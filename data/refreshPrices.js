@@ -31,9 +31,7 @@ module.exports = async function refreshPrices() {
                 }
             }
             if (name === 'beastmaster crest' || name.includes('farming exp') || name.includes('mining exp') || name.includes('combat exp') || name.includes('foraging exp') || name.includes('fishing exp')) {
-                if (!!tier) {
-                    name = `${tier}:${name}`
-                }
+                name = `${auction.tier.toLowerCase()}:${name}`
             }
             if (item.tag?.ExtraAttributes.id.startsWith('PET_SKIN_') || item.tag?.ExtraAttributes.originTag === 'FIRE_SALE') name = item.tag.ExtraAttributes.id
         }
