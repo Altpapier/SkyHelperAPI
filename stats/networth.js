@@ -1,10 +1,11 @@
 const { getPrice, getBazaarPrice } = require('../constants/networth/functions')
+const fs = require('fs')
 const getPet = require('../constants/pets')
-const { decodeData, decodeArrayBuffer } = require('../utils/nbt')
+const { decodeData } = require('../utils/nbt')
 const { titleCase } = require('../constants/functions')
 
 module.exports = async (profile, profileData) => {
-    const prices = require('../data/prices.json')
+    const prices = JSON.parse(fs.readFileSync('./uuids.json').toString())
 
     let networth = {
         total_networth: 0,
