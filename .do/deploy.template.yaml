@@ -1,0 +1,16 @@
+spec:
+  name: SkyHelperAPI
+  services:
+    name: SkyHelperAPI
+    github:
+      branch: master
+      deploy_on_push: true
+      repo: Altpapier/SkyHelperAPI
+    health_check:
+      http_path: /
+    cors:
+      allowed_origins:
+        - regex: .*
+    http_port: 3000
+    routes:
+      - path: /
