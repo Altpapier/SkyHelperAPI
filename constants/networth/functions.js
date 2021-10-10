@@ -5,6 +5,7 @@ const ignored_items = require('./ignored_items')
 const reforge_stones = require('./reforge_stones')
 const ignored_enchantments = require('./ignored_enchantments')
 const essence_upgrades = require('./essence_upgrades')
+const { forgeItemTimes } = require('../mining')
 const { titleCase } = require('../functions')
 const format_item_name = (name, item, { pet = false, tier = 'common', level = null, tierboosted = false } = {}) => {
     name = name.toLowerCase();
@@ -23,7 +24,9 @@ const format_item_name = (name, item, { pet = false, tier = 'common', level = nu
             name = name.substring(name.indexOf(' ') + 1)
         }
         if (name === 'beastmaster crest') {
-            //do later
+            let id = item.tag.ExtraAttributes?.id.split('_')
+            let beast_rarity = id[id.length - 1].toLowerCase()
+            name = `${beast_rarity}:${name}`
         }
     }
     name = name.replace(/§[0-9a-k]/g, '').replace(/✪/g, '').replace(/✦/g, '');
@@ -32,6 +35,20 @@ const format_item_name = (name, item, { pet = false, tier = 'common', level = nu
 
 function getBazaarPrice(id, prices) {
     return prices[id] || 0
+}
+
+const materials_to_id = {
+    WHEAT: 'WHEAT',
+    CANE: 'SUGAR_CANE',
+    CARROT: 'CARROT_ITEM',
+    WARTS: 'NETHER_STALK',
+    POTATO: 'POTATO_ITEM'
+}
+function getHoe(id) {
+    id = id.split('_')
+    const level = id[id.length - 1]
+    const material = materials_to_id[id[id.length - 2]]
+    return { level: Number(level), material }
 }
 
 const pet_raritys = ['common', 'uncommon', 'rare', 'epic', 'legendary']
@@ -72,20 +89,30 @@ module.exports = {
                 name = format_item_name(item?.tag?.display?.Name, item)
             }
             let key = (Object.keys(prices).includes(name)) ? name : Object.keys(prices).includes(item.tag?.ExtraAttributes.id) ? item.tag?.ExtraAttributes.id : null
-            if (key == null) return {
-                name: item.tag?.display?.Name.replace(/§[0-9a-k]/g, ''),
-                value: 0,
-                base_item_price: 0,
-                calculation: [
-                    {
-                        type: 'Item Not Found',
+            let val = 0
+            if (key == null) {
+                if (item.tag.display.Lore[item.tag.display.Lore.length - 1].includes('HOE') && item.tag.ExtraAttributes.id.startsWith('THEORETICAL')) {
+                    const hoe = getHoe(item.tag.ExtraAttributes.id)
+                    const tickets = hoe.level == 2 ? prices['JACOBS_TICKET'] * 64 : prices['JACOBS_TICKET'] * 256
+                    val = 1000000 + 256 * (prices[hoe.material] * (144 ** (hoe.level - 1))) + tickets
+                } else {
+                    return {
+                        name: item.tag?.display?.Name.replace(/§[0-9a-k]/g, ''),
                         value: 0,
-                        amount: 1
+                        base_item_price: 0,
+                        calculation: [
+                            {
+                                type: 'Item Not Found',
+                                value: 0,
+                                amount: 1
+                            }
+                        ]
                     }
-                ]
+                }
+            } else {
+                val = prices[key] * (item.Count || 1)
             }
             const extra_information = []
-            let val = prices[key] * (item.Count || 1)
             let base_item_price = val
             if (!pet) {
                 //PRICE PAYED (Midas Sword + Midas Staff)
@@ -144,6 +171,11 @@ module.exports = {
                             enchantments.push({ name: titleCase(name), value: 1000, amount: 1 })
                         } else {
                             if (!item.tag.display.Name.toLowerCase().includes('ice spray wand') && !name.includes('scavenger 5')) {
+                                if (!item.tag.display?.Name.toLowerCase().includes('stonk') && enchantment === 'efficiency' && item.tag.ExtraAttributes?.enchantments[enchantment] > 5) {
+                                    //SILEX (Efficiency Enchantment Upgrade)
+                                    val += prices['silex'] || 0 * (item.tag.ExtraAttributes.enchantments[enchantment] - 5)
+                                    extra_information.push({ type: 'Silex', value: (prices['silex'] || 0) * (item.tag.ExtraAttributes.enchantments[enchantment] - 5), amount: item.tag.ExtraAttributes.enchantments[enchantment] - 5 })
+                                }
                                 val += prices[name] || 0
                                 enchantment_value += prices[name] || 0
                                 enchantments.push({ name: titleCase(name), value: (prices[name] || 0), amount: 1 })
@@ -209,26 +241,60 @@ module.exports = {
                     }
                 }
 
+                //WOODEN SINGULARITY
+                if (item.tag.ExtraAttributes.wood_singularity_count) {
+                    val += prices['wood singularity'] || 0
+                    extra_information.push({ type: 'Wood Singularity', value: (prices['wood singularity'] || 0), amount: 1 })
+                }
+
+                //TRANSMISSION TUNERS
+                if (item.tag.ExtraAttributes.tuned_transmission) {
+                    val += prices['transmission tuner'] || 0 * item.tag.ExtraAttributes.tuned_transmission
+                    extra_information.push({ type: 'Wood Singularity', value: (prices['wood singularity'] || 0) * item.tag.ExtraAttributes.tuned_transmission, amount: 1 })
+                }
+
+                //ETHERMERGE (Aspect of the Void)
+                if (item.tag.ExtraAttributes.ethermerge) {
+                    val += prices['etherwarp conduit'] || 0 + prices['etherwarp merger'] || 0
+                    extra_information.push({ type: 'Ether Transmission', value: prices['etherwarp conduit'] || 0 + prices['etherwarp merger'] || 0, amount: 1 })
+                }
+
+                //DRILLS
+                if (item.tag.ExtraAttributes.drill_part_upgrade_module) {
+                    let price = prices[forgeItemTimes[item.tag.ExtraAttributes.drill_part_upgrade_module.toUpperCase()].name.toLowerCase()] || 0
+                    val += price
+                    extra_information.push({ type: `${forgeItemTimes[item.tag.ExtraAttributes.drill_part_upgrade_module.toUpperCase()].name}`, value: price, amount: 1 })
+                }
+                if (item.tag.ExtraAttributes.drill_part_engine) {
+                    let price = prices[forgeItemTimes[item.tag.ExtraAttributes.drill_part_engine.toUpperCase()].name.toLowerCase()] || 0
+                    val += price
+                    extra_information.push({ type: `${forgeItemTimes[item.tag.ExtraAttributes.drill_part_engine.toUpperCase()].name}`, value: price, amount: 1 })
+                }
+                if (item.tag.ExtraAttributes.drill_part_fuel_tank) {
+                    let price = prices[forgeItemTimes[item.tag.ExtraAttributes.drill_part_fuel_tank.toUpperCase()].name.toLowerCase()] || 0
+                    val += price
+                    extra_information.push({ type: `${forgeItemTimes[item.tag.ExtraAttributes.drill_part_fuel_tank.toUpperCase()].name}`, value: price, amount: 1 })
+                }
 
                 //RECOMBOBULATOR
                 if (val > 600000 || item.tag.display.Lore.includes('ACCESSORY')) {
                     val += item.tag.ExtraAttributes.rarity_upgrades ? prices['RECOMBOBULATOR_3000'] || 0 : 0
-                    if (item.tag.ExtraAttributes.rarity_upgrades) extra_information.push({ type: 'Recombobulator 3000', value: (prices['RECOMBOBULATOR_3000'] || 0), amount: 1})
+                    if (item.tag.ExtraAttributes.rarity_upgrades) extra_information.push({ type: 'Recombobulator 3000', value: (prices['RECOMBOBULATOR_3000'] || 0), amount: 1 })
                 }
             } else {
                 //GET PET SKIN
                 if (item?.skin) {
                     val += getBazaarPrice(`PET_SKIN_${item.skin}`, prices)
-                    extra_information.push({ type: titleCase(item.skin + ' Skin'), value: getBazaarPrice(`PET_SKIN_${item.skin}`, prices), amount: 1})
+                    extra_information.push({ type: titleCase(item.skin + ' Skin'), value: getBazaarPrice(`PET_SKIN_${item.skin}`, prices), amount: 1 })
                 }
                 //GET PET ITEM
                 if (item?.heldItem && pet_items[item?.heldItem]) {
                     if (pet_items[item?.heldItem].rarity) {
                         val += getBazaarPrice(`${pet_items[item?.heldItem].rarity}:${pet_items[item.heldItem].item_name.toLowerCase()}`, prices)
-                        extra_information.push({ type: titleCase(pet_items[item.heldItem].item_name), value: getBazaarPrice(`${pet_items[item?.heldItem].rarity}:${pet_items[item.heldItem].item_name.toLowerCase()}`, prices), amount: 1})
+                        extra_information.push({ type: titleCase(pet_items[item.heldItem].item_name), value: getBazaarPrice(`${pet_items[item?.heldItem].rarity}:${pet_items[item.heldItem].item_name.toLowerCase()}`, prices), amount: 1 })
                     } else {
                         val += getBazaarPrice(pet_items[item.heldItem].item_name.toLowerCase(), prices)
-                        extra_information.push({ type: titleCase(pet_items[item.heldItem].item_name), value: getBazaarPrice(pet_items[item.heldItem].item_name.toLowerCase(), prices), amount: 1})
+                        extra_information.push({ type: titleCase(pet_items[item.heldItem].item_name), value: getBazaarPrice(pet_items[item.heldItem].item_name.toLowerCase(), prices), amount: 1 })
                     }
                 }
             }
@@ -244,7 +310,7 @@ module.exports = {
                 ]
             }
             return {
-                name: item.tag?.display?.Name.replace(/§[0-9a-k]/g, ''),
+                name: (item.tag?.display?.Name || item.type).replace(/§[0-9a-k]/g, ''),
                 value: val,
                 base_item_price,
                 amount: item.Count || 0,
@@ -252,7 +318,7 @@ module.exports = {
             }
         } catch (err) {
             return {
-                name: item.tag?.display?.Name.replace(/§[0-9a-k]/g, ''),
+                name: (item.tag?.display?.Name || item.type).replace(/§[0-9a-k]/g, ''),
                 value: 0,
                 base_item_price: 0,
                 calculation: [
