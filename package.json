@@ -21,5 +21,8 @@
     "express": "^4.17.1",
     "prismarine-nbt": "^1.6.0",
     "util": "^0.12.4"
+  },
+  "engines": {
+    "node": ">=0.14"
   }
 }
