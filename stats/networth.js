@@ -5,7 +5,7 @@ const { decodeData } = require('../utils/nbt')
 const { titleCase } = require('../constants/functions')
 
 module.exports = async (profile, profileData) => {
-    const prices = JSON.parse(fs.readFileSync('./uuids.json').toString())
+    const prices = JSON.parse(fs.readFileSync('./data/prices.json').toString())
 
     let networth = {
         total_networth: 0,
