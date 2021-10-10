@@ -14,5 +14,8 @@ module.exports = [
     'oak wood',
     'sludge juice',
     'wishing compass',
-    'rune'
+    'rune',
+    'mini sandcastle',
+    'inflatable jerry',
+    'spirit leap'
 ]
