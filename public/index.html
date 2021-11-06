@@ -1,75 +1,136 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SkyHelper API Documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyHelper API - Documentation</title>
+    <link rel="stylesheet" href="https://stackedit.io/style.css" />
   </head>
-  <body>
-    <div class="background-banner">
-        <img
-          src="https://i.imgur.com/GbUqMZN.png"
-          alt="Background"
-          role="banner"
-          class="background-image"
-        />
-    </div>
 
-    <div class="titles">
-      <h1 class="title">SkyHelper API</h1>
-      <h1 class="subtitle">
-        Documentation
-      </h1>
-      <h1 class="auth">Authentication</h1>
+  <body class="stackedit">
+    <div class="stackedit__html">
+      <h1 id="skyhelper-api">SkyHelper API</h1>
+      <h1 id="authentication">Authentication</h1>
+      <p>
+        The SkyHelper API uses their own API keys to authenticate requests. You
+        can either host this API on your own server and define keys on there or
+        subscribe to the SkyHelper
+        <a href="https://www.patreon.com/skyhelper">Patreon</a> (Silver or Gold
+        Supporter) to get an API key from me.<br />
+        You can either use the key query parameter by adding a
+        <code>?key=token</code> to the end of API requests or using an
+        authorization header by adding a <code>Authorization</code> header to
+        your API requests, where the value of the header is your API token.
+      </p>
+      <h1 id="responses">Responses</h1>
+      <p>
+        All endpoints in the API returns all their responses in JSON, all
+        requests will return a <code>status</code> key which should math the
+        response status code that was returned and a <code>data</code> key for
+        successful responses. A <code>reason</code> key will be returned for
+        failed requests.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Status Code</th>
+            <th>Reason</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>200</td>
+            <td>Successful request</td>
+          </tr>
+          <tr>
+            <td>400</td>
+            <td>
+              The request is missing an authentication method (valid
+              <code>key</code> query parameter or an
+              <code>Authentication</code> header
+            </td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>The provided token does not exist</td>
+          </tr>
+          <tr>
+            <td>404</td>
+            <td>
+              There is no player with the given UUID or name or the player got
+              no Skyblock profiles
+            </td>
+          </tr>
+          <tr>
+            <td>429</td>
+            <td>
+              The Hypixel API rate-limit was reached (The API will return
+              <code>RateLimit-Remaining</code> and
+              <code>RateLimit-Reset</code> headers
+            </td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>
+              There was an error in the SkyHelper API or the Hypixel API
+              returned an unknown error code. Please report these errors back on
+              <a href="https://github.com/Altpapier/SkyHelperAPI/issues"
+                >GitHub</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>502</td>
+            <td>
+              Hypixels API is experiencing some technical issues or is
+              unavailable
+            </td>
+          </tr>
+          <tr>
+            <td>503</td>
+            <td>Hypixels API is in maintenance mode</td>
+          </tr>
+          <tr>
+            <td>504</td>
+            <td>
+              Hypixels API returned an <code>Gateway Time-out</code> error
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 id="endpoints">Endpoints:</h1>
+      <h3 id="get-v1profilesuser"><code>GET</code> /v1/profiles/:user</h3>
+      <h3 id="get-v1profileuserprofile">
+        <code>GET</code> /v1/profile/:user/:profile
+      </h3>
+      <h3 id="get-v1fetchur"><code>GET</code> /v1/fetchur</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>user</td>
+            <td>This can be the UUID of a user or the name</td>
+          </tr>
+          <tr>
+            <td>profile</td>
+            <td>This can be the users profile id or name</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 id="credit">Credit</h1>
+      <p>
+        This API has been made possible by
+        <a href="https://hypixel-api.senither.com">Hypixel Skyblock Facade</a>
+        and <a href="https://sky.shiiyu.moe">SkyCrypt</a> and a lot of the code
+        comes from them. Make sure to check them out!
+      </p>
     </div>
   </body>
-  <style>
-    body {
-      color: #ffffffcc;
-      background: #070510;
-      display: flex;
-      width: 100%;
-      min-height: 100%;
-      scroll-behavior: smooth;
-    }
-    .titles {
-      font-family: "Helvetica";
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    .titles .title {
-      color: #ffffffcc;
-      font-size: 50px;
-    }
-    .titles .subtitle {
-      color: #d1d1d1cc;
-      font-size: 20px;
-    }
-
-    .titles .auth {
-        text-align: left;
-        margin-left: 30px;
-    }
-
-    .background-banner {
-      width: 100%;
-      height: 100vh;
-      inset: 0px;
-      z-index: -1;
-      position: absolute;
-      pointer-events: none;
-    }
-    .background-image {
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      width: 100vw;
-      min-height: 50vh;
-      max-height: 90vh;
-      object-position: center top;
-      opacity: 0.1;
-      object-fit: cover;
-      -webkit-mask-image: linear-gradient(to top, transparent 2%, black 80%);
-    }
-  </style>
 </html>
