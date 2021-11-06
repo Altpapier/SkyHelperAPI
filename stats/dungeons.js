@@ -67,6 +67,7 @@ module.exports = (player, profile) => {
 }
 
 function getScoreName(score) {
+    //CREDIT: https://github.com/Senither/hypixel-skyblock-facade
     let name = 'C'
     if (score >= 300) {
         name = 'S+'

@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/SkyCryptWebsite/SkyCrypt/blob/master/src/constants/talismans.js
 module.exports = {
     talisman_upgrades: {
         WOLF_TALISMAN: [

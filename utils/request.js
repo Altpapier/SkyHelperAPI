@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
 const axios = require('axios');
 const headers = ['RateLimit-Limit', 'RateLimit-Remaining', 'RateLimit-Reset']
 
@@ -12,5 +13,12 @@ module.exports = {
     }
 
     return result
+  },
+  wrap: function wrap(fn) {
+    return function (req, res, next) {
+      return fn(req, res, next).catch(err => {
+        next(err)
+      })
+    }
   }
 }

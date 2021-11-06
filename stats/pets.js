@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/SkyCrypt/SkyCryptWebsite (Modified)
 const xp_tables = require('../constants/xp_tables')
 const { titleCase } = require('../constants/functions')
 

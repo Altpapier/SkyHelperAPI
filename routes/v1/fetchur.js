@@ -1,6 +1,7 @@
 const items = require('../../constants/fetchur_items')
+const { wrap } = require('../../utils/request')
 
-module.exports = (req, res) => {
+module.exports = wrap(async function (req, res) {
     let today = new Date();
     today.setHours(today.getHours() - 6);
     let day = today.getDate();
@@ -11,4 +12,4 @@ module.exports = (req, res) => {
     item = items[(day % 12)]
 
     return res.status(200).json(item)
-}
+})

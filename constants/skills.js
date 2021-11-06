@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/SkyCrypt/SkyCryptWebsite (Modified)
 const xp_tables = require('./xp_tables')
 
 module.exports = function calcSkill(skill, experience) {

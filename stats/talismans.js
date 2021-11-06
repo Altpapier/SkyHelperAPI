@@ -15,7 +15,7 @@ module.exports = async (profile) => {
 
         for (const talisman of talisman_bag) {
             if (talisman.tag?.display.Name && talisman.tag?.ExtraAttributes) {
-                //If there is a reforge, remove the reforge fromt he item name
+                //If there is a reforge, remove the reforge from the item name
                 let name = talisman.tag?.display.Name.replace(/\u00A7[0-9A-FK-OR]/ig, '') || null
                 const reforge = capitalize(talisman.tag?.ExtraAttributes.modifier || null)
                 if (reforge) name = name.substring(name.indexOf(' ') + 1)

@@ -20,7 +20,7 @@ module.exports = function getMilestones(profile) {
         }
     }
 }
-
+//CREDIT: https://github.com/SkyCrypt/SkyCryptWebsite (Modified)
 function getCurrentPet(pet, stats) {
     let level = 0;
     let xpForNext = 0;

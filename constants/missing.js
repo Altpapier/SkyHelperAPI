@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/SkyCrypt/SkyCryptWebsite
 const constants = require('./talismans')
 
 module.exports = function getMissingTalismans(talismans, option='') {

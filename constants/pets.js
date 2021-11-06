@@ -1,4 +1,4 @@
-//CREDIT: https://github.com/SkyCryptWebsite/SkyCrypt
+//CREDIT: https://github.com/SkyCryptWebsite/SkyCrypt (Modified)
 const pet_levels = [
     100, 110, 120, 130, 145, 160, 175, 190,
     210, 230, 250, 275, 300, 330, 360, 400,

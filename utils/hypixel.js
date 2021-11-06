@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
 const getSkills = require('../stats/skills')
 const getMilestones = require('../stats/milestones')
 const getCakebag = require('../stats/cakebag')
@@ -60,7 +61,6 @@ module.exports = {
             return;
         }
 
-
         if (!isValidProfile(profileData.members, uuid)) {
             res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'` })
             return;
@@ -89,6 +89,46 @@ module.exports = {
             minions: getMinions(profileData),
             cakebag: await getCakebag(profile)
         }
+    },
+    parseProfiles: async function parseProfile(player, profileRes, uuid, res) {
+        if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
+            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
+            return;
+        }
+
+        const result = []
+
+        for (const profileData of profileRes.data.profiles) {
+            if (!isValidProfile(profileData.members, uuid)) {
+                continue
+            }
+            const profile = profileData.members[uuid]
+
+            result.push({
+                username: player.name,
+                id: profileData.profile_id,
+                name: profileData.cute_name,
+                isIronman: profileData?.game_mode === 'ironman' ? true : false,
+                last_save: profile.last_save,
+                skills: getSkills(player, profile),
+                networth: await getNetworth(profile, profileData),
+                weight: getWeight(profile),
+                dungeons: getDungeons(player, profile),
+                mining: getMining(player, profile),
+                slayer: getSlayer(profile),
+                milestones: getMilestones(profile),
+                missing: await getMissing(profile),
+                kills: getKills(profile),
+                deaths: getDeaths(profile),
+                pets: getPets(profile),
+                talismans: await getTalismans(profile),
+                collections: getCollections(profileData),
+                minions: getMinions(profileData),
+                cakebag: await getCakebag(profile)
+            })
+        }
+        if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
+        return result.sort((a, b) => b.last_save - a.last_save)
     }
 }
 

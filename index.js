@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
 const FetchurRoute = require('./routes/v1/fetchur');
 const ProfileRoute = require('./routes/v1/profile');
 const ProfilesRoute = require('./routes/v1/profiles');
@@ -11,6 +12,9 @@ const refreshPrices = require('./data/refreshPrices')
 const checkForUpdate = require('./middleware/checkforupdate')
 require('dotenv').config();
 const port = process.env.PORT || 3000;
+
+process.on('uncaughtException', error =>console.log(error))
+process.on('unhandledRejection', error => console.log(error))
 
 app.use(express.static(__dirname + '/public'));
 app.use(Auth);

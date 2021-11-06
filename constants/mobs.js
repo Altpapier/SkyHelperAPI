@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/SkyCrypt/SkyCryptWebsite
 module.exports = {
     pond_squid: "Squid",
     unburried_zombie: "Crypt Ghoul",

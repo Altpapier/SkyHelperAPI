@@ -1,13 +1,6 @@
-const HttpException = require('../exceptions/httpexception')
-
-
+//CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
 module.exports = (error, _, response, __) => {
-  if (error instanceof HttpException) {
-    return response.status(error.statusCode).json({
-      status: error.statusCode,
-      reason: error.message,
-    })
-  } else if (error.hasOwnProperty('response')) {
+  if (error.hasOwnProperty('response')) {
     switch (error.response.status) {
       case 403:
         return createJsonResponse(response, 403, 'Invalid Hypixel API token provided')
@@ -21,6 +14,9 @@ module.exports = (error, _, response, __) => {
       case 502:
         return createJsonResponse(response, 502, 'Hypixels API is currently experiencing some technical issues, try again later')
 
+      case 504:
+        return createJsonResponse(response, 504, 'Hypixels API timed out')
+
       case 521:
         return createJsonResponse(response, 503, 'Hypixels API is currently in maintenance mode, try again later')
     }
@@ -30,9 +26,6 @@ module.exports = (error, _, response, __) => {
     status: 500,
     reason: error.message,
   }
-
-  //jsonResponse.stack = error.stack?.split('\n')
-
 
   return response.status(500).json(jsonResponse)
 }

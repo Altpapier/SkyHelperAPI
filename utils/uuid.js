@@ -1,3 +1,4 @@
+//CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
 function isUuid(uuid) {
     if (!uuid) {
         return false
