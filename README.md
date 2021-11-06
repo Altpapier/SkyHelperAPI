@@ -27,6 +27,8 @@ You will have to set the Hypixel API key by adding the `HYPIXEL_API_KEY` environ
 To be able to use the API you will need to define your own API keys. For that add the `TOKENS` environment variable and add tokens seperated by a `,`
 Example: `token1,token2`
 
+The API automatically updates upon starting. If you wish to not want that change the `AUTO_UPDATE` environment variable to `false`
+
 # Endpoints:
 
 ### `GET` /v1/profiles/:user
