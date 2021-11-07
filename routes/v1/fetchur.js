@@ -11,5 +11,5 @@ module.exports = wrap(async function (req, res) {
     }
     item = items[(day % 12)]
 
-    return res.status(200).json(item)
+    return res.status(200).json({status: 200, data: item})
 })

@@ -19,5 +19,5 @@ module.exports = wrap(async function (req, res) {
     const profile = await parseProfiles(player, profileRes, uuid, res);
 
 
-    return res.status(200).json(profile);
+    return res.status(200).json({status: 200, data: profile});
 })
