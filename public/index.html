@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="iron" href="https://cdn.discordapp.com/avatars/710143953533403226/02ca825e4901e74c2c2d6f8e59341325.png?size=512" sizes="512x512" type="image/png">
+    <meta property="og:title" content="SkyHelper API - Documentation">
+    <meta property="og:image" content="https://cdn.discordapp.com/avatars/710143953533403226/02ca825e4901e74c2c2d6f8e59341325.png?size=512">
+    <meta property="oh.theme-color" content="#3585d0">
+    <meta property="og:description" content="A hypixel skyblock API wrapper containing most features that the SkyHelper bot has to offer.">
     <title>SkyHelper API - Documentation</title>
     <link rel="stylesheet" href="https://stackedit.io/style.css" />
   </head>
@@ -24,8 +29,8 @@
       </p>
       <h1 id="responses">Responses</h1>
       <p>
-        All endpoints in the API returns all their responses in JSON, all
-        requests will return a <code>status</code> key which should math the
+        All endpoints in the API return all their responses in JSON, all
+        requests will return a <code>status</code> key which should match the
         response status code that was returned and a <code>data</code> key for
         successful responses. A <code>reason</code> key will be returned for
         failed requests.
@@ -48,7 +53,7 @@
             <td>
               The request is missing an authentication method (valid
               <code>key</code> query parameter or an
-              <code>Authentication</code> header
+              <code>Authentication</code> header)
             </td>
           </tr>
           <tr>
@@ -67,7 +72,7 @@
             <td>
               The Hypixel API rate-limit was reached (The API will return
               <code>RateLimit-Remaining</code> and
-              <code>RateLimit-Reset</code> headers
+              <code>RateLimit-Reset</code> headers)
             </td>
           </tr>
           <tr>
