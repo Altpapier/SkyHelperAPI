@@ -15,7 +15,14 @@ module.exports = [
     'sludge juice',
     'wishing compass',
     'rune',
-    'mini sandcastle',
     'inflatable jerry',
-    'spirit leap'
+    'spirit leap',
+    'mini sandcastle',
+    'decoy',
+    "arachne's keeperfragment",
+    'hypixel sandcastle',
+    'red goblin egg',
+    'worm membrane',
+    'soul string',
+    'tasty cheese'
 ]
