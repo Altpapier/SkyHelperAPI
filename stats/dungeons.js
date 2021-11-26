@@ -17,6 +17,7 @@ module.exports = (player, profile) => {
                 times_played: catacombs?.times_played ? catacombs?.times_played[floor] || 0 : 0,
                 completions: catacombs?.tier_completions ? catacombs?.tier_completions[floor] || 0 : 0,
                 best_score: { score: catacombs?.best_score ? catacombs?.best_score[floor] || 0 : 0, name: getScoreName(catacombs?.best_score ? catacombs?.best_score[floor] || 0 : 0) },
+                fastest: catacombs?.fastest_time ? catacombs?.fastest_time[floor] || 0 : 0,
                 fastest_s: catacombs?.fastest_time_s ? catacombs?.fastest_time_s[floor] || 0 : 0,
                 fastest_s_plus: catacombs?.fastest_time_s_plus ? catacombs?.fastest_time_s_plus[floor] || 0 : 0,
                 mobs_killed: catacombs?.mobs_killed ? catacombs?.mobs_killed[floor] || 0 : 0
@@ -32,6 +33,7 @@ module.exports = (player, profile) => {
                     times_played: master_catacombs?.times_played ? master_catacombs?.times_played[floor] || 0 : 0,
                     completions: master_catacombs?.times_played ? master_catacombs?.tier_completions[floor] || 0 : 0,
                     best_score: { score: master_catacombs?.best_score ? master_catacombs?.best_score[floor] || 0 : 0, name: getScoreName(master_catacombs?.best_score ? master_catacombs?.best_score[floor] || 0 : 0) },
+                    fastest: master_catacombs?.fastest_time ? master_catacombs?.fastest_time[floor] || 0 : 0,
                     fastest_s: master_catacombs?.fastest_time_s ? master_catacombs?.fastest_time_s[floor] || 0 : 0,
                     fastest_s_plus: master_catacombs?.fastest_time_s_plus ? master_catacombs?.fastest_time_s_plus[floor] || 0 : 0,
                     mobs_killed: master_catacombs?.mobs_killed ? master_catacombs?.mobs_killed[floor] || 0 : 0
