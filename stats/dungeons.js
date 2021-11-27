@@ -25,7 +25,7 @@ module.exports = (player, profile) => {
         }
 
         const master_mode_floors = {}
-        const master_available_floors = Object.keys(dungeons?.dungeon_types.master_catacombs.mobs_killed || [])
+        const master_available_floors = Object.keys(dungeons?.dungeon_types.master_catacombs.mobs_killed || []) + 1
 
         for (const floor in master_available_floors) {
             if (floor != 0) {
