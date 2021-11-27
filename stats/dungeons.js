@@ -31,7 +31,7 @@ module.exports = (player, profile) => {
             if (floor != 0) {
                 master_mode_floors[`floor_${floor}`] = {
                     times_played: master_catacombs?.times_played ? master_catacombs?.times_played[floor] || 0 : 0,
-                    completions: master_catacombs?.times_played ? master_catacombs?.tier_completions[floor] || 0 : 0,
+                    completions: master_catacombs?.tier_completions ? master_catacombs?.tier_completions[floor] || 0 : 0,
                     best_score: { score: master_catacombs?.best_score ? master_catacombs?.best_score[floor] || 0 : 0, name: getScoreName(master_catacombs?.best_score ? master_catacombs?.best_score[floor] || 0 : 0) },
                     fastest: master_catacombs?.fastest_time ? master_catacombs?.fastest_time[floor] || 0 : 0,
                     fastest_s: master_catacombs?.fastest_time_s ? master_catacombs?.fastest_time_s[floor] || 0 : 0,
