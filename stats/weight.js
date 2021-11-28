@@ -2,7 +2,7 @@ const calculateWeight = require('../constants/weight')
 const calcSkill = require('../constants/skills')
 
 module.exports = (profile) => {
-    return {
+    const weight = {
         skills: {
             farming: calculateWeight('farming', (calcSkill('farming', profile?.experience_skill_farming || 0)).level, profile?.experience_skill_farming || 0),
             mining: calculateWeight('mining', (calcSkill('mining', profile?.experience_skill_mining || 0)).level, profile?.experience_skill_mining || 0),
@@ -29,5 +29,10 @@ module.exports = (profile) => {
                 tank: calculateWeight('tank', (calcSkill('dungeoneering', profile.dungeons?.player_classes.tank.experience || 0)).level, profile.dungeons?.player_classes.tank.experience),
             }
         }
+    }
+    return {
+        total_weight: weight.skills.farming.weight + weight.skills.mining.weight + weight.skills.combat.weight + weight.skills.foraging.weight + weight.skills.fishing.weight + weight.skills.enchanting.weight + weight.skills.alchemy.weight + weight.skills.taming.weight + weight.slayer.revenant.weight + weight.slayer.tarantula.weight + weight.slayer.sven.weight + weight.slayer.enderman.weight + weight.dungeons.catacombs.weight + weight.dungeons.classes.healer.weight + weight.dungeons.classes.mage.weight + weight.dungeons.classes.berserk.weight + weight.dungeons.classes.archer.weight + weight.dungeons.classes.tank.weight,
+        total_weight_with_overflow: weight.skills.farming.weight + weight.skills.mining.weight + weight.skills.combat.weight + weight.skills.foraging.weight + weight.skills.fishing.weight + weight.skills.enchanting.weight + weight.skills.alchemy.weight + weight.skills.taming.weight + weight.slayer.revenant.weight + weight.slayer.tarantula.weight + weight.slayer.sven.weight + weight.slayer.enderman.weight + weight.dungeons.catacombs.weight + weight.dungeons.classes.healer.weight + weight.dungeons.classes.mage.weight + weight.dungeons.classes.berserk.weight + weight.dungeons.classes.archer.weight + weight.dungeons.classes.tank.weight + weight.skills.farming.weight_overflow + weight.skills.mining.weight_overflow + weight.skills.combat.weight_overflow + weight.skills.foraging.weight_overflow + weight.skills.fishing.weight_overflow + weight.skills.enchanting.weight_overflow + weight.skills.alchemy.weight_overflow + weight.skills.taming.weight_overflow + weight.slayer.revenant.weight_overflow + weight.slayer.tarantula.weight_overflow + weight.slayer.sven.weight_overflow + weight.slayer.enderman.weight_overflow + weight.dungeons.catacombs.weight_overflow + weight.dungeons.classes.healer.weight_overflow + weight.dungeons.classes.mage.weight_overflow + weight.dungeons.classes.berserk.weight_overflow + weight.dungeons.classes.archer.weight_overflow + weight.dungeons.classes.tank.weight_overflow,
+        weight
     }
 }
