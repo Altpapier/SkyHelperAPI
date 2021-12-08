@@ -82,7 +82,7 @@ module.exports = {
                 if (item.level > 90) level = 3
                 if (item.level == 100) level = 4
                 if (tierboosted) {
-                    item.tier = pet_raritys[pet.indexOf(item.tier.toLowerCase()) + 1]
+                    item.tier = pet_raritys[pet_raritys.indexOf(item.tier.toLowerCase()) + 1]
                 }
                 name = format_item_name(item.type.toLowerCase(), item, { pet: true, tier: item.tier.toLowerCase(), level, tierboosted })
             } else {
@@ -317,6 +317,7 @@ module.exports = {
                 calculation: extra_information
             }
         } catch (err) {
+            console.log({ err, item: item.type })
             return {
                 name: (item.tag?.display?.Name || item.type).replace(/§[0-9a-k]/g, ''),
                 value: 0,
