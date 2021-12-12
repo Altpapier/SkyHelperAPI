@@ -317,9 +317,8 @@ module.exports = {
                 calculation: extra_information
             }
         } catch (err) {
-            console.log({ err, item: item.type })
             return {
-                name: (item.tag?.display?.Name || item.type).replace(/§[0-9a-k]/g, ''),
+                name: (item.tag?.display?.Name || item?.type || 'null').replace(/§[0-9a-k]/g, ''),
                 value: 0,
                 base_item_price: 0,
                 calculation: [

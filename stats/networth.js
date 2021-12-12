@@ -66,7 +66,7 @@ async function getNetworth(type, data, prices) {
             let contents = (await decodeData(Buffer.from(data, 'base64'))).i
             for (const item of contents) {
                 if (item?.tag) {
-                    networth.value += (getPrice(item, prices, false)).value || 0
+                    networth.value += (getPrice(item, prices, false))?.value || 0
                     networth.items.push(getPrice(item, prices, false))
                 }
             }
