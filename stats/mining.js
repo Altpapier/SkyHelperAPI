@@ -39,8 +39,8 @@ module.exports = (player, profile) => {
 
     for (const forge_types of Object.values(forge_api)) {
         for (const item of Object.values(forge_types)) {
-            if (item.id === 'PET') item.id = 'AMMONITE'
-            forge.push({ slot: item.slot, item: forgeItemTimes[item.id].name, id: item.id === 'AMMONITE' ? 'PET' : item.id, ending: Number((item.startTime + forgeItemTimes[item.id].duration).toFixed()), ended: item.startTime + forgeItemTimes[item.id].duration < Date.now() ? true : false })
+            if (item?.id === 'PET') item.id = 'AMMONITE'
+            forge.push({ slot: item.slot, item: forgeItemTimes[item.id]?.name || 'Unknown', id: item.id === 'AMMONITE' ? 'PET' : item.id, ending: Number((item.startTime + forgeItemTimes[item.id]?.duration || 0).toFixed()), ended: item.startTime + forgeItemTimes[item.id]?.duration || 0 < Date.now() ? true : false })
         }
     }
 
