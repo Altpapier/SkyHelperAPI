@@ -1,6 +1,5 @@
 node_modules/
 data/collections.json
-data/prices.json
 package-lock.json
 .env
 package-lock.json
