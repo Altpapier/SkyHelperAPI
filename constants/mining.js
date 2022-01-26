@@ -109,6 +109,8 @@ module.exports = {
         DIVAN_BOOTS: { duration: 82800000, name: 'Boots Of Divan' }, //23h
         AMBER_POLISHED_DRILL_ENGINE: { duration: 180000000, name: 'Amber-polished Drill Engine' }, //2d 2h 50h
         PERFECTLY_CUT_FUEL_TANK: { duration: 180000000, name: 'Perfectly-Cut Fuel Tank' }, //2d 2h 50h
-        DIVAN_DRILL: { duration: 216000000, name: 'Divan\'s Drill' }, //2d 12h 60h
+        DIVAN_DRILL: { duration: 216000000, name: 'Divan\'s Drill' }, //2d 12h 60h,
+        CRYSTAL_HOLLOWS_TRAVEL_SCROLL: { duration: 36000000, name: 'Travel Scroll to the Crystal Hollows' }, //10h
+        FORGE_TRAVEL_SCROLL: { duration: 18000000, name: 'Travel Scroll to the Dwarven Forge' }, //5h
     }
 }
