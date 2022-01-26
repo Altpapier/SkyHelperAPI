@@ -19,11 +19,11 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "mongoose": "^6.1.8",
     "prismarine-nbt": "^1.6.0",
     "util": "^0.12.4"
   },
   "engines": {
     "node": ">=0.14"
-  },
-  "devDependencies": {}
+  }
 }
