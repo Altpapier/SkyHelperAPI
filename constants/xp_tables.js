@@ -1,6 +1,6 @@
 module.exports = {
     max_levels: {
-        farming: 50,
+        farming: 60,
         mining: 60,
         combat: 60,
         foraging: 50,
