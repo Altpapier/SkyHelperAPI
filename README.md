@@ -17,14 +17,16 @@ Node.js >= 14
 2. Install all dependencies using NPM by going into the `SkyHelperAPI` folder
 `npm install`
 
-3. Start the API using `node .` or `npm start`
+3. Set up the environment variables
+
+4. Start the API using `node .` or `npm start`
 
 ### Environment Variables
 The Port normally defaults to `3000`. If you want to change that, you can do so by changing the `PORT` environment variable.
 
 You will have to set the Hypixel API key by adding the `HYPIXEL_API_KEY` environment variable.
 
-You will also have to set the MongoDB uri by adding the `MONGO` environment variable.
+You will also have to set the MongoDB uri by adding the `MONGO` environment variable. If you need the auctions and bazaar data from the SkyHelper bot make sure to DM me on Discord (@Altpapier#4847)
 
 If you don't want the prices to update you can also add the `UPDATE_PRICES` environment variable and set that to `false`.
 
