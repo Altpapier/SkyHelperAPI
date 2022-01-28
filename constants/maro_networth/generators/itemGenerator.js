@@ -272,7 +272,6 @@ const getItems = async function (profile, db) {
         output.storage = storage.flat();
     }
 
-    console.log(profile.pets)
     if (profile.pets) {
         const pets = [];
 

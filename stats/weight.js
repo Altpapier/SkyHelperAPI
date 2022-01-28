@@ -4,14 +4,14 @@ const calcSkill = require('../constants/skills')
 module.exports = (profile) => {
     const weight = {
         skills: {
-            farming: calculateWeight('farming', (calcSkill('farming', profile?.experience_skill_farming || 0)).level, profile?.experience_skill_farming || 0),
-            mining: calculateWeight('mining', (calcSkill('mining', profile?.experience_skill_mining || 0)).level, profile?.experience_skill_mining || 0),
-            combat: calculateWeight('combat', (calcSkill('combat', profile?.experience_skill_combat || 0)).level, profile?.experience_skill_combat || 0),
-            foraging: calculateWeight('foraging', (calcSkill('foraging', profile?.experience_skill_foraging || 0)).level, profile?.experience_skill_foraging || 0),
-            fishing: calculateWeight('fishing', (calcSkill('fishing', profile?.experience_skill_fishing || 0)).level, profile?.experience_skill_fishing || 0),
-            enchanting: calculateWeight('enchanting', (calcSkill('enchanting', profile?.experience_skill_enchanting || 0)).level, profile?.experience_skill_enchanting || 0),
-            alchemy: calculateWeight('alchemy', (calcSkill('alchemy', profile?.experience_skill_alchemy || 0)).level, profile?.experience_skill_alchemy || 0),
-            taming: calculateWeight('taming', (calcSkill('taming', profile?.experience_skill_taming || 0)).level, profile?.experience_skill_taming || 0)
+            farming: calculateWeight('farming', (calcSkill('farming', profile?.experience_skill_farming || 0)).levelWithProgress, profile?.experience_skill_farming || 0),
+            mining: calculateWeight('mining', (calcSkill('mining', profile?.experience_skill_mining || 0)).levelWithProgress, profile?.experience_skill_mining || 0),
+            combat: calculateWeight('combat', (calcSkill('combat', profile?.experience_skill_combat || 0)).levelWithProgress, profile?.experience_skill_combat || 0),
+            foraging: calculateWeight('foraging', (calcSkill('foraging', profile?.experience_skill_foraging || 0)).levelWithProgress, profile?.experience_skill_foraging || 0),
+            fishing: calculateWeight('fishing', (calcSkill('fishing', profile?.experience_skill_fishing || 0)).levelWithProgress, profile?.experience_skill_fishing || 0),
+            enchanting: calculateWeight('enchanting', (calcSkill('enchanting', profile?.experience_skill_enchanting || 0)).levelWithProgress, profile?.experience_skill_enchanting || 0),
+            alchemy: calculateWeight('alchemy', (calcSkill('alchemy', profile?.experience_skill_alchemy || 0)).levelWithProgress, profile?.experience_skill_alchemy || 0),
+            taming: calculateWeight('taming', (calcSkill('taming', profile?.experience_skill_taming || 0)).levelWithProgress, profile?.experience_skill_taming || 0)
         },
         slayer: {
             revenant: calculateWeight('revenant', null, profile.slayer_bosses?.zombie?.xp || 0),
@@ -20,13 +20,13 @@ module.exports = (profile) => {
             enderman: calculateWeight('enderman', null, profile.slayer_bosses?.enderman?.xp || 0)
         },
         dungeons: {
-            catacombs: calculateWeight('catacombs', (calcSkill('dungeoneering', profile.dungeons?.dungeon_types?.catacombs?.experience || 0)).level, profile.dungeons?.dungeon_types?.catacombs?.experience  || 0),
+            catacombs: calculateWeight('catacombs', (calcSkill('dungeoneering', profile.dungeons?.dungeon_types?.catacombs?.experience || 0)).levelWithProgress, profile.dungeons?.dungeon_types?.catacombs?.experience  || 0),
             classes: {
-                healer: calculateWeight('healer', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.healer?.experience || 0)).level, profile.dungeons?.player_classes?.healer?.experience || 0),
-                mage: calculateWeight('mage', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.mage?.experience || 0)).level, profile.dungeons?.player_classes?.mage?.experience || 0),
-                berserk: calculateWeight('berserk', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.berserk?.experience || 0)).level, profile.dungeons?.player_classes?.berserk?.experience || 0),
-                archer: calculateWeight('archer', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.archer?.experience || 0)).level, profile.dungeons?.player_classes?.archer?.experience || 0),
-                tank: calculateWeight('tank', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.tank?.experience || 0)).level, profile.dungeons?.player_classes?.tank?.experience || 0),
+                healer: calculateWeight('healer', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.healer?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.healer?.experience || 0),
+                mage: calculateWeight('mage', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.mage?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.mage?.experience || 0),
+                berserk: calculateWeight('berserk', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.berserk?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.berserk?.experience || 0),
+                archer: calculateWeight('archer', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.archer?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.archer?.experience || 0),
+                tank: calculateWeight('tank', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.tank?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.tank?.experience || 0),
             }
         }
     }
