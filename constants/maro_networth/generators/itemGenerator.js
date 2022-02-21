@@ -1,9 +1,19 @@
 const petGenerator = require('./petGenerator');
+const sbItems = require('../../../json/items.json');
 const constants = require('../src/constants');
 const nbt = require('prismarine-nbt');
 const helper = require('../src/helper');
 const utils = require('util');
 const parseNbt = utils.promisify(nbt.parse);
+
+const ESSENCE_PRICES = {
+    WITHER: 4000,
+    UNDEAD: 1250,
+    GOLD: 3000,
+    DIAMOND: 3000,
+    DRAGON: 2000,
+    ICE: 2000,
+};
 
 const getBackpackContents = async function (arraybuf) {
     const buf = Buffer.from(arraybuf);
@@ -219,6 +229,17 @@ const parseItems = async function (base64, db) {
                         value: db[constants.master_stars[star]] ?? 0,
                         count: 1,
                     });
+                }
+            }
+
+            const foundItem = sbItems.find((item) => item.id === itemId.toUpperCase());
+            if (foundItem && (ExtraAttributes.dungeon_item_level || ExtraAttributes.dungeon_item_level == 0)) {
+                const essence = foundItem.essence;
+                if (essence) {
+                    for (let i = 0; i <= ExtraAttributes.dungeon_item_level && i <= 5; i++) {
+                        price += (essence?.costs?.[i] || 0) * (ESSENCE_PRICES[essence?.essence_type] || 0) * 0.55;
+                        calculation.push({ type: essence?.essence_type + ' Essence', value: essence?.costs?.[i] * ESSENCE_PRICES[essence?.essence_type] * 0.55, count: essence?.costs[i] });
+                    }
                 }
             }
 
