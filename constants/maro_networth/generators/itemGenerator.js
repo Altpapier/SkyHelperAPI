@@ -55,7 +55,19 @@ const parseItems = async function (base64, db) {
     }
 
     for (const item of items) {
-        if (item.tag?.ExtraAttributes?.id != undefined) {
+        if (item.tag?.ExtraAttributes?.id === 'PET' && item?.tag?.ExtraAttributes?.petInfo) {
+            const petInfo = JSON.parse(item.tag.ExtraAttributes.petInfo);
+            const petData = petGenerator.getPetPrice(petInfo, db);
+
+            item.price = petData?.price;
+            item.id = petData?.type;
+            item.heldItem = petData?.heldItem;
+            item.candyUsed = petData?.candyUsed;
+            item.modified = petData?.modified || {};
+            item.modified.isPet = true;
+            item.modified.id = petData?.type?.toLowerCase();
+            item.Count = 1;
+        } else if (item.tag?.ExtraAttributes?.id != undefined) {
             let itemName = helper.getRawLore(item.tag.display.Name);
             let itemId = item.tag.ExtraAttributes.id.toLowerCase();
 
@@ -369,6 +381,22 @@ const getItems = async function (profile, db) {
         }
 
         output.storage = storage.flat();
+    }
+
+    if (profile.backpack_icons) {
+        const storage = [];
+
+        for (const backpack of Object.values(profile.backpack_icons)) {
+            const items = await parseItems(backpack.data, db);
+
+            storage.push(items);
+        }
+
+        if ('storage' in output) {
+            output.storage = output.storage.concat(storage.flat());
+        } else {
+            output.storage = storage.flat();
+        }
     }
 
     if (profile.pets) {
