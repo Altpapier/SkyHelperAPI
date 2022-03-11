@@ -117,7 +117,7 @@ const parseItems = async function (base64, db) {
                 for (const enchant of Object.entries(ExtraAttributes.enchantments)) {
                     if (constants.blocked_enchants[itemId]?.includes(enchant[0])) continue;
 
-                    if (constants.allowed_enchants.includes(enchant[0])) {
+                    if (constants.allowed_enchants.includes(enchant[0]) || (Object.keys(constants.allowed_enchant_tiers).includes(enchant[0]) && constants.allowed_enchant_tiers[enchant[0]].includes(enchant[1]))) {
                         if (enchant[0] === 'efficiency' && enchant[1] > 5 && itemId != 'stonk_pickaxe') {
                             price += (db[`sil_ex`] ?? 0) * (enchant[1] - 5) * 0.7;
                             calculation.push({
@@ -127,10 +127,10 @@ const parseItems = async function (base64, db) {
                             });
                         }
 
-                        price += db[`${enchant[0]}_${enchant[1]}`] ?? 0;
+                        price += (db[`${enchant[0]}_${enchant[1]}`] ?? 0) * 0.85;
                         calculation.push({
                             type: `${enchant[0]}_${enchant[1]}`,
-                            value: db[`${enchant[0]}_${enchant[1]}`] ?? 0,
+                            value: (db[`${enchant[0]}_${enchant[1]}`] ?? 0) * 0.85,
                         });
                     }
                 }

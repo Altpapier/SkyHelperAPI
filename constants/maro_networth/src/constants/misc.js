@@ -11,6 +11,10 @@ module.exports = {
       'ultimate_no_pain_no_gain',
       'ultimate_swarm',
       'ender_slayer',
+      'dragon_hunter',
+      'vicious',
+      'respite',
+      'smarty_pants',
       'giant_killer',
       'first_strike',
       'sharpness',
@@ -26,12 +30,49 @@ module.exports = {
       'snipe',
       'power'
     ],
+    allowed_enchant_tiers: {
+      bane_of_arthropods: '7',
+      cleave: '6',
+      critical: '7',
+      cubism: '6',
+      ender_slayer: '7',
+      execute: '6',
+      first: 'strike',
+      giant_killer: '7',
+      lethality: '6',
+      life_steal: '5',
+      looting: '5',
+      luck: '7',
+      prosecute: '6',
+      scavenger: '5',
+      sharpness: '7',
+      smite: '7',
+      syphon: '5',
+      thunderbolt: '7',
+      thunderlord: '7',
+      titan_killer: '7',
+      vampirism: '6',
+      venomous: '6',
+      vicious: '5',
+      chance: '5',
+      overload: '5',
+      power: '7',
+      snipe: '4',
+      blast_protection: '7',
+      big_brain: '5',
+      counter_strike: '5',
+      fire_protection: '7',
+      growth: '7',
+      projectile_protection: '7',
+      protection: '7',
+      rejuvenate: '5',
+    },
   
     blocked_enchants: {
       bone_boomerang: ['overload', 'power'],
       death_bow: ['overload', 'power', 'ultimate_soul_eater']
     },
   
-    master_stars: ['first_master_star', 'second_master_star', 'third_master_star', 'fourth_master_star']
+    master_stars: ['first_master_star', 'second_master_star', 'third_master_star', 'fourth_master_star', 'fifth_master_star']
   };
   
