@@ -16,11 +16,11 @@ module.exports = (player, profile) => {
         }
     }
 
-    for (const statue of mining_stats?.biomes?.dwarven?.statues_placed || []) {
+    for (let statue of mining_stats?.biomes?.dwarven?.statues_placed || []) {
         statue = titleCase(statue);
     }
 
-    for (const part of mining_stats?.biomes?.precursor?.parts_delivered || []) {
+    for (let part of mining_stats?.biomes?.precursor?.parts_delivered || []) {
         part = titleCase(part, true);
     }
 
