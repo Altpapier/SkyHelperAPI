@@ -139,23 +139,23 @@ const parseItems = async function (base64, db) {
             //HOT POTATO BOOKS
             if (ExtraAttributes.hot_potato_count) {
                 if (ExtraAttributes.hot_potato_count > 10) {
-                    price += db['hot_potato_book'] || 0 * 10;
-                    price += (db['fuming_potato_book'] || 0 * ExtraAttributes.hot_potato_count - 10) * 0.6;
+                    price += (db['hot_potato_book'] || 0) * 10;
+                    price += ((db['fuming_potato_book'] || 0) * ExtraAttributes.hot_potato_count - 10) * 0.6;
                     calculation.push({
                         type: 'Hot Potato Books',
-                        value: db['hot_potato_book'] || 0 * 10,
+                        value: (db['hot_potato_book'] || 0) * 10,
                         count: 10,
                     });
                     calculation.push({
                         type: 'Fuming Potato Books',
-                        value: db['fuming_potato_book'] || 0 * ExtraAttributes.hot_potato_count - 10,
+                        value: (db['fuming_potato_book'] || 0) * ExtraAttributes.hot_potato_count - 10,
                         count: ExtraAttributes.hot_potato_count - 10,
                     });
                 } else {
-                    price += db['hot_potato_book'] || 0 * ExtraAttributes.hot_potato_count;
+                    price += (db['hot_potato_book'] || 0) * ExtraAttributes.hot_potato_count;
                     calculation.push({
                         type: 'Hot Potato Books',
-                        value: db['hot_potato_book'] || 0 * ExtraAttributes.hot_potato_count,
+                        value: (db['hot_potato_book'] || 0) * ExtraAttributes.hot_potato_count,
                         count: ExtraAttributes.hot_potato_count,
                     });
                 }
@@ -163,20 +163,20 @@ const parseItems = async function (base64, db) {
 
             //ART OF WAR
             if (ExtraAttributes.art_of_war_count) {
-                price += (db['the_art_of_war'] || 0 * ExtraAttributes.art_of_war_count) * 0.6;
+                price += (db['the_art_of_war'] || 0) * ExtraAttributes.art_of_war_count * 0.6;
                 calculation.push({
                     type: 'The Art of War',
-                    value: db['the_art_of_war'] || 0 * ExtraAttributes.art_of_war_count,
+                    value: (db['the_art_of_war'] || 0) * ExtraAttributes.art_of_war_count,
                     count: ExtraAttributes.art_of_war_count,
                 });
             }
 
             //FARMING FOR DUMMIES
             if (ExtraAttributes.farming_for_dummies_count) {
-                price += (db['farming_for_dummies'] || 0 * ExtraAttributes.farming_for_dummies_count) * 0.5;
+                price += (db['farming_for_dummies'] || 0) * ExtraAttributes.farming_for_dummies_count * 0.5;
                 calculation.push({
                     type: 'Farming for Dummies',
-                    value: db['farming_for_dummies'] || 0 * ExtraAttributes.farming_for_dummies_count,
+                    value: (db['farming_for_dummies'] || 0) * ExtraAttributes.farming_for_dummies_count,
                     count: ExtraAttributes.farming_for_dummies_count,
                 });
             }
