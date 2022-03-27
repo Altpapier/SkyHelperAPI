@@ -127,10 +127,10 @@ const parseItems = async function (base64, db) {
                             });
                         }
 
-                        price += (db[`${enchant[0]}_${enchant[1]}`] ?? 0) * 0.85;
+                        price += (db[`${enchant[0]}_${enchant[1]}`] ?? 0) * 0.85 * (enchant[0] === 'overload' || enchant[0] === 'ultimate_soul_eater' ? 0.5 : 1);
                         calculation.push({
                             type: `${enchant[0]}_${enchant[1]}`,
-                            value: (db[`${enchant[0]}_${enchant[1]}`] ?? 0) * 0.85,
+                            value: (db[`${enchant[0]}_${enchant[1]}`] ?? 0) * 0.85 * (enchant[0] === 'overload' || enchant[0] === 'ultimate_soul_eater' ? 0.5 : 1),
                         });
                     }
                 }
