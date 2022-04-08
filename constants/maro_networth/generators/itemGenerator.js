@@ -161,6 +161,16 @@ const parseItems = async function (base64, db) {
                 }
             }
 
+            // DYES
+            if (ExtraAttributes.dye_item) {
+                price += (db[ExtraAttributes.dye_item] || 0) * 0.9;
+                calculation.push({
+                    type: 'Dye',
+                    value: (db[ExtraAttributes.dye_item] || 0) * 0.9,
+                    count: 1,
+                });
+            }
+
             //ART OF WAR
             if (ExtraAttributes.art_of_war_count) {
                 price += (db['the_art_of_war'] || 0) * ExtraAttributes.art_of_war_count * 0.6;
