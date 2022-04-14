@@ -76,7 +76,7 @@ const getPetPrice = function (pet, db) {
     }
   }
 
-  if (pet.candyUsed > 0 && pet.type !== 'ENDER_DRAGON') {
+  if (pet.candyUsed > 0 && pet.type !== 'ENDER_DRAGON' && pet.type !== 'GOLDEN_DRAGON') {
     const reducedValue = price / 1.538232;
 
     if (reducedValue && !isNaN(reducedValue)) {
