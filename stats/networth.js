@@ -1,6 +1,7 @@
 const itemGenerator = require('../constants/maro_networth/generators/itemGenerator');
 const networthGenerator = require('../constants/maro_networth/generators/networthGenerator');
 const db = require('../constants/maro_networth/storage/database');
+const fs = require('fs');
 
 let prices = {};
 
@@ -12,6 +13,12 @@ const retrievePrices = async function () {
     for (const product of await db.bazaar.find()) {
         prices[product.id.toLowerCase()] = parseInt(product.buyPrice);
     }
+
+    const moogma = (prices['moogma_leggings'] || 400000) / 20;
+    const slug = (prices['slug_boots'] || 300000) / 15;
+    prices['crimson_essence'] = moogma > slug ? slug : moogma;
+
+    fs.writeFileSync('./data/prices.json', JSON.stringify(prices, null, 2));
     console.log('Prices retrieved successfully');
 };
 

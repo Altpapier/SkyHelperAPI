@@ -90,6 +90,7 @@ const parseItems = async function (base64, db) {
             let price = data * item.Count;
             let base = data * item.Count;
             let calculation = [];
+            ESSENCE_PRICES['CRIMSON'] = db['crimson_essence'];
 
             //PRICE PAYED IN DARK AUCTION
             if (ExtraAttributes.winning_bid && !itemId.includes('hegemony')) {
@@ -254,13 +255,31 @@ const parseItems = async function (base64, db) {
                 }
             }
 
+            // ESSENCE DUNGEON STARS
             const foundItem = sbItems.find((item) => item.id === itemId.toUpperCase());
             if (foundItem && (ExtraAttributes.dungeon_item_level || ExtraAttributes.dungeon_item_level == 0)) {
-                const essence = foundItem.essence;
+                const essence = foundItem.upgrade_costs;
                 if (essence) {
-                    for (let i = 0; i <= ExtraAttributes.dungeon_item_level && i <= 5; i++) {
-                        price += (essence?.costs?.[i] || 0) * (ESSENCE_PRICES[essence?.essence_type] || 0) * 0.55;
-                        calculation.push({ type: essence?.essence_type + ' Essence', value: essence?.costs?.[i] * ESSENCE_PRICES[essence?.essence_type] * 0.55, count: essence?.costs[i] });
+                    for (let i = 0; i < ExtraAttributes.dungeon_item_level && i <= 5; i++) {
+                        for (const upgrade of essence[i] || []) {
+                            if (upgrade?.essence_type) {
+                                price += (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55;
+                                calculation.push({ type: `${upgrade?.essence_type} Essence`, value: (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55, count: upgrade?.amount });
+                            }
+                        }
+                    }
+                }
+            }
+            // UPGRADE STARS (eg. CRIMSON)
+            if (foundItem?.upgrade_costs && (ExtraAttributes.upgrade_level || ExtraAttributes.upgrade_level == 0)) {
+                const itemUpgrades = foundItem.upgrade_costs;
+
+                for (let i = 0; i < ExtraAttributes.upgrade_level; i++) {
+                    for (const upgrade of itemUpgrades[i]) {
+                        if (upgrade?.essence_type) {
+                            price += (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55;
+                            calculation.push({ type: upgrade?.essence_type + ' Essence', value: (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55, count: upgrade?.amount });
+                        }
                     }
                 }
             }
