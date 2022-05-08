@@ -109,6 +109,7 @@ const parseItems = async function (base64, db) {
                     const value = ExtraAttributes.enchantments[enchants[0]];
 
                     price = db[`${enchants[0]}_${value}`]?.price ?? 0;
+                    if (enchants[0] === 'aiming') enchants[0] = 'dragon tracer';
                     itemName = helper.capitalize(`${enchants[0]} ${value}`);
                     calculation.push({ type: 'Enchantment Book', value: price });
                 }
