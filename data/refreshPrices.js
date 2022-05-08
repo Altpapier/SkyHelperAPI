@@ -7,11 +7,15 @@ module.exports = async function refreshPrices() {
         try {
             request = await axios.get('https://raw.githubusercontent.com/SkyHelperBot/Prices/master/prices.json');
         } catch (err) {
-            return console.log('Failed to update prices:', err);
+            return console.log('Failed to update prices: ', err);
         }
 
-        fs.writeFileSync('./data/prices.json', JSON.stringify(request.data, null, 2));
-        console.log('[PRICES] Prices updated successfully');
+        if (request.status === 200) {
+            fs.writeFileSync('./data/prices.json', JSON.stringify(request.data, null, 2));
+            console.log('[PRICES] Prices updated successfully');
+        } else {
+            console.log('[PRICES] Failed to update prices: ', request.status);
+        }
     }
 
     updatePrices();
