@@ -1,318 +1,121 @@
-//CREDIT: https://github.com/SkyCryptWebsite/SkyCrypt/blob/master/src/constants/talismans.js
 module.exports = {
     talisman_upgrades: {
-        WOLF_TALISMAN: [
-            'WOLF_RING'
-        ],
-        RING_POTION_AFFINITY: [
-            'ARTIFACT_POTION_AFFINITY'
-        ],
-        POTION_AFFINITY_TALISMAN: [
-            'RING_POTION_AFFINITY',
-            'ARTIFACT_POTION_AFFINITY'
-        ],
-        FEATHER_RING: [
-            'FEATHER_ARTIFACT'
-        ],
-        FEATHER_TALISMAN: [
-            'FEATHER_RING',
-            'FEATHER_ARTIFACT'
-        ],
-        SEA_CREATURE_RING: [
-            'SEA_CREATURE_ARTIFACT'
-        ],
-        SEA_CREATURE_TALISMAN: [
-            'SEA_CREATURE_RING',
-            'SEA_CREATURE_ARTIFACT'
-        ],
-        HEALING_TALISMAN: [
-            'HEALING_RING'
-        ],
-        CANDY_ARTIFACT: [
-            'CANDY_RELIC'
-        ],
-        CANDY_RING: [
-            'CANDY_ARTIFACT',
-            'CANDY_RELIC'
-        ],
-        CANDY_TALISMAN: [
-            'CANDY_RING',
-            'CANDY_ARTIFACT',
-            'CANDY_RELIC'
-        ],
-        INTIMIDATION_RING: [
-            'INTIMIDATION_ARTIFACT'
-        ],
-        INTIMIDATION_TALISMAN: [
-            'INTIMIDATION_RING',
-            'INTIMIDATION_ARTIFACT'
-        ],
-        SPIDER_RING: [
-            'SPIDER_ARTIFACT'
-        ],
-        SPIDER_TALISMAN: [
-            'SPIDER_RING',
-            'SPIDER_ARTIFACT'
-        ],
-        RED_CLAW_RING: [
-            'RED_CLAW_ARTIFACT'
-        ],
-        RED_CLAW_TALISMAN: [
-            'RED_CLAW_RING',
-            'RED_CLAW_ARTIFACT'
-        ],
-        HUNTER_TALISMAN: [
-            'HUNTER_RING'
-        ],
-        ZOMBIE_RING: [
-            'ZOMBIE_ARTIFACT'
-        ],
-        ZOMBIE_TALISMAN: [
-            'ZOMBIE_RING',
-            'ZOMBIE_ARTIFACT'
-        ],
-        BAT_RING: [
-            'BAT_ARTIFACT'
-        ],
-        BAT_TALISMAN: [
-            'BAT_RING',
-            'BAT_ARTIFACT'
-        ],
-        BROKEN_PIGGY_BANK: [
-            'CRACKED_PIGGY_BANK',
-            'PIGGY_BANK'
-        ],
-        CRACKED_PIGGY_BANK: [
-            'PIGGY_BANK'
-        ],
-        SPEED_TALISMAN: [
-            'SPEED_RING',
-            'SPEED_ARTIFACT'
-        ],
-        SPEED_RING: [
-            'SPEED_ARTIFACT'
-        ],
-        PERSONAL_COMPACTOR_4000: [
-            'PERSONAL_COMPACTOR_5000',
-            'PERSONAL_COMPACTOR_6000',
-            'PERSONAL_COMPACTOR_7000'
-        ],
-        PERSONAL_COMPACTOR_5000: [
-            'PERSONAL_COMPACTOR_6000',
-            'PERSONAL_COMPACTOR_7000'
-        ],
-        PERSONAL_COMPACTOR_6000: [
-            'PERSONAL_COMPACTOR_7000'
-        ],
-        PERSONAL_DELETOR_4000: [
-            'PERSONAL_DELETOR_5000',
-            'PERSONAL_DELETOR_6000',
-            'PERSONAL_DELETOR_7000'
-        ],
-        PERSONAL_DELETOR_5000: [
-            'PERSONAL_DELETOR_6000',
-            'PERSONAL_DELETOR_7000'
-        ],
-        PERSONAL_DELETOR_6000: [
-            'PERSONAL_DELETOR_7000'
-        ],
-        SCARF_STUDIES: [
-            'SCARF_THESIS',
-            'SCARF_GRIMOIRE'
-        ],
-        SCARF_THESIS: [
-            'SCARF_GRIMOIRE'
-        ],
-        CAT_TALISMAN: [
-            'LYNX_TALISMAN',
-            'CHEETAH_TALISMAN'
-        ],
-        LYNX_TALISMAN: [
-            'CHEETAH_TALISMAN'
-        ],
-        SHADY_RING: [
-            'CROOKED_ARTIFACT',
-            'SEAL_OF_THE_FAMILY'
-        ],
-        CROOKED_ARTIFACT: [
-            'SEAL_OF_THE_FAMILY'
-        ],
-        TREASURE_TALISMAN: [
-            'TREASURE_RING',
-            'TREASURE_ARTIFACT'
-        ],
-        TREASURE_RING: [
-            'TREASURE_ARTIFACT'
-        ],
-        BEASTMASTER_CREST_COMMON: [
-            'BEASTMASTER_CREST_UNCOMMON',
-            'BEASTMASTER_CREST_RARE',
-            'BEASTMASTER_CREST_EPIC',
-            'BEASTMASTER_CREST_LEGENDARY'
-        ],
-        BEASTMASTER_CREST_UNCOMMON: [
-            'BEASTMASTER_CREST_RARE',
-            'BEASTMASTER_CREST_EPIC',
-            'BEASTMASTER_CREST_LEGENDARY'
-        ],
-        BEASTMASTER_CREST_RARE: [
-            'BEASTMASTER_CREST_EPIC',
-            'BEASTMASTER_CREST_LEGENDARY'
-        ],
-        BEASTMASTER_CREST_EPIC: [
-            'BEASTMASTER_CREST_LEGENDARY'
-        ],
-        RAGGEDY_SHARK_TOOTH_NECKLACE: [
-            'DULL_SHARK_TOOTH_NECKLACE',
-            'HONED_SHARK_TOOTH_NECKLACE',
-            'SHARP_SHARK_TOOTH_NECKLACE',
-            'RAZOR_SHARP_SHARK_TOOTH_NECKLACE'
-        ],
-        DULL_SHARK_TOOTH_NECKLACE: [
-            'HONED_SHARK_TOOTH_NECKLACE',
-            'SHARP_SHARK_TOOTH_NECKLACE',
-            'RAZOR_SHARP_SHARK_TOOTH_NECKLACE'
-        ],
-        HONED_SHARK_TOOTH_NECKLACE: [
-            'SHARP_SHARK_TOOTH_NECKLACE',
-            'RAZOR_SHARP_SHARK_TOOTH_NECKLACE'
-        ],
-        SHARP_SHARK_TOOTH_NECKLACE: [
-            'RAZOR_SHARP_SHARK_TOOTH_NECKLACE'
-        ],
-        BAT_PERSON_TALISMAN: [
-            'BAT_PERSON_RING',
-            'BAT_PERSON_ARTIFACT'
-        ],
-        BAT_PERSON_RING: [
-            'BAT_PERSON_ARTIFACT'
-        ],
-        LUCKY_HOOF: [
-            'ETERNAL_HOOF'
-        ],
-        WITHER_ARTIFACT: [
-            'WITHER_RELIC'
-        ],
-        WEDDING_RING_0: [
-            'WEDDING_RING_2',
-            'WEDDING_RING_4',
-            'WEDDING_RING_7',
-            'WEDDING_RING_9'
-        ],
-        WEDDING_RING_2: [
-            'WEDDING_RING_4',
-            'WEDDING_RING_7',
-            'WEDDING_RING_9'
-        ],
-        WEDDING_RING_4: [
-            'WEDDING_RING_7',
-            'WEDDING_RING_9'
-        ],
-        WEDDING_RING_7: [
-            'WEDDING_RING_9'
-        ],
-        CAMPFIRE_TALISMAN_1: [
-            'CAMPFIRE_TALISMAN_4',
-            'CAMPFIRE_TALISMAN_8',
-            'CAMPFIRE_TALISMAN_13',
-            'CAMPFIRE_TALISMAN_21'
-        ],
-        CAMPFIRE_TALISMAN_4: [
-            'CAMPFIRE_TALISMAN_8',
-            'CAMPFIRE_TALISMAN_13',
-            'CAMPFIRE_TALISMAN_21'
-        ],
-        CAMPFIRE_TALISMAN_8: [
-            'CAMPFIRE_TALISMAN_13',
-            'CAMPFIRE_TALISMAN_21'
-        ],
-        CAMPFIRE_TALISMAN_13: [
-            'CAMPFIRE_TALISMAN_21'
-        ],
-        JERRY_TALISMAN_GREEN: [
-            'JERRY_TALISMAN_BLUE',
-            'JERRY_TALISMAN_PURPLE',
-            'JERRY_TALISMAN_GOLDEN',
-        ],
-        JERRY_TALISMAN_BLUE: [
-            'JERRY_TALISMAN_PURPLE',
-            'JERRY_TALISMAN_GOLDEN',
-        ],
-        JERRY_TALISMAN_PURPLE: [
-            'JERRY_TALISMAN_GOLDEN',
-        ],
-        TITANIUM_TALISMAN: [
-            'TITANIUM_RING',
-            'TITANIUM_ARTIFACT',
-            'TITANIUM_RELIC',
-        ],
-        TITANIUM_RING: [
-            'TITANIUM_ARTIFACT',
-            'TITANIUM_RELIC',
-        ],
-        TITANIUM_ARTIFACT: [
-            'TITANIUM_RELIC',
-        ],
-        BAIT_RING: [
-            'SPIKED_ATROCITY',
-        ],
-        MASTER_SKULL_TIER_1: [
-            'MASTER_SKULL_TIER_2',
-            'MASTER_SKULL_TIER_3',
-            'MASTER_SKULL_TIER_4',
-            'MASTER_SKULL_TIER_5',
-            'MASTER_SKULL_TIER_6',
-            'MASTER_SKULL_TIER_7',
-        ],
-        MASTER_SKULL_TIER_2: [
-            'MASTER_SKULL_TIER_3',
-            'MASTER_SKULL_TIER_4',
-            'MASTER_SKULL_TIER_5',
-            'MASTER_SKULL_TIER_6',
-            'MASTER_SKULL_TIER_7',
-        ],
-        MASTER_SKULL_TIER_3: [
-            'MASTER_SKULL_TIER_4',
-            'MASTER_SKULL_TIER_5',
-            'MASTER_SKULL_TIER_6',
-            'MASTER_SKULL_TIER_7',
-        ],
-        MASTER_SKULL_TIER_4: [
-            'MASTER_SKULL_TIER_5',
-            'MASTER_SKULL_TIER_6',
-            'MASTER_SKULL_TIER_7',
-        ],
-        MASTER_SKULL_TIER_5: [
-            'MASTER_SKULL_TIER_6',
-            'MASTER_SKULL_TIER_7',
-        ],
-        MASTER_SKULL_TIER_6: [
-            'MASTER_SKULL_TIER_7',
-        ],
-        SOULFLOW_PILE: [
-            "SOULFLOW_BATTERY",
-            "SOULFLOW_SUPERCELL"
-        ],
-        SOULFLOW_BATTERY: [
-            "SOULFLOW_SUPERCELL"
-        ],
-        ENDER_ARTIFACT: [
-            "ENDER_RELIC"
-        ],
-        POWER_TALISMAN: [
-            "POWER_RING",
-            "POWER_ARTIFACT"
-        ],
-        POWER_RING: [
-            "POWER_ARTIFACT"
+        WOLF_TALISMAN: ['WOLF_RING'],
+        RING_POTION_AFFINITY: ['ARTIFACT_POTION_AFFINITY'],
+        POTION_AFFINITY_TALISMAN: ['RING_POTION_AFFINITY', 'ARTIFACT_POTION_AFFINITY'],
+        FEATHER_RING: ['FEATHER_ARTIFACT'],
+        FEATHER_TALISMAN: ['FEATHER_RING', 'FEATHER_ARTIFACT'],
+        SEA_CREATURE_RING: ['SEA_CREATURE_ARTIFACT'],
+        SEA_CREATURE_TALISMAN: ['SEA_CREATURE_RING', 'SEA_CREATURE_ARTIFACT'],
+        HEALING_TALISMAN: ['HEALING_RING'],
+        CANDY_ARTIFACT: ['CANDY_RELIC'],
+        CANDY_RING: ['CANDY_ARTIFACT', 'CANDY_RELIC'],
+        CANDY_TALISMAN: ['CANDY_RING', 'CANDY_ARTIFACT', 'CANDY_RELIC'],
+        INTIMIDATION_RING: ['INTIMIDATION_ARTIFACT'],
+        INTIMIDATION_TALISMAN: ['INTIMIDATION_RING', 'INTIMIDATION_ARTIFACT'],
+        SPIDER_RING: ['SPIDER_ARTIFACT'],
+        SPIDER_TALISMAN: ['SPIDER_RING', 'SPIDER_ARTIFACT'],
+        RED_CLAW_RING: ['RED_CLAW_ARTIFACT'],
+        RED_CLAW_TALISMAN: ['RED_CLAW_RING', 'RED_CLAW_ARTIFACT'],
+        HUNTER_TALISMAN: ['HUNTER_RING'],
+        ZOMBIE_RING: ['ZOMBIE_ARTIFACT'],
+        ZOMBIE_TALISMAN: ['ZOMBIE_RING', 'ZOMBIE_ARTIFACT'],
+        BAT_RING: ['BAT_ARTIFACT'],
+        BAT_TALISMAN: ['BAT_RING', 'BAT_ARTIFACT'],
+        BROKEN_PIGGY_BANK: ['CRACKED_PIGGY_BANK', 'PIGGY_BANK'],
+        CRACKED_PIGGY_BANK: ['PIGGY_BANK'],
+        SPEED_TALISMAN: ['SPEED_RING', 'SPEED_ARTIFACT'],
+        SPEED_RING: ['SPEED_ARTIFACT'],
+        PERSONAL_COMPACTOR_4000: ['PERSONAL_COMPACTOR_5000', 'PERSONAL_COMPACTOR_6000', 'PERSONAL_COMPACTOR_7000'],
+        PERSONAL_COMPACTOR_5000: ['PERSONAL_COMPACTOR_6000', 'PERSONAL_COMPACTOR_7000'],
+        PERSONAL_COMPACTOR_6000: ['PERSONAL_COMPACTOR_7000'],
+        PERSONAL_DELETOR_4000: ['PERSONAL_DELETOR_5000', 'PERSONAL_DELETOR_6000', 'PERSONAL_DELETOR_7000'],
+        PERSONAL_DELETOR_5000: ['PERSONAL_DELETOR_6000', 'PERSONAL_DELETOR_7000'],
+        PERSONAL_DELETOR_6000: ['PERSONAL_DELETOR_7000'],
+        SCARF_STUDIES: ['SCARF_THESIS', 'SCARF_GRIMOIRE'],
+        SCARF_THESIS: ['SCARF_GRIMOIRE'],
+        CAT_TALISMAN: ['LYNX_TALISMAN', 'CHEETAH_TALISMAN'],
+        LYNX_TALISMAN: ['CHEETAH_TALISMAN'],
+        SHADY_RING: ['CROOKED_ARTIFACT', 'SEAL_OF_THE_FAMILY'],
+        CROOKED_ARTIFACT: ['SEAL_OF_THE_FAMILY'],
+        TREASURE_TALISMAN: ['TREASURE_RING', 'TREASURE_ARTIFACT'],
+        TREASURE_RING: ['TREASURE_ARTIFACT'],
+        BEASTMASTER_CREST_COMMON: ['BEASTMASTER_CREST_UNCOMMON', 'BEASTMASTER_CREST_RARE', 'BEASTMASTER_CREST_EPIC', 'BEASTMASTER_CREST_LEGENDARY'],
+        BEASTMASTER_CREST_UNCOMMON: ['BEASTMASTER_CREST_RARE', 'BEASTMASTER_CREST_EPIC', 'BEASTMASTER_CREST_LEGENDARY'],
+        BEASTMASTER_CREST_RARE: ['BEASTMASTER_CREST_EPIC', 'BEASTMASTER_CREST_LEGENDARY'],
+        BEASTMASTER_CREST_EPIC: ['BEASTMASTER_CREST_LEGENDARY'],
+        RAGGEDY_SHARK_TOOTH_NECKLACE: ['DULL_SHARK_TOOTH_NECKLACE', 'HONED_SHARK_TOOTH_NECKLACE', 'SHARP_SHARK_TOOTH_NECKLACE', 'RAZOR_SHARP_SHARK_TOOTH_NECKLACE'],
+        DULL_SHARK_TOOTH_NECKLACE: ['HONED_SHARK_TOOTH_NECKLACE', 'SHARP_SHARK_TOOTH_NECKLACE', 'RAZOR_SHARP_SHARK_TOOTH_NECKLACE'],
+        HONED_SHARK_TOOTH_NECKLACE: ['SHARP_SHARK_TOOTH_NECKLACE', 'RAZOR_SHARP_SHARK_TOOTH_NECKLACE'],
+        SHARP_SHARK_TOOTH_NECKLACE: ['RAZOR_SHARP_SHARK_TOOTH_NECKLACE'],
+        BAT_PERSON_TALISMAN: ['BAT_PERSON_RING', 'BAT_PERSON_ARTIFACT'],
+        BAT_PERSON_RING: ['BAT_PERSON_ARTIFACT'],
+        LUCKY_HOOF: ['ETERNAL_HOOF'],
+        WITHER_ARTIFACT: ['WITHER_RELIC'],
+        WEDDING_RING_0: ['WEDDING_RING_2', 'WEDDING_RING_4', 'WEDDING_RING_7', 'WEDDING_RING_9'],
+        WEDDING_RING_2: ['WEDDING_RING_4', 'WEDDING_RING_7', 'WEDDING_RING_9'],
+        WEDDING_RING_4: ['WEDDING_RING_7', 'WEDDING_RING_9'],
+        WEDDING_RING_7: ['WEDDING_RING_9'],
+        CAMPFIRE_TALISMAN_1: ['CAMPFIRE_TALISMAN_4', 'CAMPFIRE_TALISMAN_8', 'CAMPFIRE_TALISMAN_13', 'CAMPFIRE_TALISMAN_21'],
+        CAMPFIRE_TALISMAN_4: ['CAMPFIRE_TALISMAN_8', 'CAMPFIRE_TALISMAN_13', 'CAMPFIRE_TALISMAN_21'],
+        CAMPFIRE_TALISMAN_8: ['CAMPFIRE_TALISMAN_13', 'CAMPFIRE_TALISMAN_21'],
+        CAMPFIRE_TALISMAN_13: ['CAMPFIRE_TALISMAN_21'],
+        JERRY_TALISMAN_GREEN: ['JERRY_TALISMAN_BLUE', 'JERRY_TALISMAN_PURPLE', 'JERRY_TALISMAN_GOLDEN'],
+        JERRY_TALISMAN_BLUE: ['JERRY_TALISMAN_PURPLE', 'JERRY_TALISMAN_GOLDEN'],
+        JERRY_TALISMAN_PURPLE: ['JERRY_TALISMAN_GOLDEN'],
+        TITANIUM_TALISMAN: ['TITANIUM_RING', 'TITANIUM_ARTIFACT', 'TITANIUM_RELIC'],
+        TITANIUM_RING: ['TITANIUM_ARTIFACT', 'TITANIUM_RELIC'],
+        TITANIUM_ARTIFACT: ['TITANIUM_RELIC'],
+        BAIT_RING: ['SPIKED_ATROCITY'],
+        MASTER_SKULL_TIER_1: ['MASTER_SKULL_TIER_2', 'MASTER_SKULL_TIER_3', 'MASTER_SKULL_TIER_4', 'MASTER_SKULL_TIER_5', 'MASTER_SKULL_TIER_6', 'MASTER_SKULL_TIER_7'],
+        MASTER_SKULL_TIER_2: ['MASTER_SKULL_TIER_3', 'MASTER_SKULL_TIER_4', 'MASTER_SKULL_TIER_5', 'MASTER_SKULL_TIER_6', 'MASTER_SKULL_TIER_7'],
+        MASTER_SKULL_TIER_3: ['MASTER_SKULL_TIER_4', 'MASTER_SKULL_TIER_5', 'MASTER_SKULL_TIER_6', 'MASTER_SKULL_TIER_7'],
+        MASTER_SKULL_TIER_4: ['MASTER_SKULL_TIER_5', 'MASTER_SKULL_TIER_6', 'MASTER_SKULL_TIER_7'],
+        MASTER_SKULL_TIER_5: ['MASTER_SKULL_TIER_6', 'MASTER_SKULL_TIER_7'],
+        MASTER_SKULL_TIER_6: ['MASTER_SKULL_TIER_7'],
+        SOULFLOW_PILE: ['SOULFLOW_BATTERY', 'SOULFLOW_SUPERCELL'],
+        SOULFLOW_BATTERY: ['SOULFLOW_SUPERCELL'],
+        ENDER_ARTIFACT: ['ENDER_RELIC'],
+        POWER_TALISMAN: ['POWER_RING', 'POWER_ARTIFACT'],
+        POWER_RING: ['POWER_ARTIFACT'],
+        BINGO_TALISMAN: ['BINGO_RING'],
+        BURNING_KUUDRA_CORE: ['FIERY_KUUDRA_CORE', 'INFERNA_KUUDRA_CORE'],
+        FIERY_KUUDRA_CORE: ['INFERNA_KUUDRA_CORE'],
+        BURSTSTOPPER_TALISMAN: ['BURSTSTOPPER_ARTIFACT'],
+        ODGERS_BRONZE_TOOTH: ['ODGERS_SILVER_TOOTH', 'ODGERS_GOLD_TOOTH', 'ODGERS_DIAMOND_TOOTH'],
+        ODGERS_SILVER_TOOTH: ['ODGERS_GOLD_TOOTH', 'ODGERS_DIAMOND_TOOTH'],
+        ODGERS_GOLD_TOOTH: ['ODGERS_DIAMOND_TOOTH'],
+    },
+
+    talisman_duplicates: {
+        WEDDING_RING_0: ['WEDDING_RING_1'],
+        WEDDING_RING_2: ['WEDDING_RING_3'],
+        WEDDING_RING_4: ['WEDDING_RING_5', 'WEDDING_RING_6'],
+        WEDDING_RING_7: ['WEDDING_RING_8'],
+
+        CAMPFIRE_TALISMAN_1: ['CAMPFIRE_TALISMAN_2', 'CAMPFIRE_TALISMAN_3'],
+        CAMPFIRE_TALISMAN_4: ['CAMPFIRE_TALISMAN_5', 'CAMPFIRE_TALISMAN_6', 'CAMPFIRE_TALISMAN_7'],
+        CAMPFIRE_TALISMAN_8: ['CAMPFIRE_TALISMAN_9', 'CAMPFIRE_TALISMAN_10', 'CAMPFIRE_TALISMAN_11', 'CAMPFIRE_TALISMAN_12'],
+        CAMPFIRE_TALISMAN_13: ['CAMPFIRE_TALISMAN_14', 'CAMPFIRE_TALISMAN_15', 'CAMPFIRE_TALISMAN_16', 'CAMPFIRE_TALISMAN_17', 'CAMPFIRE_TALISMAN_18', 'CAMPFIRE_TALISMAN_19', 'CAMPFIRE_TALISMAN_20'],
+        CAMPFIRE_TALISMAN_21: [
+            'CAMPFIRE_TALISMAN_22',
+            'CAMPFIRE_TALISMAN_23',
+            'CAMPFIRE_TALISMAN_24',
+            'CAMPFIRE_TALISMAN_25',
+            'CAMPFIRE_TALISMAN_26',
+            'CAMPFIRE_TALISMAN_27',
+            'CAMPFIRE_TALISMAN_28',
+            'CAMPFIRE_TALISMAN_29',
         ],
     },
+
     talismans: {
         WEDDING_RING_0: { name: 'Shiny Yellow Rock', rarity: 'common' },
         WEDDING_RING_2: { name: 'Mediocre Ring of Love', rarity: 'uncommon' },
         WEDDING_RING_4: { name: 'Modest Ring of Love', rarity: 'rare' },
         WEDDING_RING_7: { name: 'Exquisite Ring of Love', rarity: 'epic' },
         WEDDING_RING_9: { name: 'Legendary Ring of Love', rarity: 'legendary' },
+
         CAMPFIRE_TALISMAN_1: { name: 'Campfire Initiate Badge', rarity: 'common' },
         CAMPFIRE_TALISMAN_4: { name: 'Campfire Adept Badge', rarity: 'uncommon' },
         CAMPFIRE_TALISMAN_8: { name: 'Campfire Cultist Badge', rarity: 'rare' },
@@ -421,7 +224,7 @@ module.exports = {
         BAT_PERSON_ARTIFACT: { name: 'Bat Person Artifact', rarity: 'rare' },
         CANDY_RELIC: { name: 'Candy Relic', rarity: 'legendary' },
         LUCKY_HOOF: { name: 'Lucky Hoof', rarity: 'uncommon' },
-        WITHER_RELIC: { name: 'Wither Relic', rarity: 'epic' },
+        WITHER_RELIC: { name: 'Wither Relic', rarity: 'legendary' },
         CATACOMBS_EXPERT_RING: { name: 'Catacombs Expert Ring', rarity: 'epic' },
         AUTO_RECOMBOBULATOR: { name: 'Auto Recombobulator', rarity: 'legendary' },
         JERRY_TALISMAN_GOLDEN: { name: 'Golden Jerry Artifact', rarity: 'legendary' },
@@ -440,14 +243,14 @@ module.exports = {
         BAIT_RING: { name: 'Bait Ring', rarity: 'rare' },
         HUNTER_TALISMAN: { name: 'Hunter Talisman', rarity: 'uncommon' },
         HUNTER_RING: { name: 'Hunter Ring', rarity: 'rare' },
-        ETERNAL_HOOF: { name: 'Eternal Hoof', rarity: 'uncommon' },
+        ETERNAL_HOOF: { name: 'Eternal Hoof', rarity: 'rare' },
         BLOOD_GOD_CREST: { name: 'Blood God Crest', rarity: 'common' },
         SPIKED_ATROCITY: { name: 'Spiked Atrocity', rarity: 'epic' },
         MASTER_SKULL_TIER_1: { name: 'Master Skull - Tier 1', rarity: 'common' },
         MASTER_SKULL_TIER_2: { name: 'Master Skull - Tier 2', rarity: 'common' },
         MASTER_SKULL_TIER_3: { name: 'Master Skull - Tier 3', rarity: 'uncommon' },
         MASTER_SKULL_TIER_4: { name: 'Master Skull - Tier 4', rarity: 'uncommon' },
-        MASTER_SKULL_TIER_5: { name: 'Master Skull - Tier 5', rarity: 'epic' },
+        MASTER_SKULL_TIER_5: { name: 'Master Skull - Tier 5', rarity: 'rare' },
         MASTER_SKULL_TIER_6: { name: 'Master Skull - Tier 6', rarity: 'epic' },
         MASTER_SKULL_TIER_7: { name: 'Master Skull - Tier 7', rarity: 'legendary' },
         SOULFLOW_PILE: { name: 'Soulflow Pile', rarity: 'uncommon' },
@@ -460,56 +263,21 @@ module.exports = {
         POWER_TALISMAN: { name: 'Talisman of Power', rarity: 'common' },
         POWER_RING: { name: 'Ring of Power', rarity: 'uncommon' },
         POWER_ARTIFACT: { name: 'Artifact of Power', rarity: 'rare' },
-        NETHER_ARTIFACT: { name: 'Nether Artifact', rarity: 'epic' }
-    },
-    talisman_duplicates: {
-        WEDDING_RING_0: [
-            'WEDDING_RING_1'
-        ],
-        WEDDING_RING_2: [
-            'WEDDING_RING_3'
-        ],
-        WEDDING_RING_4: [
-            'WEDDING_RING_5',
-            'WEDDING_RING_6'
-        ],
-        WEDDING_RING_7: [
-            'WEDDING_RING_8'
-        ],
-        CAMPFIRE_TALISMAN_1: [
-            'CAMPFIRE_TALISMAN_2',
-            'CAMPFIRE_TALISMAN_3'
-        ],
-        CAMPFIRE_TALISMAN_4: [
-            'CAMPFIRE_TALISMAN_5',
-            'CAMPFIRE_TALISMAN_6',
-            'CAMPFIRE_TALISMAN_7'
-        ],
-        CAMPFIRE_TALISMAN_8: [
-            'CAMPFIRE_TALISMAN_9',
-            'CAMPFIRE_TALISMAN_10',
-            'CAMPFIRE_TALISMAN_11',
-            'CAMPFIRE_TALISMAN_12'
-        ],
-        CAMPFIRE_TALISMAN_13: [
-            'CAMPFIRE_TALISMAN_14',
-            'CAMPFIRE_TALISMAN_15',
-            'CAMPFIRE_TALISMAN_16',
-            'CAMPFIRE_TALISMAN_17',
-            'CAMPFIRE_TALISMAN_18',
-            'CAMPFIRE_TALISMAN_19',
-            'CAMPFIRE_TALISMAN_20'
-        ],
-        CAMPFIRE_TALISMAN_21: [
-            'CAMPFIRE_TALISMAN_22',
-            'CAMPFIRE_TALISMAN_23',
-            'CAMPFIRE_TALISMAN_24',
-            'CAMPFIRE_TALISMAN_25',
-            'CAMPFIRE_TALISMAN_26',
-            'CAMPFIRE_TALISMAN_27',
-            'CAMPFIRE_TALISMAN_28',
-            'CAMPFIRE_TALISMAN_29'
-        ]
+        NETHER_ARTIFACT: { name: 'Nether Artifact', rarity: 'epic' },
+        BINGO_TALISMAN: { name: 'Bingo Talisman', rarity: 'common' },
+        BINGO_RING: { name: 'Bingo Ring', rarity: 'uncommon' },
+        BURSTSTOPPER_TALISMAN: { name: 'Burststopper Talisman', rarity: 'rare' },
+        BURSTSTOPPER_ARTIFACT: { name: 'Burststopper Artifact', rarity: 'epic' },
+        FIERY_KUUDRA_CORE: { name: 'Fiery Kuudra Core', rarity: 'epic' },
+        BURNING_KUUDRA_CORE: { name: 'Burning Kuudra Core', rarity: 'rare' },
+        INFERNAL_KUUDRA_CORE: { name: 'Infernal Kuudra Core', rarity: 'rare' },
+        JACOBUS_REGISTER: { name: 'Jacobus Register', rarity: 'legendary' },
+        ODGERS_BRONZE_TOOTH: { name: "Odger's Bronze Tooth", rarity: 'common' },
+        ODGERS_SILVER_TOOTH: { name: "Odger's Silver Tooth", rarity: 'uncommon' },
+        ODGERS_GOLD_TOOTH: { name: "Odger's Gold Tooth", rarity: 'rare' },
+        ODGERS_DIAMOND_TOOTH: { name: "Odger's Diamond Tooth", rarity: 'epic' },
+        PULSE_RING: { name: 'Pulse Ring', rarity: 'uncommon' },
+        BLAZE_TALISMAN: { name: 'Blaze Talisman', rarity: 'rare' },
     },
     max_upgrade_talismans: {
         WEDDING_RING_9: { name: 'Legendary Ring of Love', rarity: 'legendary' },
@@ -577,7 +345,7 @@ module.exports = {
         DANTE_TALISMAN: { name: 'Dante Talisman', rarity: 'common' },
         PIGGY_BANK: { name: 'Piggy Bank', rarity: 'uncommon' },
         HUNTER_RING: { name: 'Hunter Ring', rarity: 'rare' },
-        ETERNAL_HOOF: { name: 'Eternal Hoof', rarity: 'uncommon' },
+        ETERNAL_HOOF: { name: 'Eternal Hoof', rarity: 'rare' },
         BLOOD_GOD_CREST: { name: 'Blood God Crest', rarity: 'common' },
         SPIKED_ATROCITY: { name: 'Spiked Atrocity', rarity: 'epic' },
         MASTER_SKULL_TIER_7: { name: 'Master Skull - Tier 7', rarity: 'legendary' },
@@ -587,6 +355,13 @@ module.exports = {
         ENDER_RELIC: { name: 'Ender Relic', rarity: 'legendary' },
         JUNGLE_AMULET: { name: 'Jungle Amulet', rarity: 'uncommon' },
         POWER_ARTIFACT: { name: 'Artifact of Power', rarity: 'rare' },
-        NETHER_ARTIFACT: { name: 'Nether Artifact', rarity: 'epic' }
-    }
-}
+        NETHER_ARTIFACT: { name: 'Nether Artifact', rarity: 'epic' },
+        BINGO_RING: { name: 'Bingo Ring', rarity: 'uncommon' },
+        BURSTSTOPPER_ARTIFACT: { name: 'Burststopper Artifact', rarity: 'epic' },
+        INFERNAL_KUUDRA_CORE: { name: 'Infernal Kuudra Core', rarity: 'rare' },
+        JACOBUS_REGISTER: { name: 'Jacobus Register', rarity: 'legendary' },
+        ODGERS_DIAMOND_TOOTH: { name: "Odger's Diamond Tooth", rarity: 'epic' },
+        PULSE_RING: { name: 'Pulse Ring', rarity: 'uncommon' },
+        BLAZE_TALISMAN: { name: 'Blaze Talisman', rarity: 'rare' },
+    },
+};
