@@ -6,19 +6,12 @@ const fs = require('fs');
 let prices = {};
 
 const retrievePrices = async function () {
-    for (const item of await db.auctions.find()) {
-        if (!(item?.auction?.name || '').toLowerCase().includes('null')) prices[item.id.toLowerCase()] = parseInt(item.auction.price);
-    }
+    prices = JSON.parse(fs.readFileSync('./data/prices.json'));
 
-    for (const product of await db.bazaar.find()) {
-        prices[product.id.toLowerCase()] = parseInt(product.buyPrice);
-    }
+    const moogma = (prices['moogma_leggings']?.price || 400000) / 20;
+    const slug = (prices['slug_boots']?.price || 300000) / 15;
+    prices['crimson_essence'] = { price: moogma > slug ? slug : moogma, name: 'Crimson Essence' };
 
-    const moogma = (prices['moogma_leggings'] || 400000) / 20;
-    const slug = (prices['slug_boots'] || 300000) / 15;
-    prices['crimson_essence'] = moogma > slug ? slug : moogma;
-
-    fs.writeFileSync('./data/prices.json', JSON.stringify(prices, null, 2));
     console.log('Prices retrieved successfully');
 };
 
