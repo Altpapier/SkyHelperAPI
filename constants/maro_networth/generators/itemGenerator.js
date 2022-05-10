@@ -243,8 +243,10 @@ const parseItems = async function (base64, db) {
             }
 
             //DUNGEON STARS
-            if (ExtraAttributes.dungeon_item_level > 5) {
-                const starsUsed = ExtraAttributes.dungeon_item_level - 5;
+            if (ExtraAttributes.dungeon_item_level > 5 || ExtraAttributes.upgrade_level > 5) {
+                const starsUsedDungeons = ExtraAttributes.dungeon_item_level - 5;
+                const starsUsedUpgrade = (ExtraAttributes.upgrade_level || 0) - 5;
+                const starsUsed = starsUsedDungeons > starsUsedUpgrade ? starsUsedDungeons : starsUsedUpgrade;
 
                 for (const star of Array(starsUsed).keys()) {
                     price += db[constants.master_stars[star]]?.price ?? 0;
