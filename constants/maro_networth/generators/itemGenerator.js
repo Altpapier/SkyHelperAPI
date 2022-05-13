@@ -85,12 +85,52 @@ const parseItems = async function (base64, db) {
                 }
             }
 
+            ESSENCE_PRICES['CRIMSON'] = db['crimson_essence']?.price;
             const data = db[itemId]?.price;
             const ExtraAttributes = item.tag.ExtraAttributes;
             let price = data * item.Count;
             let base = data * item.Count;
             let calculation = [];
-            ESSENCE_PRICES['CRIMSON'] = db['crimson_essence']?.price;
+
+            // UPGRADABLE ARMOR PRICES (eg: CRIMSON)
+            if (!data) {
+                const prestige = constants.prestige[itemId.toUpperCase()];
+                if (prestige) {
+                    for (const prestigeItem of prestige) {
+                        const foundItem = sbItems.find((item) => item.id === prestigeItem);
+                        if (isNaN(price)) price = 0;
+
+                        if (foundItem?.upgrade_costs) {
+                            for (const u of foundItem.upgrade_costs) {
+                                for (const upgrade of u || []) {
+                                    if (upgrade?.essence_type) {
+                                        price += (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55;
+                                        calculation.push({ type: upgrade?.essence_type + ' Essence', value: (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55, count: upgrade?.amount });
+                                    }
+                                }
+                            }
+                        }
+                        if (foundItem?.prestige) {
+                            for (const prestigeCost of foundItem.prestige.costs || []) {
+                                if (prestigeCost.essence_type) {
+                                    price += (prestigeCost.amount || 0) * (ESSENCE_PRICES[prestigeCost.essence_type] || 0) * 0.55;
+                                    calculation.push({
+                                        type: prestigeCost.essence_type + ' Essence',
+                                        value: (prestigeCost.amount || 0) * (ESSENCE_PRICES[prestigeCost.essence_type] || 0) * 0.55,
+                                        count: prestigeCost.amount,
+                                    });
+                                }
+                            }
+                        }
+
+                        const prestigeItemPrice = db[prestigeItem.toLowerCase()]?.price;
+                        if (prestigeItemPrice) {
+                            price += prestigeItemPrice;
+                            calculation.push({ type: prestigeItem, value: prestigeItemPrice, count: 1 });
+                        }
+                    }
+                }
+            }
 
             //PRICE PAYED IN DARK AUCTION
             if (ExtraAttributes.winning_bid && !itemId.includes('hegemony')) {
@@ -129,10 +169,10 @@ const parseItems = async function (base64, db) {
                             });
                         }
 
-                        price += (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * 0.85 * (enchant[0] === 'overload' || enchant[0] === 'ultimate_soul_eater' ? 0.5 : 1);
+                        price += (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * 0.85 * (['overload', 'ultimate_soul_eater', 'ultimate_inferno', 'ultimate_fatal_tempo'].includes(enchant[0]) ? 0.5 : 1);
                         calculation.push({
                             type: `${enchant[0]}_${enchant[1]}`,
-                            value: (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * 0.85 * (enchant[0] === 'overload' || enchant[0] === 'ultimate_soul_eater' ? 0.5 : 1),
+                            value: (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * 0.85 * (['overload', 'ultimate_soul_eater', 'ultimate_inferno', 'ultimate_fatal_tempo'].includes(enchant[0]) ? 0.5 : 1),
                         });
                     }
                 }
@@ -243,23 +283,25 @@ const parseItems = async function (base64, db) {
             }
 
             //DUNGEON STARS
-            if (ExtraAttributes.dungeon_item_level > 5 || ExtraAttributes.upgrade_level > 5) {
+            const foundItem = sbItems.find((item) => item.id === itemId.toUpperCase());
+            if (foundItem?.upgrade_costs && (ExtraAttributes.dungeon_item_level > 5 || ExtraAttributes.upgrade_level > 5)) {
                 const starsUsedDungeons = ExtraAttributes.dungeon_item_level - 5;
                 const starsUsedUpgrade = (ExtraAttributes.upgrade_level || 0) - 5;
                 const starsUsed = starsUsedDungeons > starsUsedUpgrade ? starsUsedDungeons : starsUsedUpgrade;
 
-                for (const star of Array(starsUsed).keys()) {
-                    price += db[constants.master_stars[star]]?.price ?? 0;
-                    calculation.push({
-                        type: constants.master_stars[star],
-                        value: db[constants.master_stars[star]]?.price ?? 0,
-                        count: 1,
-                    });
+                if (foundItem.upgrade_costs.length <= 5) {
+                    for (const star of Array(starsUsed).keys()) {
+                        price += db[constants.master_stars[star]]?.price ?? 0;
+                        calculation.push({
+                            type: constants.master_stars[star],
+                            value: db[constants.master_stars[star]]?.price ?? 0,
+                            count: 1,
+                        });
+                    }
                 }
             }
 
             // ESSENCE DUNGEON STARS
-            const foundItem = sbItems.find((item) => item.id === itemId.toUpperCase());
             if (foundItem && (ExtraAttributes.dungeon_item_level || ExtraAttributes.dungeon_item_level == 0)) {
                 const essence = foundItem.upgrade_costs;
                 if (essence) {
