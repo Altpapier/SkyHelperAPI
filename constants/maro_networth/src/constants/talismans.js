@@ -169,5 +169,6 @@ module.exports = {
         odgers_diamond_tooth: { rarity: 'epic' },
         pulse_ring: { rarity: 'uncommon' },
         blaze_talisman: { rarity: 'rare' },
+        netherrack_looking_sunshade: { rarity: 'common' },
     },
 };

@@ -243,7 +243,7 @@ const parseItems = async function (base64, db) {
             }
 
             //RECOMBS
-            if (ExtraAttributes.rarity_upgrades > 0 && ExtraAttributes.originTag) {
+            if (ExtraAttributes.rarity_upgrades > 0 && !ExtraAttributes.item_tier) {
                 if (ExtraAttributes.enchantments || constants.talismans[itemId]) {
                     price += db['recombobulator_3000']?.price * 0.8;
                     calculation.push({
