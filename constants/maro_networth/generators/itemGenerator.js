@@ -320,7 +320,7 @@ const parseItems = async function (base64, db) {
                 const itemUpgrades = foundItem.upgrade_costs;
 
                 for (let i = 0; i < ExtraAttributes.upgrade_level; i++) {
-                    for (const upgrade of itemUpgrades[i]) {
+                    for (const upgrade of itemUpgrades[i] || []) {
                         if (upgrade?.essence_type) {
                             price += (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55;
                             calculation.push({ type: upgrade?.essence_type + ' Essence', value: (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55, count: upgrade?.amount });
