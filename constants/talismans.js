@@ -278,6 +278,7 @@ module.exports = {
         ODGERS_DIAMOND_TOOTH: { name: "Odger's Diamond Tooth", rarity: 'epic' },
         PULSE_RING: { name: 'Pulse Ring', rarity: 'uncommon' },
         BLAZE_TALISMAN: { name: 'Blaze Talisman', rarity: 'rare' },
+        NETHERRACK_LOOKING_SUNSHADE: { name: 'Netherrack-Looking Sunshade', rarity: 'common' },
     },
     max_upgrade_talismans: {
         WEDDING_RING_9: { name: 'Legendary Ring of Love', rarity: 'legendary' },
@@ -363,5 +364,6 @@ module.exports = {
         ODGERS_DIAMOND_TOOTH: { name: "Odger's Diamond Tooth", rarity: 'epic' },
         PULSE_RING: { name: 'Pulse Ring', rarity: 'uncommon' },
         BLAZE_TALISMAN: { name: 'Blaze Talisman', rarity: 'rare' },
+        NETHERRACK_LOOKING_SUNSHADE: { name: 'Netherrack-Looking Sunshade', rarity: 'common' },
     },
 };
