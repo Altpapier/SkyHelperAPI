@@ -1,5 +1,6 @@
 const { decodeData } = require('../utils/nbt')
-const  { capitalize } = require('../constants/functions')
+const { capitalize } = require('../constants/functions')
+const { talismans: allTalismans } = require('../constants/talismans')
 
 module.exports = async (profile) => {
     if (profile.talisman_bag?.data) {
@@ -22,7 +23,7 @@ module.exports = async (profile) => {
                 const isRecombed = talisman.tag?.ExtraAttributes.rarity_upgrades > 0 ? true : false || false
 
                 const new_talisman = {
-                    name: name,
+                    name: allTalismans[talisman.tag?.ExtraAttributes.id]?.name || name,
                     id: talisman.tag?.ExtraAttributes.id || null,
                     reforge: reforge,
                     rarity: getRarity(talisman.tag?.display.Lore).toUpperCase(),
