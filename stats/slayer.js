@@ -55,7 +55,8 @@ module.exports = (profile) => {
         wolf: getSlayer('wolf'),
         zombie: getSlayer('zombie'),
         spider: getSlayer('spider'),
-        enderman: getSlayer('enderman')
+        enderman: getSlayer('enderman'),
+        blaze: getSlayer('blaze')
     }
 }
 
