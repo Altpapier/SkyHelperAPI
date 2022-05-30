@@ -11,6 +11,7 @@ const express = require('express');
 const app = express();
 const refreshCollections = require('./data/refreshCollections');
 const refreshPrices = require('./data/refreshPrices');
+const { refreshAuctions } = require('./data/refreshAuctions');
 const checkForUpdate = require('./middleware/checkforupdate');
 require('dotenv').config();
 const port = process.env.PORT || 3000;
@@ -38,8 +39,7 @@ app.use(express.json());
 app.get('/v1/fetchur', FetchurRoute);
 app.get('/v1/profile/:uuid/:profileid', ProfileRoute);
 app.get('/v1/profiles/:uuid', ProfilesRoute);
-if (process.env.SKYHELPER) app.get('/v1/lowestbin/:data', LowestBINRoute);
-
+app.get('/v1/lowestbin/:data', LowestBINRoute);
 
 app.use(NotFound);
 app.use(ErrorHandler);
@@ -47,10 +47,7 @@ app.use(ErrorHandler);
 refreshCollections();
 refreshPrices();
 checkForUpdate();
-if (process.env.SKYHELPER) {
-    const AuctionHouse = require('./data/auctions');
-    AuctionHouse.start();
-}
+refreshAuctions();
 
 app.listen(port, () => {
     console.log(`Now listening on port ${port}`);

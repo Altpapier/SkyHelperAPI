@@ -1,5 +1,5 @@
 const { wrap } = require('../../utils/request');
-const { getAuctionHouse } = require('../../data/auctions');
+const { getAuctionHouse } = require('../../data/refreshAuctions');
 const { auctionMatches } = require('../../utils/auctionMatches');
 
 module.exports = wrap(async function (req, res) {
