@@ -2,6 +2,7 @@
 const FetchurRoute = require('./routes/v1/fetchur');
 const ProfileRoute = require('./routes/v1/profile');
 const ProfilesRoute = require('./routes/v1/profiles');
+const LowestBINRoute = require('./routes/v1/lowestbin');
 const NotFound = require('./middleware/notfound');
 const Auth = require('./middleware/auth');
 const ErrorHandler = require('./middleware/errorhandler');
@@ -37,6 +38,8 @@ app.use(express.json());
 app.get('/v1/fetchur', FetchurRoute);
 app.get('/v1/profile/:uuid/:profileid', ProfileRoute);
 app.get('/v1/profiles/:uuid', ProfilesRoute);
+if (process.env.SKYHELPER) app.get('/v1/lowestbin/:data', LowestBINRoute);
+
 
 app.use(NotFound);
 app.use(ErrorHandler);
@@ -44,6 +47,10 @@ app.use(ErrorHandler);
 refreshCollections();
 refreshPrices();
 checkForUpdate();
+if (process.env.SKYHELPER) {
+    const AuctionHouse = require('./data/auctions');
+    AuctionHouse.start();
+}
 
 app.listen(port, () => {
     console.log(`Now listening on port ${port}`);

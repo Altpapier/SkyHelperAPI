@@ -22,6 +22,7 @@
     "express-rate-limit": "^6.3.0",
     "mongoose": "^6.1.8",
     "prismarine-nbt": "^1.6.0",
+    "redis": "^4.1.0",
     "util": "^0.12.4"
   },
   "engines": {
