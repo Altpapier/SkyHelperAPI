@@ -440,6 +440,7 @@ const getItems = async function (profile, db) {
     }
 
     output.armor = profile.inv_armor ? await parseItems(profile.inv_armor.data, db) : [];
+    output.equipment = profile?.equippment_contents ? await parseItems(profile.equippment_contents.data, db) : [];
     output.wardrobe_inventory = profile.wardrobe_contents ? await parseItems(profile.wardrobe_contents.data, db) : [];
     output.inventory = profile.inv_contents ? await parseItems(profile.inv_contents.data, db) : [];
     output.enderchest = profile.ender_chest_contents ? await parseItems(profile.ender_chest_contents.data, db) : [];
