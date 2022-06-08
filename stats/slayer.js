@@ -43,7 +43,6 @@ module.exports = (profile) => {
         return {
             xp: experience,
             level,
-            current,
             xpForNext,
             progress,
             kills,
