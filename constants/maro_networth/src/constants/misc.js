@@ -34,6 +34,8 @@ module.exports = {
         'strong_mana',
         'ultimate_inferno',
         'ultimate_fatal_tempo',
+        'ultimate_reiterate', //duplex
+        'smoldering',
     ],
     allowed_enchant_tiers: {
         bane_of_arthropods: '7',
@@ -78,6 +80,7 @@ module.exports = {
         hardened_mana: '8',
         hardened_mana: '9',
         hardened_mana: '10',
+        fire_aspect: '3',
     },
 
     blocked_enchants: {
