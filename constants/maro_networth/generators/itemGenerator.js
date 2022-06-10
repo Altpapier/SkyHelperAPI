@@ -182,7 +182,7 @@ const parseItems = async function (base64, db) {
             if (ExtraAttributes.hot_potato_count) {
                 if (ExtraAttributes.hot_potato_count > 10) {
                     price += (db['hot_potato_book']?.price || 0) * 10;
-                    price += ((db['fuming_potato_book']?.price || 0) * ExtraAttributes.hot_potato_count - 10) * 0.6;
+                    price += (db['fuming_potato_book']?.price || 0) * (ExtraAttributes.hot_potato_count - 10) * 0.6;
                     calculation.push({
                         type: 'Hot Potato Books',
                         value: (db['hot_potato_book']?.price || 0) * 10,
@@ -190,7 +190,7 @@ const parseItems = async function (base64, db) {
                     });
                     calculation.push({
                         type: 'Fuming Potato Books',
-                        value: (db['fuming_potato_book']?.price || 0) * ExtraAttributes.hot_potato_count - 10,
+                        value: (db['fuming_potato_book']?.price || 0) * (ExtraAttributes.hot_potato_count - 10),
                         count: ExtraAttributes.hot_potato_count - 10,
                     });
                 } else {
