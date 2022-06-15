@@ -68,7 +68,7 @@ const getPetPrice = function (pet, db) {
         }
     }
 
-    if (pet.heldItem && data.level != 200) {
+    if (pet.heldItem) {
         const heldItemPrice = db[pet.heldItem.toLowerCase()]?.price;
 
         if (heldItemPrice != undefined) {
