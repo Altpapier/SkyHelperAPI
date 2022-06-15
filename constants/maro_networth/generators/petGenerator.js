@@ -85,7 +85,7 @@ const getPetPrice = function (pet, db) {
     }
 
     pet.price = price;
-    pet.modified = { name: `[Lvl ${data.level}] ${helper.capitalize(`${pet.tier} ${pet.type}`)}${pet.skin ? ' ✦' : ''}` };
+    pet.modified = { name: `[Lvl ${data.level}] ${helper.capitalize(`${pet.tier} ${pet.type}`)}${pet.skin ? ' ✦' : ''}`, isPet: true };
 
     return pet;
 };
