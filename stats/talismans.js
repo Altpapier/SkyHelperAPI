@@ -12,6 +12,7 @@ module.exports = async (profile) => {
             legendary: [],
             mythic: [],
             special: [],
+            very: [],
         };
         const talisman_bag = (await decodeData(Buffer.from(profile.talisman_bag.data, 'base64'))).i;
 
