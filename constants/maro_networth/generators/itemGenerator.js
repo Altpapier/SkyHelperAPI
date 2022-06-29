@@ -205,10 +205,10 @@ const parseItems = async function (base64, db) {
 
             // DYES
             if (ExtraAttributes.dye_item) {
-                price += (db[ExtraAttributes.dye_item]?.price || 0) * 0.9;
+                price += (db[ExtraAttributes.dye_item.toLowerCase()]?.price || 0) * 0.9;
                 calculation.push({
-                    type: 'Dye',
-                    value: (db[ExtraAttributes.dye_item]?.price || 0) * 0.9,
+                    type: `Dye ${ExtraAttributes.dye_item}`,
+                    value: (db[ExtraAttributes.dye_item.toLowerCase()]?.price || 0) * 0.9,
                     count: 1,
                 });
             }
