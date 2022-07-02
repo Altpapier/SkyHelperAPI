@@ -1,6 +1,5 @@
 const itemGenerator = require('../constants/maro_networth/generators/itemGenerator');
 const networthGenerator = require('../constants/maro_networth/generators/networthGenerator');
-const db = require('../constants/maro_networth/storage/database');
 const fs = require('fs');
 
 let prices = {};
