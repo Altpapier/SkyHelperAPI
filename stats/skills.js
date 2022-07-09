@@ -1,4 +1,4 @@
-const calcSkill = require('../constants/skills')
+const calcSkill = require('../constants/skills');
 
 module.exports = function getSkills(player, profile) {
     const skill_experience = {
@@ -11,9 +11,9 @@ module.exports = function getSkills(player, profile) {
         alchemy: profile?.experience_skill_alchemy || 0,
         carpentry: profile?.experience_skill_carpentry || 0,
         runecrafting: profile?.experience_skill_runecrafting || 0,
-        social: profile?.experience_skill_social || 0,
-        taming: profile?.experience_skill_taming || 0
-    }
+        social: profile?.experience_skill_social2 || 0,
+        taming: profile?.experience_skill_taming || 0,
+    };
 
     return {
         farming: calcSkill('farming', skill_experience['farming']),
@@ -26,6 +26,6 @@ module.exports = function getSkills(player, profile) {
         carpentry: calcSkill('carpentry', skill_experience['carpentry']),
         runecrafting: calcSkill('runecrafting', skill_experience['runecrafting']),
         social: calcSkill('social', skill_experience['social']),
-        taming: calcSkill('taming', skill_experience['taming'])
-    }
-}
+        taming: calcSkill('taming', skill_experience['taming']),
+    };
+};
