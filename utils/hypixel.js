@@ -1,20 +1,21 @@
 //CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
-const getSkills = require('../stats/skills')
-const getMilestones = require('../stats/milestones')
-const getCakebag = require('../stats/cakebag')
-const getMinions = require('../stats/minions')
-const getSlayer = require('../stats/slayer')
-const getKills = require('../stats/kills')
-const getDeaths = require('../stats/deaths')
-const getPets = require('../stats/pets')
-const getTalismans = require('../stats/talismans')
-const getCollections = require('../stats/collections')
-const getMining = require('../stats/mining')
-const getDungeons = require('../stats/dungeons.js')
-const getWeight = require('../stats/weight')
-const getMissing = require('../stats/missing')
-const getNetworth = require('../stats/networth')
-const { isUuid } = require('./uuid')
+const getSkills = require('../stats/skills');
+const getMilestones = require('../stats/milestones');
+const getCakebag = require('../stats/cakebag');
+const getMinions = require('../stats/minions');
+const getSlayer = require('../stats/slayer');
+const getKills = require('../stats/kills');
+const getDeaths = require('../stats/deaths');
+const getPets = require('../stats/pets');
+const getTalismans = require('../stats/talismans');
+const getCollections = require('../stats/collections');
+const getMining = require('../stats/mining');
+const getDungeons = require('../stats/dungeons.js');
+const getWeight = require('../stats/weight');
+const getMissing = require('../stats/missing');
+const getNetworth = require('../stats/networth');
+const getBestiary = require('../stats/bestiary');
+const { isUuid } = require('./uuid');
 
 module.exports = {
     parseHypixel: function parseHypixel(playerRes, uuid, res) {
@@ -35,12 +36,12 @@ module.exports = {
                 combat: achievements?.skyblock_combat || 0,
                 fishing: achievements?.skyblock_angler || 0,
                 alchemy: achievements?.skyblock_concoctor || 0,
-                taming: achievements?.skyblock_domesticator || 0
+                taming: achievements?.skyblock_domesticator || 0,
             },
             dungeons: {
-                secrets: achievements?.skyblock_treasure_hunter || 0
-            }
-        }
+                secrets: achievements?.skyblock_treasure_hunter || 0,
+            },
+        };
     },
     parseProfile: async function parseProfile(player, profileRes, uuid, profileid, res) {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
@@ -50,7 +51,7 @@ module.exports = {
         if (!isUuid(profileid)) {
             for (const profile of profileRes.data?.profiles || []) {
                 if (profile.cute_name.toLowerCase() === profileid.toLowerCase()) {
-                    profileid = profile.profile_id
+                    profileid = profile.profile_id;
                 }
             }
         }
@@ -62,11 +63,11 @@ module.exports = {
         }
 
         if (!isValidProfile(profileData.members, uuid)) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'` })
+            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'` });
             return;
         }
-        
-        const profile = profileData.members[uuid]
+
+        const profile = profileData.members[uuid];
 
         return {
             username: player.name,
@@ -78,6 +79,7 @@ module.exports = {
             skills: getSkills(player, profile),
             networth: await getNetworth(profile, profileData),
             weight: getWeight(profile),
+            bestiary: getBestiary(profile),
             dungeons: getDungeons(player, profile),
             mining: getMining(player, profile),
             slayer: getSlayer(profile),
@@ -89,8 +91,8 @@ module.exports = {
             talismans: await getTalismans(profile),
             collections: getCollections(profileData),
             minions: getMinions(profileData),
-            cakebag: await getCakebag(profile)
-        }
+            cakebag: await getCakebag(profile),
+        };
     },
     parseProfiles: async function parseProfile(player, profileRes, uuid, res) {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
@@ -98,13 +100,13 @@ module.exports = {
             return;
         }
 
-        const result = []
+        const result = [];
 
         for (const profileData of profileRes.data.profiles) {
             if (!isValidProfile(profileData.members, uuid)) {
-                continue
+                continue;
             }
-            const profile = profileData.members[uuid]
+            const profile = profileData.members[uuid];
 
             result.push({
                 username: player.name,
@@ -116,6 +118,7 @@ module.exports = {
                 skills: getSkills(player, profile),
                 networth: await getNetworth(profile, profileData),
                 weight: getWeight(profile),
+                bestiary: getBestiary(profile),
                 dungeons: getDungeons(player, profile),
                 mining: getMining(player, profile),
                 slayer: getSlayer(profile),
@@ -127,14 +130,14 @@ module.exports = {
                 talismans: await getTalismans(profile),
                 collections: getCollections(profileData),
                 minions: getMinions(profileData),
-                cakebag: await getCakebag(profile)
-            })
+                cakebag: await getCakebag(profile),
+            });
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
-        return result.sort((a, b) => b.last_save - a.last_save)
-    }
-}
+        return result.sort((a, b) => b.last_save - a.last_save);
+    },
+};
 
 function isValidProfile(profileMembers, uuid) {
-    return profileMembers.hasOwnProperty(uuid) && profileMembers[uuid].last_save != undefined
+    return profileMembers.hasOwnProperty(uuid) && profileMembers[uuid].last_save != undefined;
 }
