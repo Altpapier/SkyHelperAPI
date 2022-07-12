@@ -127,6 +127,8 @@ module.exports = {
                 last_save: profile.last_save,
                 first_join: profile.first_join,
                 fairy_souls: profile.fairy_souls_collected || 0,
+                purse: profile.coin_purse || 0,
+                bank: profileData.banking?.balance || 0,
                 skills: getSkills(player, profile),
                 networth: await getNetworth(profile, profileData),
                 weight: getWeight(profile),
