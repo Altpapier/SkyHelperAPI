@@ -169,11 +169,9 @@ const parseItems = async function (base64, db) {
                             });
                         }
 
-                        price += (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * 0.85 * (['overload', 'ultimate_soul_eater', 'ultimate_inferno', 'ultimate_fatal_tempo'].includes(enchant[0]) ? 0.5 : 1);
-                        calculation.push({
-                            type: `${enchant[0]}_${enchant[1]}`,
-                            value: (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * 0.85 * (['overload', 'ultimate_soul_eater', 'ultimate_inferno', 'ultimate_fatal_tempo'].includes(enchant[0]) ? 0.5 : 1),
-                        });
+                        const enchantmentWorth = (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * (constants.specialPercentages[enchant[0]] || 0.85);
+                        price += enchantmentWorth;
+                        calculation.push({ type: `${enchant[0]}_${enchant[1]}`, value: enchantmentWorth });
                     }
                 }
             }

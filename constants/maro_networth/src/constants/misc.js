@@ -83,6 +83,15 @@ module.exports = {
         fire_aspect: '3',
     },
 
+    specialPercentages: {
+        overload: 0.35,
+        ultimate_soul_eater: 0.35,
+        ultimate_inferno: 0.35,
+        ultimate_fatal_tempo: 0.35,
+        big_brain: 0.35,
+        counter_strike: 0.2,
+    },
+
     blocked_enchants: {
         bone_boomerang: ['overload', 'power'],
         death_bow: ['overload', 'power', 'ultimate_soul_eater'],
