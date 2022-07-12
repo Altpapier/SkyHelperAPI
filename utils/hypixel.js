@@ -1,4 +1,6 @@
 //CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
+const getRank = require('../stats/rank');
+const getHypixelLevel = require('../stats/hypixelLevel');
 const getSkills = require('../stats/skills');
 const getMilestones = require('../stats/milestones');
 const getCakebag = require('../stats/cakebag');
@@ -28,6 +30,9 @@ module.exports = {
 
         return {
             name: data.displayname,
+            rank: getRank(data),
+            hypixelLevel: getHypixelLevel(data),
+            karma: data.karma,
             skills: {
                 mining: achievements?.skyblock_excavator || 0,
                 foraging: achievements?.skyblock_gatherer || 0,
@@ -73,6 +78,9 @@ module.exports = {
             username: player.name,
             id: profileData.profile_id,
             name: profileData.cute_name,
+            rank: player.rank,
+            hypixelLevel: player.hypixelLevel,
+            karma: player.karma,
             isIronman: profileData?.game_mode === 'ironman' ? true : false,
             last_save: profile.last_save,
             fairy_souls: profile.fairy_souls_collected || 0,
@@ -112,8 +120,12 @@ module.exports = {
                 username: player.name,
                 id: profileData.profile_id,
                 name: profileData.cute_name,
+                rank: player.rank,
+                hypixelLevel: player.hypixelLevel,
+                karma: player.karma,
                 isIronman: profileData?.game_mode === 'ironman' ? true : false,
                 last_save: profile.last_save,
+                first_join: profile.first_join,
                 fairy_souls: profile.fairy_souls_collected || 0,
                 skills: getSkills(player, profile),
                 networth: await getNetworth(profile, profileData),
