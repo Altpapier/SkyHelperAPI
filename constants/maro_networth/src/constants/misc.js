@@ -35,6 +35,7 @@ module.exports = {
         'ultimate_inferno',
         'ultimate_fatal_tempo',
         'ultimate_reiterate', //duplex
+        'ultimate_flash',
         'smoldering',
     ],
     allowed_enchant_tiers: {
