@@ -30,12 +30,13 @@ module.exports = async (profile) => {
                     reforge: reforge,
                     rarity: getRarity(talisman.tag?.display.Lore).toUpperCase(),
                     recombobulated: isRecombed,
+                    enrichment: talisman.tag?.ExtraAttributes?.talisman_enrichment ?? 'None'
                 };
                 if (talismans[getRarity(talisman.tag?.display.Lore)]) talismans[getRarity(talisman.tag?.display.Lore)].push(new_talisman);
                 else talismans[getRarity(talisman.tag?.display.Lore)] = new_talisman;
             }
         }
-
+        
         return talismans;
     } else {
         return {
