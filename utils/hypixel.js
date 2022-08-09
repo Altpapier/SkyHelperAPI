@@ -13,6 +13,8 @@ const getTalismans = require('../stats/talismans');
 const getCollections = require('../stats/collections');
 const getMining = require('../stats/mining');
 const getDungeons = require('../stats/dungeons.js');
+const getTrophyFish = require('../stats/trophyFishing')
+const getCrimson = require('../stats/crimson.js')
 const getWeight = require('../stats/weight');
 const getMissing = require('../stats/missing');
 const getNetworth = require('../stats/networth');
@@ -91,6 +93,8 @@ module.exports = {
             weight: getWeight(profile),
             bestiary: getBestiary(profile),
             dungeons: getDungeons(player, profile),
+            crimson: await getCrimson(profile),
+            trophy_fish: await getTrophyFish(profile),
             mining: getMining(player, profile),
             slayer: getSlayer(profile),
             milestones: getMilestones(profile),
@@ -136,6 +140,8 @@ module.exports = {
                 weight: getWeight(profile),
                 bestiary: getBestiary(profile),
                 dungeons: getDungeons(player, profile),
+                crimson: await getCrimson(profile),
+                trophy_fish: await getTrophyFish(profile),
                 mining: getMining(player, profile),
                 slayer: getSlayer(profile),
                 milestones: getMilestones(profile),
