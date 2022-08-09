@@ -40,8 +40,8 @@ module.exports = (profile) => {
 
             result.categories[family][mobName] = {
                 tier: tier, 
-                nextTierKills: nextTierKills,
-                currentKills: kills,
+                nextTier: nextTierKills,
+                kills: kills,
                 killsForNext: toTier,
                 progress: progress,
                 levelWithProgress: levelWithProgress,
