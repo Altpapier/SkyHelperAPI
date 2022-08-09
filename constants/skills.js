@@ -37,7 +37,7 @@ module.exports = function calcSkill(skill, experience) {
 
     let xpCurrent = Math.floor(experience - xp);
 
-    let totalXp = xpCurrent + xp;
+    let totalXp = experience;
 
     if (level < maxLevel) {
         xpForNext = Math.ceil(xp_tables[table][level]);
