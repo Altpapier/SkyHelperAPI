@@ -9,6 +9,7 @@ module.exports = function calcSkill(skill, experience) {
 
     if (experience <= 0) {
         return {
+            totalXp: 0,
             xp: 0,
             level: 0,
             xpCurrent: 0,
@@ -16,7 +17,6 @@ module.exports = function calcSkill(skill, experience) {
             progress: 0,
         };
     }
-
     let xp = 0;
     let level = 0;
     let xpForNext = 0;
@@ -37,13 +37,15 @@ module.exports = function calcSkill(skill, experience) {
 
     let xpCurrent = Math.floor(experience - xp);
 
+    let totalXp = xpCurrent + xp;
+
     if (level < maxLevel) {
         xpForNext = Math.ceil(xp_tables[table][level]);
     }
-
-    progress = Math.max(0, Math.min(xpCurrent / xpForNext, 1));
+    progress = level >= maxLevel ? 0 : Math.max(0, Math.min(xpCurrent / xpForNext, 1)) 
 
     return {
+        totalXp,
         xp,
         level,
         xpCurrent,

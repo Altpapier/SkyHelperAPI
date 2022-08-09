@@ -1,38 +1,144 @@
-const calculateWeight = require('../constants/weight')
-const calcSkill = require('../constants/skills')
+const { calculateTotalSenitherWeight } = require('../constants/senitherWeight')
+const { calculateLilyWeight } = require('../constants/lilyWeight')
 
-module.exports = (profile) => {
+module.exports = async (profile, uuid) => {
+    const lily = await calculateLilyWeight(profile, uuid)
+    const senither = await calculateTotalSenitherWeight(profile)
     const weight = {
-        skills: {
-            farming: calculateWeight('farming', (calcSkill('farming', profile?.experience_skill_farming || 0)).levelWithProgress, profile?.experience_skill_farming || 0),
-            mining: calculateWeight('mining', (calcSkill('mining', profile?.experience_skill_mining || 0)).levelWithProgress, profile?.experience_skill_mining || 0),
-            combat: calculateWeight('combat', (calcSkill('combat', profile?.experience_skill_combat || 0)).levelWithProgress, profile?.experience_skill_combat || 0),
-            foraging: calculateWeight('foraging', (calcSkill('foraging', profile?.experience_skill_foraging || 0)).levelWithProgress, profile?.experience_skill_foraging || 0),
-            fishing: calculateWeight('fishing', (calcSkill('fishing', profile?.experience_skill_fishing || 0)).levelWithProgress, profile?.experience_skill_fishing || 0),
-            enchanting: calculateWeight('enchanting', (calcSkill('enchanting', profile?.experience_skill_enchanting || 0)).levelWithProgress, profile?.experience_skill_enchanting || 0),
-            alchemy: calculateWeight('alchemy', (calcSkill('alchemy', profile?.experience_skill_alchemy || 0)).levelWithProgress, profile?.experience_skill_alchemy || 0),
-            taming: calculateWeight('taming', (calcSkill('taming', profile?.experience_skill_taming || 0)).levelWithProgress, profile?.experience_skill_taming || 0)
-        },
-        slayer: {
-            revenant: calculateWeight('revenant', null, profile.slayer_bosses?.zombie?.xp || 0),
-            tarantula: calculateWeight('tarantula', null, profile.slayer_bosses?.spider?.xp || 0),
-            sven: calculateWeight('sven', null, profile.slayer_bosses?.wolf?.xp || 0),
-            enderman: calculateWeight('enderman', null, profile.slayer_bosses?.enderman?.xp || 0)
-        },
-        dungeons: {
-            catacombs: calculateWeight('catacombs', (calcSkill('dungeoneering', profile.dungeons?.dungeon_types?.catacombs?.experience || 0)).levelWithProgress, profile.dungeons?.dungeon_types?.catacombs?.experience  || 0),
-            classes: {
-                healer: calculateWeight('healer', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.healer?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.healer?.experience || 0),
-                mage: calculateWeight('mage', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.mage?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.mage?.experience || 0),
-                berserk: calculateWeight('berserk', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.berserk?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.berserk?.experience || 0),
-                archer: calculateWeight('archer', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.archer?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.archer?.experience || 0),
-                tank: calculateWeight('tank', (calcSkill('dungeoneering', profile.dungeons?.player_classes?.tank?.experience || 0)).levelWithProgress, profile.dungeons?.player_classes?.tank?.experience || 0),
+        senither: {
+            total: senither.skills.farming.weight + senither.skills.mining.weight + senither.skills.combat.weight + senither.skills.foraging.weight + senither.skills.fishing.weight + senither.skills.enchanting.weight + senither.skills.alchemy.weight + senither.skills.taming.weight + senither.slayer.revenant.weight + senither.slayer.tarantula.weight + senither.slayer.sven.weight + senither.slayer.enderman.weight + senither.dungeons.catacombs.weight + senither.dungeons.classes.healer.weight + senither.dungeons.classes.mage.weight + senither.dungeons.classes.berserk.weight + senither.dungeons.classes.archer.weight + senither.dungeons.classes.tank.weight + senither.skills.farming.weight_overflow + senither.skills.mining.weight_overflow + senither.skills.combat.weight_overflow + senither.skills.foraging.weight_overflow + senither.skills.fishing.weight_overflow + senither.skills.enchanting.weight_overflow + senither.skills.alchemy.weight_overflow + senither.skills.taming.weight_overflow + senither.slayer.revenant.weight_overflow + senither.slayer.tarantula.weight_overflow + senither.slayer.sven.weight_overflow + senither.slayer.enderman.weight_overflow + senither.dungeons.catacombs.weight_overflow + senither.dungeons.classes.healer.weight_overflow + senither.dungeons.classes.mage.weight_overflow + senither.dungeons.classes.berserk.weight_overflow + senither.dungeons.classes.archer.weight_overflow + senither.dungeons.classes.tank.weight_overflow,
+            weight: senither.skills.farming.weight + senither.skills.mining.weight + senither.skills.combat.weight + senither.skills.foraging.weight + senither.skills.fishing.weight + senither.skills.enchanting.weight + senither.skills.alchemy.weight + senither.skills.taming.weight + senither.slayer.revenant.weight + senither.slayer.tarantula.weight + senither.slayer.sven.weight + senither.slayer.enderman.weight + senither.dungeons.catacombs.weight + senither.dungeons.classes.healer.weight + senither.dungeons.classes.mage.weight + senither.dungeons.classes.berserk.weight + senither.dungeons.classes.archer.weight + senither.dungeons.classes.tank.weight,
+            weight_overflow: senither.skills.farming.weight_overflow + senither.skills.mining.weight_overflow + senither.skills.combat.weight_overflow + senither.skills.foraging.weight_overflow + senither.skills.fishing.weight_overflow + senither.skills.enchanting.weight_overflow + senither.skills.alchemy.weight_overflow + senither.skills.taming.weight_overflow,
+            skills: {
+                farming: {
+                    total: senither.skills.farming.weight + senither.skills.farming.weight_overflow,
+                    weight: senither.skills.farming.weight,
+                    weight_overflow: senither.skills.farming.weight_overflow,
+                },
+                mining: {
+                    total: senither.skills.mining.weight + senither.skills.mining.weight_overflow,
+                    weight: senither.skills.mining.weight,
+                    weight_overflow: senither.skills.mining.weight_overflow,
+                },
+                combat: {
+                    total: senither.skills.combat.weight + senither.skills.combat.weight_overflow,
+                    weight: senither.skills.combat.weight,
+                    weight_overflow: senither.skills.combat.weight_overflow,
+                },
+                foraging: {
+                    total: senither.skills.foraging.weight + senither.skills.foraging.weight_overflow,
+                    weight: senither.skills.foraging.weight,
+                    weight_overflow: senither.skills.foraging.weight_overflow,
+                },
+                fishing: {
+                    total: senither.skills.fishing.weight + senither.skills.fishing.weight_overflow,
+                    weight: senither.skills.fishing.weight,
+                    weight_overflow: senither.skills.fishing.weight_overflow,
+                },
+                enchanting: {
+                    total: senither.skills.enchanting.weight + senither.skills.enchanting.weight_overflow,
+                    weight: senither.skills.enchanting.weight,
+                    weight_overflow: senither.skills.enchanting.weight_overflow,
+                },
+                alchemy: {
+                    total: senither.skills.alchemy.weight + senither.skills.alchemy.weight_overflow,
+                    weight: senither.skills.alchemy.weight,
+                    weight_overflow: senither.skills.alchemy.weight_overflow,
+                },
+                taming: {
+                    total: senither.skills.taming.weight + senither.skills.taming.weight_overflow,
+                    weight: senither.skills.taming.weight,
+                    weight_overflow: senither.skills.taming.weight_overflow,
+                },
+            },
+            slayer: {
+                total: senither.slayer.revenant.weight + senither.slayer.revenant.weight_overflow + senither.slayer.tarantula.weight + senither.slayer.tarantula.weight_overflow + senither.slayer.sven.weight + senither.slayer.sven.weight_overflow + senither.slayer.enderman.weight + senither.slayer.enderman.weight_overflow,
+                weight: senither.slayer.revenant.weight + senither.slayer.tarantula.weight + senither.slayer.sven.weight + senither.slayer.enderman.weight,
+                weight_overflow: senither.slayer.revenant.weight_overflow + senither.slayer.tarantula.weight_overflow + senither.slayer.sven.weight_overflow + senither.slayer.enderman.weight_overflow,
+                revenant: {
+                    total: senither.slayer.revenant.weight + senither.slayer.revenant.weight_overflow,
+                    weight: senither.slayer.revenant.weight,
+                    weight_overflow: senither.slayer.revenant.weight_overflow,
+                },
+                tarantula: {
+                    total: senither.slayer.tarantula.weight + senither.slayer.tarantula.weight_overflow,
+                    weight: senither.slayer.tarantula.weight,
+                    weight_overflow: senither.slayer.tarantula.weight_overflow,
+                },
+                sven: {
+                    total: senither.slayer.sven.weight + senither.slayer.sven.weight_overflow,
+                    weight: senither.slayer.sven.weight,
+                    weight_overflow: senither.slayer.sven.weight_overflow,
+                },
+                enderman: {
+                    total: senither.slayer.enderman.weight + senither.slayer.enderman.weight_overflow,
+                    weight: senither.slayer.enderman.weight,
+                    weight_overflow: senither.slayer.enderman.weight_overflow,
+                },
+            },
+            dungeons: {
+                total: senither.dungeons.catacombs.weight + senither.dungeons.catacombs.weight_overflow + senither.dungeons.classes.healer.weight + senither.dungeons.classes.healer.weight_overflow + senither.dungeons.classes.mage.weight + senither.dungeons.classes.mage.weight_overflow + senither.dungeons.classes.berserk.weight + senither.dungeons.classes.berserk.weight_overflow + senither.dungeons.classes.archer.weight + senither.dungeons.classes.archer.weight_overflow + senither.dungeons.classes.tank.weight + senither.dungeons.classes.tank.weight_overflow,
+                weight: senither.dungeons.catacombs.weight + senither.dungeons.classes.healer.weight + senither.dungeons.classes.mage.weight + senither.dungeons.classes.berserk.weight + senither.dungeons.classes.archer.weight + senither.dungeons.classes.tank.weight,
+                weight_overflow: senither.dungeons.catacombs.weight_overflow + senither.dungeons.classes.healer.weight_overflow + senither.dungeons.classes.mage.weight_overflow + senither.dungeons.classes.berserk.weight_overflow + senither.dungeons.classes.archer.weight_overflow + senither.dungeons.classes.tank.weight_overflow,
+                catacombs: {
+                    total: senither.dungeons.catacombs.weight + senither.dungeons.catacombs.weight_overflow,
+                    weight: senither.dungeons.catacombs.weight,
+                    weight_overflow: senither.dungeons.catacombs.weight_overflow,
+                },
+                classes: {
+                    healer: {
+                        total: senither.dungeons.classes.healer.weight + senither.dungeons.classes.healer.weight_overflow,
+                        weight: senither.dungeons.classes.healer.weight,
+                        weight_overflow: senither.dungeons.classes.healer.weight_overflow,
+                    },
+                    mage: {
+                        total: senither.dungeons.classes.mage.weight + senither.dungeons.classes.mage.weight_overflow,
+                        weight: senither.dungeons.classes.mage.weight,
+                        weight_overflow: senither.dungeons.classes.mage.weight_overflow,
+                    },
+                    berserk: {
+                        total: senither.dungeons.classes.berserk.weight + senither.dungeons.classes.berserk.weight_overflow,
+                        weight: senither.dungeons.classes.berserk.weight,
+                        weight_overflow: senither.dungeons.classes.berserk.weight_overflow,
+                    },
+                    archer: {
+                        total: senither.dungeons.classes.archer.weight + senither.dungeons.classes.archer.weight_overflow,
+                        weight: senither.dungeons.classes.archer.weight,
+                        weight_overflow: senither.dungeons.classes.archer.weight_overflow,
+                    },
+                    tank: {
+                        total: senither.dungeons.classes.tank.weight + senither.dungeons.classes.tank.weight_overflow,
+                        weight: senither.dungeons.classes.tank.weight,
+                        weight_overflow: senither.dungeons.classes.tank.weight_overflow,
+                    },
+                }
+            }            
+        },  
+        lily : {
+            total: lily.total,
+            skills: {
+                total: lily.skill.base + lily.skill.overflow,
+                base: lily.skill.base,
+                overflow: lily.skill.overflow,
+            },
+            slayer: {
+                total: lily.slayer
+            },
+            catacombs: {
+                total: lily.catacombs.completion.base + lily.catacombs.completion.master + lily.catacombs.experience,
+                completion: {
+                    base: lily.catacombs.completion.base,
+                    master: lily.catacombs.completion.master,
+                },
+                experience: lily.catacombs.experience
             }
         }
     }
-    return {
-        total_weight: weight.skills.farming.weight + weight.skills.mining.weight + weight.skills.combat.weight + weight.skills.foraging.weight + weight.skills.fishing.weight + weight.skills.enchanting.weight + weight.skills.alchemy.weight + weight.skills.taming.weight + weight.slayer.revenant.weight + weight.slayer.tarantula.weight + weight.slayer.sven.weight + weight.slayer.enderman.weight + weight.dungeons.catacombs.weight + weight.dungeons.classes.healer.weight + weight.dungeons.classes.mage.weight + weight.dungeons.classes.berserk.weight + weight.dungeons.classes.archer.weight + weight.dungeons.classes.tank.weight,
-        total_weight_with_overflow: weight.skills.farming.weight + weight.skills.mining.weight + weight.skills.combat.weight + weight.skills.foraging.weight + weight.skills.fishing.weight + weight.skills.enchanting.weight + weight.skills.alchemy.weight + weight.skills.taming.weight + weight.slayer.revenant.weight + weight.slayer.tarantula.weight + weight.slayer.sven.weight + weight.slayer.enderman.weight + weight.dungeons.catacombs.weight + weight.dungeons.classes.healer.weight + weight.dungeons.classes.mage.weight + weight.dungeons.classes.berserk.weight + weight.dungeons.classes.archer.weight + weight.dungeons.classes.tank.weight + weight.skills.farming.weight_overflow + weight.skills.mining.weight_overflow + weight.skills.combat.weight_overflow + weight.skills.foraging.weight_overflow + weight.skills.fishing.weight_overflow + weight.skills.enchanting.weight_overflow + weight.skills.alchemy.weight_overflow + weight.skills.taming.weight_overflow + weight.slayer.revenant.weight_overflow + weight.slayer.tarantula.weight_overflow + weight.slayer.sven.weight_overflow + weight.slayer.enderman.weight_overflow + weight.dungeons.catacombs.weight_overflow + weight.dungeons.classes.healer.weight_overflow + weight.dungeons.classes.mage.weight_overflow + weight.dungeons.classes.berserk.weight_overflow + weight.dungeons.classes.archer.weight_overflow + weight.dungeons.classes.tank.weight_overflow,
-        weight
-    }
+    return weight
 }
+
+
+
+
+
+

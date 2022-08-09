@@ -16,6 +16,9 @@ const getNetworth = async function (data, profile, bank) {
 
         for (const item of data[key].filter((i) => i.price)) {
             category.total += item.price;
+
+            // Looks pretty bad, I know.. if (item?.modified?.calculation?.length > 0) calculation: item.modified.calculation
+            item?.modified?.calculation?.length > 0 ?
             category.items.push({
                 id: item.modified.id,
                 name: item.modified.name,
@@ -24,11 +27,25 @@ const getNetworth = async function (data, profile, bank) {
                 heldItem: item.heldItem,
                 winning_bid: item?.tag?.ExtraAttributes?.winning_bid,
                 base: item?.modified?.base,
-                calculation: item?.modified?.calculation,
+                calculation: item.modified.calculation,
+                candyUsed: item.candyUsed,
+                isPet: item?.modified?.isPet,
+                count: item.Count ?? 1,
+            }) 
+            :
+            category.items.push({
+                id: item.modified.id,
+                name: item.modified.name,
+                price: parseInt(item.price),
+                recomb: isItemRecombobulated(item),
+                heldItem: item.heldItem,
+                winning_bid: item?.tag?.ExtraAttributes?.winning_bid,
+                base: item?.modified?.base,
                 candyUsed: item.candyUsed,
                 isPet: item?.modified?.isPet,
                 count: item.Count ?? 1,
             });
+
         }
 
         if (category.items.length > 0) {

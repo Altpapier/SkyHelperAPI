@@ -78,8 +78,9 @@ module.exports = {
 
         return {
             username: player.name,
-            id: profileData.profile_id,
+            uuid: uuid,
             name: profileData.cute_name,
+            id: profileData.profile_id,
             rank: player.rank,
             hypixelLevel: player.hypixelLevel,
             karma: player.karma,
@@ -90,7 +91,7 @@ module.exports = {
             bank: profileData.banking?.balance || 0,
             skills: getSkills(player, profile),
             networth: await getNetworth(profile, profileData),
-            weight: getWeight(profile),
+            weight: await getWeight(profile, uuid),
             bestiary: getBestiary(profile),
             dungeons: getDungeons(player, profile),
             crimson: await getCrimson(profile),
@@ -124,8 +125,9 @@ module.exports = {
 
             result.push({
                 username: player.name,
-                id: profileData.profile_id,
+                uuid: uuid,
                 name: profileData.cute_name,
+                id: profileData.profile_id,
                 rank: player.rank,
                 hypixelLevel: player.hypixelLevel,
                 karma: player.karma,
@@ -137,7 +139,7 @@ module.exports = {
                 bank: profileData.banking?.balance || 0,
                 skills: getSkills(player, profile),
                 networth: await getNetworth(profile, profileData),
-                weight: getWeight(profile),
+                weight: await getWeight(profile, uuid),
                 bestiary: getBestiary(profile),
                 dungeons: getDungeons(player, profile),
                 crimson: await getCrimson(profile),
