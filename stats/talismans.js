@@ -27,7 +27,7 @@ module.exports = async (profile) => {
                 const new_talisman = {
                     name: allTalismans[talisman.tag?.ExtraAttributes.id]?.name || name,
                     id: talisman.tag?.ExtraAttributes.id || null,
-                    reforge: reforge,
+                    reforge: reforge ?? 'None',
                     rarity: getRarity(talisman.tag?.display.Lore).toUpperCase(),
                     recombobulated: isRecombed,
                     enrichment: talisman.tag?.ExtraAttributes?.talisman_enrichment ?? 'None'
