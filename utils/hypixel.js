@@ -8,7 +8,7 @@ const getMinions = require('../stats/minions');
 const getSlayer = require('../stats/slayer');
 const getKills = require('../stats/kills');
 const getDeaths = require('../stats/deaths');
-const getPets = require('../stats/pets');
+const { getPets } = require('../stats/pets');
 const getTalismans = require('../stats/talismans');
 const getCollections = require('../stats/collections');
 const getMining = require('../stats/mining');
@@ -102,7 +102,7 @@ module.exports = {
             missing: await getMissing(profile),
             kills: getKills(profile),
             deaths: getDeaths(profile),
-            pets: getPets(profile),
+            pets: await getPets(profile),
             talismans: await getTalismans(profile),
             collections: getCollections(profileData),
             minions: getMinions(profileData),
@@ -150,7 +150,7 @@ module.exports = {
                 missing: await getMissing(profile),
                 kills: getKills(profile),
                 deaths: getDeaths(profile),
-                pets: getPets(profile),
+                pets: await getPets(profile),
                 talismans: await getTalismans(profile),
                 collections: getCollections(profileData),
                 minions: getMinions(profileData),
