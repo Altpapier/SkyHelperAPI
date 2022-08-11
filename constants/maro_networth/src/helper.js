@@ -155,4 +155,8 @@ const getMode = function (numbers) {
   return currentStreak > bestStreak ? currentElem : bestElem;
 };
 
-module.exports = { getPath, decodeNBT, getRawLore, capitalize, parseItemGems, removeReforge, getAverage, getMedian, getMean, getMode };
+const toTimestamp = function (timestamp) {
+  return Date.parse(timestamp)/1000
+}
+
+module.exports = { getPath, decodeNBT, getRawLore, capitalize, parseItemGems, removeReforge, getAverage, getMedian, getMean, getMode, toTimestamp };

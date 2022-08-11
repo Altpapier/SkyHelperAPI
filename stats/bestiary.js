@@ -18,23 +18,33 @@ module.exports = (profile) => {
         result.categories[family] = {};
         for (const mob of bestiary[family].mobs) {
             const mobName = mob.lookup.substring(13);
-            let kills = 0;
-
-            kills = bestiaryFamilies[mob.lookup] || 0;
 
             const boss = mob.boss ? 'boss' : 'regular';
+
+            let kills = bestiaryFamilies[mob.lookup] || 0;
             let tier = bestiaryKills[boss].filter((k) => k <= kills).length;
+            let nextTierKills = bestiaryKills[boss][tier];
+            let progress = kills/bestiaryKills[boss][tier];
+            let levelWithProgress = tier + (kills/bestiaryKills[boss][tier]);
             let toTier = bestiaryKills[boss][tier] - (kills || 0);
 
             if (tier >= bestiary[family].max) {
                 tier = bestiary[family].max;
+                // setting all data to null since bestiary family is maxed
+                nextTierKills = null;
                 toTier = null;
+                progress = 0;
+                levelWithProgress = tier;
             }
             totalCollection += tier;
+
             result.categories[family][mobName] = {
-                kills: kills || 0,
-                tier: tier || 0,
-                nextTier: toTier,
+                tier: tier, 
+                nextTier: nextTierKills,
+                kills: kills,
+                killsForNext: toTier,
+                progress: progress,
+                levelWithProgress: levelWithProgress,
             };
         }
     }
