@@ -1,10 +1,10 @@
 {
   "status": 200,
   "data": {
-    "name": "Nether Quartz Ore",
+    "name": "Red Wool",
     "quantity": 50,
-    "text": "50x Nether Quartz Ore",
-    "image": "https://sky.shiiyu.moe/item/QUARTZ_ORE",
-    "description": "This item can be mined in the Crimson Isle using a Pickaxe enchanted with Silk Touch"
+    "text": "50x Red Wool",
+    "image": "https://sky.shiiyu.moe/item/WOOL:14",
+    "description": "This item can be purchased from the Wool Merchant at the Builder's House in the Hub"
   }
 }

@@ -13,6 +13,7 @@ const getEquipment = require('../stats/equipment')
 const getArmor = require('../stats/armor')
 const getTalismans = require('../stats/talismans');
 const getCollections = require('../stats/collections');
+const getFarming = require('../stats/farming')
 const getMining = require('../stats/mining');
 const getDungeons = require('../stats/dungeons.js');
 const getTrophyFish = require('../stats/trophyFishing')
@@ -103,6 +104,7 @@ module.exports = {
             dungeons: getDungeons(player, profile),
             crimson: await getCrimson(profile),
             trophy_fish: await getTrophyFish(profile),
+            farming: await getFarming(player, profile),
             mining: getMining(player, profile),
             slayer: getSlayer(profile),
             milestones: getMilestones(profile),
@@ -154,6 +156,7 @@ module.exports = {
                 dungeons: getDungeons(player, profile),
                 crimson: await getCrimson(profile),
                 trophy_fish: await getTrophyFish(profile),
+                farming: await getFarming(player, profile),
                 mining: getMining(player, profile),
                 slayer: getSlayer(profile),
                 milestones: getMilestones(profile),
