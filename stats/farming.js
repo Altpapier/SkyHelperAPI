@@ -2,11 +2,19 @@ const constants = require('../constants/farming');
 const getSkills = require('./skills');
 
 module.exports = async (player, profile) => {
-    const output = {}
     const jacob = {
         talked: profile.jacob2?.talked || false,
     };
-    
+    const trapper_quest = {
+        last_task_time: 'None',
+        pelt_count: 0
+    };
+
+    if (profile.trapper_quest) {
+        trapper_quest.last_task_time = profile.trapper_quest?.last_task_time/1000 || 0 == 0 ? 'None' : profile.trapper_quest?.last_task_time|| 0
+        trapper_quest.pelt_count = profile.trapper_quest.pelt_count ?? 0
+    };
+
     if (jacob.talked) {
         jacob.medals = {
             bronze: profile.jacob2.medals_inv.bronze || 0,
@@ -92,10 +100,9 @@ module.exports = async (player, profile) => {
         jacob.contests = contests;
     }
 
-    output.jacob = jacob;
-
     return {
-        farming: getSkills(player, profile).mining?.level || 0,
-        output,
+        farming: getSkills(player, profile).farming?.level || 0,
+        trapper_quest,
+        jacob,
     }
 };
