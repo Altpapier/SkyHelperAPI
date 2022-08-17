@@ -17,7 +17,7 @@ const rarities = [
     "very_special",
   ];
 
-async function getPets(profile) {
+  module.exports = async (profile) => {
     let output = [];
 
     if (!("pets" in profile)) return output;
@@ -337,5 +337,3 @@ function getPetLevel(petExp, offsetRarity, maxLevel) {
   
     return items;
 }
-
-module.exports = { getPets }

@@ -8,7 +8,8 @@ const getMinions = require('../stats/minions');
 const getSlayer = require('../stats/slayer');
 const getKills = require('../stats/kills');
 const getDeaths = require('../stats/deaths');
-const { getPets } = require('../stats/pets');
+const getPets = require('../stats/pets');
+const getBingo = require('../stats/bingo')
 const getEquipment = require('../stats/equipment')
 const getArmor = require('../stats/armor')
 const getTalismans = require('../stats/talismans');
@@ -238,9 +239,13 @@ module.exports = {
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
         return result.sort((a, b) => b.last_save - a.last_save);
-    }
-
-
+    },
+    parseBingoProfile: async function parseBingoProfile(profile, bingo, uuid) {
+        return {
+            uuid: uuid,
+            profile: await getBingo(profile.data, bingo.data)
+        }
+    },
 };
 
 function isValidProfile(profileMembers, uuid) {
