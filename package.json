@@ -21,6 +21,7 @@
         "express": "^4.17.1",
         "express-rate-limit": "^6.3.0",
         "lilyweight": "^2.7.0",
+        "moment": "^2.29.4",
         "prismarine-nbt": "^1.6.0",
         "util": "^0.12.4"
     },

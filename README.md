@@ -43,6 +43,10 @@ The API automatically updates upon starting. If you wish to not want that, chang
 
 ### `GET` /v1/items/:user/:profile
 
+### `GET` /v1/bingo/:user
+
+### `GET` /v1/calendar
+
 ### `GET` /v1/fetchur
 
 | Parameter | Description                                |
@@ -61,6 +65,7 @@ The API automatically updates upon starting. If you wish to not want that, chang
 | bestiary       | Get a player's bestiary                                                 | profile/profiles       |
 | crimson        | Get player's Crimson Isle data                                          | profile/profiles       |
 | trophy_fish    | Get player's trophy fishing caches and information                      | profile/profiles       |
+| enchanting     | Get a player's enchanting stats including experimentations              | profile/profiles       |
 | farming        | Get a player's farming stats including Jacob's contests                 | profile/profiles       |
 | mining         | Get a player's mining stats including HotM tree and forge               | profile/profiles       |
 | slayer         | Get a player's slayer stats                                             | profile/profiles       |
@@ -86,6 +91,8 @@ The API automatically updates upon starting. If you wish to not want that, chang
 | inventory      | Get player's inventory                                                  | items                  |
 | candy bag      | Get player's candy bag                                                  | items                  |
 | items          | Check what item fetchur wants today                                     | fetchur                |
+| bingo          | Get a player's bingo profile and progress                               | fetchur                |
+| calendar       | Get Skyblock's calendar including all events                            | calendar               |
 
 **Documentation**: https://api.altpapier.dev
 
