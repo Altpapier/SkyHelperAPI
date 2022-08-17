@@ -11,7 +11,7 @@ module.exports = async (player, profile) => {
     };
 
     if (profile.trapper_quest) {
-        trapper_quest.last_task_time = profile.trapper_quest?.last_task_time/1000 || 0 == 0 ? 'None' : profile.trapper_quest?.last_task_time|| 0
+        trapper_quest.last_task_time = profile.trapper_quest?.last_task_time ? profile.trapper_quest?.last_task_time : 'None'
         trapper_quest.pelt_count = profile.trapper_quest.pelt_count ?? 0
     };
 
