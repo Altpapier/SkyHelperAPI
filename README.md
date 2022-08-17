@@ -92,6 +92,7 @@ The API automatically updates upon starting. If you wish to not want that, chang
 | candy bag      | Get player's candy bag                                                  | items                  |
 | items          | Check what item fetchur wants today                                     | fetchur                |
 | bingo          | Get a player's bingo profile and progress                               | fetchur                |
+| mayor          | Information about current mayor and ongoing election                    | mayor                  |
 | calendar       | Get Skyblock's calendar including all events                            | calendar               |
 
 **Documentation**: https://api.altpapier.dev

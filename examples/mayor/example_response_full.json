@@ -1,0 +1,184 @@
+{
+  "status": 200,
+  "data": {
+    "last_updated": 1660758114786,
+    "current": {
+      "year": 224,
+      "name": "Derpy",
+      "type": "derp",
+      "perks": [
+        {
+          "name": "TURBO MINIONS!!!",
+          "description": "Minions have double the output!"
+        },
+        {
+          "name": "AH CLOSED!!!",
+          "description": "The Auction House will be closed while Derpy is elected!"
+        },
+        {
+          "name": "DOUBLE MOBS HP!!!",
+          "description": "ALL monsters have double health!"
+        },
+        {
+          "name": "MOAR SKILLZ!!!",
+          "description": "Gain §d+50% §7more skill experience!"
+        }
+      ],
+      "chart": "https://quickchart.io/chart?bkg=rgb(46,49,55)&c={\"type\":\"bar\",\"data\":{\"labels\":[\"Derpy\",\"Cole\",\"Paul\",\"Diaz\",\"Foxy\"],\"datasets\":[{\"label\":\"Votes\",\"data\":[804577,23115,15851,373,94],\"backgroundColor\":[\"rgba(255, 85, 85, 0.8)\",\"rgba(85, 255, 85, 0.8)\",\"rgba(85, 255, 255, 0.8)\",\"rgba(255, 255, 85, 0.8)\",\"rgba(255, 85, 255, 0.8)\"]}]}}",
+      "election": [
+        {
+          "name": "Derpy",
+          "type": "derp",
+          "perks": [
+            {
+              "name": "TURBO MINIONS!!!",
+              "description": "Minions have double the output!"
+            },
+            {
+              "name": "AH CLOSED!!!",
+              "description": "The Auction House will be closed while Derpy is elected!"
+            },
+            {
+              "name": "DOUBLE MOBS HP!!!",
+              "description": "ALL monsters have double health!"
+            },
+            {
+              "name": "MOAR SKILLZ!!!",
+              "description": "Gain §d+50% §7more skill experience!"
+            }
+          ],
+          "votes": 804577
+        },
+        {
+          "name": "Cole",
+          "type": "mining",
+          "perks": [
+            {
+              "name": "Mining Fiesta",
+              "description": "§7Schedules two Mining Fiesta events during the year!"
+            }
+          ],
+          "votes": 23115
+        },
+        {
+          "name": "Paul",
+          "type": "dungeons",
+          "perks": [
+            {
+              "name": "Benediction",
+              "description": "Blessings are §d25% §7stronger."
+            }
+          ],
+          "votes": 15851
+        },
+        {
+          "name": "Diaz",
+          "type": "economist",
+          "perks": [
+            {
+              "name": "Barrier Street",
+              "description": "Gain §625% §7more bank interest."
+            },
+            {
+              "name": "Shopping Spree",
+              "description": "Increase daily NPC buy limits by §e10x§7."
+            }
+          ],
+          "votes": 373
+        },
+        {
+          "name": "Foxy",
+          "type": "events",
+          "perks": [
+            {
+              "name": "Sweet Tooth",
+              "description": "Grants §a+20% §7chance to get Candy from mobs during the §6Spooky Festival§7."
+            },
+            {
+              "name": "Benevolence",
+              "description": "Gain §c2.5x §7gifts from the attack event on Jerry's Workshop."
+            },
+            {
+              "name": "Extra Event",
+              "description": "Schedules an extra §bFishing Festival §7event during the year."
+            }
+          ],
+          "votes": 94
+        }
+      ]
+    },
+    "upcoming": {
+      "year": 225,
+      "chart": "https://quickchart.io/chart?bkg=rgb(46,49,55)&c={\"type\":\"bar\",\"data\":{\"labels\":[\"Foxy\",\"Cole\",\"Diaz\",\"Marina\",\"Paul\"],\"datasets\":[{\"label\":\"Votes\",\"data\":[503119,133221,68875,52241,50765],\"backgroundColor\":[\"rgba(255, 85, 85, 0.8)\",\"rgba(85, 255, 85, 0.8)\",\"rgba(85, 255, 255, 0.8)\",\"rgba(255, 255, 85, 0.8)\",\"rgba(255, 85, 255, 0.8)\"]}]}}",
+      "election": [
+        {
+          "name": "Foxy",
+          "type": "events",
+          "perks": [
+            {
+              "name": "Sweet Tooth",
+              "description": "Grants §a+20% §7chance to get Candy from mobs during the §6Spooky Festival§7."
+            },
+            {
+              "name": "Benevolence",
+              "description": "Gain §c2.5x §7gifts from the attack event on Jerry's Workshop."
+            },
+            {
+              "name": "Extra Event",
+              "description": "Schedules an extra §6Mining Fiesta §7event during the year."
+            }
+          ],
+          "votes": 503119
+        },
+        {
+          "name": "Cole",
+          "type": "mining",
+          "perks": [
+            {
+              "name": "Mining Fiesta",
+              "description": "§7Schedules two Mining Fiesta events during the year!"
+            }
+          ],
+          "votes": 133221
+        },
+        {
+          "name": "Diaz",
+          "type": "economist",
+          "perks": [
+            {
+              "name": "Barrier Street",
+              "description": "Gain §625% §7more bank interest."
+            },
+            {
+              "name": "Shopping Spree",
+              "description": "Increase daily NPC buy limits by §e10x§7."
+            }
+          ],
+          "votes": 68875
+        },
+        {
+          "name": "Marina",
+          "type": "fishing",
+          "perks": [
+            {
+              "name": "Fishing Festival",
+              "description": "Start a special fishing event the first §b3 §7days of each month!"
+            }
+          ],
+          "votes": 52241
+        },
+        {
+          "name": "Paul",
+          "type": "dungeons",
+          "perks": [
+            {
+              "name": "Benediction",
+              "description": "Blessings are §d25% §7stronger."
+            }
+          ],
+          "votes": 50765
+        }
+      ]
+    }
+  }
+}
