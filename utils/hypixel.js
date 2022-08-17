@@ -8,11 +8,13 @@ const getMinions = require('../stats/minions');
 const getSlayer = require('../stats/slayer');
 const getKills = require('../stats/kills');
 const getDeaths = require('../stats/deaths');
-const { getPets } = require('../stats/pets');
+const getPets = require('../stats/pets');
+const getBingo = require('../stats/bingo')
 const getEquipment = require('../stats/equipment')
 const getArmor = require('../stats/armor')
 const getTalismans = require('../stats/talismans');
 const getCollections = require('../stats/collections');
+const getEnchanting = require('../stats/enchanting')
 const getFarming = require('../stats/farming')
 const getMining = require('../stats/mining');
 const getDungeons = require('../stats/dungeons.js');
@@ -22,10 +24,8 @@ const getWeight = require('../stats/weight');
 const getMissing = require('../stats/missing');
 const getNetworth = require('../stats/networth');
 const getBestiary = require('../stats/bestiary');
-const { isUuid } = require('./uuid');
-
 const getContent = require('../stats/items')
-
+const { isUuid } = require('./uuid');
 
 module.exports = {
     parseHypixel: function parseHypixel(playerRes, uuid, res) {
@@ -104,6 +104,7 @@ module.exports = {
             dungeons: getDungeons(player, profile),
             crimson: await getCrimson(profile),
             trophy_fish: await getTrophyFish(profile),
+            enchanting: await getEnchanting(player, profile),
             farming: await getFarming(player, profile),
             mining: getMining(player, profile),
             slayer: getSlayer(profile),
@@ -156,6 +157,7 @@ module.exports = {
                 dungeons: getDungeons(player, profile),
                 crimson: await getCrimson(profile),
                 trophy_fish: await getTrophyFish(profile),
+                enchanting: await getEnchanting(player, profile),
                 farming: await getFarming(player, profile),
                 mining: getMining(player, profile),
                 slayer: getSlayer(profile),
@@ -237,9 +239,13 @@ module.exports = {
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
         return result.sort((a, b) => b.last_save - a.last_save);
-    }
-
-
+    },
+    parseBingoProfile: async function parseBingoProfile(profile, bingo, uuid) {
+        return {
+            uuid: uuid,
+            profile: await getBingo(profile.data, bingo.data)
+        }
+    },
 };
 
 function isValidProfile(profileMembers, uuid) {

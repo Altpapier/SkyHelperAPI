@@ -17,7 +17,7 @@ const rarities = [
     "very_special",
   ];
 
-async function getPets(profile) {
+  module.exports = async (profile) => {
     let output = [];
 
     if (!("pets" in profile)) return output;
@@ -63,18 +63,18 @@ async function getPets(profile) {
 
       // Get texture
       if (typeof petData.head === "object") {
-        pet.texture_path = petData.head[pet.rarity] ?? petData.head.default;
+        pet.texture_path = `https://sky.shiiyu.moe${petData.head[pet.rarity]}` ?? `https://sky.shiiyu.moe${petData.head.default}`;
       } else {
-        pet.texture_path = petData.head;
+        pet.texture_path = `https://sky.shiiyu.moe${petData.head}`;
       }
   
       if (petData.hatching?.level > pet.level) {
-        pet.texture_path = petData.hatching.head;
+        pet.texture_path = `https://sky.shiiyu.moe${petData.hatching.head}`;
       }
   
       let petSkin = null;
       if (pet.skin && pet_skins?.[`PET_SKIN_${pet.skin}`]) {
-        pet.texture_path = pet_skins[`PET_SKIN_${pet.skin}`].texture;
+        pet.texture_path = `https://sky.shiiyu.moe${pet_skins[`PET_SKIN_${pet.skin}`].texture}`;
         petSkin = pet_skins[`PET_SKIN_${pet.skin}`].name;
       }
       const levelData = getPetLevel(pet.exp, petData.customLevelExpRarityOffset ?? pet.rarity, petData.maxLevel);
@@ -275,7 +275,10 @@ async function getPets(profile) {
       return a.active ? -1 : 1;
     });
 
-    return output;
+    return {
+      auto_pet: profile.autopet,
+      pets: output,
+    }
 }
 
 
@@ -334,5 +337,3 @@ function getPetLevel(petExp, offsetRarity, maxLevel) {
   
     return items;
 }
-
-module.exports = { getPets }
