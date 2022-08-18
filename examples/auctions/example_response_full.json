@@ -1,531 +1,198 @@
 {
   "status": 200,
   "data": {
-    "active": {
-      "bin": [
-        {
-          "_id": "62fe201d0cf239777c7e59e5",
-          "uuid": "f03e20ae0757428d818a9f17854e56f5",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660821533708,
-          "end": 1661015933708,
-          "item_name": "Treecapitator",
-          "item_lore": [
-            "§9Efficiency V",
-            "§7Increases how quickly your tool",
-            "§7breaks blocks.",
-            "",
-            "§7A forceful Gold Axe which can",
-            "§7break a large amount of logs in",
-            "§7a single hit!",
-            "§8Cooldown: §a2s",
-            "",
-            "§7§8This item can be reforged!",
-            "§5§lEPIC AXE"
-          ],
-          "extra": "Treecapitator Gold Axe Efficiency",
-          "category": "weapon",
-          "tier": "EPIC",
-          "starting_bid": 1200000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAD2R3W7TQBCFx0kDiYMo5QHQFHEbmqTNT3tnBVOCSokqF3GHxvbYXmW9G7xr0jxR3iMPhlhHFbdnz3znzKwP0ANP+ADgtaAlUu+dB52FrpX1fGhbyntwwiopnh1t+UdC5+gEBA/6jyqumNYUS/ba0PsiUv4sKTfO/teHl6kwG0k7B7nTFXed2ofTw/46zDKRCAfe4Q94f9jPlipxHMMGC73F37VI1nKHO11XaLWWcOY8xySDsdTJ2nx0LHRigJmuEs5qibdaphg8MW4LkRSYkDqij2NIKKnKGalslkOdodS5QaHgjfMQGqFyyVgIew5vD/v5wqWmeqtuXAiNzXOae4gK4cYsl00AxowVuwY5p+fw+rCfHPYyXC0XGPwMu3ByTyU3AZOoYk5oIyxZXYEPp+GTrSiwthJxbdl0oacrkQsVUQ7+18f727vw15HRnPosegjDRbBaRkH0/aHRfXjVfAspW7Kypg0+/z+p69ppQ9+y5LVQbETT3gNXp64d7MN4Ohmmk/l8MJ3N0sEVUTygLE4H08loFl9fzmdJeun6WFGysVRu4HQ0uri6GI9wfDMc4uobQAtefKKScnZk+AdaQM5VRQIAAA=="
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
+    "active": [
+      {
+        "_id": "62fe201d0cf239777c7e59e5",
+        "uuid": "f03e20ae0757428d818a9f17854e56f5",
+        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
+        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
+        "coop": [
+          "a40eb1c449ac4b099426cb80384ac7e9"
+        ],
+        "start": 1660821533708,
+        "end": 1661015933708,
+        "item_name": "Treecapitator",
+        "item_lore": [
+          "§9Efficiency V",
+          "§7Increases how quickly your tool",
+          "§7breaks blocks.",
+          "",
+          "§7A forceful Gold Axe which can",
+          "§7break a large amount of logs in",
+          "§7a single hit!",
+          "§8Cooldown: §a2s",
+          "",
+          "§7§8This item can be reforged!",
+          "§5§lEPIC AXE"
+        ],
+        "extra": "Treecapitator Gold Axe Efficiency",
+        "category": "weapon",
+        "tier": "EPIC",
+        "starting_bid": 1200000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAAD2R3W7TQBCFx0kDiYMo5QHQFHEbmqTNT3tnBVOCSokqF3GHxvbYXmW9G7xr0jxR3iMPhlhHFbdnz3znzKwP0ANP+ADgtaAlUu+dB52FrpX1fGhbyntwwiopnh1t+UdC5+gEBA/6jyqumNYUS/ba0PsiUv4sKTfO/teHl6kwG0k7B7nTFXed2ofTw/46zDKRCAfe4Q94f9jPlipxHMMGC73F37VI1nKHO11XaLWWcOY8xySDsdTJ2nx0LHRigJmuEs5qibdaphg8MW4LkRSYkDqij2NIKKnKGalslkOdodS5QaHgjfMQGqFyyVgIew5vD/v5wqWmeqtuXAiNzXOae4gK4cYsl00AxowVuwY5p+fw+rCfHPYyXC0XGPwMu3ByTyU3AZOoYk5oIyxZXYEPp+GTrSiwthJxbdl0oacrkQsVUQ7+18f727vw15HRnPosegjDRbBaRkH0/aHRfXjVfAspW7Kypg0+/z+p69ppQ9+y5LVQbETT3gNXp64d7MN4Ohmmk/l8MJ3N0sEVUTygLE4H08loFl9fzmdJeun6WFGysVRu4HQ0uri6GI9wfDMc4uobQAtefKKScnZk+AdaQM5VRQIAAA=="
         },
-        {
-          "_id": "62fe202f0cf239777c7e6060",
-          "uuid": "ea869e7f96a444fc9ddce6384cbb599b",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660821551119,
-          "end": 1661015951119,
-          "item_name": "Grizzly Bait",
-          "item_lore": ["§eRight-click to view recipes!", "", "§9§lRARE"],
-          "extra": "Grizzly Bait Raw Fish",
-          "category": "consumables",
-          "tier": "RARE",
-          "starting_bid": 1000000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAABXOQU6DQBjF8TdQFSYm9QZi4pZUkBLqjmqtTaoL4sYmxgzDV5wI0sCgthfiHhzMiNtf/i95HLDBFAfADBgqY68MR7dV+6kZh6lFbsJ+UBndFyJvhuqX4yRTza4QexujdVWTNaiJ876jROXv2pWFkh+OrpwvRd9OTVLtqLkYIt53s74rkjhZWBg9iZIwHmhZq8Oh2DtzoTQ4xosfXYtY61qlrabG+n+F02Wy2mzWL2/zePU8rNt2wEu6zvwtEbkylFM3iNLQjbZB6kYk09k086TMfAu2ViU1WpQ7nAUTL5z4vuN5N96VEz8CBo7vRClyAgP+AIh261IPAQAA"
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
+        "claimed": false,
+        "claimed_bidders": [
+          
+        ],
+        "bin": true,
+        "highest_bid_amount": 0,
+        "bids": [
+          
+        ]
+      },
+      {
+        "_id": "62fe202f0cf239777c7e6060",
+        "uuid": "ea869e7f96a444fc9ddce6384cbb599b",
+        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
+        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
+        "coop": [
+          "a40eb1c449ac4b099426cb80384ac7e9"
+        ],
+        "start": 1660821551119,
+        "end": 1661015951119,
+        "item_name": "Grizzly Bait",
+        "item_lore": [
+          "§eRight-click to view recipes!",
+          "",
+          "§9§lRARE"
+        ],
+        "extra": "Grizzly Bait Raw Fish",
+        "category": "consumables",
+        "tier": "RARE",
+        "starting_bid": 1000000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAABXOQU6DQBjF8TdQFSYm9QZi4pZUkBLqjmqtTaoL4sYmxgzDV5wI0sCgthfiHhzMiNtf/i95HLDBFAfADBgqY68MR7dV+6kZh6lFbsJ+UBndFyJvhuqX4yRTza4QexujdVWTNaiJ876jROXv2pWFkh+OrpwvRd9OTVLtqLkYIt53s74rkjhZWBg9iZIwHmhZq8Oh2DtzoTQ4xosfXYtY61qlrabG+n+F02Wy2mzWL2/zePU8rNt2wEu6zvwtEbkylFM3iNLQjbZB6kYk09k086TMfAu2ViU1WpQ7nAUTL5z4vuN5N96VEz8CBo7vRClyAgP+AIh261IPAQAA"
         },
-        {
-          "_id": "62fe20b30cf239777c7e8b0d",
-          "uuid": "735e9ebae55f44ddb29a1c828e7ac971",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660821683853,
-          "end": 1661016083853,
-          "item_name": "Submerged Shark Scale Helmet",
-          "item_lore": [
-            "§7Crit Chance: §c+10% §9(+10%)",
-            "§7Sea Creature Chance: §c+3.4% §9(+0.9%)",
-            "§7Health: §a+195",
-            "§7Defense: §a+135",
-            " §8[§7❈§8] §8[§7❈§8]",
-            "",
-            "§9§d§lLegion V",
-            "§9Aqua Affinity I",
-            "§9Growth V",
-            "§9Protection V",
-            "§9Respiration III",
-            "§9Thorns III",
-            "",
-            "§6Full Set Bonus: Absorb",
-            "§7§9Doubles§7 your §a❈ Defense§7",
-            "§7while in water.",
-            "",
-            "§6Full Set Bonus: Reflect",
-            "§7§7Your sharp scales reflect",
-            "§7§915% §7of damage onto the",
-            "§7attacker.",
-            "",
-            "§6§lLEGENDARY HELMET"
-          ],
-          "extra": "Submerged Shark Scale Helmet Skull Item Thorns §d§lLegion Growth Protection Respiration Aqua Affinity",
-          "category": "armor",
-          "tier": "LEGENDARY",
-          "starting_bid": 10000000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAG1U227bRhAdSbErKTGMJECL9qHdAinawpBD6kKZBvrASoou1SUWZcdSERhLcilS4kVdLiMrX9CXfkKf9QP9An1KP6TokJKbpugTd86cuc+wCFCAjFsEgEwWsq6V+S0DR40wDkSmCDlB5wV4xALTSRjZLOS8dx7kUiYcwUHeW8Ix5KDQcS32yqPzCPl/FaGoL2PPG60DxvOQ7VrwwqA2Ney6VZIVppQqZdsoqfWyVLqQy1VZNahp1ito95qHK8aFy6IC5AW7FzFnUZpmHo5uqBcz+INtetLs1pGs255nbroKyhNd8kbdxareDW42RqOrdH3UdzSlv1H/xa0J+qbmTSs9ZxZcxYZ/I/UrY491xrLpX78bvF+uB5NWedZuyYPJ2Bm+Hy5n7avaYLGUh83l/ah5vZm+GS+Gk3l10NQqs0XPmZavKrP29Wa4WFZGTccZLFqbUfuqOkvtp9LU7an2rfQDVlCETyw3Wnl0g73th5zlEfwMvt5t6w3uCtJwaGCyS7Lbmmey9A1+1e+Sx/dwhhSdUdLgjCYN+YhaOa8euNK5iuRnSO4w6gkn0dMzWa3Bc8SazGZBxA5gpQZf4uviZ9T8+fuv+Hr7HxGTe4pud1trt/X6bO6GAblJvKvaLzElmm27gSs2pAuPEWvzcC0cJJyigEMUzBQfLMYsWrmcpki324UTxCZOyIMoFQE+322VV7gxRGeC/BgGcXRJNCMKuQHfYkpIb4ax4bEIBbIJY55UgYmSQ1UIp4WvHddjxA3ImgrGz9HzF//jecxsD/ODr1LX9WniL3IoX5HIpBiE8I8IqlxLOlwPbWJRn84ZCQMREuEweIIwFYKay320TzFa0q5WuzVsauMp6bT6g9YkD4+G1GeJP0XHvWN8ziyiY8gl0ZOQpMM8nwnckdPWveBUE4K7RixYlIe8H1qu7TIOhejBNg+FkLtzN5jQOZzor0fDduvuIVZylM/0jjb+6U5vaP0HRRGeJBdNA+GzQEQ5OBbpCDDtXA5OY0+4PnbtzktnjegRUubpXPdCcfXPXPfAY/5hrnsvJxR3444ediM5W8Da4xgzelGVDePCUlipVrWkUlWxzZJatcySIdfLloL3fyHbWBdmwSJB/RWcqi9rL8sykaXLqkq0Af6J4LiZTgB/OfA3UE/k9cQEAAA="
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
+        "claimed": false,
+        "claimed_bidders": [
+          
+        ],
+        "bin": true,
+        "highest_bid_amount": 0,
+        "bids": [
+          
+        ]
+      }
+    ],
+    "ended": [
+      {
+        "_id": "62fe35d00cf239777c813831",
+        "uuid": "626e0848cef04929bb6bd04ea34048ea",
+        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
+        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
+        "coop": [
+          "a40eb1c449ac4b099426cb80384ac7e9"
+        ],
+        "start": 1660827088550,
+        "end": 1660832475193,
+        "item_name": "Implosion Belt",
+        "item_lore": [
+          "§7Defense: §a+70",
+          "",
+          "§bArachno Resistance I",
+          "§7Grants §a+1.5❈ Defense §7against",
+          "§7§a§aspiders§7.",
+          "§bBreeze I",
+          "§7When you haven't been damaged in",
+          "§7the last §a5s §7or more, your",
+          "§7mana costs are decreased by",
+          "§7§a1%§7.",
+          "",
+          "§6Ability: Consolidated",
+          "§7§7Increases all explosion damage",
+          "§7dealt by §a25%§7.",
+          "",
+          "§7§8This item can be reforged!",
+          "§5§lEPIC BELT"
+        ],
+        "extra": "Implosion Belt Skull Item",
+        "category": "misc",
+        "tier": "EPIC",
+        "starting_bid": 2500000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAAF1Uy47iRhQtmpkJkCitGUVJVlElmWgWCTN+YAy9M9DtLoKhG8zD3ozKdoELyjayi6bhC7LJJ2TNf/ApUb4jShm6R0kkW3adOvfcc+91uQJAGRRoBQBQuAAXNCj8XgAv28km5oUKKHK8KILyLQ3IDcOLTLD+roDKaLVhbLCNSVoCFygAb33clOsNfV6d+7pUVZVmreqpGFebDdnzFExktRaIuLs0WZOUU5KVQYmTR75JSXZKXQIvJ5htSOEvsk0WqN2V8FRmvjoMvZlBUSdZWLYjWXtnay2RNrANxRptf0Vtg/q33Qc3Ypk7ZitEjTpqI8m1ra27HG9dO6DOdCxZirN3pu7Kiq7Vfme8c5QJdW2kOTuUtamxQHFr5ynu2jMnA0fkPet054HZ5M5s+EBYg/aMk689ngYbgcl+NBm5sxsZz7rMbaPFgLYkP56wJ57kzkIpEHv+7rSnn/IIv2OJd236HyznC73tqU4Uibhbo97bNf+loXE81ZijdkM3vt940UTqqUNGbnMf4wd3eSNqQ1tr767cjqP0zS4d2K3lYHov9Tv9pWWvtIHp0r6NFGu/qjlT0SNzuHKnSB1MUa3fMR6d5bXiLFnYN+8fLbMbWs+9Ofvj7mwYuuaN5Iz+713ckfzgmpPsqW97z2QcLZKn/VbzzD0/5/frpph4BXwW0GzN8K4MXvSSlJQE+Bq8OR70DpmTOCNX8HjAP+uSwL85HjwjxX4YJ3BIMppxHPsEIvBO0M0Uxzw7keX32p9//AafBASk4wWmccbBV+JdMMSVrcXHnGZi/R58LnRbKSH7XOtHAU1DEsNdsoEhfiDxOw49IoAAR3hBAkhj8IMg8ZBAhjOep9TyxHqSwkiU8EsemoLvBBLhGEM/yYQxnBIYED8lOBMa3g58cfYi/3TyAMC3x0Pd8CijfHcF20mcJYwGmBNxrk5MHcXnaKHFGCSPa5ZkNHn2Bb4WlIBgJtzuck+K9qwMT/ENO6QZpJxE0MexKAmmZJ6koqLvweXxoB0P7PoOtWHrumeXwIs+jgh4LXAUPSdqEcbFxC6vH3mKDc5T6m14fnIr+NOiCF55p1bmx7kI3uDzvD6mn+aVb4BS/o8BXyLrrjcYoUH/41PWzUbAb3XsBU1PVquBpuJqzVflKp5LtWp9TiSloWq+5NdLoMxpRIRmtAaX+ge59kFRoHKl6tCwALgArzrnvhQB+Aco6/s63gQAAA=="
         },
-        {
-          "_id": "62fe20be0cf239777c7e8e09",
-          "uuid": "3d858a9ffd504d0a9f3d7d3175b2faeb",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660821694408,
-          "end": 1661016094408,
-          "item_name": "Ancient Shark Scale Leggings",
-          "item_lore": [
-            "§7Strength: §c+25 §9(+25)",
-            "§7Crit Chance: §c+12% §9(+12%)",
-            "§7Crit Damage: §c+33% §9(+33%)",
-            "§7Sea Creature Chance: §c+2.5%",
-            "§7Health: §a+232 §9(+7)",
-            "§7Defense: §a+172 §9(+7)",
-            "§7Intelligence: §a+20 §9(+20)",
-            " §8[§7❈§8] §8[§7❈§8]",
-            "",
-            "§9§d§lLegion IV",
-            "§7Increases most of your player",
-            "§7stats by §e0.28% §7per player",
-            "§7within §b30 §7blocks of you, up",
-            "§7to §c20 §7players.",
-            "§9Growth V",
-            "§7Grants §a+75 §c❤ Health§7.",
-            "§9Protection V",
-            "§7Grants §a+15 §a❈ Defense§7.",
-            "§9Thorns III",
-            "§7Grants a §a50% §7chance to",
-            "§7rebound §a9% §7of damage dealt",
-            "§7back at the attacker.",
-            "",
-            "§6Full Set Bonus: Absorb",
-            "§7§9Doubles§7 your §a❈ Defense§7",
-            "§7while in water.",
-            "",
-            "§6Full Set Bonus: Reflect",
-            "§7§7Your sharp scales reflect",
-            "§7§915% §7of damage onto the",
-            "§7attacker.",
-            "",
-            "§9Ancient Bonus",
-            "§7Grants §a+1 §9☠ Crit Damage",
-            "§9§7per §cCatacombs §7level.",
-            "",
-            "§6§lLEGENDARY LEGGINGS"
-          ],
-          "extra": "Ancient Shark Scale Leggings Leather Leggings Thorns §d§lLegion Growth Protection",
-          "category": "armor",
-          "tier": "LEGENDARY",
-          "starting_bid": 6000000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAG1U4W7bNhA+x0nruB1SDAO2dcPGrg26oIlrSbFl+5/npI6xNCjiLkAxDAElnyUhtGiQ1LK8wR5hfwrsR1G/hx8lDzL0KCltklUQIJL33Xf33R1VB1iHSlIHgMoKrCSTynYF1gYyS02lDlXDo3VYxTSMwT4VuPdbGijkZzwQWKnC+kEywReCR5qs/9Xh7iTRc8EvyOlQKqzR6SZ8v1z4Y6MwjUzcY8tF+Mxt0af7M3234BFZByoxbBDzNMQC4LibBYIW1yB7fMajEuJ5JYQWW8BsDORsQMmZTOENNrfR2oSHhDhALooc+DPXcwt/fwu+I9seTjHVWBgd/5PRUo9Sg0IkEZac5N4sJTS34Adadn4n2OXbv2n1x60tFeFLwi4Xk+VCHGKUyJSNTkrekBLWqNlMasPklF3ITDFbQlTwEyG04Uaz4ILQ2Gy4HSvan+NHzBPanicmTlIyBJ7Nyg+EDM90ybbNsjl8TadG2mLkefuFs27APUpsqOS5idlJHm+oeEoBrUTfdim8fPuOFXUjawM2yOGVkgZDY3WcwOObTo514qSclQXNvb4gr9exVKlmo9EIfvzkwy281cxlhXnPmJE5qcKAxnBi7d3cTHom+QCwic0HvrFSeXjGuGEmRvoY2qFqUMG/XS7aLzIh2BgN+0Wmme6xfqClCuApuVE6ezKjGda0KWr+v6xt0/zzOBHIqLjn3BTMDz/DfIxTQQXJddH7xvLpmKs50yGnIEzdAHSd1i1BMqXukAa4T8fXdTwgdD8NE0zLYLeb5NgxvPznX3btgtjR6pZjQh0ccOKTs8A6+AL/RGGZqXptO4/7w/2jvf7xG0ar4ehoOK7CWiiFVADb72uwesRnaPNuX6UxJmFnbGyFMZrmKEnp9tdhY/8vo3jfGJUEmUFdu6KpNXu7uz2n3a5BbSYnyTShsb3LC7YarEuVEMdrHsFX44P+8a+n40H/cP/0Kp2a/St93lSH+/bXRLWYEZWuwh2Tzxipq1ZhIxMmmVHbTkV+5+h0lSBRPu20WatCff5xku0BkNwso2hPOsiR+1PcafuBt7PLsb0TtDvTHe6GLa/Dw67neZQ68SNd0NkcNpznjvvcdVir12qy/kuAFbhTdoOeDzdl9pZnBQAA"
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
+        "claimed": false,
+        "claimed_bidders": [
+          "91d14350414f43cc91d27dbce284dd03"
+        ],
+        "bin": true,
+        "highest_bid_amount": 2500000,
+        "bids": [
+          {
+            "auction_id": "626e0848cef04929bb6bd04ea34048ea",
+            "bidder": "91d14350414f43cc91d27dbce284dd03",
+            "profile_id": "91b8d65d48d147c984a4f738c10695a9",
+            "amount": 2500000,
+            "timestamp": 1660832478310
+          }
+        ]
+      },
+      {
+        "_id": "62fe42fa0cf239777c824f4d",
+        "uuid": "ff9777936be0469a9301c6880eb0be86",
+        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
+        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
+        "coop": [
+          "a40eb1c449ac4b099426cb80384ac7e9"
+        ],
+        "start": 1660830458533,
+        "end": 1660830861151,
+        "item_name": "Heroic Spirit Sceptre ✪✪✪✪✪",
+        "item_lore": [
+          "§7Gear Score: §d682 §8(2029)",
+          "§7Damage: §c+218 §e(+20) §8(+750)",
+          "§7Strength: §c+60 §e(+20) §9(+40) §8(+225)",
+          "§7Crit Damage: §c+50% §8(+187.5%)",
+          "§7Bonus Attack Speed: §c+5% §9(+5%) §8(+7.5%)",
+          "§7Intelligence: §a+430 §9(+100) §8(+1,500)",
+          " §8[§8✎§8]",
+          "",
+          "§d§l§d§lUltimate Wise V§9, §9Critical V§9, §9Cubism V",
+          "§9Ender Slayer V§9, §9Execute V§9, §9Experience III",
+          "§9First Strike IV§9, §9Giant Killer V§9, §9Impaling III",
+          "§9Lethality V§9, §9Life Steal III§9, §9Looting III",
+          "§9Luck V§9, §9Scavenger III§9, §9Sharpness V",
+          "§9Vampirism V",
+          "",
+          "§6Ability: Guided Bat §e§lRIGHT CLICK",
+          "§7Shoots a guided spirit bat,",
+          "§7following your aim and exploding",
+          "§7for §c7,047 §7damage.",
+          "§8Mana Cost: §3125",
+          "",
+          "§6§lLEGENDARY DUNGEON SWORD"
+        ],
+        "extra": "Heroic Spirit Sceptre ✪✪✪✪✪ Red Rose Impaling Luck Critical Looting Ender Slayer Scavenger Vampirism Experience Life Steal Execute Giant Killer First Strike §d§lUltimate Wise Sharpness Cubism Lethality",
+        "category": "weapon",
+        "tier": "LEGENDARY",
+        "starting_bid": 17800000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAAHVU3W4aRxQ+GMcGmiZV1faiUtuRGldG+IddWJZY7QUGjFEIjoDYqqJoNewOy8izP9qddeyX6BPk3lIfw4+SB6l6ZgcoN0ViZs833zlz5sx3pgJQhgKvAEBhB3a4B78V4Fk3ykJZqEBRUr8Muyx0l6B+RShfco9dCOqnaP5TgX2Pp7GgD8gaRQkrIfoD/PL0aA8YTcjUReyMPD16rbaJU/vQrJuvq3CAhB4NqJ8vujXTaOPMDmtmvZrTarZVr8Ip0qYyYaEvl5rYqm/zXh/WmmsH07Sq8AodugmXZDu4VT/QFKNtn1gHVTCQdR6FWUo6UlL3lkxjxrwV+UDHRd4qkdzlBF2GoWRCcB+rkUemtWajrtlGfZ2GcWThN7xU1gf8f/n8F44fsSx/YBWeHoUe3wvJAyoZueEpI9cY5EhFUrlzl4otJJvzNCDX0EajH3oMi4rlxmlD6d8zN5NsG4hZwlWaZDgcwu8IXfAklQRryW8R3DAHnIaSvOFCbAccBjEVPPRzbxuBEZNLROTDf5wRXzCMxzBXZG3QKJJrR0PZGVZ34zN16R3eJW615TJd0iQOWZriGV+gfU2DmCf6zACHT4+tzpyrvc/IIEPteeScSiUCrOJkOLicke5o2H0DPyutLHH/lFDia2aqIkkyp/IIfsX1RSRE9Ekl+BBlCaE8IDT0CLuPReQhDD/mpEQpwT6qN238sL1cSifwHd7jWxpS0o1Sqe6/YZgWpvgTpoi5jPqD/rjXmfxJeu/Hg/7VmExvria9EuyOacBUGVuXLIm4i2rLs5q6LEZtY6DWl89//98IFXjZv5cJRakmfI73nBbhm2UknTiSVEaOq1oV06iUoBTgKRacJbC3zLcqwrdehgWPQodLFjiC3TGh2rgIX2exn1CPbbBnJShHCfd5OKM+fN+ddC5mw/HAGUyGPad7NRr1u7NS/kCUzjsz56Yz7lXguXoZUEIBCyXmVeIr5eg9dgVevwqNK+5K2drcF1oomodRUNdOmutaE8rpWiua8hW2HrvlqBOuHp4CMu7WQtEeFbZRvXapCJSokyqJamCf6UbR/Oe+0r5zm2t/BS1Ul6CL6hKEdlWZVo3qfMJGXee2lqy299y8R1eLYt0ryga8/gy1CK+shmHVzZZxbDbp4rjZaljH80XLOjYM2241zKZheE28AdyMpRJPBi/MU/vUNIlxhsO7twA7sKdfNfyCfwHhA3vxtwUAAA=="
         },
-        {
-          "_id": "62fe20c30cf239777c7e8f4d",
-          "uuid": "99903cc7d05c4234a54e57db967ada05",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660821698881,
-          "end": 1661016098881,
-          "item_name": "Wise Shark Scale Chestplate",
-          "item_lore": [
-            "§7Sea Creature Chance: §c+2.5%",
-            "§7Health: §a+190 §9(+15)",
-            "§7Defense: §a+175",
-            "§7Speed: §a+2 §9(+2)",
-            "§7Intelligence: §a+125 §9(+125)",
-            " §8[§7❈§8] §8[§7❈§8]",
-            "",
-            "§9§d§lLegion IV",
-            "§7Increases most of your player",
-            "§7stats by §e0.28% §7per player",
-            "§7within §b30 §7blocks of you, up",
-            "§7to §c20 §7players.",
-            "",
-            "§6Full Set Bonus: Absorb",
-            "§7§9Doubles§7 your §a❈ Defense§7",
-            "§7while in water.",
-            "",
-            "§6Full Set Bonus: Reflect",
-            "§7§7Your sharp scales reflect",
-            "§7§915% §7of damage onto the",
-            "§7attacker.",
-            "",
-            "§6§lLEGENDARY CHESTPLATE"
-          ],
-          "extra": "Wise Shark Scale Chestplate Leather Chestplate §d§lLegion",
-          "category": "armor",
-          "tier": "LEGENDARY",
-          "starting_bid": 6000000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAHVT7W4SQRS9FKoLNqnRxEZN6sS00YbSsls+Cv8QqDRi05SqaYxpZnfvwoRlh+zMBvsGvoR/5T14FB/EeGdBG43un52599xzz7kzUwDIQ0YUACCzBmvCzxQzsN6WSaQzBchqPsxDDiNvBObLwL13kRsjH3M3xEwW8j3h40nIh4qyPwpw1xdqGvIbKurLGC2KbgFbzOsD5KxNhTqJkbVHPPKwSXGv6BxUd+EpIXrIQz0yQV60G2X6N14W7eoePKRkBwOMFK6y9SpsGc4por8MOUu4swfPKXEaaQxDMcRVFypxqitChxi3aX38kYDfv36h1ae/tiT6AYEXc38xD/s4FDJip+9TG6eRRyYUKjaRSjMZsBuZxMxYxjjtrTTXirk3hMbygXO8a8qm+BuzQ9uZ0CMRUcI9Mj7rbii9sVqx7bNkmtrT0gzISRHLYnVA0h4v5rWTJAzZADV7JaNENVnLVTJ24QUhSXhHJnQ6ijZLdTQAcsZWM6SwsVefjUSIjGTMuMbYMD/5B/MFBiF6Gp6l1PUrw6dGPJ4y5XFqwuI/AA27mhomKz6f8CEyGZEPPULYoDDXmnvj225mvt3X3bNO6+KKtXvdweV5v3XZzcK6J0MZA+x/syB3xicI2wT/IBSyAXUfs4HpThcJlabZaIQCbHY/65i3tI6Fm2hU1i8Wq9ysVJp2rWaBNZG+CASdQ25GZBbkZSyGIrrkQ3g06LUu3lwP2q1+9/pWjGVexf+SBdgwj4NHeoKRVlnYTEItJiToOkwvDhnNAXlIEiLZ8dwjP0DXLwUN3y9VjiteqXFU4yUeuJ4XlCvlqt8gTcRAvvhkCvcrh0750LGZbTerDjt/C7AGdzrpaM2D/AmpPisYvwMAAA=="
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
-        },
-        {
-          "_id": "62fe20e10cf239777c7e97c3",
-          "uuid": "d87d0d74ac9e4e43ade980df1a7ca805",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660821729467,
-          "end": 1661016129467,
-          "item_name": "[Lvl 39] Tarantula",
-          "item_lore": [
-            "§8Combat Pet",
-            "",
-            "§7Crit Chance: §a+3%",
-            "§7Strength: §a+3",
-            "§7Crit Damage: §a+11%",
-            "",
-            "§6Webbed Cells",
-            "§7§7Anti-healing is §a11.7% §7less",
-            "§7effective against you.",
-            "",
-            "§6Eight Legs",
-            "§7§7Decreases the mana cost of",
-            "§7Spider, Tarantula and Thorn's",
-            "§7boots by §a19.5%",
-            "",
-            "§6Arachnid Slayer",
-            "§7§7Gain +§a15.6% §7more combat xp",
-            "§7from spiders.",
-            "",
-            "§6Held Item: §9Combat Exp Boost",
-            "§7§7Gives +§a40% §7pet exp for",
-            "§7Combat.",
-            "",
-            "§7§eRight-click to add this pet to",
-            "§eyour pet menu!",
-            "",
-            "§6§lLEGENDARY"
-          ],
-          "extra": "[Lvl 39] Tarantula Skull Item",
-          "category": "misc",
-          "tier": "LEGENDARY",
-          "starting_bid": 2400000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAI1U0W6jRhSdJLtdx1KVtqp2W/VlFiXtw8ZZMBhCpD4Q2+uQ2jhrEyd2VUUDXBsSBiwYkjhVP6HfkR/oF+RL+iVVL6w36mMlhIbLOeeee4ahTsg22YjqhJCNTbIZBRt/bpCX7bRIxEadbAm22CLbJ1EAH2K2yBH1T53UxzdFHA/vEshqZNMOyK4KLc3QAq2hqXqroQIzGp7m+XiDwG9pAVM1BXlnWbqETESQb5OagHtRZJBXrWvk5YTFBZC/YHUqzy5DObg8jf2VreOzO5bjoX29NOxksvLatm5zfH9i6f2V+R9sS7CLVjxVT8NZ8rHw+ETuq6MYTkaKz89vh53B3aBzozl8cjPode+c3iR0Hm5ag86IO/xD7LgOdzpxPOs44aA3486FfT/rTZsDfhpN3elqwCfXU/7xwXnw1dl1V3H4iA/bp+b8Uv4ZJ6iTV0GUL2O22iYv+mkGNSz+QL58ejxsp9xjgp6BwNLrp0ejnUWCtkOW+HBEnx7ZO3WPfIP1scggWYhwXSRvPmM7jLPFGqsoeyiz8/SoX4DnQUDbEMc5+RGxeFmJiBohsDhKFjTKS4aiHBh7uDBiyHPyPS5gPgdfRLdA2YJFSS7oKi0OUBXd6t1oEQraB9xs+kmzA34GLIecihAoZwmjfoqkdF4hxkv8OrJ96rKMJaKIGWVJQN0wzZKfcvItIrw0FTn1VpUb86BVDoDz6lbG/DCJAjrG2CD7PEMPPdF3JbZ1oFfOOeaJPasY75fkKyzNs5TTvGqdl9bfot4JxAG1BfAyKXMde/d+SY9T9EuktTwOnlf6mlypL0FQQNQ8zUi9jLwilqK7FQNGZSQNP478GypSyoIAk8BwS6JIydcIwQCz6plDUrxdb9DTY9zv9rpOxxpNa+SFwziQ71Dy1/5tTFXzN2yuP6eGX9BO915kzBIii7xCQF4jr1DSTuYp+ft3SayWIB1JrjWyHPe8b0n7Eqt2UTqasziHfQmHkI6ainaoNw9MTdeaiqGZ5r6EBy5D5rMXZIYYXCn8zA0xuzI6xJ113Svb7Q6u2sPBseVejX+x+/2r4+Fw7F6NrFEX6T5u8eo8h0A6kveloohwITVVD1TDkBuqYSoNzVTlhqeYakNWdL3JQFbQ07p1lWi7DHRt4I9a+e8hW9gbkyoFye7/0auRbRFxyAXjS7Jz+F45fN9sUgNToNaAkE3yxaezQ7YI+RdXXUOb6wQAAA=="
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
-        },
-        {
-          "_id": "62fe272e0cf239777c7fb7e9",
-          "uuid": "e5542feaa42046ac94194e4d296aa8ce",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660823342387,
-          "end": 1661017742387,
-          "item_name": "Enchanted Book",
-          "item_lore": [
-            "§9Blessing VI",
-            "§7§a30%§7 chance to get double",
-            "§7drops when fishing.",
-            "",
-            "§7Use this on an item in an Anvil",
-            "§7to apply it!",
-            "",
-            "§9§lRARE"
-          ],
-          "extra": "Enchanted Book Enchanted Book Blessing",
-          "category": "consumables",
-          "tier": "RARE",
-          "starting_bid": 1750000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAC1QzU7CQBCeAmJpDMSL58XoEaH8CPVWoAajQkLUq9nSod3Ybht2q/IcPkTfow9mHNQ5zcz3Mz8WQAMMYQGAUYGKCIwvA45maS61YUFV87ABNZSbCA5RhcZCBHgb81BR+W3BcSBUFvM9sR7SHZrUNaFZFs40RqWEDNnLHbTLYlwWfNC7pIRtIi43yHTKQtQsSHM/RjgjJNilmWIfEUq2FSoi8RXZnRPyrIgfCcVSybhkQmPCxG/qyncRQ4s45MezLN4T2iaZRTuURbx2154JtSVPEE6p5cnDeI0Bm6bpG1jQ8j71jrta74Sfa1Tm4QnQ9Jazhbt88uav09Xq3oIT/BMmKLWqgun/n0eT6nRxLc9JdTEaDXy73xt3uDPAztDm246/HTmdIdoOYu960rP7JjS0SFBpnmTQmnTtUbffZ5Obgc3cR4AK1Oc84SEe/v0DtWJ9l54BAAA="
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
-        },
-        {
-          "_id": "62fe2d210cf239777c80692e",
-          "uuid": "5a65d2acec884008b7425810c3c4bd30",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660824865904,
-          "end": 1662207265904,
-          "item_name": "Zombie Soldier Boots",
-          "item_lore": [
-            "§7Gear Score: §d94 §8(294)",
-            "§7Health: §a+17 §8(+55.25)",
-            "§7Defense: §a+36 §8(+117)",
-            "",
-            "§6Full Set Bonus: §cShoal",
-            "§7Gain §a+30❈ Defense §7for each",
-            "§7§cZombie Soldier Set §7within",
-            "§7§a30 §7blocks.",
-            "",
-            "§7§8This item can be reforged!",
-            "§aPerfect 52500 / 52500",
-            "§5§lEPIC DUNGEON BOOTS"
-          ],
-          "extra": "Zombie Soldier Boots Leather Boots",
-          "category": "armor",
-          "tier": "EPIC",
-          "starting_bid": 20000000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAF2RzW7TQBSFr5MWEgsJJCqBBEgDAomocuP/n+5I47aR2jjCZdNNNbGv4xG2p7LHAlZseQnWeY88Ac/AgyDGDis2M5rznXPuaEYFGIPCVABQBjBgqaIpcHjG20ooKgwF3QxhfMlSPC/oppGuPyo8TFlzX9BvYzi44jWOpPoIXu223gXSmsSJ1E7JbpsGtlz992ZgT3p8ibQQeYfoseH17NhxTkxnAi8lnmOGVYN7brl7bhjeRPa/2G3d87YoSIyCzHjVNp0tiXNOC3jXjaas2gf13z9/kH9dUvEyXhOkSQ5v5EFmbnm5ZkhiXqQM675Qgi9M5KyCp72HWnqnrQuefG5O5HjSy/5NzhrCBJYkoRVZI6lRtm8wfQ3PZWqFdYaJII7p6DqZ7veOOLttEa4WZ2T+aXkRRksyi6KbeAiHCS94Db++wwgOlrREeCbN/11wxrloQIXH4VdR0w9C1GzdCmxG3W/B0W10PVuEd3F0NV+EH+/6ZtnWthK+dQNbN60g0zI0fc3ObFcLXF/XrE50A8fTfXMEY8FKbAQt7+GJPTWtqWkSwzw1XLK6BhjAgzkt6QblO8BfXz09+i8CAAA="
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
-        },
-        {
-          "_id": "62fe2fe40cf239777c80aec1",
-          "uuid": "e8132d87482b423cbeb99f9f4543d9cc",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660825572906,
-          "end": 1661019972906,
-          "item_name": "◆ Tidal Rune I",
-          "item_lore": [
-            "§8Requires level 20",
-            "§8Boots",
-            "",
-            "§7Obtained from Phantom Fisher",
-            "§7during Spooky Festival.",
-            "",
-            "§7Apply this rune to boots or fuse",
-            "§7two together at the Runic",
-            "§7Pedestal!",
-            "",
-            "§6§lLEGENDARY COSMETIC"
-          ],
-          "extra": "◆ Tidal Rune I Skull Item",
-          "category": "misc",
-          "tier": "LEGENDARY",
-          "starting_bid": 1250000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAD1SS3LaQBBtsEkESVU2WTipVGVSyZaUAAH2EvOzXEjCID7SbsSMYMRIItLItjhAdlnnCFwgJ+AoOUgqoyzSm67u9/pV/2oAVSixGgCUylBmpPSjBJV+nEWiVIMLgbdVuKTRZgeFXUD1jhE64nibyvBPDWrzfca59RTRRIGyTuDLTaup+d12u95SSafeavrNunfdbNSpqnqq1vG1jqfKumkSH2giGE2roAj6LLKEpv/aUKCyxDyj8Ivm96q73qlkfc83ud6RsT1XuaUHh64eLXOvr3f0UOJ3t0eLXT+S8VIjd8vcXRuZt+KZuzJzZ+Wqk7DNSf/mv9bk6LTNYPNsDB5aztHdueOF5tg8MMcPTcdeaMbqPjACd28EW1XGqrNaHI1woZkr42iOTW4GfG8NRqFl6y3L5swNzNAJdeavGzdyghq8JCw9cJzL3U3ihCoy+Qrenk/XM/otY3JQxOkj5aipgiKzt3Esin1+PJ+6licwiyhBfhKHaLrDkZB+xNIdTeC9JJAsYdEWzQ9xvM/RiKaCPWL+VZZ/lmjvcOA5EjuWoiSLKBIx8gp1FCfIz1IKHyRJPMUS2FIhNREWkk7RLIvYBl5LdEqJFMX8k5S8Op865xOfDMdDc9CbOahvzY2hrfcVuDRxSOHd+dT4/fM7kk7ybEYwL6Qo0uUa3gyfRYJ7QiTMy0Rx3krRVHoBFVsf9CbFtUEpvg4uZwtzCFCGFwMc4i2VrwZ/AYpsx66cAgAA"
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
-        },
-        {
-          "_id": "62fe3a0a0cf239777c819709",
-          "uuid": "60bac6bf93204b5bbfd7a523490390f6",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660828170855,
-          "end": 1661173770855,
-          "item_name": "Titanium-Infused Fuel Tank",
-          "item_lore": [
-            "§8Drill Part",
-            "",
-            "§7Part Type: §6Fuel Tank",
-            "",
-            "§7Stored Fuel: §215,166",
-            "",
-            "§7Can be applied to Drills by",
-            "§7talking to a §2Drill Mechanic§7!",
-            "",
-            "§9§lRARE"
-          ],
-          "extra": "Titanium-Infused Fuel Tank Skull Item",
-          "category": "misc",
-          "tier": "RARE",
-          "starting_bid": 21750000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAFVT246TQBiebne1bWKM3mmiwUTvbEJbe0CjCT3TLWC7HAo3zQCzdNqBNjAspe/gO3jX9+iDGQd2L/SKP9/h/76ZCTUAqqCEawCA0hW4wl7pVwncDPZJSEs1UKbQL4PqFHtoTKAfM9WfGqjd7RJC1DREUQVcSR74iGCr3eW7nboL3W69BXtOvdcQhPq94AjIQW6zK/SY72e0P6CIYhRXQYWiI00iFBfRFXBjQJKg0m+U7n1pMOOh2SBua7lxViKWhntf1qyjPLROylZvyic/VbL0VhqI2J3OHuyAxLZOdhIWO8yL5cmCt7bSFyuQj/bQ5dWh37ZMK7U1v6lsx1vb1NtKMN5YWIoHWPSlsJ85TfvgTAzVYrlPexRotonepAeHCA9u4OK5WHQ7QdNLrNWy4QbGnb0aN+BqRuyB5Ku4z7uhQZ50vL3a8B7j3KzgukUW66zzdKbh/7Bcz/alxVmlgPmmYmeeCf/saNO8j9WabexwkTiBwc9bS4KmeQ/9wTKNQDHZ2bajkzKxN6qmZ/lsB8tAnkgndbhrs/tLraZ8VCcGtk59pnGP8mnRsrVFw9LYXZlKoGrGRplIqbWVj1Ym3Rbdpjz79oVByH9nr1UDzz0cHwjMquB6vo9QpQBfXM69YYQJ4X7CiDLo7eXczUdOyw7oK3c5d8YJIpwGwx1j3zD2jjK3x+Vwzjcb7c+NToeR7xk5gCHnIA4eDgQzEd1zxfaYczLwifEUkh0O/ZyAufkxW0buBobYZYIPea3LWbicyVJcjirgWoEBAu8YpGHKRElQl8L7JH6q8NisBl6OjjSCIqURdhKK4jJ4FRdF114esb5nWgC+/ajk/wt4rUmaqEi6vB7ro/mazbcAXIFnQxhAH4EyAH8BS1h1O2QDAAA="
-          },
-          "claimed": false,
-          "claimed_bidders": [],
-          "bin": true,
-          "highest_bid_amount": 0,
-          "bids": []
-        }
-      ],
-      "auction": []
-    },
-    "ended": {
-      "bin": [
-        {
-          "_id": "62fe35d00cf239777c813831",
-          "uuid": "626e0848cef04929bb6bd04ea34048ea",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660827088550,
-          "end": 1660832475193,
-          "item_name": "Implosion Belt",
-          "item_lore": [
-            "§7Defense: §a+70",
-            "",
-            "§bArachno Resistance I",
-            "§7Grants §a+1.5❈ Defense §7against",
-            "§7§a§aspiders§7.",
-            "§bBreeze I",
-            "§7When you haven't been damaged in",
-            "§7the last §a5s §7or more, your",
-            "§7mana costs are decreased by",
-            "§7§a1%§7.",
-            "",
-            "§6Ability: Consolidated",
-            "§7§7Increases all explosion damage",
-            "§7dealt by §a25%§7.",
-            "",
-            "§7§8This item can be reforged!",
-            "§5§lEPIC BELT"
-          ],
-          "extra": "Implosion Belt Skull Item",
-          "category": "misc",
-          "tier": "EPIC",
-          "starting_bid": 2500000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAF1Uy47iRhQtmpkJkCitGUVJVlElmWgWCTN+YAy9M9DtLoKhG8zD3ozKdoELyjayi6bhC7LJJ2TNf/ApUb4jShm6R0kkW3adOvfcc+91uQJAGRRoBQBQuAAXNCj8XgAv28km5oUKKHK8KILyLQ3IDcOLTLD+roDKaLVhbLCNSVoCFygAb33clOsNfV6d+7pUVZVmreqpGFebDdnzFExktRaIuLs0WZOUU5KVQYmTR75JSXZKXQIvJ5htSOEvsk0WqN2V8FRmvjoMvZlBUSdZWLYjWXtnay2RNrANxRptf0Vtg/q33Qc3Ypk7ZitEjTpqI8m1ra27HG9dO6DOdCxZirN3pu7Kiq7Vfme8c5QJdW2kOTuUtamxQHFr5ynu2jMnA0fkPet054HZ5M5s+EBYg/aMk689ngYbgcl+NBm5sxsZz7rMbaPFgLYkP56wJ57kzkIpEHv+7rSnn/IIv2OJd236HyznC73tqU4Uibhbo97bNf+loXE81ZijdkM3vt940UTqqUNGbnMf4wd3eSNqQ1tr767cjqP0zS4d2K3lYHov9Tv9pWWvtIHp0r6NFGu/qjlT0SNzuHKnSB1MUa3fMR6d5bXiLFnYN+8fLbMbWs+9Ofvj7mwYuuaN5Iz+713ckfzgmpPsqW97z2QcLZKn/VbzzD0/5/frpph4BXwW0GzN8K4MXvSSlJQE+Bq8OR70DpmTOCNX8HjAP+uSwL85HjwjxX4YJ3BIMppxHPsEIvBO0M0Uxzw7keX32p9//AafBASk4wWmccbBV+JdMMSVrcXHnGZi/R58LnRbKSH7XOtHAU1DEsNdsoEhfiDxOw49IoAAR3hBAkhj8IMg8ZBAhjOep9TyxHqSwkiU8EsemoLvBBLhGEM/yYQxnBIYED8lOBMa3g58cfYi/3TyAMC3x0Pd8CijfHcF20mcJYwGmBNxrk5MHcXnaKHFGCSPa5ZkNHn2Bb4WlIBgJtzuck+K9qwMT/ENO6QZpJxE0MexKAmmZJ6koqLvweXxoB0P7PoOtWHrumeXwIs+jgh4LXAUPSdqEcbFxC6vH3mKDc5T6m14fnIr+NOiCF55p1bmx7kI3uDzvD6mn+aVb4BS/o8BXyLrrjcYoUH/41PWzUbAb3XsBU1PVquBpuJqzVflKp5LtWp9TiSloWq+5NdLoMxpRIRmtAaX+ge59kFRoHKl6tCwALgArzrnvhQB+Aco6/s63gQAAA=="
-          },
-          "claimed": false,
-          "claimed_bidders": ["91d14350414f43cc91d27dbce284dd03"],
-          "bin": true,
-          "highest_bid_amount": 2500000,
-          "bids": [
-            {
-              "auction_id": "626e0848cef04929bb6bd04ea34048ea",
-              "bidder": "91d14350414f43cc91d27dbce284dd03",
-              "profile_id": "91b8d65d48d147c984a4f738c10695a9",
-              "amount": 2500000,
-              "timestamp": 1660832478310
-            }
-          ]
-        },
-        {
-          "_id": "62fe42fa0cf239777c824f4d",
-          "uuid": "ff9777936be0469a9301c6880eb0be86",
-          "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-          "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-          "coop": ["a40eb1c449ac4b099426cb80384ac7e9"],
-          "start": 1660830458533,
-          "end": 1660830861151,
-          "item_name": "Heroic Spirit Sceptre ✪✪✪✪✪",
-          "item_lore": [
-            "§7Gear Score: §d682 §8(2029)",
-            "§7Damage: §c+218 §e(+20) §8(+750)",
-            "§7Strength: §c+60 §e(+20) §9(+40) §8(+225)",
-            "§7Crit Damage: §c+50% §8(+187.5%)",
-            "§7Bonus Attack Speed: §c+5% §9(+5%) §8(+7.5%)",
-            "§7Intelligence: §a+430 §9(+100) §8(+1,500)",
-            " §8[§8✎§8]",
-            "",
-            "§d§l§d§lUltimate Wise V§9, §9Critical V§9, §9Cubism V",
-            "§9Ender Slayer V§9, §9Execute V§9, §9Experience III",
-            "§9First Strike IV§9, §9Giant Killer V§9, §9Impaling III",
-            "§9Lethality V§9, §9Life Steal III§9, §9Looting III",
-            "§9Luck V§9, §9Scavenger III§9, §9Sharpness V",
-            "§9Vampirism V",
-            "",
-            "§6Ability: Guided Bat §e§lRIGHT CLICK",
-            "§7Shoots a guided spirit bat,",
-            "§7following your aim and exploding",
-            "§7for §c7,047 §7damage.",
-            "§8Mana Cost: §3125",
-            "",
-            "§6§lLEGENDARY DUNGEON SWORD"
-          ],
-          "extra": "Heroic Spirit Sceptre ✪✪✪✪✪ Red Rose Impaling Luck Critical Looting Ender Slayer Scavenger Vampirism Experience Life Steal Execute Giant Killer First Strike §d§lUltimate Wise Sharpness Cubism Lethality",
-          "category": "weapon",
-          "tier": "LEGENDARY",
-          "starting_bid": 17800000,
-          "item_bytes": {
-            "type": 0,
-            "data": "H4sIAAAAAAAAAHVU3W4aRxQ+GMcGmiZV1faiUtuRGldG+IddWJZY7QUGjFEIjoDYqqJoNewOy8izP9qddeyX6BPk3lIfw4+SB6l6ZgcoN0ViZs833zlz5sx3pgJQhgKvAEBhB3a4B78V4Fk3ykJZqEBRUr8Muyx0l6B+RShfco9dCOqnaP5TgX2Pp7GgD8gaRQkrIfoD/PL0aA8YTcjUReyMPD16rbaJU/vQrJuvq3CAhB4NqJ8vujXTaOPMDmtmvZrTarZVr8Ip0qYyYaEvl5rYqm/zXh/WmmsH07Sq8AodugmXZDu4VT/QFKNtn1gHVTCQdR6FWUo6UlL3lkxjxrwV+UDHRd4qkdzlBF2GoWRCcB+rkUemtWajrtlGfZ2GcWThN7xU1gf8f/n8F44fsSx/YBWeHoUe3wvJAyoZueEpI9cY5EhFUrlzl4otJJvzNCDX0EajH3oMi4rlxmlD6d8zN5NsG4hZwlWaZDgcwu8IXfAklQRryW8R3DAHnIaSvOFCbAccBjEVPPRzbxuBEZNLROTDf5wRXzCMxzBXZG3QKJJrR0PZGVZ34zN16R3eJW615TJd0iQOWZriGV+gfU2DmCf6zACHT4+tzpyrvc/IIEPteeScSiUCrOJkOLicke5o2H0DPyutLHH/lFDia2aqIkkyp/IIfsX1RSRE9Ekl+BBlCaE8IDT0CLuPReQhDD/mpEQpwT6qN238sL1cSifwHd7jWxpS0o1Sqe6/YZgWpvgTpoi5jPqD/rjXmfxJeu/Hg/7VmExvria9EuyOacBUGVuXLIm4i2rLs5q6LEZtY6DWl89//98IFXjZv5cJRakmfI73nBbhm2UknTiSVEaOq1oV06iUoBTgKRacJbC3zLcqwrdehgWPQodLFjiC3TGh2rgIX2exn1CPbbBnJShHCfd5OKM+fN+ddC5mw/HAGUyGPad7NRr1u7NS/kCUzjsz56Yz7lXguXoZUEIBCyXmVeIr5eg9dgVevwqNK+5K2drcF1oomodRUNdOmutaE8rpWiua8hW2HrvlqBOuHp4CMu7WQtEeFbZRvXapCJSokyqJamCf6UbR/Oe+0r5zm2t/BS1Ul6CL6hKEdlWZVo3qfMJGXee2lqy299y8R1eLYt0ryga8/gy1CK+shmHVzZZxbDbp4rjZaljH80XLOjYM2241zKZheE28AdyMpRJPBi/MU/vUNIlxhsO7twA7sKdfNfyCfwHhA3vxtwUAAA=="
-          },
-          "claimed": false,
-          "claimed_bidders": ["393c45a50080492b98a5309df1fea69d"],
-          "bin": true,
-          "highest_bid_amount": 17800000,
-          "bids": [
-            {
-              "auction_id": "ff9777936be0469a9301c6880eb0be86",
-              "bidder": "393c45a50080492b98a5309df1fea69d",
-              "profile_id": "695b840aaa5441728179e6e27f1dc26c",
-              "amount": 17800000,
-              "timestamp": 1660830865087
-            }
-          ]
-        }
-      ],
-      "auction": []
-    }
+        "claimed": false,
+        "claimed_bidders": [
+          "393c45a50080492b98a5309df1fea69d"
+        ],
+        "bin": true,
+        "highest_bid_amount": 17800000,
+        "bids": [
+          {
+            "auction_id": "ff9777936be0469a9301c6880eb0be86",
+            "bidder": "393c45a50080492b98a5309df1fea69d",
+            "profile_id": "695b840aaa5441728179e6e27f1dc26c",
+            "amount": 17800000,
+            "timestamp": 1660830865087
+          }
+        ]
+      }
+    ]
   }
 }
