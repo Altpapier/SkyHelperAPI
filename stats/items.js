@@ -1,4 +1,4 @@
-const { decodeData, decodeArrayBuffer } = require('../utils/nbt');
+const { decodeData } = require('../utils/nbt');
 const { toTimestamp } = require('../constants/maro_networth/src/helper');
 const { toFixed } = require('../constants/functions');
 
