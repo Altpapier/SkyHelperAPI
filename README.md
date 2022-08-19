@@ -43,16 +43,27 @@ The API automatically updates upon starting. If you wish to not want that, chang
 
 ### `GET` /v1/items/:user/:profile
 
+### `GET` /v1/auctionhouse/:name/:lore/:rarity/:category/:bin/:lowest_price/:highest_price
+
+### `GET` /v1/auctions/:user
+
 ### `GET` /v1/bingo/:user
 
 ### `GET` /v1/calendar
 
 ### `GET` /v1/fetchur
 
-| Parameter | Description                                |
-| --------- | ------------------------------------------ |
-| user      | This can be the UUID of a user or the name |
-| profile   | This can be the users profile id or name   |
+| Parameter     | Description                                   |
+| ------------- | --------------------------------------------- |
+| user          | This can be the UUID of a user or the name    |
+| profile       | This can be the users profile id or name      |
+| name          | Name of the desired item                      |
+| lore          | Lore of the desired item                      |
+| rarity        | Rarity of the desired item                    |
+| category      | Category of the desired item                  |
+| bin           | Should the auction be BIN or Auction, boolean |
+| lowest_price  | Lowest price of the desired item              |
+| highest_price | Highest price of the desired item             |
 
 # Features:
 
@@ -91,7 +102,9 @@ The API automatically updates upon starting. If you wish to not want that, chang
 | inventory      | Get player's inventory                                                  | items                  |
 | candy bag      | Get player's candy bag                                                  | items                  |
 | items          | Check what item fetchur wants today                                     | fetchur                |
-| bingo          | Get a player's bingo profile and progress                               | fetchur                |
+| auctions       | Get a player's active and ended auctions and information about them     | auctions               |
+| auction house  | Get currently active auctions                                           | auctionhouse           |
+| bingo          | Get a player's bingo profile and progress                               | bingo                  |
 | mayor          | Information about current mayor and ongoing election                    | mayor                  |
 | calendar       | Get Skyblock's calendar including all events                            | calendar               |
 
