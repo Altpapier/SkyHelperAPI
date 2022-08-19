@@ -110,6 +110,7 @@
       <h3 id="get-v1profilesuseritems"><code>GET</code> /v1/items/:user</h3>
       <h3 id="get-v1profileuserprofileitems"><code>GET</code> /v1/items/:user/:profile</h3>
       <h3 id="get-v1auctions"><code>GET</code> /v1/auctions/:user</h3>
+      <h3 id="get-v1auctionhouse"><code>GET</code> /v1/auctionhouse/:name/:lore/:rarity/:category/:bin/:lowest_price/:highest_price</h3>
       <h3 id="get-v1bingo"><code>GET</code> /v1/bingo/:user</h3>
       <h3 id="get-v1mayor"><code>GET</code> /v1/mayor</h3>
       <h3 id="get-v1calendar"><code>GET</code> /v1/calendar</h3>
@@ -130,6 +131,34 @@
           <tr>
             <td>profile</td>
             <td>This can be the users profile id or name</td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>Name of the desired item</td>
+          </tr>
+          <tr>
+            <td>lore</td>
+            <td>Lore of the desired item  </td>
+          </tr>
+          <tr>
+            <td>rarity</td>
+            <td>Rarity of the desired item</td>
+          </tr>
+          <tr>
+            <td>category</td>
+            <td>Category of the desired item  </td>
+          </tr>
+          <tr>
+            <td>bin</td>
+            <td>Should the auction be BIN or Auction, boolean</td>
+          </tr>
+          <tr>
+            <td>lowest_price</td>
+            <td>Lowest price of the desired item</td>
+          </tr>
+          <tr>
+            <td>highest_price</td>
+            <td>Highest price of the desired item </td>
           </tr>
         </tbody>
       </table>
@@ -317,6 +346,11 @@
             <td>auctions</td>
             <td>Get a player's active and ended auctions and information about them</td>
             <td>auctions</td>
+          </tr>
+          <tr>
+            <td>auctionhouse</td>
+            <td>Get currently active auctions</td>
+            <td>auctionhouse</td>
           </tr>
           <tr>
             <td>bingo</td>
