@@ -280,6 +280,9 @@ module.exports = {
         PULSE_RING: { name: 'Pulse Ring', rarity: 'uncommon' },
         BLAZE_TALISMAN: { name: 'Blaze Talisman', rarity: 'rare' },
         NETHERRACK_LOOKING_SUNSHADE: { name: 'Netherrack-Looking Sunshade', rarity: 'common' },
+        ARTIFACT_OF_CONTROL: { name: 'Artifact of Control', rarity: 'legendary' },
+        PANDORAS_BOX: { name: "Pandora's Box", rarity: 'common' },
+        SHENS_REGALIA: { name: "Shen's Regalia", rarity: 'legendary' },
     },
     max_upgrade_talismans: {
         WEDDING_RING_9: { name: 'Legendary Ring of Love', rarity: 'legendary' },
@@ -367,5 +370,8 @@ module.exports = {
         PULSE_RING: { name: 'Pulse Ring', rarity: 'uncommon' },
         BLAZE_TALISMAN: { name: 'Blaze Talisman', rarity: 'rare' },
         NETHERRACK_LOOKING_SUNSHADE: { name: 'Netherrack-Looking Sunshade', rarity: 'common' },
+        ARTIFACT_OF_CONTROL: { name: 'Artifact of Control', rarity: 'legendary' },
+        PANDORAS_BOX: { name: "Pandora's Box", rarity: 'common' },
+        SHENS_REGALIA: { name: "Shen's Regalia", rarity: 'legendary' },
     },
 };
