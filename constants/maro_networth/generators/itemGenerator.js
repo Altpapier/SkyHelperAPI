@@ -6,15 +6,6 @@ const helper = require('../src/helper');
 const utils = require('util');
 const parseNbt = utils.promisify(nbt.parse);
 
-const ESSENCE_PRICES = {
-    WITHER: 4000,
-    UNDEAD: 1250,
-    GOLD: 3000,
-    DIAMOND: 3000,
-    DRAGON: 2000,
-    ICE: 2000,
-};
-
 const getBackpackContents = async function (arraybuf) {
     const buf = Buffer.from(arraybuf);
     const data = nbt.simplify(await parseNbt(buf));
@@ -104,8 +95,12 @@ const parseItems = async function (base64, db) {
                             for (const u of foundItem.upgrade_costs) {
                                 for (const upgrade of u || []) {
                                     if (upgrade?.essence_type) {
-                                        price += (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55;
-                                        calculation.push({ type: upgrade?.essence_type + ' Essence', value: (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55, count: upgrade?.amount });
+                                        price += (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75;
+                                        calculation.push({
+                                            type: upgrade?.essence_type + ' Essence',
+                                            value: (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75,
+                                            count: upgrade?.amount,
+                                        });
                                     }
                                 }
                             }
@@ -113,10 +108,10 @@ const parseItems = async function (base64, db) {
                         if (foundItem?.prestige) {
                             for (const prestigeCost of foundItem.prestige.costs || []) {
                                 if (prestigeCost.essence_type) {
-                                    price += (prestigeCost.amount || 0) * (ESSENCE_PRICES[prestigeCost.essence_type] || 0) * 0.55;
+                                    price += (prestigeCost.amount || 0) * (db[`essence_${prestigeCost?.essence_type.toLowerCase()}`]?.price || 0) * 0.75;
                                     calculation.push({
                                         type: prestigeCost.essence_type + ' Essence',
-                                        value: (prestigeCost.amount || 0) * (ESSENCE_PRICES[prestigeCost.essence_type] || 0) * 0.55,
+                                        value: (prestigeCost.amount || 0) * (db[`essence_${prestigeCost?.essence_type.toLowerCase()}`]?.price || 0) * 0.75,
                                         count: prestigeCost.amount,
                                     });
                                 }
@@ -148,7 +143,7 @@ const parseItems = async function (base64, db) {
                 if (enchants.length == 1) {
                     const value = ExtraAttributes.enchantments[enchants[0]];
 
-                    price = db[`${enchants[0]}_${value}`]?.price ?? 0;
+                    price = db[`enchantment_${enchants[0]}_${value}`]?.price ?? 0;
                     if (enchants[0] === 'aiming') enchants[0] = 'dragon tracer';
                     itemName = helper.capitalize(`${enchants[0]} ${value}`);
                     calculation.push({ type: 'Enchantment Book', value: price });
@@ -157,23 +152,37 @@ const parseItems = async function (base64, db) {
 
             if (ExtraAttributes.enchantments && itemId != 'enchanted_book') {
                 for (const enchant of Object.entries(ExtraAttributes.enchantments)) {
-                    if (constants.blocked_enchants[itemId]?.includes(enchant[0])) continue;
+                    if (enchant[0] === 'efficiency' && enchant[1] > 5) {
+                        price += (db[`sil_ex`]?.price ?? 0) * (enchant[1] - (itemId === 'stonk_pickaxe' ? 6 : 5)) * 0.7;
+                        calculation.push({ type: 'Silex', value: (db[`sil_ex`]?.price ?? 0) * (enchant[1] - 5) * 0.7, count: enchant[1] - 5 });
+                    }
 
-                    if (constants.allowed_enchants.includes(enchant[0]) || (Object.keys(constants.allowed_enchant_tiers).includes(enchant[0]) && constants.allowed_enchant_tiers[enchant[0]].includes(enchant[1]))) {
-                        if (enchant[0] === 'efficiency' && enchant[1] > 5 && itemId != 'stonk_pickaxe') {
-                            price += (db[`sil_ex`]?.price ?? 0) * (enchant[1] - 5) * 0.7;
-                            calculation.push({
-                                type: 'Silex',
-                                value: (db[`sil_ex`]?.price ?? 0) * (enchant[1] - 5) * 0.7,
-                                count: enchant[1] - 5,
-                            });
-                        }
-
-                        const enchantmentWorth = (db[`${enchant[0]}_${enchant[1]}`]?.price ?? 0) * (constants.specialPercentages[enchant[0]] || 0.85);
+                    const enchantmentWorth = (db[`enchantment_${enchant[0]}_${enchant[1]}`]?.price ?? 0) * (constants.specialPercentages[enchant[0]] || 0.85);
+                    if (enchantmentWorth) {
                         price += enchantmentWorth;
                         calculation.push({ type: `${enchant[0]}_${enchant[1]}`, value: enchantmentWorth });
                     }
                 }
+            }
+
+            //WOOD SINGULARITY
+            if (ExtraAttributes.wood_singularity_count) {
+                price += (db[`wood_singularity`]?.price ?? 0) * ExtraAttributes.wood_singularity_count * 0.5;
+                calculation.push({ type: 'Wood Singularity', value: (db[`wood_singularity`]?.price ?? 0) * ExtraAttributes.wood_singularity_count * 0.5, count: ExtraAttributes.wood_singularity_count });
+            }
+
+            //TUNED TRANSMISSION
+            if (ExtraAttributes.tuned_transmission) {
+                price += (db[`transmission_tuner`]?.price ?? 0) * ExtraAttributes.tuned_transmission * 0.7;
+                calculation.push({ type: 'Tuned Transmission', value: (db[`transmission_tuner`]?.price ?? 0) * ExtraAttributes.tuned_transmission * 0.7, count: ExtraAttributes.tuned_transmission });
+            }
+
+            //ABILITY SCROLLS
+            if (ExtraAttributes.ability_scroll) {
+                ExtraAttributes.ability_scroll.forEach((scroll) => {
+                    price += (db[scroll.toLowerCase()]?.price ?? 0) * 0.6;
+                    calculation.push({ type: `Scroll ${scroll}`, value: (db[scroll.toLowerCase()]?.price ?? 0) * 0.6 });
+                });
             }
 
             //HOT POTATO BOOKS
@@ -306,8 +315,12 @@ const parseItems = async function (base64, db) {
                     for (let i = 0; i < ExtraAttributes.dungeon_item_level && i <= 5; i++) {
                         for (const upgrade of essence[i] || []) {
                             if (upgrade?.essence_type) {
-                                price += (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55;
-                                calculation.push({ type: `${upgrade?.essence_type} Essence`, value: (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55, count: upgrade?.amount });
+                                price += (upgrade?.amount || 0) * (db[`essence_${upgrade.essence_type.toLowerCase()}`]?.price || 0) * 0.75;
+                                calculation.push({
+                                    type: `${upgrade?.essence_type} Essence`,
+                                    value: (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75,
+                                    count: upgrade?.amount,
+                                });
                             }
                         }
                     }
@@ -320,8 +333,8 @@ const parseItems = async function (base64, db) {
                 for (let i = 0; i < ExtraAttributes.upgrade_level; i++) {
                     for (const upgrade of itemUpgrades[i] || []) {
                         if (upgrade?.essence_type) {
-                            price += (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55;
-                            calculation.push({ type: upgrade?.essence_type + ' Essence', value: (upgrade?.amount || 0) * (ESSENCE_PRICES[upgrade?.essence_type] || 0) * 0.55, count: upgrade?.amount });
+                            price += (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`] || 0) * 0.75;
+                            calculation.push({ type: upgrade?.essence_type + ' Essence', value: (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`] || 0) * 0.75, count: upgrade?.amount });
                         }
                     }
                 }
