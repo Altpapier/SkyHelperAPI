@@ -157,7 +157,8 @@ const parseItems = async function (base64, db) {
                     }
 
                     const enchantmentWorth = (db[`enchantment_${enchant[0]}_${enchant[1]}`]?.price ?? 0) * (constants.specialPercentages[enchant[0]] || 0.85);
-                    if (enchantmentWorth && enchant[0] === 'scavenger' && enchant[1] === 5) {
+                    const isScav5 = enchant[0] === 'scavenger' && enchant[1] == 5;
+                    if (enchantmentWorth && !isScav5) {
                         price += enchantmentWorth;
                         calculation.push({ type: `${enchant[0]}_${enchant[1]}`, value: enchantmentWorth });
                     }
