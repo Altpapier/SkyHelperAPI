@@ -231,6 +231,7 @@ const parseItems = async function (base64, db) {
                 });
             }
 
+            //TALISMAN ENRICHMENT
             if (ExtraAttributes.talisman_enrichment) {
                 price += (db['talisman_enrichment_' + ExtraAttributes?.talisman_enrichment.toLowerCase()]?.price || 0) * 0.75;
                 calculation.push({
@@ -324,8 +325,12 @@ const parseItems = async function (base64, db) {
                 for (let i = 0; i < ExtraAttributes.upgrade_level; i++) {
                     for (const upgrade of itemUpgrades[i] || []) {
                         if (upgrade?.essence_type) {
-                            price += (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`] || 0) * 0.75;
-                            calculation.push({ type: upgrade?.essence_type + ' Essence', value: (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`] || 0) * 0.75, count: upgrade?.amount });
+                            price += (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75;
+                            calculation.push({
+                                type: upgrade?.essence_type + ' Essence',
+                                value: (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75,
+                                count: upgrade?.amount,
+                            });
                         }
                     }
                 }
