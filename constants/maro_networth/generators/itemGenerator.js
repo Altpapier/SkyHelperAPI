@@ -76,7 +76,6 @@ const parseItems = async function (base64, db) {
                 }
             }
 
-            ESSENCE_PRICES['CRIMSON'] = db['crimson_essence']?.price;
             const data = db[itemId]?.price;
             const ExtraAttributes = item.tag.ExtraAttributes;
             let price = data * item.Count;
@@ -175,14 +174,6 @@ const parseItems = async function (base64, db) {
             if (ExtraAttributes.tuned_transmission) {
                 price += (db[`transmission_tuner`]?.price ?? 0) * ExtraAttributes.tuned_transmission * 0.7;
                 calculation.push({ type: 'Tuned Transmission', value: (db[`transmission_tuner`]?.price ?? 0) * ExtraAttributes.tuned_transmission * 0.7, count: ExtraAttributes.tuned_transmission });
-            }
-
-            //ABILITY SCROLLS
-            if (ExtraAttributes.ability_scroll) {
-                ExtraAttributes.ability_scroll.forEach((scroll) => {
-                    price += (db[scroll.toLowerCase()]?.price ?? 0) * 0.6;
-                    calculation.push({ type: `Scroll ${scroll}`, value: (db[scroll.toLowerCase()]?.price ?? 0) * 0.6 });
-                });
             }
 
             //HOT POTATO BOOKS
