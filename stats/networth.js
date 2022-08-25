@@ -27,8 +27,10 @@ module.exports = async (profile, profileData) => {
 
     return {
         total_networth: networth.networth,
+        total_networth_ignore_soulbound: networth.total_ignore_soulbound,
         purse: networth.purse,
         bank: networth.bank,
+        personal_bank: networth.personal_bank,
         types: networth.categories,
     };
 };

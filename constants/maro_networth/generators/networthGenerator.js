@@ -9,18 +9,20 @@ const isItemRecombobulated = function (item) {
 };
 
 const getNetworth = async function (data, profile, bank) {
-    const output = { categories: {} };
+    const output = { categories: {}, total_ignore_soulbound: 0 };
 
     for (const key of Object.keys(data)) {
         const category = { items: [], total: 0 };
 
         for (const item of data[key].filter((i) => i.price)) {
+            if (item?.tag?.ExtraAttributes?.donated_museum == 1) output.total_ignore_soulbound += item.price
             category.total += item.price;
             category.items.push({
                 id: item.modified.id,
                 name: item.modified.name,
                 price: parseInt(item.price),
                 recomb: isItemRecombobulated(item),
+                soulbound: item?.tag?.ExtraAttributes?.donated_museum == 1 ? true : false,
                 heldItem: item.heldItem,
                 winning_bid: item?.tag?.ExtraAttributes?.winning_bid,
                 base: item?.modified?.base,
@@ -63,8 +65,8 @@ const getNetworth = async function (data, profile, bank) {
     output.bank = bank || 0;
     output.personal_bank = (profile.bank_account || 0) !== (bank || 0) ? profile.bank_account || 0 : 0;
     output.purse = profile.coin_purse ?? 0;
-
     output.networth = Object.values(output.categories).reduce((a, b) => a + b.total, 0) + output.bank + output.personal_bank + output.purse;
+    output.total_ignore_soulbound = output.networth - output.total_ignore_soulbound
 
     return output;
 };
