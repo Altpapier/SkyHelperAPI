@@ -86,9 +86,13 @@ const parseItemGems = function (gems) {
     if (slots.ignore.includes(key)) continue;
 
     const slot_type = key.split('_')[0];
-
+    
     if (slots.special.includes(slot_type)) {
-      parsed.push({ type: gems[`${key}_gem`], tier: value });
+      if (key.includes('_gem')) { 
+        parsed.push({ type: gems[`${key}`], tier: gems[`${key.replace('_gem', '')}`] });
+      } else { 
+        parsed.push({ type: gems[`${key}_gem`], tier: value }); 
+      }
     } else if (slots.normal.includes(slot_type)) {
       parsed.push({ type: key.split('_')[0], tier: value });
     }
