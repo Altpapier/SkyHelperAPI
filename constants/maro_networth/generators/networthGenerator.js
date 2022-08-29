@@ -22,7 +22,7 @@ const getNetworth = async function (data, profile, bank) {
                 name: item.modified.name,
                 price: parseInt(item.price),
                 recomb: isItemRecombobulated(item),
-                soulbound: item?.tag?.ExtraAttributes?.donated_museum == 1 ? true : false,
+                soulbound: item?.tag?.ExtraAttributes?.donated_museum ? item?.tag?.ExtraAttributes?.donated_museum === 1 : item?.tag?.ExtraAttributes?.donated_museum,
                 heldItem: item.heldItem,
                 winning_bid: item?.tag?.ExtraAttributes?.winning_bid,
                 base: item?.modified?.base,
