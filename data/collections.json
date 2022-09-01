@@ -135,7 +135,7 @@
     "name": "Raw Chicken",
     "id": "RAW_CHICKEN",
     "category": "FARMING",
-    "maxTiers": 9,
+    "maxTiers": 10,
     "tiers": [
       {
         "tier": 1,
@@ -172,6 +172,10 @@
       {
         "tier": 9,
         "amountRequired": 50000
+      },
+      {
+        "tier": 10,
+        "amountRequired": 100000
       }
     ]
   },
@@ -940,6 +944,54 @@
     ]
   },
   {
+    "name": "Mycelium",
+    "id": "MYCEL",
+    "category": "MINING",
+    "maxTiers": 10,
+    "tiers": [
+      {
+        "tier": 1,
+        "amountRequired": 50
+      },
+      {
+        "tier": 2,
+        "amountRequired": 500
+      },
+      {
+        "tier": 3,
+        "amountRequired": 750
+      },
+      {
+        "tier": 4,
+        "amountRequired": 1000
+      },
+      {
+        "tier": 5,
+        "amountRequired": 2500
+      },
+      {
+        "tier": 6,
+        "amountRequired": 10000
+      },
+      {
+        "tier": 7,
+        "amountRequired": 15000
+      },
+      {
+        "tier": 8,
+        "amountRequired": 25000
+      },
+      {
+        "tier": 9,
+        "amountRequired": 50000
+      },
+      {
+        "tier": 10,
+        "amountRequired": 100000
+      }
+    ]
+  },
+  {
     "name": "End Stone",
     "id": "ENDER_STONE",
     "category": "MINING",
@@ -1319,7 +1371,7 @@
     "name": "Glowstone Dust",
     "id": "GLOWSTONE_DUST",
     "category": "MINING",
-    "maxTiers": 9,
+    "maxTiers": 7,
     "tiers": [
       {
         "tier": 1,
@@ -1331,31 +1383,23 @@
       },
       {
         "tier": 3,
-        "amountRequired": 250
-      },
-      {
-        "tier": 4,
         "amountRequired": 1000
       },
       {
-        "tier": 5,
+        "tier": 4,
         "amountRequired": 2500
       },
       {
-        "tier": 6,
+        "tier": 5,
         "amountRequired": 5000
       },
       {
-        "tier": 7,
+        "tier": 6,
         "amountRequired": 10000
       },
       {
-        "tier": 8,
+        "tier": 7,
         "amountRequired": 25000
-      },
-      {
-        "tier": 9,
-        "amountRequired": 50000
       }
     ]
   },
@@ -1572,6 +1616,46 @@
     ]
   },
   {
+    "name": "Red Sand",
+    "id": "SAND:1",
+    "category": "MINING",
+    "maxTiers": 8,
+    "tiers": [
+      {
+        "tier": 1,
+        "amountRequired": 50
+      },
+      {
+        "tier": 2,
+        "amountRequired": 500
+      },
+      {
+        "tier": 3,
+        "amountRequired": 2500
+      },
+      {
+        "tier": 4,
+        "amountRequired": 10000
+      },
+      {
+        "tier": 5,
+        "amountRequired": 15000
+      },
+      {
+        "tier": 6,
+        "amountRequired": 25000
+      },
+      {
+        "tier": 7,
+        "amountRequired": 50000
+      },
+      {
+        "tier": 8,
+        "amountRequired": 100000
+      }
+    ]
+  },
+  {
     "name": "Ice",
     "id": "ICE",
     "category": "MINING",
@@ -1616,6 +1700,50 @@
       {
         "tier": 10,
         "amountRequired": 250000
+      }
+    ]
+  },
+  {
+    "name": "Sulphur",
+    "id": "SULPHUR_ORE",
+    "category": "MINING",
+    "maxTiers": 9,
+    "tiers": [
+      {
+        "tier": 1,
+        "amountRequired": 200
+      },
+      {
+        "tier": 2,
+        "amountRequired": 1000
+      },
+      {
+        "tier": 3,
+        "amountRequired": 2500
+      },
+      {
+        "tier": 4,
+        "amountRequired": 5000
+      },
+      {
+        "tier": 5,
+        "amountRequired": 10000
+      },
+      {
+        "tier": 6,
+        "amountRequired": 15000
+      },
+      {
+        "tier": 7,
+        "amountRequired": 25000
+      },
+      {
+        "tier": 8,
+        "amountRequired": 50000
+      },
+      {
+        "tier": 9,
+        "amountRequired": 100000
       }
     ]
   },
@@ -1692,6 +1820,50 @@
     ]
   },
   {
+    "name": "Chili Pepper",
+    "id": "CHILI_PEPPER",
+    "category": "COMBAT",
+    "maxTiers": 9,
+    "tiers": [
+      {
+        "tier": 1,
+        "amountRequired": 10
+      },
+      {
+        "tier": 2,
+        "amountRequired": 25
+      },
+      {
+        "tier": 3,
+        "amountRequired": 75
+      },
+      {
+        "tier": 4,
+        "amountRequired": 250
+      },
+      {
+        "tier": 5,
+        "amountRequired": 1000
+      },
+      {
+        "tier": 6,
+        "amountRequired": 2500
+      },
+      {
+        "tier": 7,
+        "amountRequired": 5000
+      },
+      {
+        "tier": 8,
+        "amountRequired": 10000
+      },
+      {
+        "tier": 9,
+        "amountRequired": 20000
+      }
+    ]
+  },
+  {
     "name": "Slimeball",
     "id": "SLIME_BALL",
     "category": "COMBAT",
@@ -1739,7 +1911,7 @@
     "name": "Magma Cream",
     "id": "MAGMA_CREAM",
     "category": "COMBAT",
-    "maxTiers": 9,
+    "maxTiers": 8,
     "tiers": [
       {
         "tier": 1,
@@ -1747,34 +1919,30 @@
       },
       {
         "tier": 2,
-        "amountRequired": 100
-      },
-      {
-        "tier": 3,
         "amountRequired": 250
       },
       {
-        "tier": 4,
+        "tier": 3,
         "amountRequired": 1000
       },
       {
-        "tier": 5,
+        "tier": 4,
         "amountRequired": 2500
       },
       {
-        "tier": 6,
+        "tier": 5,
         "amountRequired": 5000
       },
       {
-        "tier": 7,
+        "tier": 6,
         "amountRequired": 10000
       },
       {
-        "tier": 8,
+        "tier": 7,
         "amountRequired": 25000
       },
       {
-        "tier": 9,
+        "tier": 8,
         "amountRequired": 50000
       }
     ]
@@ -1783,7 +1951,7 @@
     "name": "Ghast Tear",
     "id": "GHAST_TEAR",
     "category": "COMBAT",
-    "maxTiers": 9,
+    "maxTiers": 7,
     "tiers": [
       {
         "tier": 1,
@@ -1791,35 +1959,27 @@
       },
       {
         "tier": 2,
-        "amountRequired": 100
-      },
-      {
-        "tier": 3,
         "amountRequired": 250
       },
       {
-        "tier": 4,
+        "tier": 3,
         "amountRequired": 1000
       },
       {
-        "tier": 5,
+        "tier": 4,
         "amountRequired": 2500
       },
       {
-        "tier": 6,
+        "tier": 5,
         "amountRequired": 5000
       },
       {
-        "tier": 7,
+        "tier": 6,
         "amountRequired": 10000
       },
       {
-        "tier": 8,
+        "tier": 7,
         "amountRequired": 25000
-      },
-      {
-        "tier": 9,
-        "amountRequired": 50000
       }
     ]
   },
@@ -2011,7 +2171,7 @@
     "name": "Blaze Rod",
     "id": "BLAZE_ROD",
     "category": "COMBAT",
-    "maxTiers": 9,
+    "maxTiers": 8,
     "tiers": [
       {
         "tier": 1,
@@ -2019,34 +2179,30 @@
       },
       {
         "tier": 2,
-        "amountRequired": 100
-      },
-      {
-        "tier": 3,
         "amountRequired": 250
       },
       {
-        "tier": 4,
+        "tier": 3,
         "amountRequired": 1000
       },
       {
-        "tier": 5,
+        "tier": 4,
         "amountRequired": 2500
       },
       {
-        "tier": 6,
+        "tier": 5,
         "amountRequired": 5000
       },
       {
-        "tier": 7,
+        "tier": 6,
         "amountRequired": 10000
       },
       {
-        "tier": 8,
+        "tier": 7,
         "amountRequired": 25000
       },
       {
-        "tier": 9,
+        "tier": 8,
         "amountRequired": 50000
       }
     ]
@@ -2440,7 +2596,7 @@
     ]
   },
   {
-    "name": "Ink Sack",
+    "name": "Ink Sac",
     "id": "INK_SACK",
     "category": "FISHING",
     "maxTiers": 9,
@@ -2660,6 +2816,62 @@
       {
         "tier": 9,
         "amountRequired": 10000
+      }
+    ]
+  },
+  {
+    "name": "Magmafish",
+    "id": "MAGMA_FISH",
+    "category": "FISHING",
+    "maxTiers": 12,
+    "tiers": [
+      {
+        "tier": 1,
+        "amountRequired": 20
+      },
+      {
+        "tier": 2,
+        "amountRequired": 100
+      },
+      {
+        "tier": 3,
+        "amountRequired": 500
+      },
+      {
+        "tier": 4,
+        "amountRequired": 1000
+      },
+      {
+        "tier": 5,
+        "amountRequired": 5000
+      },
+      {
+        "tier": 6,
+        "amountRequired": 15000
+      },
+      {
+        "tier": 7,
+        "amountRequired": 30000
+      },
+      {
+        "tier": 8,
+        "amountRequired": 50000
+      },
+      {
+        "tier": 9,
+        "amountRequired": 75000
+      },
+      {
+        "tier": 10,
+        "amountRequired": 100000
+      },
+      {
+        "tier": 11,
+        "amountRequired": 250000
+      },
+      {
+        "tier": 12,
+        "amountRequired": 500000
       }
     ]
   },

@@ -2471,7 +2471,7 @@ class Dolphin extends Pet {
   }
 
   get first() {
-    const mult = getValue(this.rarity, { common: 0.07, uncommon: 0.08, epic: 0.009 });
+    const mult = getValue(this.rarity, { common: 0.07, uncommon: 0.08, epic: 0.09 });
     return {
       name: "§6Pod Tactics",
       desc: [
