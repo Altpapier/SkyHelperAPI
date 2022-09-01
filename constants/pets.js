@@ -537,10 +537,7 @@ class Endermite extends Pet {
     return {
       name: "§6More Stonks",
       desc: [
-        `§7Gain more exp orbs for breaking end stone and gain a +§a${round(
-          this.level * mult,
-          1
-        )}% §7chance to get an extra block dropped.`,
+        `§7Gain more exp orbs for breaking end stone and gain a +§a${round(this.level * mult, 1)}% §7chance to get an extra block dropped.`,
       ],
     };
   }
@@ -549,15 +546,14 @@ class Endermite extends Pet {
     const mult = getValue(this.rarity, { rare: 0.03, epic: 0.05 });
     return {
       name: "§6Pearl Muncher",
-      desc: [`§7Upon picking up an ender pearl, consume it and gain §a${5 + round(this.level * mult, 1)} §6coins`],
+      desc: [`&7Ender Pearls dropped from slain enemies are consumed and converted into &6${5 + round(this.level * mult, 1)} coins&7.`],
     };
   }
 
   get third() {
-    const mult = getValue(this.rarity, { legendary: 0.4 });
     return {
       name: "§6Pearl Powered",
-      desc: [`§7Upon consuming an ender pearl, gain +§a${10 + round(this.level * mult, 1)} §7speed for 10 seconds`],
+      desc: [`§7Upon munching Ender Pearls, gain +&fa${round(this.level * 0.05, 1)} ${symbols.speed.symbol} Speed&7, &c+${round(this.level * 0.3, 1)} ${symbols.strength.symbol} Strength &7and &b${round(this.level * 0.1, 1)} ${symbols.magic_find.symbol} Magic Find &7for 10 seconds`],
     };
   }
 }
@@ -990,8 +986,8 @@ class GoldenDragon extends Pet {
     const stats = {};
     if (this.level >= 100) {
       stats.strength = round(Math.max(0, this.level - 100) * 0.25 + 25 - 0.01, 0);
-      stats.magic_find = round(floor(this.level / 10) * 0.5);
       stats.bonus_attack_speed = round(Math.max(0, this.level - 100) * 0.25 + 25 - 0.01, 0);
+      stats.magic_find = round((floor(this.level / 10) * 0.5), 2);
     }
     return stats;
   }
@@ -1028,7 +1024,7 @@ class GoldenDragon extends Pet {
     const value = Math.max(0, this.level - 100) * 0.5 + 50;
     return {
       name: "§6Gold's Power",
-      desc: [`§7Adds §c+${round(value, 1)} ${symbols.strength.symbol} Strength §7to all §6golden §7weapons`],
+      desc: [`§7Adds §c+${round(value, 1)} ${symbols.strength.symbol} Strength §7to all §6golden §7weapons.`],
     };
   }
 
@@ -1036,27 +1032,27 @@ class GoldenDragon extends Pet {
     return {
       name: "§6Shining Scales",
       desc: [
-        `§7For each digit in your §6gold collection §7gain §c+10 ${symbols.strength.symbol} Strength §7and §b+2 ${symbols.magic_find.symbol} Magic Find`,
+        `&7Grants &c+10 ${symbols.strength.symbol} Strength &7and &b+2 ${symbols.magic_find.symbol} Magic Find &7to your pet for each digit in your &6gold collection&7.`,
       ],
     };
   }
 
   get third() {
-    const value = Math.max(0, this.level - 100) * 0.2 + 20;
     return {
       name: "§6Dragon's Greed",
       desc: [
-        `§7Gain §a${round(value, 1)}% §7of your §b${symbols.magic_find.symbol} Magic Find §7as §c${symbols.strength.symbol} Strength`,
+        `&7Gain &c0.5% ${symbols.strength.symbol} Strength &7per &b5 ${symbols.magic_find.symbol} Magic Find&7.`
       ],
     };
   }
 
   get fourth() {
     const value = this.level * 0.00125;
-
     return {
       name: "§6Legendary Treasure",
-      desc: [`§7Gain §c${round(value, 4)}% §7damage for every milion coins in your bank`],
+      desc: [
+        `Gain &c${round(value, 4)}% damage &7for every million coins in your bank.`,
+      ]
     };
   }
 }
@@ -1188,7 +1184,7 @@ class Golem extends Pet {
     const mult = getValue(this.rarity, { epic: 0.3 });
     return {
       name: "§6Last Stand",
-      desc: [`§7While less than 15% HP, deal §a${round(this.level * mult, 1)}% §7more damage`],
+      desc: [`§7While less than 25% HP, deal §a${round(this.level * mult, 1)}% §7more damage`],
     };
   }
 
@@ -1489,7 +1485,7 @@ class Phoenix extends Pet {
         `§7Before death, become §eimmune §7and gain §c${start_strength + round(this.level * mult_strength, 1)} ${
           symbols.strength.symbol
         } Strength §7for ${2 + round(this.level * mult_time, 1)} §7seconds`,
-        `§73 minutes cooldown`,
+        `§71m cooldown`,
       ],
     };
   }
@@ -1920,7 +1916,7 @@ class Tiger extends Pet {
   }
 
   get third() {
-    const mult = getValue(this.rarity, { legendary: 0.2 });
+    const mult = getValue(this.rarity, { legendary: 1 });
     return {
       name: "§6Apex Predator",
       desc: [
@@ -2207,7 +2203,7 @@ class Lion extends Pet {
   }
 
   get third() {
-    const mult = getValue(this.rarity, { legendary: 0.15 });
+    const mult = getValue(this.rarity, { legendary: 1.5 });
     return {
       name: "§6King of the Jungle",
       desc: [
