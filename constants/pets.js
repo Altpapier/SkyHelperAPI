@@ -668,8 +668,11 @@ class Scatha extends Pet {
     if (this.rarity >= RARE) {
       list.push(this.second);
     }
-    if (this.rarity >= LEGENDARY) {
+    if (this.rarity >= EPIC) {
       list.push(this.third);
+    }
+    if (this.rarity >= LEGENDARY) {
+      list.push(this.fourth);
     }
     return list;
   }
@@ -695,6 +698,13 @@ class Scatha extends Pet {
     return {
       name: "§6Wormhole",
       desc: [`§7Gives a §a${round(this.level * mult, 1)}% §7to mine 2 adjacent stone or hard stone`],
+    };
+  }
+  get fourth() {
+    const mult = getValue(this.rarity, { legendary: 0.2 });
+    return {
+      name: "§6Gemstone Power",
+      desc: [`§7Gain §a+${round(this.level * mult, 1)}% §7more Gemstone Powder from all sources.`],
     };
   }
 }
@@ -948,7 +958,7 @@ class EnderDragon extends Pet {
   }
 
   get first() {
-    const mult = getValue(this.rarity, { epic: 0.25 });
+    const mult = getValue(this.rarity, { epic: 2 });
     return {
       name: "§6End Strike",
       desc: [`§7Deal §a${round(this.level * mult, 1)}% §7more damage to end mobs`],
@@ -2399,7 +2409,7 @@ class BlueWhale extends Pet {
 class Ammonite extends Pet {
   get stats() {
     return {
-      sea_creature_chance: this.level * 0.07,
+      sea_creature_chance: this.level * 0.05,
     };
   }
 
@@ -2413,9 +2423,9 @@ class Ammonite extends Pet {
     return {
       name: "§6Heart of the Sea",
       desc: [
-        `§7Each Heart of the Mountain level grants §3+${round(this.level * mult, 1)} ${
+        `§7Grants §3+${round(this.level * mult, 2)}${
           symbols.sea_creature_chance.symbol
-        } Sea Creature Chance`,
+        } Sea Creature Chance §7to your pet for each §5Heart of the Mountain §7level.`,
       ],
     };
   }
@@ -2425,18 +2435,18 @@ class Ammonite extends Pet {
     return {
       name: "§6Not a Snail",
       desc: [
-        `§7Each fishing and mining level grants §f+${round(this.level * mult, 1)} ${
+        `§7Each fishing and mining level grants §f+${round(this.level * mult, 2)} ${
           symbols.speed.symbol
-        } Speed §7and §a+${round(this.level * mult, 1)} ${symbols.defense.symbol} Defense`,
+        } Speed §7and §a+${round(this.level * mult, 2)} ${symbols.defense} Defense.`,
       ],
     };
   }
 
   get third() {
-    const mult = getValue(this.rarity, { legendary: 0.006 });
+    const mult = getValue(this.rarity, { legendary: 0.009 });
     return {
       name: "§6Gift of the Ammonite",
-      desc: [`§7Increases your fishing speed by §a${round(this.level * mult, 1)}% §7for each mining level`],
+      desc: [`§7Grants §b+${round(this.level * mult, 2)}${symbols.fishing_speed.symbol} Fishing Speed §7per Mining level.`],
     };
   }
 }
@@ -2461,15 +2471,14 @@ class Dolphin extends Pet {
   }
 
   get first() {
-    const mult = getValue(this.rarity, { common: 0.03, uncommon: 0.04, epic: 0.05 });
-    const max = getValue(this.rarity, { common: 15, uncommon: 20, epic: 25 });
+    const mult = getValue(this.rarity, { common: 0.07, uncommon: 0.08, epic: 0.009 });
     return {
       name: "§6Pod Tactics",
       desc: [
-        `§7Increases your fishing speed by §a${round(
+        `§7Grants §b+${round(
           this.level * mult,
-          1
-        )}% §7for each nearby player within 10 blocks up to §a${max}%`,
+          2
+        )}${symbols.fishing_speed.symbol} Fishing Speed §7for each player within §a10 §7blocks, up to §a5 §7players.`,
       ],
     };
   }
@@ -2478,7 +2487,7 @@ class Dolphin extends Pet {
     const mult = this.rarity >= EPIC ? 0.1 : 0.07;
     return {
       name: "§6Echolocation",
-      desc: [`§7Increases sea creatures catch chance by §a${round(this.level * mult, 1)}%`],
+      desc: [`§7Grants §3+${round(this.level * mult, 2)}${symbols.sea_creature_chance} Sea Creature Chance§7.`],
     };
   }
 
@@ -2510,10 +2519,10 @@ class FlyingFish extends Pet {
   }
 
   get first() {
-    const mult = getValue(this.rarity, { rare: 0.4, epic: 0.5 });
+    const mult = getValue(this.rarity, { rare: 0.6, epic: 0.75 });
     return {
       name: "§6Quick Reel",
-      desc: [`§7Increases fishing speed by §a${round(this.level * mult, 1)}%`],
+      desc: [`§7Grants §b+${round(this.level * mult, 2)}${symbols.fishing_speed.symbol} Fishing Speed§7.`],
     };
   }
 

@@ -172,6 +172,15 @@ const symbols = {
       suffix: "",
       color: "5",
     },
+    fishing_speed: {
+      name: "Fishing Speed",
+      nameLore: "Fishing Speed",
+      nameShort: "Fishing Speed",
+      nameTiny: "FsgSpd",
+      symbol: "☂",
+      suffix: "",
+      color: "b"
+    }
   };
 
 module.exports = { symbols }

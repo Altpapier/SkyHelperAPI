@@ -76,11 +76,15 @@ const getPetPrice = function (pet, db) {
         }
     }
 
-    if (pet.candyUsed > 0 && pet.type !== 'ENDER_DRAGON' && pet.type !== 'GOLDEN_DRAGON') {
+    if (pet.candyUsed > 0 && pet.type !== 'ENDER_DRAGON' && pet.type !== 'GOLDEN_DRAGON' && pet.type !== 'SCATHA') {
         const reducedValue = price / 1.538232;
 
-        if (reducedValue && !isNaN(reducedValue)) {
-            price = reducedValue;
+        if (!isNaN(price)) {
+            if (data.level === 100) {
+                price = Math.max(reducedValue, price - 5000000);
+            } else {
+                price = Math.max(reducedValue, price - 2500000);
+            }
         }
     }
 

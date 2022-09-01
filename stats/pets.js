@@ -83,10 +83,9 @@ const rarities = [
 
       pet.display_name = `${petName}${petSkin ? " ✦" : ""}`;
   
-      
       pet.xpMaxLevel = levelData[4]
       pet.level = levelData[0]
-      pet.xpCurrent = levelData[1]
+      pet.xpCurrent = pet.exp
       pet.xpForNext = levelData[2]
       pet.progress =  levelData[3]
 
