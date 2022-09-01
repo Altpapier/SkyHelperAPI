@@ -375,8 +375,8 @@ class Rabbit extends Pet {
   get second() {
     const mult = getValue(this.rarity, { rare: 0.25, epic: 0.3 });
     return {
-      name: "§6Farming Exp Boost ",
-      desc: [`§7Boosts your Farming Exp by §a${round(this.level * mult, 1)}%`],
+      name: "§6Farming Wisdom Boost ",
+      desc: [`§7Grants §3+${round(this.level * mult, 1)}${symbols.wisdom.symbol} Farming Wisdom&7.`],
     };
   }
 
@@ -739,8 +739,8 @@ class Silverfish extends Pet {
   get second() {
     const mult = getValue(this.rarity, { rare: 0.25, epic: 0.3 });
     return {
-      name: "§6Mining Exp Boost",
-      desc: [`§7Boosts your Mining exp by §a${round(this.level * mult, 1)}%`],
+      name: "§6Mining Wisdom Boost",
+      desc: [`§7Grants by §3+${round(this.level * mult, 1)}${symbols.wisdom.symbol} Mining Wisdom&7.`],
     };
   }
 
@@ -1115,7 +1115,7 @@ class Enderman extends Pet {
     const mult = getValue(this.rarity, { mythic: 0.4 });
     return {
       name: "§6Enderman Slayer",
-      desc: [`§7Gain +§a${round(this.level * mult, 1)}% §7more combat xp from endermen`],
+      desc: [`&7Grants §a${round(this.level * mult, 1)}% &3${symbols.wisdom.symbol} Combat Wisdom &7against &aEndermen&7.`],
     };
   }
 }
@@ -1315,8 +1315,8 @@ class Guardian extends Pet {
   get second() {
     const mult = getValue(this.rarity, { rare: 0.25, epic: 0.3 });
     return {
-      name: "§6Enchanting Exp Boost",
-      desc: [`§7Boosts your Enchanting exp by §a${round(this.level * mult, 1)}%`],
+      name: "§6Enchanting Wisdom Boost",
+      desc: [`§7Grants &3+${round(this.level * mult, 1)}${symbols.wisdom.symbol} Enchanting Wisdom&7.`],
     };
   }
 
@@ -1877,7 +1877,7 @@ class Tarantula extends Pet {
     const mult = getValue(this.rarity, { legendary: 0.4 });
     return {
       name: "§6Arachnid Slayer",
-      desc: [`§7Gain +§a${round(this.level * mult, 1)}% §7more combat xp from spiders`],
+      desc: [`&7Grants §a${round(this.level * mult, 1)}% &3${symbols.wisdom.symbol} Combat Wisdom &7against &aSpiders&7.`],
     };
   }
 }
@@ -2028,8 +2028,8 @@ class Wolf extends Pet {
   get third() {
     const mult = getValue(this.rarity, { legendary: 0.3 });
     return {
-      name: "§6Combat Exp Boost",
-      desc: [`§7Boosts your Combat exp by §a${round(this.level * mult, 1)}%`],
+      name: "§6Combat Wisdom Boost",
+      desc: [`§7Grants §3+${round(this.level * mult, 1)}${symbols.wisdom.symbol} Combat Wisdom&7.`],
     };
   }
 }
@@ -2287,8 +2287,8 @@ class Ocelot extends Pet {
   get first() {
     const mult = getValue(this.rarity, { common: 0.2, uncommon: 0.25, epic: 0.3 });
     return {
-      name: "§6Foraging Exp Boost",
-      desc: [`§7Boosts your Foraging exp by §a${round(this.level * mult, 1)}%`],
+      name: "§6Foraging Wisdom Boost",
+      desc: [`§7Grants §3+${round(this.level * mult, 1)}${symbols.wisdom.symbol} Foraging Wisdom&7.`],
     };
   }
 
@@ -2651,8 +2651,8 @@ class Squid extends Pet {
   get third() {
     const mult = getValue(this.rarity, { legendary: 0.3 });
     return {
-      name: "§6Fishing Exp Boost",
-      desc: [`§7Boosts your Fishing exp by §a${round(this.level * mult, 1)}%`],
+      name: "§6Fishing Wisdom Boost",
+      desc: [`§7Grants §3+${round(this.level * mult, 1)}${symbols.wisdom.symbol} Fishing Wisdom&7.`],
     };
   }
 }
