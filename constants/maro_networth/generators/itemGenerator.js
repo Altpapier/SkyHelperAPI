@@ -21,11 +21,22 @@ const getBackpackContents = async function (arraybuf) {
     return items;
 };
 
-const parseItems = async function (base64, db) {
-    const buf = Buffer.from(base64, 'base64');
-    const data = nbt.simplify(await parseNbt(buf));
+async function parseItem(item, db) {
+    return (
+        await parseItems(null, db, {
+            Count: item.count || 1,
+            tag: {
+                display: { Name: item.item_name },
+                ExtraAttributes: { petInfo: JSON.stringify(item.petInfo), enchantments: item.enchantments, gems: item.gems, runes: item.runes, ...item.ExtraAttributes },
+            },
+        })
+    )[0];
+}
 
-    const items = data.i;
+const parseItems = async function (base64, db, manualItem) {
+    const data = base64 ? nbt.simplify(await parseNbt(Buffer.from(base64, 'base64'))) : null;
+
+    const items = manualItem ? [manualItem] : data.i;
 
     for (const [index, item] of items.entries()) {
         if (item.tag?.display?.Name.includes('Backpack')) {
@@ -45,8 +56,8 @@ const parseItems = async function (base64, db) {
         }
     }
 
-    for (const item of items) {
-        if (item.tag?.ExtraAttributes?.id === 'PET' && item?.tag?.ExtraAttributes?.petInfo) {
+    for (let item of items) {
+        if (item.tag?.ExtraAttributes?.id === 'PET' && item.tag?.ExtraAttributes?.petInfo) {
             const petInfo = JSON.parse(item.tag.ExtraAttributes.petInfo);
             const petData = petGenerator.getPetPrice(petInfo, db);
 
@@ -66,20 +77,10 @@ const parseItems = async function (base64, db) {
                 itemId = `${itemId}_skinned_${item.tag.ExtraAttributes.skin}`.toLowerCase();
             }
 
-            if (item.tag.ExtraAttributes.dungeon_item_level > 0) {
-                const dungeonItemLevel = item.tag.ExtraAttributes.dungeon_item_level;
-
-                if (dungeonItemLevel > 5) {
-                    const newStars = '⍟'.repeat(dungeonItemLevel - 5) + '✪'.repeat(5 - (dungeonItemLevel - 5));
-
-                    itemName = itemName.replace(/✪/g, '') + newStars;
-                }
-            }
-
-            const data = db[itemId]?.price;
+            const data = db[itemId];
             const ExtraAttributes = item.tag.ExtraAttributes;
-            let price = data * item.Count;
-            let base = data * item.Count;
+            let price = data?.price * item.Count;
+            let base = data?.price * item.Count;
             let calculation = [];
 
             // UPGRADABLE ARMOR PRICES (eg: CRIMSON)
@@ -128,11 +129,9 @@ const parseItems = async function (base64, db) {
 
             //PRICE PAYED IN DARK AUCTION
             if (ExtraAttributes.winning_bid && !itemId.includes('hegemony')) {
-                price = ExtraAttributes.winning_bid;
-                calculation.push({
-                    type: 'Winning Bid',
-                    value: ExtraAttributes.winning_bid,
-                });
+                const max = itemId === 'midas_sword' ? 50000000 : itemId === 'midas_staff' ? 100000000 : Infinity;
+                price = Math.min(ExtraAttributes.winning_bid, max);
+                calculation.push({ type: 'Winning Bid', value: ExtraAttributes.winning_bid });
             }
 
             //ENCHANTMENT BOOKS
@@ -151,6 +150,8 @@ const parseItems = async function (base64, db) {
 
             if (ExtraAttributes.enchantments && itemId != 'enchanted_book') {
                 for (const enchant of Object.entries(ExtraAttributes.enchantments)) {
+                    if (constants.blocked_enchants[itemId]?.includes(enchant[0])) continue;
+
                     if (enchant[0] === 'efficiency' && enchant[1] > 5) {
                         price += (db[`sil_ex`]?.price ?? 0) * (enchant[1] - (itemId === 'stonk_pickaxe' ? 6 : 5)) * 0.7;
                         calculation.push({ type: 'Silex', value: (db[`sil_ex`]?.price ?? 0) * (enchant[1] - 5) * 0.7, count: enchant[1] - 5 });
@@ -160,7 +161,7 @@ const parseItems = async function (base64, db) {
                     const isScav5 = enchant[0] === 'scavenger' && enchant[1] == 5;
                     if (enchantmentWorth && !isScav5) {
                         price += enchantmentWorth;
-                        calculation.push({ type: `${enchant[0]}_${enchant[1]}`, value: enchantmentWorth });
+                        calculation.push({ type: `enchantment_${enchant[0]}_${enchant[1]}`, value: enchantmentWorth });
                     }
                 }
             }
@@ -181,63 +182,41 @@ const parseItems = async function (base64, db) {
             if (ExtraAttributes.hot_potato_count) {
                 if (ExtraAttributes.hot_potato_count > 10) {
                     price += (db['hot_potato_book']?.price || 0) * 10;
-                    price += (db['fuming_potato_book']?.price || 0) * (ExtraAttributes.hot_potato_count - 10) * 0.6;
-                    calculation.push({
-                        type: 'Hot Potato Books',
-                        value: (db['hot_potato_book']?.price || 0) * 10,
-                        count: 10,
-                    });
-                    calculation.push({
-                        type: 'Fuming Potato Books',
-                        value: (db['fuming_potato_book']?.price || 0) * (ExtraAttributes.hot_potato_count - 10),
-                        count: ExtraAttributes.hot_potato_count - 10,
-                    });
+                    calculation.push({ type: 'Hot Potato Books', value: (db['hot_potato_book']?.price || 0) * 10, count: 10 });
+
+                    if (!constants.blocked_enchants[itemId]) {
+                        price += (db['fuming_potato_book']?.price || 0) * (ExtraAttributes.hot_potato_count - 10) * 0.6;
+                        calculation.push({ type: 'Fuming Potato Books', value: (db['fuming_potato_book']?.price || 0) * (ExtraAttributes.hot_potato_count - 10) * 0.6, count: ExtraAttributes.hot_potato_count - 10 });
+                    }
                 } else {
                     price += (db['hot_potato_book']?.price || 0) * ExtraAttributes.hot_potato_count;
-                    calculation.push({
-                        type: 'Hot Potato Books',
-                        value: (db['hot_potato_book']?.price || 0) * ExtraAttributes.hot_potato_count,
-                        count: ExtraAttributes.hot_potato_count,
-                    });
+                    calculation.push({ type: 'Hot Potato Books', value: (db['hot_potato_book']?.price || 0) * ExtraAttributes.hot_potato_count, count: ExtraAttributes.hot_potato_count });
                 }
             }
 
             // DYES
             if (ExtraAttributes.dye_item) {
-                price += (db[ExtraAttributes.dye_item.toLowerCase()]?.price || 0) * 0.9;
-                calculation.push({
-                    type: `Dye ${ExtraAttributes.dye_item}`,
-                    value: (db[ExtraAttributes.dye_item.toLowerCase()]?.price || 0) * 0.9,
-                    count: 1,
-                });
+                price += (db[ExtraAttributes.dye_item.toLowerCase()]?.price ?? 0) * 0.9;
+                calculation.push({ type: ExtraAttributes.dye_item, value: (db[ExtraAttributes.dye_item.toLowerCase()]?.price ?? 0) * 0.9, count: 1 });
             }
 
             //ART OF WAR
             if (ExtraAttributes.art_of_war_count) {
                 price += (db['the_art_of_war']?.price || 0) * ExtraAttributes.art_of_war_count * 0.6;
-                calculation.push({
-                    type: 'The Art of War',
-                    value: (db['the_art_of_war']?.price || 0) * ExtraAttributes.art_of_war_count,
-                    count: ExtraAttributes.art_of_war_count,
-                });
+                calculation.push({ type: 'The Art of War', value: db['the_art_of_war']?.price || 0 * ExtraAttributes.art_of_war_count * 0.6, count: ExtraAttributes.art_of_war_count });
             }
 
             //FARMING FOR DUMMIES
             if (ExtraAttributes.farming_for_dummies_count) {
                 price += (db['farming_for_dummies']?.price || 0) * ExtraAttributes.farming_for_dummies_count * 0.5;
-                calculation.push({
-                    type: 'Farming for Dummies',
-                    value: (db['farming_for_dummies']?.price || 0) * ExtraAttributes.farming_for_dummies_count,
-                    count: ExtraAttributes.farming_for_dummies_count,
-                });
+                calculation.push({ type: 'Farming for Dummies', value: (db['farming_for_dummies']?.price || 0) * ExtraAttributes.farming_for_dummies_count * 0.5, count: ExtraAttributes.farming_for_dummies_count });
             }
 
-            //TALISMAN ENRICHMENT
             if (ExtraAttributes.talisman_enrichment) {
                 price += (db['talisman_enrichment_' + ExtraAttributes?.talisman_enrichment.toLowerCase()]?.price || 0) * 0.75;
                 calculation.push({
                     type: 'Enrichment: ' + ExtraAttributes?.talisman_enrichment.toLowerCase(),
-                    value: db['talisman_enrichment_' + ExtraAttributes?.talisman_enrichment.toLowerCase()]?.price || 0,
+                    value: db['talisman_enrichment_' + ExtraAttributes?.talisman_enrichment.toLowerCase()]?.price || 0 * 0.75,
                     count: 1,
                 });
             }
@@ -246,11 +225,7 @@ const parseItems = async function (base64, db) {
             if (ExtraAttributes.rarity_upgrades > 0 && !ExtraAttributes.item_tier) {
                 if (ExtraAttributes.enchantments || constants.talismans[itemId]) {
                     price += db['recombobulator_3000']?.price * 0.8;
-                    calculation.push({
-                        type: 'Recombobulator 3000',
-                        value: db['recombobulator_3000']?.price * 0.8,
-                        count: 1,
-                    });
+                    calculation.push({ type: 'Recombobulator 3000', value: db['recombobulator_3000']?.price * 0.8, count: 1 });
                 }
             }
 
@@ -260,11 +235,7 @@ const parseItems = async function (base64, db) {
 
                 for (const gem of Object.values(gems)) {
                     price += db[`${gem.tier}_${gem.type}_gem`.toLowerCase()]?.price ?? 0;
-                    calculation.push({
-                        type: `${gem.tier} ${gem.type} Gem`,
-                        value: db[`${gem.tier}_${gem.type}_gem`.toLowerCase()]?.price ?? 0,
-                        count: 1,
-                    });
+                    calculation.push({ type: `${gem.tier} ${gem.type} Gem`, value: db[`${gem.tier}_${gem.type}_gem`.toLowerCase()]?.price ?? 0, count: 1 });
                 }
             }
 
@@ -274,29 +245,23 @@ const parseItems = async function (base64, db) {
 
                 if (constants.reforges[reforge]) {
                     price += db[constants.reforges[reforge]]?.price ?? 0;
-                    calculation.push({
-                        type: constants.reforges[reforge] + ' Reforge',
-                        value: db[constants.reforges[reforge]]?.price ?? 0,
-                        count: 1,
-                    });
+                    calculation.push({ type: constants.reforges[reforge] + ' Reforge', value: db[constants.reforges[reforge]]?.price ?? 0, count: 1 });
                 }
             }
 
             //DUNGEON STARS
             const foundItem = sbItems.find((item) => item.id === itemId.toUpperCase());
-            if (foundItem?.upgrade_costs && (ExtraAttributes.dungeon_item_level > 5 || ExtraAttributes.upgrade_level > 5)) {
-                const starsUsedDungeons = ExtraAttributes.dungeon_item_level - 5;
-                const starsUsedUpgrade = (ExtraAttributes.upgrade_level || 0) - 5;
+            const dungeonItemLevel = parseInt((ExtraAttributes.dungeon_item_level || 0).toString().replace(/\D/g, ''));
+            const upgradeLevel = parseInt((ExtraAttributes.upgrade_level || 0).toString().replace(/\D/g, ''));
+            if (foundItem?.upgrade_costs && (dungeonItemLevel > 5 || upgradeLevel > 5)) {
+                const starsUsedDungeons = dungeonItemLevel - 5;
+                const starsUsedUpgrade = (upgradeLevel || 0) - 5;
                 const starsUsed = starsUsedDungeons > starsUsedUpgrade ? starsUsedDungeons : starsUsedUpgrade;
 
                 if (foundItem.upgrade_costs.length <= 5) {
                     for (const star of Array(starsUsed).keys()) {
                         price += db[constants.master_stars[star]]?.price ?? 0;
-                        calculation.push({
-                            type: constants.master_stars[star],
-                            value: db[constants.master_stars[star]]?.price ?? 0,
-                            count: 1,
-                        });
+                        calculation.push({ type: constants.master_stars[star], value: db[constants.master_stars[star]]?.price ?? 0, count: 1 });
                     }
                 }
             }
@@ -305,10 +270,10 @@ const parseItems = async function (base64, db) {
             if (foundItem && (ExtraAttributes.dungeon_item_level || ExtraAttributes.dungeon_item_level == 0)) {
                 const essence = foundItem.upgrade_costs;
                 if (essence) {
-                    for (let i = 0; i < ExtraAttributes.dungeon_item_level && i <= 5; i++) {
+                    for (let i = 0; i < dungeonItemLevel && i <= 5; i++) {
                         for (const upgrade of essence[i] || []) {
                             if (upgrade?.essence_type) {
-                                price += (upgrade?.amount || 0) * (db[`essence_${upgrade.essence_type.toLowerCase()}`]?.price || 0) * 0.75;
+                                price += (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75;
                                 calculation.push({
                                     type: `${upgrade?.essence_type} Essence`,
                                     value: (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75,
@@ -319,11 +284,11 @@ const parseItems = async function (base64, db) {
                     }
                 }
             }
-            // UPGRADE STARS (eg. CRIMSON)
+            // UPGRADE STARS (eg. CRIMSON, or newly upgrades dungeons gear (hypixel why))
             if (foundItem?.upgrade_costs && (ExtraAttributes.upgrade_level || ExtraAttributes.upgrade_level == 0)) {
                 const itemUpgrades = foundItem.upgrade_costs;
 
-                for (let i = 0; i < ExtraAttributes.upgrade_level; i++) {
+                for (let i = 0; i < upgradeLevel; i++) {
                     for (const upgrade of itemUpgrades[i] || []) {
                         if (upgrade?.essence_type) {
                             price += (upgrade?.amount || 0) * (db[`essence_${upgrade?.essence_type.toLowerCase()}`]?.price || 0) * 0.75;
@@ -336,75 +301,46 @@ const parseItems = async function (base64, db) {
                     }
                 }
             }
-
-            //NECRON BLADE SCROLLS
             if (ExtraAttributes.ability_scroll) {
+                //NECRON BLADE SCROLLS
                 for (const item of Object.values(ExtraAttributes.ability_scroll)) {
                     price += db[item.toLowerCase()]?.price ?? 0;
-                    calculation.push({
-                        type: item,
-                        value: db[item.toLowerCase()]?.price ?? 0,
-                        count: 1,
-                    });
+                    calculation.push({ type: item, value: db[item.toLowerCase()]?.price ?? 0, count: 1 });
                 }
             }
 
             //GEMSTONE CHAMBERS
             if (ExtraAttributes.gemstone_slots) {
                 price += ExtraAttributes.gemstone_slots * db['gemstone_chamber']?.price * 0.9;
-                calculation.push({
-                    type: 'Gemstone Chamber',
-                    value: db['gemstone_chamber']?.price * ExtraAttributes.gemstone_slots,
-                    count: ExtraAttributes.gemstone_slots,
-                });
+                calculation.push({ type: 'Gemstone Chamber', value: db['gemstone_chamber']?.price * ExtraAttributes.gemstone_slots, count: ExtraAttributes.gemstone_slots });
             }
             if (itemId === 'divan_chestplate' || itemId === 'divan_leggings' || itemId === 'divan_boots' || itemId === 'divan_helmet') {
                 if (ExtraAttributes?.gems?.unlocked_slots) {
                     price += ExtraAttributes.gems.unlocked_slots.length * db['gemstone_chamber']?.price * 0.9;
-                    calculation.push({
-                        type: 'Gemstone Chamber',
-                        value: db['gemstone_chamber']?.price * ExtraAttributes.gems.unlocked_slots.length,
-                        count: ExtraAttributes.gems.unlocked_slots.length,
-                    });
+                    calculation.push({ type: 'Gemstone Chamber', value: db['gemstone_chamber']?.price * ExtraAttributes.gems.unlocked_slots.length * 0.9, count: ExtraAttributes.gems.unlocked_slots.length });
                 }
             }
 
             //DRILLS
             if (ExtraAttributes.drill_part_upgrade_module) {
                 price += db[ExtraAttributes.drill_part_upgrade_module]?.price ?? 0;
-                calculation.push({
-                    type: ExtraAttributes.drill_part_upgrade_module + ' Drill Part Upgrade Module',
-                    value: db[ExtraAttributes.drill_part_upgrade_module]?.price ?? 0,
-                    count: 1,
-                });
+                calculation.push({ type: ExtraAttributes.drill_part_upgrade_module + ' Drill Part Upgrade Module', value: db[ExtraAttributes.drill_part_upgrade_module]?.price ?? 0, count: 1 });
             }
 
             if (ExtraAttributes.drill_part_fuel_tank) {
                 price += db[ExtraAttributes.drill_part_fuel_tank]?.price ?? 0;
-                calculation.push({
-                    type: ExtraAttributes.drill_part_fuel_tank + ' Drill Part Fuel Tank',
-                    value: db[ExtraAttributes.drill_part_fuel_tank]?.price ?? 0,
-                    count: 1,
-                });
+                calculation.push({ type: ExtraAttributes.drill_part_fuel_tank + ' Drill Part Fuel Tank', value: db[ExtraAttributes.drill_part_fuel_tank]?.price ?? 0, count: 1 });
             }
 
             if (ExtraAttributes.drill_part_engine) {
                 price += db[ExtraAttributes.drill_part_engine]?.price ?? 0;
-                calculation.push({
-                    type: ExtraAttributes.drill_part_engine + ' Drill Part Engine',
-                    value: db[ExtraAttributes.drill_part_engine]?.price ?? 0,
-                    count: 1,
-                });
+                calculation.push({ type: ExtraAttributes.drill_part_engine + ' Drill Part Engine', value: db[ExtraAttributes.drill_part_engine]?.price ?? 0, count: 1 });
             }
 
             //ETHERWARP (aotv)
             if (ExtraAttributes.ethermerge > 0) {
                 price += db['etherwarp_conduit']?.price ?? 0;
-                calculation.push({
-                    type: 'Etherwarp Conduit',
-                    value: db['etherwarp_conduit']?.price ?? 0,
-                    count: 1,
-                });
+                calculation.push({ type: 'Etherwarp Conduit', value: db['etherwarp_conduit']?.price ?? 0, count: 1 });
             }
 
             item.price = price ?? 0;
@@ -422,7 +358,7 @@ const getItems = async function (profile, db) {
     let sacksValue = 0;
 
     for (const [index, count] of Object.entries(profile.sacks_counts)) {
-      const sackPrice = db[index.toLowerCase()];
+      const sackPrice = db[index.toLowerCase()]?.price;
       if (sackPrice != undefined) {
         sacksValue += sackPrice * count ?? 0;
       }
@@ -447,14 +383,14 @@ const getItems = async function (profile, db) {
         }
     }
 
-    output.armor = profile.inv_armor ? await parseItems(profile.inv_armor.data, db) : [];
+    output.armor = profile?.inv_armor ? await parseItems(profile.inv_armor.data, db) : [];
     output.equipment = profile?.equippment_contents ? await parseItems(profile.equippment_contents.data, db) : [];
-    output.wardrobe_inventory = profile.wardrobe_contents ? await parseItems(profile.wardrobe_contents.data, db) : [];
-    output.inventory = profile.inv_contents ? await parseItems(profile.inv_contents.data, db) : [];
-    output.enderchest = profile.ender_chest_contents ? await parseItems(profile.ender_chest_contents.data, db) : [];
-    output.personal_vault = profile.personal_vault_contents ? await parseItems(profile.personal_vault_contents.data, db) : [];
+    output.wardrobe_inventory = profile?.wardrobe_contents ? await parseItems(profile.wardrobe_contents.data, db) : [];
+    output.inventory = profile?.inv_contents ? await parseItems(profile.inv_contents.data, db) : [];
+    output.enderchest = profile?.ender_chest_contents ? await parseItems(profile.ender_chest_contents.data, db) : [];
+    output.personal_vault = profile?.personal_vault_contents ? await parseItems(profile.personal_vault_contents.data, db) : [];
 
-    if (profile.backpack_contents) {
+    if (profile?.backpack_contents) {
         const storage = [];
 
         for (const backpack of Object.values(profile.backpack_contents)) {
@@ -466,7 +402,7 @@ const getItems = async function (profile, db) {
         output.storage = storage.flat();
     }
 
-    if (profile.backpack_icons) {
+    if (profile?.backpack_icons) {
         const storage = [];
 
         for (const backpack of Object.values(profile.backpack_icons)) {
@@ -481,8 +417,7 @@ const getItems = async function (profile, db) {
             output.storage = storage.flat();
         }
     }
-
-    if (profile.pets) {
+    if (profile?.pets) {
         const pets = [];
 
         for (const pet of profile.pets) {
@@ -494,7 +429,7 @@ const getItems = async function (profile, db) {
         output.pets = pets;
     }
 
-    output.talismans = profile.talisman_bag ? await parseItems(profile.talisman_bag.data, db) : [];
+    output.talismans = profile?.talisman_bag ? await parseItems(profile.talisman_bag.data, db) : [];
 
     if (output.inventory.length == 0) {
         output.no_inventory = true;
@@ -503,4 +438,4 @@ const getItems = async function (profile, db) {
     return output;
 };
 
-module.exports = { getItems };
+module.exports = { parseItem, getItems };

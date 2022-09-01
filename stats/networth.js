@@ -6,11 +6,6 @@ let prices = {};
 
 const retrievePrices = async function () {
     prices = JSON.parse(fs.readFileSync('./data/prices.json'));
-
-    const moogma = (prices['moogma_leggings']?.price || 400000) / 20;
-    const slug = (prices['slug_boots']?.price || 300000) / 15;
-    prices['crimson_essence'] = { price: moogma > slug ? slug : moogma, name: 'Crimson Essence' };
-
     console.log('Prices retrieved successfully');
 };
 
