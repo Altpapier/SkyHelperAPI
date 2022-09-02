@@ -25,7 +25,6 @@ const getMissing = require('../stats/missing');
 const getNetworth = require('../stats/networth');
 const getBestiary = require('../stats/bestiary');
 const getContent = require('../stats/items')
-const getMayorData = require('../stats/mayor')
 const { isUuid } = require('./uuid');
 
 module.exports = {
@@ -238,9 +237,6 @@ module.exports = {
             uuid: uuid,
             profile: getBingo(profile.data, bingo.data)
         }
-    },
-    parseMayorData: function parseMayorData(mayorData) {
-        return getMayorData(mayorData)
     },
 };
 

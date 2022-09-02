@@ -3,7 +3,6 @@ const auctionsRoute = require('./routes/v1/auctions')
 const bingoRoute = require('./routes/v1/bingo');
 const calendarRoute = require('./routes/v1/calendar')
 const FetchurRoute = require('./routes/v1/fetchur');
-const mayorRoute = require('./routes/v1/mayor')
 const ProfileRoute = require('./routes/v1/profile');
 const ProfilesRoute = require('./routes/v1/profiles');
 const ProfileItemsRoute= require('./routes/v1/profileItems')
@@ -47,7 +46,6 @@ app.get('/v1/items/:uuid/:profileid', ProfileItemsRoute);
 app.get('/v1/items/:uuid', ProfilesItemsRoute);
 app.get('/v1/bingo/:uuid', bingoRoute)
 app.get('/v1/calendar', calendarRoute)
-app.get('/v1/mayor', mayorRoute)
 app.get('/v1/auctions/:uuid', auctionsRoute)
 
 app.use(NotFound);

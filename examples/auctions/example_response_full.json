@@ -1,195 +1,357 @@
 {
   "status": 200,
   "data": {
+    "total": 8,
+    "activeAuctions": 3,
+    "unclaimed": 5,
+    "coinsToClaim": 1452000,
+    "valueIfAllSold": 15652000,
     "active": [
       {
-        "_id": "62fe201d0cf239777c7e59e5",
-        "uuid": "f03e20ae0757428d818a9f17854e56f5",
-        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-        "coop": [
-          "a40eb1c449ac4b099426cb80384ac7e9"
-        ],
-        "start": 1660821533708,
-        "end": 1661015933708,
-        "item_name": "Treecapitator",
+        "_id": "6311cee00cf2f44aa14dafd8",
+        "uuid": "08abd70775d94d6aaaa42d72966328b5",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "4b5da4a29d2d49478f445794f9ee2f41",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1662111456542,
+        "end": 1662133056542,
+        "item_name": "Molten Bracelet",
         "item_lore": [
-          "§9Efficiency V",
-          "§7Increases how quickly your tool",
-          "§7breaks blocks.",
+          "§7Strength: §c+20",
+          "§7Health: §a+30",
+          "§7Defense: §a+20",
           "",
-          "§7A forceful Gold Axe which can",
-          "§7break a large amount of logs in",
-          "§7a single hit!",
-          "§8Cooldown: §a2s",
-          "",
-          "§7§8This item can be reforged!",
-          "§5§lEPIC AXE"
-        ],
-        "extra": "Treecapitator Gold Axe Efficiency",
-        "category": "weapon",
-        "tier": "EPIC",
-        "starting_bid": 1200000,
-        "item_bytes": {
-          "type": 0,
-          "data": "H4sIAAAAAAAAAD2R3W7TQBCFx0kDiYMo5QHQFHEbmqTNT3tnBVOCSokqF3GHxvbYXmW9G7xr0jxR3iMPhlhHFbdnz3znzKwP0ANP+ADgtaAlUu+dB52FrpX1fGhbyntwwiopnh1t+UdC5+gEBA/6jyqumNYUS/ba0PsiUv4sKTfO/teHl6kwG0k7B7nTFXed2ofTw/46zDKRCAfe4Q94f9jPlipxHMMGC73F37VI1nKHO11XaLWWcOY8xySDsdTJ2nx0LHRigJmuEs5qibdaphg8MW4LkRSYkDqij2NIKKnKGalslkOdodS5QaHgjfMQGqFyyVgIew5vD/v5wqWmeqtuXAiNzXOae4gK4cYsl00AxowVuwY5p+fw+rCfHPYyXC0XGPwMu3ByTyU3AZOoYk5oIyxZXYEPp+GTrSiwthJxbdl0oacrkQsVUQ7+18f727vw15HRnPosegjDRbBaRkH0/aHRfXjVfAspW7Kypg0+/z+p69ppQ9+y5LVQbETT3gNXp64d7MN4Ohmmk/l8MJ3N0sEVUTygLE4H08loFl9fzmdJeun6WFGysVRu4HQ0uri6GI9wfDMc4uobQAtefKKScnZk+AdaQM5VRQIAAA=="
-        },
-        "claimed": false,
-        "claimed_bidders": [
-          
-        ],
-        "bin": true,
-        "highest_bid_amount": 0,
-        "bids": [
-          
-        ]
-      },
-      {
-        "_id": "62fe202f0cf239777c7e6060",
-        "uuid": "ea869e7f96a444fc9ddce6384cbb599b",
-        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-        "coop": [
-          "a40eb1c449ac4b099426cb80384ac7e9"
-        ],
-        "start": 1660821551119,
-        "end": 1661015951119,
-        "item_name": "Grizzly Bait",
-        "item_lore": [
-          "§eRight-click to view recipes!",
-          "",
-          "§9§lRARE"
-        ],
-        "extra": "Grizzly Bait Raw Fish",
-        "category": "consumables",
-        "tier": "RARE",
-        "starting_bid": 1000000,
-        "item_bytes": {
-          "type": 0,
-          "data": "H4sIAAAAAAAAABXOQU6DQBjF8TdQFSYm9QZi4pZUkBLqjmqtTaoL4sYmxgzDV5wI0sCgthfiHhzMiNtf/i95HLDBFAfADBgqY68MR7dV+6kZh6lFbsJ+UBndFyJvhuqX4yRTza4QexujdVWTNaiJ876jROXv2pWFkh+OrpwvRd9OTVLtqLkYIt53s74rkjhZWBg9iZIwHmhZq8Oh2DtzoTQ4xosfXYtY61qlrabG+n+F02Wy2mzWL2/zePU8rNt2wEu6zvwtEbkylFM3iNLQjbZB6kYk09k086TMfAu2ViU1WpQ7nAUTL5z4vuN5N96VEz8CBo7vRClyAgP+AIh261IPAQAA"
-        },
-        "claimed": false,
-        "claimed_bidders": [
-          
-        ],
-        "bin": true,
-        "highest_bid_amount": 0,
-        "bids": [
-          
-        ]
-      }
-    ],
-    "ended": [
-      {
-        "_id": "62fe35d00cf239777c813831",
-        "uuid": "626e0848cef04929bb6bd04ea34048ea",
-        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-        "coop": [
-          "a40eb1c449ac4b099426cb80384ac7e9"
-        ],
-        "start": 1660827088550,
-        "end": 1660832475193,
-        "item_name": "Implosion Belt",
-        "item_lore": [
-          "§7Defense: §a+70",
-          "",
-          "§bArachno Resistance I",
-          "§7Grants §a+1.5❈ Defense §7against",
-          "§7§a§aspiders§7.",
           "§bBreeze I",
           "§7When you haven't been damaged in",
           "§7the last §a5s §7or more, your",
           "§7mana costs are decreased by",
           "§7§a1%§7.",
+          "§bMana Pool I",
+          "§7Grants §b+20✎ Intelligence§7.",
           "",
-          "§6Ability: Consolidated",
-          "§7§7Increases all explosion damage",
-          "§7dealt by §a25%§7.",
+          "§8Tiered Bonus: Molten Core (0/4)",
+          "§7Gain §a5% §7damage resistance",
+          "§7while fighting §6Kuudra§7.",
           "",
           "§7§8This item can be reforged!",
-          "§5§lEPIC BELT"
+          "§5§lEPIC BRACELET"
         ],
-        "extra": "Implosion Belt Skull Item",
+        "extra": "Molten Bracelet Skull Item",
         "category": "misc",
         "tier": "EPIC",
-        "starting_bid": 2500000,
+        "starting_bid": 9350000,
         "item_bytes": {
           "type": 0,
-          "data": "H4sIAAAAAAAAAF1Uy47iRhQtmpkJkCitGUVJVlElmWgWCTN+YAy9M9DtLoKhG8zD3ozKdoELyjayi6bhC7LJJ2TNf/ApUb4jShm6R0kkW3adOvfcc+91uQJAGRRoBQBQuAAXNCj8XgAv28km5oUKKHK8KILyLQ3IDcOLTLD+roDKaLVhbLCNSVoCFygAb33clOsNfV6d+7pUVZVmreqpGFebDdnzFExktRaIuLs0WZOUU5KVQYmTR75JSXZKXQIvJ5htSOEvsk0WqN2V8FRmvjoMvZlBUSdZWLYjWXtnay2RNrANxRptf0Vtg/q33Qc3Ypk7ZitEjTpqI8m1ra27HG9dO6DOdCxZirN3pu7Kiq7Vfme8c5QJdW2kOTuUtamxQHFr5ynu2jMnA0fkPet054HZ5M5s+EBYg/aMk689ngYbgcl+NBm5sxsZz7rMbaPFgLYkP56wJ57kzkIpEHv+7rSnn/IIv2OJd236HyznC73tqU4Uibhbo97bNf+loXE81ZijdkM3vt940UTqqUNGbnMf4wd3eSNqQ1tr767cjqP0zS4d2K3lYHov9Tv9pWWvtIHp0r6NFGu/qjlT0SNzuHKnSB1MUa3fMR6d5bXiLFnYN+8fLbMbWs+9Ofvj7mwYuuaN5Iz+713ckfzgmpPsqW97z2QcLZKn/VbzzD0/5/frpph4BXwW0GzN8K4MXvSSlJQE+Bq8OR70DpmTOCNX8HjAP+uSwL85HjwjxX4YJ3BIMppxHPsEIvBO0M0Uxzw7keX32p9//AafBASk4wWmccbBV+JdMMSVrcXHnGZi/R58LnRbKSH7XOtHAU1DEsNdsoEhfiDxOw49IoAAR3hBAkhj8IMg8ZBAhjOep9TyxHqSwkiU8EsemoLvBBLhGEM/yYQxnBIYED8lOBMa3g58cfYi/3TyAMC3x0Pd8CijfHcF20mcJYwGmBNxrk5MHcXnaKHFGCSPa5ZkNHn2Bb4WlIBgJtzuck+K9qwMT/ENO6QZpJxE0MexKAmmZJ6koqLvweXxoB0P7PoOtWHrumeXwIs+jgh4LXAUPSdqEcbFxC6vH3mKDc5T6m14fnIr+NOiCF55p1bmx7kI3uDzvD6mn+aVb4BS/o8BXyLrrjcYoUH/41PWzUbAb3XsBU1PVquBpuJqzVflKp5LtWp9TiSloWq+5NdLoMxpRIRmtAaX+ge59kFRoHKl6tCwALgArzrnvhQB+Aco6/s63gQAAA=="
+          "data": "H4sIAAAAAAAAAFVU23KjRhAd2d6NrKR2K5v33UnirSS1UYwkZEl+080IrwBfkGR4cQ0wgpEGUMFgSfxD8gV5TJX/w5+SD0mlwU4qeWFqzpzuPn2amRpCx6jCagihygE6YF7l1wp6NYyzSFRq6FAQ/xAdT5hHLzjxU2D9VUO123XGubGNaFJFB6qHTuROjzZbzrJOe26v3nKdTp205LN6p9dethypK3dID+KuknhDE8Foeoyqgu5EltC0LF1Fr+aEZ7TyB93Gvjq8lMiiwd3WTeDc9Zk6in3NtCQ97+/01Wyrm/1cu91+Vod95k4uH+yQp/aMr1XWP4NYZuU33FZspi+sXA81yVDGLWuhte3VRaDlfG3lam6vbkJjqKZD1vfVaLB3mvbGUeaGBXWf86iytdADfeVvrZW610fWTsuvtyp7qdvkkRNeSN7dJZ+F85234Ht7cV1q9SaXDftFn6fMZW8y39t3Wnn23B/U5Pr0dib/Hyv4d5fpSx+xN7nZGqz78J8cmbPgmb3Q99bClqZhm3vDnmTfBaWOaa6CN2pbVyzZMMcNKw/WlsmZHs5yY6RC//baCsfQxzw0RkFgra5b+uqCGeZ1rimznaHYoWaqDRt8s811Q1P0la1YrPRoOOgV6/J604OJ1dAXHks3nOyP0dE0TmgVwHfom6fHzq1IaOSL4Bw/PbqfmhL6GsAJJfwZIp9aEnoH0IguaZTSZwxoCH359OgMEkpzilX0PVAWAY3wPs5wQB5o9IPADgXAIyHxqYdZhL4Dkggo5iQVRZ52Ct9OnOAQJP1chCboPSAhiQh241SkmCQUe9RNKEkhh7NHX8E5hDY+wvoLegMatIJ9FcccZJwAqiQkEkVmB3T++ftvWI0E5Zz5NHJpGYUKJV2T0QRyDuIoS8+xFnMBaoegBP8onco/lWoVwqJS6cdC6XMrGK4BSwWBbOgDoNuAcYqXzA8Ei3zgnX3OMi8hL6VwKbhrBizFTNAQuyQCZyDLMk7AmG+LMbSfHvn4Sh3iwU1/OJ6OzSo60klIC+vbL9IGCXEppwKm+Xa8EwnpC5EwJxPFrayRfzeH6LVTjqW4qvAeFG7eb8CfYo+qxbOB3mrG1Bzr9/+UA5oTp+k93PYEaMA6yjLgnSy9HvHo0q27UqNTl1vErXe9jleXSbcry2dd0vXgZzoWLKRgSbhBb7qn7dNmEzfO5TN8pSF0gF6PSt/QIUJ/A62Da3zBBAAA"
+        },
+        "claimed": false,
+        "claimed_bidders": [],
+        "bin": true,
+        "highest_bid_amount": 0,
+        "bids": []
+      },
+      {
+        "_id": "6311d2a40cf2f44aa14dc28c",
+        "uuid": "90c761b8e2ca4d4b8de4bb92b3252903",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "4b5da4a29d2d49478f445794f9ee2f41",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1662112420542,
+        "end": 1662134020542,
+        "item_name": "[Lvl 58] Tiger",
+        "item_lore": [
+          "§8Combat Pet",
+          "",
+          "§7Strength: §c+10.8",
+          "§7Crit Chance: §c+2.9%",
+          "§7Crit Damage: §c+29%",
+          "§7Ferocity: §a+14.5",
+          "",
+          "§6Merciless Swipe",
+          "§7§7Gain §c+17.4% §c⫽ Ferocity§7.",
+          "",
+          "§6Hemorrhage",
+          "§7§7Melee attacks reduce healing",
+          "§7by §631.9% §7for §a10s§7.",
+          "",
+          "§a(2/10) Pet Candy Used",
+          "",
+          "§7Progress to Level 59: §e77.5%",
+          "§2----------------§f---- §e53,796.7§6/§e69k",
+          "",
+          "§7§eRight-click to add this pet to",
+          "§eyour pet menu!",
+          "",
+          "§5§lEPIC"
+        ],
+        "extra": "[Lvl 58] Tiger Skull Item",
+        "category": "misc",
+        "tier": "EPIC",
+        "starting_bid": 2450000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAAI1TyW7jRhAt2TMZSUASJEgwOXIIG5hgJJmLSIoC5mBIXiiIssfrWEEOLbJEUuIikE2P6SCfkO8QglxzzUWfkg8JUu0lCHIKQZBdVa9evarubgI0oBY1AaC2BVuRX/ulBi8HWZnyWhO2OQu2oXEc+XgYs6Ag1F9NaJ4vyzg++ZRiXoctx4cdXWemjcxvd7vMa+uWrbbtrma0DU1VbMY8nzGT8k7zbIU5j7BoQJ3jHS9zLB5K1+HlFYtLhN+xGinTj6HifxzFXuWYZF+cK/GJs1hZTnpVzQaO6SQUP943x5X9L6zB2bUR3+ijcJp+KGfJlTLWz2I8PlO95PJ2mriKu7i5Pxl6ymS4rNzEUafJJJksRovpMI6mC0efXl+FN4vl3c1iFE/uR8tJ4uru0WVXoCbXh6F7H3Td+6XhapfGdBgoTqra8w/v31MHTXjlR8UqZlUDXoyzHOvkfA2fb9a9QZbMGJdOkZPr283aOuc5pgEP+9Jm7b1TlU4PviP3II+4NAhZ6uFjROvYu/D6OTJkCQueIxQQTIeYZ17EK+Fl79Rux6ASX2/Wpou5F8VYFNL5p2iF8JbA9B6xKH0sanW6u2L1529/SM8sBOhQPmk2jzHJ8jykgiA/proYI0qMc+YtCylHv/RQCpHFURoAMVmzir6mrpJoYc6zXIhSleKJllpkb7U9VflejEIasNSvpMsCfYq9IQwdjiAXinkmjfEWY8mwRV9oWR1jF5TNWmv/59ms5+InQIbesmyzQ0rNPTJNe0m0Ow/S8SwKQt724shbCnLm+xIPo0JakQyewVcEqbIyf7ATTMs3Yj83a2Ozjg9OnUEdXkxYgvANsf0wviVdvR+ppHERBZjTxn95cMdzts95Hs1KjkUdXhGTk84z+PUnmVcrlPvyhXN0cCa3ZObx6JYccxYX2JLxbiX3ezQ10m7aPU03lJ5htWS6IzllifKUFNL9E3z/pHlieGJ2cl9ryWUZ0UJmqKvdua+1DWtmtrumrbeZb3htZD1rZpiarnvzJ7KHiQzEQJ4of66Luw/bpwcX1K4ghJ3/w1eHBo8SLDhLVvCFvaftaZpk9HVb2ncBtuCzx1ML2wB/A6+/FRVqBAAA"
+        },
+        "claimed": false,
+        "claimed_bidders": [],
+        "bin": true,
+        "highest_bid_amount": 0,
+        "bids": []
+      },
+      {
+        "_id": "6311d4220cf2f44aa14dc874",
+        "uuid": "ce176c35f26f4c94a0a2836590877bdb",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "4b5da4a29d2d49478f445794f9ee2f41",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1662112802890,
+        "end": 1662134402890,
+        "item_name": "Ancient Shark Scale Leggings",
+        "item_lore": [
+          "§7Strength: §c+25 §9(+25)",
+          "§7Crit Chance: §c+12% §9(+12%)",
+          "§7Crit Damage: §c+35% §9(+35%)",
+          "§7Sea Creature Chance: §c+2.5%",
+          "§7Health: §a+232 §9(+7)",
+          "§7Defense: §a+177 §9(+7)",
+          "§7Intelligence: §a+20 §9(+20)",
+          " §8[§7❈§8] §8[§7❈§8]",
+          "",
+          "§9§d§lLegion II",
+          "§7Increases most of your player",
+          "§7stats by §e0.14% §7per player",
+          "§7within §b30 §7blocks of you, up",
+          "§7to §c20 §7players.",
+          "§9Growth V",
+          "§7Grants §a+75 §c❤ Health§7.",
+          "§9Protection V",
+          "§7Grants §a+20 §a❈ Defense§7.",
+          "",
+          "§6Full Set Bonus: Absorb",
+          "§7§9Doubles§7 your §a❈ Defense§7",
+          "§7while in water.",
+          "",
+          "§6Full Set Bonus: Reflect",
+          "§7§7Your sharp scales reflect",
+          "§7§915% §7of damage onto the",
+          "§7attacker.",
+          "",
+          "§9Ancient Bonus",
+          "§7Grants §a+1 §9☠ Crit Damage",
+          "§9§7per §cCatacombs §7level.",
+          "",
+          "§7§4❣ §cRequires §aFishing Skill 24§c.",
+          "§6§lLEGENDARY LEGGINGS"
+        ],
+        "extra": "Ancient Shark Scale Leggings Leather Leggings §d§lLegion Protection Growth",
+        "category": "armor",
+        "tier": "LEGENDARY",
+        "starting_bid": 2400000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAAG1UXW7bRhAeWXEiKwHcBAHSpkW6TROkRiyF1B9jvamyLRt1HcNsAgRBYCypIbUQxVV3l3V9gx6hLwYKpKjuoaP4IEVnSdqN0/KFszvffDPzzZB1gDWoiDoAVFZgRYwrmxVYHcosNZU6VA2P1+AGpuEE7FOB26/TQCGf8iDBShXW9sQYdxMea/L+XYdbY6HnCT+joAOpsEa3j+Gr5cLzjcI0NpM+Wy7C560uvba+o/cGfEPeoRKGDSc8DbEAuK2nBYKMjyDbfMbjEtLulhAyNoDZHMjZkIozmcJrbK1m9yk8JMQe8qSogT9vtVtFvLcBX5JvGyNMNRZO1/OunJZ6PzWYJCLGkpPCnbIFZwMekfnyHcEuzn8j6/0nRxLhHmGXi/FykRxgLGTK9vdL3pAK1qjZTGrDZMTOZKaYlRAVPCaENtxoFpwRGp2m27FNe3O8wjyh46kwE5GSI2jbqrwgkeFUl2ybLJvDA7o10oqR1+0VwboJt6mwkZKnZsLe5PlGiqeU0Lbo2SmFF+d/skI38jZhnQKOlDQYGtvHG/j2elDOz6lzVgqaRwF8sVz0drMkYT4a9r1MM91ng0BLFcAzghDrtsxoqTQdChH+Q2NV9E4nIkFG3Z5yg8oyP/wf5mOMEqoQvs6pvbeWT0+4mjMdckrC1DXAlpsvk0eKjfMVYzIlucwE4Q5dc2N4OC2yfUboQRoKTMtkn6rm2r24+P0P9tHG2llvlXMjSYec+OQssAFegr9gYpkbeSmdi/MPFnOMP2dCYc65KzTNN2b+VFCbrQ65m/A5tW33aWe0c7g9OH7LyBrtH478KqyGMpEKYPOvGtw45DO0bfYuq/ZJhynzrQ6MtjEmZg11WN/51Sg+MEaJIDOoa5c0Naff6fTdXq8GtZkci0jQ2t3iBVsN1qQSxPETj2HdP3p1ONo5uaykZn8ocN/fGxz/cOIPBwf/uupwx/5VSLUZsegqrGeJETOa6UmSfyEkyEoV6vOrVaOL1SrcjPNltQeg5rKMEjwJoshztpA3gpdRr9FBp9sIola74QTotjl6GLVDKpT4kT6n2Rzuuu6LtvOi5TLX7TtddvQjZYOb5bDo+QeCTYh1FwUAAA=="
+        },
+        "claimed": false,
+        "claimed_bidders": [],
+        "bin": true,
+        "highest_bid_amount": 0,
+        "bids": []
+      }
+    ],
+    "ended": [
+      {
+        "_id": "60bef7cf0cf2426bce82583a",
+        "uuid": "fce96c43941b4f6b84be79ff7db5bd47",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "60b4f03593c0470c934f94e3bd88f564",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1623128015883,
+        "end": 1623149615883,
+        "item_name": "Lapis Armor Chestplate",
+        "item_lore": [
+          "§7Defense: §a+40",
+          "",
+          "§7Each piece of this armour grants",
+          "§7§a50% §7bonus experience when",
+          "§7mining ores.",
+          "",
+          "§6Full Set Bonus: Health",
+          "§7Increases the wearers maximum",
+          "§7§c❤ Health §7by §a60§7.",
+          "",
+          "§7§8This item can be reforged!",
+          "§a§lUNCOMMON CHESTPLATE"
+        ],
+        "extra": "Lapis Armor Chestplate Leather Chestplate",
+        "category": "armor",
+        "tier": "UNCOMMON",
+        "starting_bid": 2000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAAEWRzW7aQBSFryEpP62E1EWk7qZ/q4gGiG1+di4hIiqYKIC6jC7mYka1x2hmrJKH6a4S78Gj9EHaXtNW3Y3unPOdc2fqADVwZB0AnBKU5Nq5dOB8mOXKOnUoW4wdeL5UK034BVcJOWWojeWabhOMDZt+1qGylmaX4FMNziaZpipPX8DL46F7QxtShgbieMBLt8XztzwdYbQVO0kRiWwj7FYagTrNci1ijcoaeMMidnit92zsrjKVG0H7HWlJik1ft6SgwTepVFLFgiPNB2a/Oh782zxJxJys+Fi4BmJMmNgtFJw7FfEOhgxHMoRQkzYixb1M8/SkOB6iH9++//Wcop+K5n6Lj0XAH01vUTSWllIRoRIrEpo2mY5p/bqogMdDsgyHs+l0ForheDRf3E+CxagM51GWZJoxv6pwFmJKJ/UEd0wLeH8thlsylh/SEtShMdpbjYG1Wq5yS6b6D1BpDVqDjudVoZZpGUu1wBgqy/BTOPscVosfhItJcH83fwweprOHx/8dODfP+frdxvN8l/yo6XttbLp4vWli5Paa2Pd6/et25PbdLuOtTLkQpjto+Fe9q05btDsDtyuCKUAJnt1gijHxQvAbKDoTNEQCAAA="
         },
         "claimed": false,
         "claimed_bidders": [
-          "91d14350414f43cc91d27dbce284dd03"
+          "5708ac91376c431c9f59f4d09c0d070a",
+          "992cd336bd4c4295bfb2dca892b8883e"
         ],
-        "bin": true,
-        "highest_bid_amount": 2500000,
+        "highest_bid_amount": 7000,
         "bids": [
           {
-            "auction_id": "626e0848cef04929bb6bd04ea34048ea",
-            "bidder": "91d14350414f43cc91d27dbce284dd03",
-            "profile_id": "91b8d65d48d147c984a4f738c10695a9",
-            "amount": 2500000,
-            "timestamp": 1660832478310
+            "auction_id": "fce96c43941b4f6b84be79ff7db5bd47",
+            "bidder": "5708ac91376c431c9f59f4d09c0d070a",
+            "profile_id": "ac3fdccb8342435d900eace855c7b9fe",
+            "amount": 2000,
+            "timestamp": 1623149060455
+          },
+          {
+            "auction_id": "fce96c43941b4f6b84be79ff7db5bd47",
+            "bidder": "992cd336bd4c4295bfb2dca892b8883e",
+            "profile_id": "2002f05581f245fb9bcb6378c0e939de",
+            "amount": 2300,
+            "timestamp": 1623149271294
+          },
+          {
+            "auction_id": "fce96c43941b4f6b84be79ff7db5bd47",
+            "bidder": "5708ac91376c431c9f59f4d09c0d070a",
+            "profile_id": "ac3fdccb8342435d900eace855c7b9fe",
+            "amount": 7000,
+            "timestamp": 1623149299845
           }
         ]
       },
       {
-        "_id": "62fe42fa0cf239777c824f4d",
-        "uuid": "ff9777936be0469a9301c6880eb0be86",
-        "auctioneer": "a40eb1c449ac4b099426cb80384ac7e9",
-        "profile_id": "a40eb1c449ac4b099426cb80384ac7e9",
-        "coop": [
-          "a40eb1c449ac4b099426cb80384ac7e9"
-        ],
-        "start": 1660830458533,
-        "end": 1660830861151,
-        "item_name": "Heroic Spirit Sceptre ✪✪✪✪✪",
-        "item_lore": [
-          "§7Gear Score: §d682 §8(2029)",
-          "§7Damage: §c+218 §e(+20) §8(+750)",
-          "§7Strength: §c+60 §e(+20) §9(+40) §8(+225)",
-          "§7Crit Damage: §c+50% §8(+187.5%)",
-          "§7Bonus Attack Speed: §c+5% §9(+5%) §8(+7.5%)",
-          "§7Intelligence: §a+430 §9(+100) §8(+1,500)",
-          " §8[§8✎§8]",
-          "",
-          "§d§l§d§lUltimate Wise V§9, §9Critical V§9, §9Cubism V",
-          "§9Ender Slayer V§9, §9Execute V§9, §9Experience III",
-          "§9First Strike IV§9, §9Giant Killer V§9, §9Impaling III",
-          "§9Lethality V§9, §9Life Steal III§9, §9Looting III",
-          "§9Luck V§9, §9Scavenger III§9, §9Sharpness V",
-          "§9Vampirism V",
-          "",
-          "§6Ability: Guided Bat §e§lRIGHT CLICK",
-          "§7Shoots a guided spirit bat,",
-          "§7following your aim and exploding",
-          "§7for §c7,047 §7damage.",
-          "§8Mana Cost: §3125",
-          "",
-          "§6§lLEGENDARY DUNGEON SWORD"
-        ],
-        "extra": "Heroic Spirit Sceptre ✪✪✪✪✪ Red Rose Impaling Luck Critical Looting Ender Slayer Scavenger Vampirism Experience Life Steal Execute Giant Killer First Strike §d§lUltimate Wise Sharpness Cubism Lethality",
-        "category": "weapon",
+        "_id": "6311ce9b0cf2f44aa14daecc",
+        "uuid": "5ff8ef6f0d1c43dea3d709fd5a2669e3",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "4b5da4a29d2d49478f445794f9ee2f41",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1662111387369,
+        "end": 1662118789727,
+        "item_name": "Digested Mosquito",
+        "item_lore": ["§eRight-click to view recipes!", "", "§6§lLEGENDARY"],
+        "extra": "Digested Mosquito Rotten Flesh",
+        "category": "consumables",
         "tier": "LEGENDARY",
-        "starting_bid": 17800000,
+        "starting_bid": 300000,
         "item_bytes": {
           "type": 0,
-          "data": "H4sIAAAAAAAAAHVU3W4aRxQ+GMcGmiZV1faiUtuRGldG+IddWJZY7QUGjFEIjoDYqqJoNewOy8izP9qddeyX6BPk3lIfw4+SB6l6ZgcoN0ViZs833zlz5sx3pgJQhgKvAEBhB3a4B78V4Fk3ykJZqEBRUr8Muyx0l6B+RShfco9dCOqnaP5TgX2Pp7GgD8gaRQkrIfoD/PL0aA8YTcjUReyMPD16rbaJU/vQrJuvq3CAhB4NqJ8vujXTaOPMDmtmvZrTarZVr8Ip0qYyYaEvl5rYqm/zXh/WmmsH07Sq8AodugmXZDu4VT/QFKNtn1gHVTCQdR6FWUo6UlL3lkxjxrwV+UDHRd4qkdzlBF2GoWRCcB+rkUemtWajrtlGfZ2GcWThN7xU1gf8f/n8F44fsSx/YBWeHoUe3wvJAyoZueEpI9cY5EhFUrlzl4otJJvzNCDX0EajH3oMi4rlxmlD6d8zN5NsG4hZwlWaZDgcwu8IXfAklQRryW8R3DAHnIaSvOFCbAccBjEVPPRzbxuBEZNLROTDf5wRXzCMxzBXZG3QKJJrR0PZGVZ34zN16R3eJW615TJd0iQOWZriGV+gfU2DmCf6zACHT4+tzpyrvc/IIEPteeScSiUCrOJkOLicke5o2H0DPyutLHH/lFDia2aqIkkyp/IIfsX1RSRE9Ekl+BBlCaE8IDT0CLuPReQhDD/mpEQpwT6qN238sL1cSifwHd7jWxpS0o1Sqe6/YZgWpvgTpoi5jPqD/rjXmfxJeu/Hg/7VmExvria9EuyOacBUGVuXLIm4i2rLs5q6LEZtY6DWl89//98IFXjZv5cJRakmfI73nBbhm2UknTiSVEaOq1oV06iUoBTgKRacJbC3zLcqwrdehgWPQodLFjiC3TGh2rgIX2exn1CPbbBnJShHCfd5OKM+fN+ddC5mw/HAGUyGPad7NRr1u7NS/kCUzjsz56Yz7lXguXoZUEIBCyXmVeIr5eg9dgVevwqNK+5K2drcF1oomodRUNdOmutaE8rpWiua8hW2HrvlqBOuHp4CMu7WQtEeFbZRvXapCJSokyqJamCf6UbR/Oe+0r5zm2t/BS1Ul6CL6hKEdlWZVo3qfMJGXee2lqy299y8R1eLYt0ryga8/gy1CK+shmHVzZZxbDbp4rjZaljH80XLOjYM2241zKZheE28AdyMpRJPBi/MU/vUNIlxhsO7twA7sKdfNfyCfwHhA3vxtwUAAA=="
+          "data": "H4sIAAAAAAAAABWOy06DQBiFf0pVYENM3DsmbkmRm4y7RrA2Ka22deHKDPAXJ4IgDF6eiPfgwYzj9jsn53wGgA4KNwBAmcCE50qtwNFt3b8LxQBVsEIF/Z7neFeyopOtXwNOct41JfvRYbqqW9QkVeF8HHDLi1dhZSXP3oioySfHL9JixhvsLmTJHIdgHMpVvIjX0Xz7rMF0zSqEM8kjXmAnMCdJ3X30XNRggBl/i5bNhWh52gvstH8/OI2Wi3i3j6OXZLN7fFruN3Kn72Vy6dIUbTu8slJ68CyPurlFA9+37Mx1kXoUD36ggS54Jb9Y1YAZzhx35jjk+sYOyUMCMIHjiFWsQOkLf5mBVd0dAQAA"
         },
         "claimed": false,
-        "claimed_bidders": [
-          "393c45a50080492b98a5309df1fea69d"
-        ],
+        "claimed_bidders": ["5fdb72a7a2d94d22b4b4dd49ad86c791"],
         "bin": true,
-        "highest_bid_amount": 17800000,
+        "highest_bid_amount": 300000,
         "bids": [
           {
-            "auction_id": "ff9777936be0469a9301c6880eb0be86",
-            "bidder": "393c45a50080492b98a5309df1fea69d",
-            "profile_id": "695b840aaa5441728179e6e27f1dc26c",
-            "amount": 17800000,
-            "timestamp": 1660830865087
+            "auction_id": "5ff8ef6f0d1c43dea3d709fd5a2669e3",
+            "bidder": "5fdb72a7a2d94d22b4b4dd49ad86c791",
+            "profile_id": "0f00b28f090440419b0273236fee0463",
+            "amount": 300000,
+            "timestamp": 1662118793644
+          }
+        ]
+      },
+      {
+        "_id": "6311ceac0cf2f44aa14daf0b",
+        "uuid": "89dcdf0f4e4446a3992760f1b925567c",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "4b5da4a29d2d49478f445794f9ee2f41",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1662111404504,
+        "end": 1662118775782,
+        "item_name": "Digested Mosquito",
+        "item_lore": ["§eRight-click to view recipes!", "", "§6§lLEGENDARY"],
+        "extra": "Digested Mosquito Rotten Flesh",
+        "category": "consumables",
+        "tier": "LEGENDARY",
+        "starting_bid": 300000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAABWOzU6DQBhFP0pVYFNN3DsmbkkLDrS6awRrk9JqWxeuzDAz4kRwkBn8eSLegwczjttzb+49HoALlvAAwBrAQDBLWnBwI9t3bXlga1LY4N4Jxm9LUijT+vXgiAlVl+THheFKNtwx1IazvuNbUbxqn5aCviEt0afgX6jhVNRcnZvSqO/ivitX6SJdJ/PtkwPDNak4nBqeiIIrzRnKpPpohZbgwSj91g2Za92IvNVcOf9+cJIsF+lunybP2Wb38Ljcb8xO25rk4nKS59Mppj7HL9jHM3bl50EU+4wGmJIgx5hRB1wtKvNFqhqOZ+MwGochCibXUYzuM4ABHCakIgU3wvAHMiT21h4BAAA="
+        },
+        "claimed": false,
+        "claimed_bidders": ["5fdb72a7a2d94d22b4b4dd49ad86c791"],
+        "bin": true,
+        "highest_bid_amount": 300000,
+        "bids": [
+          {
+            "auction_id": "89dcdf0f4e4446a3992760f1b925567c",
+            "bidder": "5fdb72a7a2d94d22b4b4dd49ad86c791",
+            "profile_id": "0f00b28f090440419b0273236fee0463",
+            "amount": 300000,
+            "timestamp": 1662118779738
+          }
+        ]
+      },
+      {
+        "_id": "6311cebe0cf2f44aa14daf57",
+        "uuid": "c8bd4e9c1c2e4dba8174ae41c60e97c3",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "4b5da4a29d2d49478f445794f9ee2f41",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1662111422821,
+        "end": 1662118782576,
+        "item_name": "Digested Mosquito",
+        "item_lore": ["§eRight-click to view recipes!", "", "§6§lLEGENDARY"],
+        "extra": "Digested Mosquito Rotten Flesh",
+        "category": "consumables",
+        "tier": "LEGENDARY",
+        "starting_bid": 300000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAABWOzU6DQBSFL6UqsCEm7h0Tt6QwFQruiGBtUtrY1oUrM8AUbwRBGPx5It6DBzOO2++cnPMZADooaACAMoEJ5kqtwMld3b8LxQBVsEIF/QFzfl+yopOtXwPOcuyakv3oMF3XLdckVeFyHPgOi1dhZSVmb0TU5BP5F2l5hg3vrmTJHAdvHMp1vIw3Ubh71mC6YRWHC8kjLHgneE6SuvvoUdRggBl/i5aFQrSY9oJ32r8fnEerZbw/xNFLst0/Pq0OW7nT9zK5Tu05c3LPtdIjDaybwF5YQbqYW67jH3PHd2lqpxroAiv5xaoGTG9G/RmlJLilDgkTgAmcRqxiBZe+8AcSgd3CHQEAAA=="
+        },
+        "claimed": false,
+        "claimed_bidders": ["5fdb72a7a2d94d22b4b4dd49ad86c791"],
+        "bin": true,
+        "highest_bid_amount": 300000,
+        "bids": [
+          {
+            "auction_id": "c8bd4e9c1c2e4dba8174ae41c60e97c3",
+            "bidder": "5fdb72a7a2d94d22b4b4dd49ad86c791",
+            "profile_id": "0f00b28f090440419b0273236fee0463",
+            "amount": 300000,
+            "timestamp": 1662118786499
+          }
+        ]
+      },
+      {
+        "_id": "6311d6600cf2f44aa14dd4e3",
+        "uuid": "2c2b5b305a9c4e239ce00f2080f4513a",
+        "auctioneer": "60b4f03593c0470c934f94e3bd88f564",
+        "profile_id": "4b5da4a29d2d49478f445794f9ee2f41",
+        "coop": ["60b4f03593c0470c934f94e3bd88f564"],
+        "start": 1662113376061,
+        "end": 1662115865842,
+        "item_name": "Ancient Rose",
+        "item_lore": [
+          "§7§8§oAncient plant imbued with",
+          "§8§othe unyielding power of truth.",
+          "",
+          "§eRight-click to view recipes!",
+          "",
+          "§9§lRARE DUNGEON ITEM"
+        ],
+        "extra": "Ancient Rose Red Rose",
+        "category": "blocks",
+        "tier": "RARE",
+        "starting_bid": 545000,
+        "item_bytes": {
+          "type": 0,
+          "data": "H4sIAAAAAAAAADWPQU+DQBCFB1or4KFHj67GeNOreiQWW5MWCNGDJ7OFESYCS2AQ+4v2f+wPM240Xt7hvS9v5gUAPjgUAIDjgksFXDlw9KDGlp0AZizLGfgbKvCxluVgqe8AjgsauloefJhvVY+edRdwYfSt0XdGq7DNCVsWFrFKzX7EQkzEFVz+AVyhGNsDYV1QW4pOTdgL9S64H7m6sW1nRmNGZcXXeU35h2AlPgkn0WNOHQ7nFjk1+t7oOguzSKxe4nWUxOLpOdp5MI9lg7C0+f8jmRoQAlhGX9zLkLmn/cg4eL9zT9bJNtq9pUmavgK4sFjJRpZoT8AP0zPhyxwBAAA="
+        },
+        "claimed": false,
+        "claimed_bidders": ["d1fdc76008574b5f9f6f0f73024749f8"],
+        "bin": true,
+        "highest_bid_amount": 545000,
+        "bids": [
+          {
+            "auction_id": "2c2b5b305a9c4e239ce00f2080f4513a",
+            "bidder": "d1fdc76008574b5f9f6f0f73024749f8",
+            "profile_id": "809c9e6c4ef3452bbf73c012cc7f2a10",
+            "amount": 545000,
+            "timestamp": 1662115869759
           }
         ]
       }

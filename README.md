@@ -95,7 +95,6 @@ The API automatically updates upon starting. If you wish to not want that, chang
 | items          | Check what item fetchur wants today                                     | fetchur                |
 | auctions       | Get a player's active and ended auctions and information about them     | auctions               |
 | bingo          | Get a player's bingo profile and progress                               | bingo                  |
-| mayor          | Information about current mayor and ongoing election                    | mayor                  |
 | calendar       | Get Skyblock's calendar including all events                            | calendar               |
 
 **Documentation**: https://api.altpapier.dev
