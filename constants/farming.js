@@ -10,25 +10,25 @@ module.exports = {
             name: "Cocoa Beans",
         },
         MELON: {
-        name: "Melon",
+            name: "Melon",
         },
         MUSHROOM_COLLECTION: {
-        name: "Mushroom",
+            name: "Mushroom",
         },
         NETHER_STALK: {
-        name: "Nether Wart",
+            name: "Nether Wart",
         },
         POTATO_ITEM: {
-        name: "Potato",
+            name: "Potato",
         },
         PUMPKIN: {
-        name: "Pumpkin",
+            name: "Pumpkin",
         },
         SUGAR_CANE: {
             name: "Sugar Cane",
         },
         WHEAT: {
-        name: "Wheat",
+            name: "Wheat",
         },
     },
 };
