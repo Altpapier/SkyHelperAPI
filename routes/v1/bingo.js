@@ -17,7 +17,7 @@ module.exports = wrap(async function (req, res) {
 
     if (bingoRes.data.id !== profileRes.data.events[profileRes.data.events.length-1].key) return res.status(200).json({status: 200, data: `Found no Bingo profiles for a user with a UUID of '${uuid}'` })
     
-    const profile = await parseBingoProfile(profileRes, bingoRes, uuid);
+    const profile = parseBingoProfile(profileRes, bingoRes, uuid);
 
     return res.status(200).json({ status: 200, data: profile });
 });

@@ -1,6 +1,6 @@
 const getSkills = require('./skills');
 
-module.exports = async (player, profile) => {
+module.exports = (player, profile) => {
     const enchanting = {
         simon: {},
         pairings: {},

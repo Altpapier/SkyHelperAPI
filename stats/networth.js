@@ -22,8 +22,10 @@ module.exports = async (profile, profileData) => {
 
     return {
         total_networth: networth.networth,
+        soulbound_networth: networth.unsoulbound_networth,
         purse: networth.purse,
         bank: networth.bank,
+        personal_bank: networth.personal_bank,
         types: networth.categories,
     };
 };

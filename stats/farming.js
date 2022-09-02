@@ -1,7 +1,7 @@
 const constants = require('../constants/farming');
 const getSkills = require('./skills');
 
-module.exports = async (player, profile) => {
+module.exports = (player, profile) => {
     const jacob = {
         talked: profile.jacob2?.talked || false,
     };

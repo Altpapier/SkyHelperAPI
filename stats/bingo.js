@@ -1,4 +1,4 @@
-module.exports = async (profile, bingo) => {
+module.exports = (profile, bingo) => {
     profile = Object.values(profile.events[Object.values(profile.events).length-1])
     const completedGoals = profile[profile.length-1]
     const bingoGoals = bingo.goals

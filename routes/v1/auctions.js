@@ -14,7 +14,7 @@ module.exports = wrap(async function (req, res) {
 
     const auctionsRes = (await makeRequest(res, `https://api.hypixel.net/skyblock/auction?key=${process.env.HYPIXEL_API_KEY}&player=${uuid}`)).data;
 
-    const auctions = await getActiveAuctions(auctionsRes)
+    const auctions = getActiveAuctions(auctionsRes)
 
     return res.status(200).json({ status: 200, data: auctions });
 });

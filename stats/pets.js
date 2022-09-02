@@ -17,7 +17,7 @@ const rarities = [
     "very_special",
   ];
 
-  module.exports = async (profile) => {
+  module.exports = (profile) => {
     let output = [];
 
     if (!("pets" in profile)) return output;
@@ -121,7 +121,7 @@ const rarities = [
       
       if (pet.heldItem) {
         const { heldItem } = pet;
-        let heldItemObj = await constants.pet_items[heldItem]
+        let heldItemObj = constants.pet_items[heldItem]
   
         if (heldItem in constants.pet_items) {
           for (const stat in constants.pet_items[heldItem]?.stats) {
@@ -283,56 +283,38 @@ const rarities = [
 
 
 function getPetLevel(petExp, offsetRarity, maxLevel) {
-    const rarityOffset = constants.pet_rarity_offset[offsetRarity];
-    const levels = constants.pet_levels.slice(rarityOffset, rarityOffset + maxLevel - 1);
-  
-    const xpMaxLevel = levels.reduce((a, b) => a + b, 0);
-    let xpTotal = 0;
-    let level = 1;
-  
-    let xpForNext = Infinity;
-  
-    for (let i = 0; i < maxLevel; i++) {
-      xpTotal += levels[i];
-  
-      if (xpTotal > petExp) {
-        xpTotal -= levels[i];
-        break;
-      } else {
-        level++;
-      }
-    }
-  
-    let xpCurrent = Math.floor(petExp - xpTotal);
-    let progress;
-  
-    if (level < maxLevel) {
-      xpForNext = Math.ceil(levels[level - 1]);
-      progress = Math.max(0, Math.min(xpCurrent / xpForNext, 1));
+  const rarityOffset = constants.pet_rarity_offset[offsetRarity];
+  const levels = constants.pet_levels.slice(rarityOffset, rarityOffset + maxLevel - 1);
+
+  const xpMaxLevel = levels.reduce((a, b) => a + b, 0);
+  let xpTotal = 0;
+  let level = 1;
+
+  let xpForNext = Infinity;
+
+  for (let i = 0; i < maxLevel; i++) {
+    xpTotal += levels[i];
+
+    if (xpTotal > petExp) {
+      xpTotal -= levels[i];
+      break;
     } else {
-      level = maxLevel;
-      xpCurrent = petExp - levels[maxLevel - 1];
-      xpForNext = 0;
-      progress = 0;
+      level++;
     }
-  
-    return [ level, xpCurrent, xpForNext, progress, xpMaxLevel ]
-    
   }
-  
-  async function getBackpackContents(arraybuf) {
-    const buf = Buffer.from(arraybuf);
-  
-    let data = await parseNbt(buf);
-    data = nbt.simplify(data);
-  
-    const items = data.i;
-  
-    for (const [index, item] of items.entries()) {
-      item.isInactive = true;
-      item.inBackpack = true;
-      item.item_index = index;
-    }
-  
-    return items;
+
+  let xpCurrent = Math.floor(petExp - xpTotal);
+  let progress;
+
+  if (level < maxLevel) {
+    xpForNext = Math.ceil(levels[level - 1]);
+    progress = Math.max(0, Math.min(xpCurrent / xpForNext, 1));
+  } else {
+    level = maxLevel;
+    xpCurrent = petExp - levels[maxLevel - 1];
+    xpForNext = 0;
+    progress = 0;
+  }
+
+  return [ level, xpCurrent, xpForNext, progress, xpMaxLevel ]
 }

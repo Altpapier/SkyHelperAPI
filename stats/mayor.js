@@ -1,4 +1,4 @@
-module.exports = async (mayorData) => {
+module.exports = (mayorData) => {
     const current = {
         year: mayorData.mayor.election.year,
         name: mayorData.mayor.name,

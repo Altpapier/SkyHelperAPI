@@ -1,6 +1,6 @@
 const crimson = require('../constants/crimson.js');
 
-module.exports = async (profile) => {
+module.exports = (profile) => {
     if (profile.nether_island_player_data) {
         const crimsonIsland = {
             factions: crimson.factions,

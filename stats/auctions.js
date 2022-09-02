@@ -1,4 +1,4 @@
-module.exports = async (auctionsData) => {
+module.exports = (auctionsData) => {
     const auctions = {
         active: [],
         ended: [],
