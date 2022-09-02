@@ -25,7 +25,7 @@ const getMissing = require('../stats/missing');
 const getNetworth = require('../stats/networth');
 const getBestiary = require('../stats/bestiary');
 const getContent = require('../stats/items')
-const formatMayorData = require('../stats/mayor')
+const getMayorData = require('../stats/mayor')
 const { isUuid } = require('./uuid');
 
 module.exports = {
@@ -78,7 +78,7 @@ module.exports = {
         }
 
         const profile = profileData.members[uuid];
-
+        const [networth, weight, missing, armor, equipment, talismans, cakebag] = await Promise.all([getNetworth(profile, profileData), getWeight(profile, uuid), getMissing(profile), getArmor(profile), getEquipment(profile), getTalismans(profile), getCakebag(profile)]);
         return {
             username: player.name,
             uuid: uuid,
@@ -95,8 +95,8 @@ module.exports = {
             purse: profile.coin_purse || 0,
             bank: profileData.banking?.balance || 0,
             skills: getSkills(player, profile),
-            networth: await getNetworth(profile, profileData),
-            weight: await getWeight(profile, uuid),
+            networth: networth,
+            weight: weight,
             bestiary: getBestiary(profile),
             dungeons: getDungeons(player, profile),
             crimson: getCrimson(profile),
@@ -106,16 +106,16 @@ module.exports = {
             mining: getMining(player, profile),
             slayer: getSlayer(profile),
             milestones: getMilestones(profile),
-            missing: await getMissing(profile),
+            missing: missing,
             kills: getKills(profile),
             deaths: getDeaths(profile),
-            armor: await getArmor(profile),
-            equipment: await getEquipment(profile),
+            armor: armor,
+            equipment: equipment,
             pets: getPets(profile),
-            talismans: await getTalismans(profile),
+            talismans: talismans,
             collections: getCollections(profileData),
             minions: getMinions(profileData),
-            cakebag: await getCakebag(profile),
+            cakebag: cakebag,
         };
     },
     parseProfiles: async function parseProfile(player, profileRes, uuid, res) {
@@ -130,7 +130,8 @@ module.exports = {
                 continue;
             }
             const profile = profileData.members[uuid];
-
+            const [networth, weight, missing, armor, equipment, talismans, cakebag] = await Promise.all([getNetworth(profile, profileData), getWeight(profile, uuid), getMissing(profile), getArmor(profile), getEquipment(profile), getTalismans(profile), getCakebag(profile)]);
+            
             result.push({
                 username: player.name,
                 uuid: uuid,
@@ -147,8 +148,8 @@ module.exports = {
                 purse: profile.coin_purse || 0,
                 bank: profileData.banking?.balance || 0,
                 skills: getSkills(player, profile),
-                networth: await getNetworth(profile, profileData),
-                weight: await getWeight(profile, uuid),
+                networth: networth,
+                weight: weight,
                 bestiary: getBestiary(profile),
                 dungeons: getDungeons(player, profile),
                 crimson: getCrimson(profile),
@@ -158,16 +159,16 @@ module.exports = {
                 mining: getMining(player, profile),
                 slayer: getSlayer(profile),
                 milestones: getMilestones(profile),
-                missing: await getMissing(profile),
+                missing: missing,
                 kills: getKills(profile),
                 deaths: getDeaths(profile),
-                armor: await getArmor(profile),
-                equipment: await getEquipment(profile),
+                armor: armor,
+                equipment: equipment,
                 pets: getPets(profile),
-                talismans: await getTalismans(profile),
+                talismans: talismans,
                 collections: getCollections(profileData),
                 minions: getMinions(profileData),
-                cakebag: await getCakebag(profile),
+                cakebag: cakebag,
             });
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
@@ -239,7 +240,7 @@ module.exports = {
         }
     },
     parseMayorData: function parseMayorData(mayorData) {
-        return formatMayorData(mayorData)
+        return getMayorData(mayorData)
     },
 };
 
