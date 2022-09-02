@@ -45,7 +45,7 @@ module.exports = {
         cubism: '6',
         ender_slayer: '7',
         execute: '6',
-        first: 'strike',
+        first_strike: '5',
         giant_killer: '7',
         lethality: '6',
         life_steal: '5',
@@ -94,7 +94,7 @@ module.exports = {
     },
 
     blocked_enchants: {
-        bone_boomerang: ['overload', 'power'],
+        bone_boomerang: ['overload', 'power', 'ultimate_soul_eater'],
         death_bow: ['overload', 'power', 'ultimate_soul_eater'],
     },
 
