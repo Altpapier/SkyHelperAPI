@@ -52,7 +52,6 @@ module.exports = async (profile) => {
                 else talismans[getRarity(talisman.tag?.display.Lore)] = new_talisman;
             }
         }
-        console.log(talismans)
         return talismans;
     } else {
         return {
