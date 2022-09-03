@@ -1,11 +1,9 @@
-const { allTrophyFish } = require('../constants/trophyFishing.js');
-
 module.exports = (profile) => {
     if (profile.trophy_fish) {
         const trophyFish = {
             total_caught: 0,
             rewards: [],
-            fish: allTrophyFish,
+            fish: {},
         };
         trophyFish.rewards = profile.trophy_fish.rewards
         trophyFish.total_caught = profile.trophy_fish.total_caught
@@ -20,7 +18,7 @@ module.exports = (profile) => {
         return {
             rewards: [],
             total_caught: 0,
-            fish: allTrophyFish,
+            fish: {},
         };
     }
 };
