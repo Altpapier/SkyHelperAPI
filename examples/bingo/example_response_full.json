@@ -1,0 +1,184 @@
+{
+  "status": 200,
+  "data": {
+    "uuid": "fb3d96498a5b4d5b91b763db14b195ad",
+    "profile": {
+      "points": 105,
+      "id": 8,
+      "player": [
+        {
+          "completed": true,
+          "id": "FIND_EXPERIMENT_PAIRS_1",
+          "name": "Pair Up!",
+          "lore": "§7Find §91 Pair §7in the §9Experimentation Table§7.",
+          "requiredAmount": 1
+        },
+        {
+          "completed": true,
+          "id": "stat_health",
+          "name": "Healthy",
+          "lore": "§7Reach §c1,000 §c❤ Health§7.",
+          "requiredAmount": 1000
+        },
+        {
+          "completed": true,
+          "id": "UNLOCK_DUNGEON_CHEST_WOOD",
+          "name": "Wooden Treasure",
+          "lore": "§7Unlock a §fWood§7 Dungeon Chest."
+        },
+        {
+          "completed": true,
+          "id": "collection_bone",
+          "name": "Bone Collector",
+          "lore": "§7Reach §a100,000 §7Bone Collection.",
+          "requiredAmount": 100000
+        },
+        {
+          "completed": true,
+          "id": "spawn_golden_goblin",
+          "name": "Strange Eggs",
+          "lore": "§7Spawn a §6Golden Goblin §7from a Goblin Egg."
+        },
+        {
+          "completed": true,
+          "id": "OBTAIN_JACOB_SILVER",
+          "name": "Podium Position",
+          "lore": "§7Obtain a §fSilver§7 or higher §fMedal§7 in Jacob's Farming Contest."
+        },
+        {
+          "completed": true,
+          "id": "UNLOCK_UNIQUE_COLLECTIONS_40",
+          "name": "Diversity",
+          "lore": "§7Unlock §e40 §7unique Collections.",
+          "requiredAmount": 40
+        },
+        {
+          "completed": true,
+          "id": "collection_log:3",
+          "name": "Jungle Wood Collector",
+          "lore": "§7Reach §a20,000 §7Jungle Wood Collection.",
+          "requiredAmount": 20000
+        },
+        {
+          "completed": true,
+          "id": "wear_accessories",
+          "name": "Bedazzled",
+          "lore": "§7Equip §a22 §7unique Accessories.",
+          "requiredAmount": 22
+        },
+        {
+          "completed": true,
+          "id": "bestiary_level_5",
+          "name": "Collecting Data",
+          "lore": "§7Reach §3Bestiary §7Milestone 5§7.",
+          "requiredAmount": 5
+        },
+        {
+          "completed": true,
+          "id": "collection_diamond",
+          "name": "Diamond Collector",
+          "lore": "§7Reach §a25,000 §7Diamond Collection.",
+          "requiredAmount": 25000
+        },
+        {
+          "completed": true,
+          "id": "stat_strength",
+          "name": "Strongman",
+          "lore": "§7Reach §c120 §c❁ Strength§7.",
+          "requiredAmount": 120
+        },
+        {
+          "completed": true,
+          "id": "GET_SKILL_combat_10",
+          "name": "Warrior",
+          "lore": "§7Obtain level §e10§7 in the §6Combat §7Skill."
+        },
+        {
+          "completed": true,
+          "id": "obtain_pets",
+          "name": "Pet Hoarder",
+          "lore": "§7Obtain §a9 §7unique Pets.",
+          "requiredAmount": 9
+        },
+        {
+          "completed": true,
+          "id": "obtain_item_wedding_ring_2",
+          "name": "Love Is All Around",
+          "lore": "§7Obtain a §aMediocre Ring of Love§7."
+        },
+        {
+          "completed": true,
+          "id": "stat_critical_damage",
+          "name": "Critical",
+          "lore": "§7Reach §9100% §9☠ Crit Damage§7.",
+          "requiredAmount": 100
+        },
+        {
+          "completed": true,
+          "id": "fairy_souls",
+          "name": "Fairy Finder",
+          "lore": "§7Obtain §d25 Fairy Souls§7.",
+          "requiredAmount": 25
+        },
+        {
+          "completed": true,
+          "id": "bank_coins",
+          "name": "Meiser",
+          "lore": "§7Store §6500,000 Coins §7in your Bank.",
+          "requiredAmount": 500000
+        },
+        {
+          "completed": true,
+          "id": "spider_relic",
+          "name": "Relic Researcher",
+          "lore": "§7Find 10 §fRelics §7in the Spider's Den.",
+          "requiredAmount": 10
+        },
+        {
+          "completed": true,
+          "id": "obtain_pet_level",
+          "name": "Pet Grinder",
+          "lore": "§7Obtain a §a[Lvl 100] Pet§7.",
+          "requiredAmount": 0
+        }
+      ],
+      "community": [
+        {
+          "completed": true,
+          "id": "summon_sea_creatures",
+          "name": "Poseidon",
+          "tiers": [20000, 40000, 60000, 80000, 100000],
+          "progress": 137961
+        },
+        {
+          "completed": true,
+          "id": "coin_scavenger",
+          "name": "Scavenger",
+          "tiers": [50000000, 100000000, 150000000, 200000000, 250000000],
+          "progress": 327897380
+        },
+        {
+          "completed": true,
+          "id": "kill_dungeon_boss_catacombs_1",
+          "name": "Clown Collab",
+          "tiers": [1000, 2000, 3000, 4000, 5000],
+          "progress": 22927
+        },
+        {
+          "completed": true,
+          "id": "collect_pelts",
+          "name": "Hunter",
+          "tiers": [20000, 40000, 60000, 80000, 100000],
+          "progress": 204684
+        },
+        {
+          "completed": false,
+          "id": "kill_team_treasurite",
+          "name": "Let the StarFall",
+          "tiers": [100000, 200000, 300000, 400000, 500000],
+          "progress": 253432
+        }
+      ]
+    }
+  }
+}

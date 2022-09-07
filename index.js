@@ -1,4 +1,7 @@
 //CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
+const auctionsRoute = require('./routes/v1/auctions')
+const bingoRoute = require('./routes/v1/bingo');
+const calendarRoute = require('./routes/v1/calendar')
 const FetchurRoute = require('./routes/v1/fetchur');
 const ProfileRoute = require('./routes/v1/profile');
 const ProfilesRoute = require('./routes/v1/profiles');
@@ -41,6 +44,9 @@ app.get('/v1/profile/:uuid/:profileid', ProfileRoute);
 app.get('/v1/profiles/:uuid', ProfilesRoute);
 app.get('/v1/items/:uuid/:profileid', ProfileItemsRoute);
 app.get('/v1/items/:uuid', ProfilesItemsRoute);
+app.get('/v1/bingo/:uuid', bingoRoute)
+app.get('/v1/calendar', calendarRoute)
+app.get('/v1/auctions/:uuid', auctionsRoute)
 
 app.use(NotFound);
 app.use(ErrorHandler);

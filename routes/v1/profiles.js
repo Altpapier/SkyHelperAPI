@@ -12,10 +12,9 @@ module.exports = wrap(async function (req, res) {
         }
     }
 
-    const playerRes = await makeRequest(res, `https://api.hypixel.net/player?key=${process.env.HYPIXEL_API_KEY}&uuid=${uuid}`);
+    const [playerRes, profileRes] = await Promise.all([makeRequest(res, `https://api.hypixel.net/player?key=${process.env.HYPIXEL_API_KEY}&uuid=${uuid}`), makeRequest(res, `https://api.hypixel.net/skyblock/profiles?key=${process.env.HYPIXEL_API_KEY}&uuid=${uuid}`)]);
     const player = parseHypixel(playerRes, uuid, res);
-
-    const profileRes = await makeRequest(res, `https://api.hypixel.net/skyblock/profiles?key=${process.env.HYPIXEL_API_KEY}&uuid=${uuid}`);
+    
     const profile = await parseProfiles(player, profileRes, uuid, res);
 
     return res.status(200).json({ status: 200, data: profile });

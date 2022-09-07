@@ -1,9 +1,10 @@
 {
   "status": 200,
   "data": {
-    "name": "Rabbit's Foot",
-    "quantity": 3,
-    "text": "3x Rabbit's Feet",
-    "image": "https://sky.shiiyu.moe/item/RABBIT_FOOT"
+    "name": "Red Wool",
+    "quantity": 50,
+    "text": "50x Red Wool",
+    "image": "https://sky.shiiyu.moe/item/WOOL:14",
+    "description": "This item can be purchased from the Wool Merchant at the Builder's House in the Hub"
   }
 }

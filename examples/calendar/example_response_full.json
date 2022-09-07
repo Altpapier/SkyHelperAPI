@@ -1,0 +1,1827 @@
+{
+  "status": 200,
+  "data": {
+    "from": 1660744480537,
+    "to": 1661162100000,
+    "date": "Early Spring 24th, 226",
+    "year": 226,
+    "month": "Early Spring",
+    "day": 24,
+    "time": "11:30pm",
+    "hour": 11,
+    "minute": 30,
+    "next_day_countdown": 19463,
+    "next_month_countdown": 8419463,
+    "next_year_countdown": 417619463,
+    "events": {
+      "BANK_INTEREST": {
+        "name": "Bank Interest",
+        "duration": 1200000,
+        "events": [
+          {
+            "start_timestamp": 1660827300000,
+            "end_timestamp": 1660828500000,
+            "starting_in": 82819463,
+            "ending_in": 84019463
+          },
+          {
+            "start_timestamp": 1660938900000,
+            "end_timestamp": 1660940100000,
+            "starting_in": 194419463,
+            "ending_in": 195619463
+          },
+          {
+            "start_timestamp": 1661050500000,
+            "end_timestamp": 1661051700000,
+            "starting_in": 306019463,
+            "ending_in": 307219463
+          }
+        ]
+      },
+      "DARK_AUCTION": {
+        "name": "Dark Auction",
+        "duration": 1200000,
+        "events": [
+          {
+            "start_timestamp": 1660744500000,
+            "end_timestamp": 1660745700000,
+            "starting_in": 19463,
+            "ending_in": 1219463
+          },
+          {
+            "start_timestamp": 1660748100000,
+            "end_timestamp": 1660749300000,
+            "starting_in": 3619463,
+            "ending_in": 4819463
+          },
+          {
+            "start_timestamp": 1660751700000,
+            "end_timestamp": 1660752900000,
+            "starting_in": 7219463,
+            "ending_in": 8419463
+          },
+          {
+            "start_timestamp": 1660755300000,
+            "end_timestamp": 1660756500000,
+            "starting_in": 10819463,
+            "ending_in": 12019463
+          },
+          {
+            "start_timestamp": 1660758900000,
+            "end_timestamp": 1660760100000,
+            "starting_in": 14419463,
+            "ending_in": 15619463
+          },
+          {
+            "start_timestamp": 1660762500000,
+            "end_timestamp": 1660763700000,
+            "starting_in": 18019463,
+            "ending_in": 19219463
+          },
+          {
+            "start_timestamp": 1660766100000,
+            "end_timestamp": 1660767300000,
+            "starting_in": 21619463,
+            "ending_in": 22819463
+          },
+          {
+            "start_timestamp": 1660769700000,
+            "end_timestamp": 1660770900000,
+            "starting_in": 25219463,
+            "ending_in": 26419463
+          },
+          {
+            "start_timestamp": 1660773300000,
+            "end_timestamp": 1660774500000,
+            "starting_in": 28819463,
+            "ending_in": 30019463
+          },
+          {
+            "start_timestamp": 1660776900000,
+            "end_timestamp": 1660778100000,
+            "starting_in": 32419463,
+            "ending_in": 33619463
+          },
+          {
+            "start_timestamp": 1660780500000,
+            "end_timestamp": 1660781700000,
+            "starting_in": 36019463,
+            "ending_in": 37219463
+          },
+          {
+            "start_timestamp": 1660784100000,
+            "end_timestamp": 1660785300000,
+            "starting_in": 39619463,
+            "ending_in": 40819463
+          },
+          {
+            "start_timestamp": 1660787700000,
+            "end_timestamp": 1660788900000,
+            "starting_in": 43219463,
+            "ending_in": 44419463
+          },
+          {
+            "start_timestamp": 1660791300000,
+            "end_timestamp": 1660792500000,
+            "starting_in": 46819463,
+            "ending_in": 48019463
+          },
+          {
+            "start_timestamp": 1660794900000,
+            "end_timestamp": 1660796100000,
+            "starting_in": 50419463,
+            "ending_in": 51619463
+          },
+          {
+            "start_timestamp": 1660798500000,
+            "end_timestamp": 1660799700000,
+            "starting_in": 54019463,
+            "ending_in": 55219463
+          },
+          {
+            "start_timestamp": 1660802100000,
+            "end_timestamp": 1660803300000,
+            "starting_in": 57619463,
+            "ending_in": 58819463
+          },
+          {
+            "start_timestamp": 1660805700000,
+            "end_timestamp": 1660806900000,
+            "starting_in": 61219463,
+            "ending_in": 62419463
+          },
+          {
+            "start_timestamp": 1660809300000,
+            "end_timestamp": 1660810500000,
+            "starting_in": 64819463,
+            "ending_in": 66019463
+          },
+          {
+            "start_timestamp": 1660812900000,
+            "end_timestamp": 1660814100000,
+            "starting_in": 68419463,
+            "ending_in": 69619463
+          },
+          {
+            "start_timestamp": 1660816500000,
+            "end_timestamp": 1660817700000,
+            "starting_in": 72019463,
+            "ending_in": 73219463
+          },
+          {
+            "start_timestamp": 1660820100000,
+            "end_timestamp": 1660821300000,
+            "starting_in": 75619463,
+            "ending_in": 76819463
+          },
+          {
+            "start_timestamp": 1660823700000,
+            "end_timestamp": 1660824900000,
+            "starting_in": 79219463,
+            "ending_in": 80419463
+          },
+          {
+            "start_timestamp": 1660827300000,
+            "end_timestamp": 1660828500000,
+            "starting_in": 82819463,
+            "ending_in": 84019463
+          },
+          {
+            "start_timestamp": 1660830900000,
+            "end_timestamp": 1660832100000,
+            "starting_in": 86419463,
+            "ending_in": 87619463
+          },
+          {
+            "start_timestamp": 1660834500000,
+            "end_timestamp": 1660835700000,
+            "starting_in": 90019463,
+            "ending_in": 91219463
+          },
+          {
+            "start_timestamp": 1660838100000,
+            "end_timestamp": 1660839300000,
+            "starting_in": 93619463,
+            "ending_in": 94819463
+          },
+          {
+            "start_timestamp": 1660841700000,
+            "end_timestamp": 1660842900000,
+            "starting_in": 97219463,
+            "ending_in": 98419463
+          },
+          {
+            "start_timestamp": 1660845300000,
+            "end_timestamp": 1660846500000,
+            "starting_in": 100819463,
+            "ending_in": 102019463
+          },
+          {
+            "start_timestamp": 1660848900000,
+            "end_timestamp": 1660850100000,
+            "starting_in": 104419463,
+            "ending_in": 105619463
+          },
+          {
+            "start_timestamp": 1660852500000,
+            "end_timestamp": 1660853700000,
+            "starting_in": 108019463,
+            "ending_in": 109219463
+          },
+          {
+            "start_timestamp": 1660856100000,
+            "end_timestamp": 1660857300000,
+            "starting_in": 111619463,
+            "ending_in": 112819463
+          },
+          {
+            "start_timestamp": 1660859700000,
+            "end_timestamp": 1660860900000,
+            "starting_in": 115219463,
+            "ending_in": 116419463
+          },
+          {
+            "start_timestamp": 1660863300000,
+            "end_timestamp": 1660864500000,
+            "starting_in": 118819463,
+            "ending_in": 120019463
+          },
+          {
+            "start_timestamp": 1660866900000,
+            "end_timestamp": 1660868100000,
+            "starting_in": 122419463,
+            "ending_in": 123619463
+          },
+          {
+            "start_timestamp": 1660870500000,
+            "end_timestamp": 1660871700000,
+            "starting_in": 126019463,
+            "ending_in": 127219463
+          },
+          {
+            "start_timestamp": 1660874100000,
+            "end_timestamp": 1660875300000,
+            "starting_in": 129619463,
+            "ending_in": 130819463
+          },
+          {
+            "start_timestamp": 1660877700000,
+            "end_timestamp": 1660878900000,
+            "starting_in": 133219463,
+            "ending_in": 134419463
+          },
+          {
+            "start_timestamp": 1660881300000,
+            "end_timestamp": 1660882500000,
+            "starting_in": 136819463,
+            "ending_in": 138019463
+          },
+          {
+            "start_timestamp": 1660884900000,
+            "end_timestamp": 1660886100000,
+            "starting_in": 140419463,
+            "ending_in": 141619463
+          },
+          {
+            "start_timestamp": 1660888500000,
+            "end_timestamp": 1660889700000,
+            "starting_in": 144019463,
+            "ending_in": 145219463
+          },
+          {
+            "start_timestamp": 1660892100000,
+            "end_timestamp": 1660893300000,
+            "starting_in": 147619463,
+            "ending_in": 148819463
+          },
+          {
+            "start_timestamp": 1660895700000,
+            "end_timestamp": 1660896900000,
+            "starting_in": 151219463,
+            "ending_in": 152419463
+          },
+          {
+            "start_timestamp": 1660899300000,
+            "end_timestamp": 1660900500000,
+            "starting_in": 154819463,
+            "ending_in": 156019463
+          },
+          {
+            "start_timestamp": 1660902900000,
+            "end_timestamp": 1660904100000,
+            "starting_in": 158419463,
+            "ending_in": 159619463
+          },
+          {
+            "start_timestamp": 1660906500000,
+            "end_timestamp": 1660907700000,
+            "starting_in": 162019463,
+            "ending_in": 163219463
+          },
+          {
+            "start_timestamp": 1660910100000,
+            "end_timestamp": 1660911300000,
+            "starting_in": 165619463,
+            "ending_in": 166819463
+          },
+          {
+            "start_timestamp": 1660913700000,
+            "end_timestamp": 1660914900000,
+            "starting_in": 169219463,
+            "ending_in": 170419463
+          },
+          {
+            "start_timestamp": 1660917300000,
+            "end_timestamp": 1660918500000,
+            "starting_in": 172819463,
+            "ending_in": 174019463
+          },
+          {
+            "start_timestamp": 1660920900000,
+            "end_timestamp": 1660922100000,
+            "starting_in": 176419463,
+            "ending_in": 177619463
+          },
+          {
+            "start_timestamp": 1660924500000,
+            "end_timestamp": 1660925700000,
+            "starting_in": 180019463,
+            "ending_in": 181219463
+          },
+          {
+            "start_timestamp": 1660928100000,
+            "end_timestamp": 1660929300000,
+            "starting_in": 183619463,
+            "ending_in": 184819463
+          },
+          {
+            "start_timestamp": 1660931700000,
+            "end_timestamp": 1660932900000,
+            "starting_in": 187219463,
+            "ending_in": 188419463
+          },
+          {
+            "start_timestamp": 1660935300000,
+            "end_timestamp": 1660936500000,
+            "starting_in": 190819463,
+            "ending_in": 192019463
+          },
+          {
+            "start_timestamp": 1660938900000,
+            "end_timestamp": 1660940100000,
+            "starting_in": 194419463,
+            "ending_in": 195619463
+          },
+          {
+            "start_timestamp": 1660942500000,
+            "end_timestamp": 1660943700000,
+            "starting_in": 198019463,
+            "ending_in": 199219463
+          },
+          {
+            "start_timestamp": 1660946100000,
+            "end_timestamp": 1660947300000,
+            "starting_in": 201619463,
+            "ending_in": 202819463
+          },
+          {
+            "start_timestamp": 1660949700000,
+            "end_timestamp": 1660950900000,
+            "starting_in": 205219463,
+            "ending_in": 206419463
+          },
+          {
+            "start_timestamp": 1660953300000,
+            "end_timestamp": 1660954500000,
+            "starting_in": 208819463,
+            "ending_in": 210019463
+          },
+          {
+            "start_timestamp": 1660956900000,
+            "end_timestamp": 1660958100000,
+            "starting_in": 212419463,
+            "ending_in": 213619463
+          },
+          {
+            "start_timestamp": 1660960500000,
+            "end_timestamp": 1660961700000,
+            "starting_in": 216019463,
+            "ending_in": 217219463
+          },
+          {
+            "start_timestamp": 1660964100000,
+            "end_timestamp": 1660965300000,
+            "starting_in": 219619463,
+            "ending_in": 220819463
+          },
+          {
+            "start_timestamp": 1660967700000,
+            "end_timestamp": 1660968900000,
+            "starting_in": 223219463,
+            "ending_in": 224419463
+          },
+          {
+            "start_timestamp": 1660971300000,
+            "end_timestamp": 1660972500000,
+            "starting_in": 226819463,
+            "ending_in": 228019463
+          },
+          {
+            "start_timestamp": 1660974900000,
+            "end_timestamp": 1660976100000,
+            "starting_in": 230419463,
+            "ending_in": 231619463
+          },
+          {
+            "start_timestamp": 1660978500000,
+            "end_timestamp": 1660979700000,
+            "starting_in": 234019463,
+            "ending_in": 235219463
+          },
+          {
+            "start_timestamp": 1660982100000,
+            "end_timestamp": 1660983300000,
+            "starting_in": 237619463,
+            "ending_in": 238819463
+          },
+          {
+            "start_timestamp": 1660985700000,
+            "end_timestamp": 1660986900000,
+            "starting_in": 241219463,
+            "ending_in": 242419463
+          },
+          {
+            "start_timestamp": 1660989300000,
+            "end_timestamp": 1660990500000,
+            "starting_in": 244819463,
+            "ending_in": 246019463
+          },
+          {
+            "start_timestamp": 1660992900000,
+            "end_timestamp": 1660994100000,
+            "starting_in": 248419463,
+            "ending_in": 249619463
+          },
+          {
+            "start_timestamp": 1660996500000,
+            "end_timestamp": 1660997700000,
+            "starting_in": 252019463,
+            "ending_in": 253219463
+          },
+          {
+            "start_timestamp": 1661000100000,
+            "end_timestamp": 1661001300000,
+            "starting_in": 255619463,
+            "ending_in": 256819463
+          },
+          {
+            "start_timestamp": 1661003700000,
+            "end_timestamp": 1661004900000,
+            "starting_in": 259219463,
+            "ending_in": 260419463
+          },
+          {
+            "start_timestamp": 1661007300000,
+            "end_timestamp": 1661008500000,
+            "starting_in": 262819463,
+            "ending_in": 264019463
+          },
+          {
+            "start_timestamp": 1661010900000,
+            "end_timestamp": 1661012100000,
+            "starting_in": 266419463,
+            "ending_in": 267619463
+          },
+          {
+            "start_timestamp": 1661014500000,
+            "end_timestamp": 1661015700000,
+            "starting_in": 270019463,
+            "ending_in": 271219463
+          },
+          {
+            "start_timestamp": 1661018100000,
+            "end_timestamp": 1661019300000,
+            "starting_in": 273619463,
+            "ending_in": 274819463
+          },
+          {
+            "start_timestamp": 1661021700000,
+            "end_timestamp": 1661022900000,
+            "starting_in": 277219463,
+            "ending_in": 278419463
+          },
+          {
+            "start_timestamp": 1661025300000,
+            "end_timestamp": 1661026500000,
+            "starting_in": 280819463,
+            "ending_in": 282019463
+          },
+          {
+            "start_timestamp": 1661028900000,
+            "end_timestamp": 1661030100000,
+            "starting_in": 284419463,
+            "ending_in": 285619463
+          },
+          {
+            "start_timestamp": 1661032500000,
+            "end_timestamp": 1661033700000,
+            "starting_in": 288019463,
+            "ending_in": 289219463
+          },
+          {
+            "start_timestamp": 1661036100000,
+            "end_timestamp": 1661037300000,
+            "starting_in": 291619463,
+            "ending_in": 292819463
+          },
+          {
+            "start_timestamp": 1661039700000,
+            "end_timestamp": 1661040900000,
+            "starting_in": 295219463,
+            "ending_in": 296419463
+          },
+          {
+            "start_timestamp": 1661043300000,
+            "end_timestamp": 1661044500000,
+            "starting_in": 298819463,
+            "ending_in": 300019463
+          },
+          {
+            "start_timestamp": 1661046900000,
+            "end_timestamp": 1661048100000,
+            "starting_in": 302419463,
+            "ending_in": 303619463
+          },
+          {
+            "start_timestamp": 1661050500000,
+            "end_timestamp": 1661051700000,
+            "starting_in": 306019463,
+            "ending_in": 307219463
+          },
+          {
+            "start_timestamp": 1661054100000,
+            "end_timestamp": 1661055300000,
+            "starting_in": 309619463,
+            "ending_in": 310819463
+          },
+          {
+            "start_timestamp": 1661057700000,
+            "end_timestamp": 1661058900000,
+            "starting_in": 313219463,
+            "ending_in": 314419463
+          },
+          {
+            "start_timestamp": 1661061300000,
+            "end_timestamp": 1661062500000,
+            "starting_in": 316819463,
+            "ending_in": 318019463
+          },
+          {
+            "start_timestamp": 1661064900000,
+            "end_timestamp": 1661066100000,
+            "starting_in": 320419463,
+            "ending_in": 321619463
+          },
+          {
+            "start_timestamp": 1661068500000,
+            "end_timestamp": 1661069700000,
+            "starting_in": 324019463,
+            "ending_in": 325219463
+          },
+          {
+            "start_timestamp": 1661072100000,
+            "end_timestamp": 1661073300000,
+            "starting_in": 327619463,
+            "ending_in": 328819463
+          },
+          {
+            "start_timestamp": 1661075700000,
+            "end_timestamp": 1661076900000,
+            "starting_in": 331219463,
+            "ending_in": 332419463
+          },
+          {
+            "start_timestamp": 1661079300000,
+            "end_timestamp": 1661080500000,
+            "starting_in": 334819463,
+            "ending_in": 336019463
+          },
+          {
+            "start_timestamp": 1661082900000,
+            "end_timestamp": 1661084100000,
+            "starting_in": 338419463,
+            "ending_in": 339619463
+          },
+          {
+            "start_timestamp": 1661086500000,
+            "end_timestamp": 1661087700000,
+            "starting_in": 342019463,
+            "ending_in": 343219463
+          },
+          {
+            "start_timestamp": 1661090100000,
+            "end_timestamp": 1661091300000,
+            "starting_in": 345619463,
+            "ending_in": 346819463
+          },
+          {
+            "start_timestamp": 1661093700000,
+            "end_timestamp": 1661094900000,
+            "starting_in": 349219463,
+            "ending_in": 350419463
+          },
+          {
+            "start_timestamp": 1661097300000,
+            "end_timestamp": 1661098500000,
+            "starting_in": 352819463,
+            "ending_in": 354019463
+          },
+          {
+            "start_timestamp": 1661100900000,
+            "end_timestamp": 1661102100000,
+            "starting_in": 356419463,
+            "ending_in": 357619463
+          },
+          {
+            "start_timestamp": 1661104500000,
+            "end_timestamp": 1661105700000,
+            "starting_in": 360019463,
+            "ending_in": 361219463
+          },
+          {
+            "start_timestamp": 1661108100000,
+            "end_timestamp": 1661109300000,
+            "starting_in": 363619463,
+            "ending_in": 364819463
+          },
+          {
+            "start_timestamp": 1661111700000,
+            "end_timestamp": 1661112900000,
+            "starting_in": 367219463,
+            "ending_in": 368419463
+          },
+          {
+            "start_timestamp": 1661115300000,
+            "end_timestamp": 1661116500000,
+            "starting_in": 370819463,
+            "ending_in": 372019463
+          },
+          {
+            "start_timestamp": 1661118900000,
+            "end_timestamp": 1661120100000,
+            "starting_in": 374419463,
+            "ending_in": 375619463
+          },
+          {
+            "start_timestamp": 1661122500000,
+            "end_timestamp": 1661123700000,
+            "starting_in": 378019463,
+            "ending_in": 379219463
+          },
+          {
+            "start_timestamp": 1661126100000,
+            "end_timestamp": 1661127300000,
+            "starting_in": 381619463,
+            "ending_in": 382819463
+          },
+          {
+            "start_timestamp": 1661129700000,
+            "end_timestamp": 1661130900000,
+            "starting_in": 385219463,
+            "ending_in": 386419463
+          },
+          {
+            "start_timestamp": 1661133300000,
+            "end_timestamp": 1661134500000,
+            "starting_in": 388819463,
+            "ending_in": 390019463
+          },
+          {
+            "start_timestamp": 1661136900000,
+            "end_timestamp": 1661138100000,
+            "starting_in": 392419463,
+            "ending_in": 393619463
+          },
+          {
+            "start_timestamp": 1661140500000,
+            "end_timestamp": 1661141700000,
+            "starting_in": 396019463,
+            "ending_in": 397219463
+          },
+          {
+            "start_timestamp": 1661144100000,
+            "end_timestamp": 1661145300000,
+            "starting_in": 399619463,
+            "ending_in": 400819463
+          },
+          {
+            "start_timestamp": 1661147700000,
+            "end_timestamp": 1661148900000,
+            "starting_in": 403219463,
+            "ending_in": 404419463
+          },
+          {
+            "start_timestamp": 1661151300000,
+            "end_timestamp": 1661152500000,
+            "starting_in": 406819463,
+            "ending_in": 408019463
+          },
+          {
+            "start_timestamp": 1661154900000,
+            "end_timestamp": 1661156100000,
+            "starting_in": 410419463,
+            "ending_in": 411619463
+          },
+          {
+            "start_timestamp": 1661158500000,
+            "end_timestamp": 1661159700000,
+            "starting_in": 414019463,
+            "ending_in": 415219463
+          }
+        ]
+      },
+      "ELECTION_BOOTH_OPENS": {
+        "name": "Election Booth Opens",
+        "duration": 1200000,
+        "events": [
+          {
+            "start_timestamp": 1660932900000,
+            "end_timestamp": 1660934100000,
+            "starting_in": 188419463,
+            "ending_in": 189619463
+          }
+        ]
+      },
+      "ELECTION_OVER": {
+        "name": "Election Over",
+        "duration": 1200000,
+        "events": [
+          {
+            "start_timestamp": 1660821300000,
+            "end_timestamp": 1660822500000,
+            "starting_in": 76819463,
+            "ending_in": 78019463
+          }
+        ]
+      },
+      "FALLEN_STAR_CULT": {
+        "name": "Cult of the Fallen Star",
+        "duration": 1500000,
+        "events": [
+          {
+            "start_timestamp": 1660748100000,
+            "end_timestamp": 1660749600000,
+            "starting_in": 3619463,
+            "ending_in": 5119463
+          },
+          {
+            "start_timestamp": 1660760100000,
+            "end_timestamp": 1660761600000,
+            "starting_in": 15619463,
+            "ending_in": 17119463
+          },
+          {
+            "start_timestamp": 1660768500000,
+            "end_timestamp": 1660770000000,
+            "starting_in": 24019463,
+            "ending_in": 25519463
+          },
+          {
+            "start_timestamp": 1660776900000,
+            "end_timestamp": 1660778400000,
+            "starting_in": 32419463,
+            "ending_in": 33919463
+          },
+          {
+            "start_timestamp": 1660785300000,
+            "end_timestamp": 1660786800000,
+            "starting_in": 40819463,
+            "ending_in": 42319463
+          },
+          {
+            "start_timestamp": 1660797300000,
+            "end_timestamp": 1660798800000,
+            "starting_in": 52819463,
+            "ending_in": 54319463
+          },
+          {
+            "start_timestamp": 1660805700000,
+            "end_timestamp": 1660807200000,
+            "starting_in": 61219463,
+            "ending_in": 62719463
+          },
+          {
+            "start_timestamp": 1660814100000,
+            "end_timestamp": 1660815600000,
+            "starting_in": 69619463,
+            "ending_in": 71119463
+          },
+          {
+            "start_timestamp": 1660822500000,
+            "end_timestamp": 1660824000000,
+            "starting_in": 78019463,
+            "ending_in": 79519463
+          },
+          {
+            "start_timestamp": 1660834500000,
+            "end_timestamp": 1660836000000,
+            "starting_in": 90019463,
+            "ending_in": 91519463
+          },
+          {
+            "start_timestamp": 1660842900000,
+            "end_timestamp": 1660844400000,
+            "starting_in": 98419463,
+            "ending_in": 99919463
+          },
+          {
+            "start_timestamp": 1660851300000,
+            "end_timestamp": 1660852800000,
+            "starting_in": 106819463,
+            "ending_in": 108319463
+          },
+          {
+            "start_timestamp": 1660859700000,
+            "end_timestamp": 1660861200000,
+            "starting_in": 115219463,
+            "ending_in": 116719463
+          },
+          {
+            "start_timestamp": 1660871700000,
+            "end_timestamp": 1660873200000,
+            "starting_in": 127219463,
+            "ending_in": 128719463
+          },
+          {
+            "start_timestamp": 1660880100000,
+            "end_timestamp": 1660881600000,
+            "starting_in": 135619463,
+            "ending_in": 137119463
+          },
+          {
+            "start_timestamp": 1660888500000,
+            "end_timestamp": 1660890000000,
+            "starting_in": 144019463,
+            "ending_in": 145519463
+          },
+          {
+            "start_timestamp": 1660896900000,
+            "end_timestamp": 1660898400000,
+            "starting_in": 152419463,
+            "ending_in": 153919463
+          },
+          {
+            "start_timestamp": 1660908900000,
+            "end_timestamp": 1660910400000,
+            "starting_in": 164419463,
+            "ending_in": 165919463
+          },
+          {
+            "start_timestamp": 1660917300000,
+            "end_timestamp": 1660918800000,
+            "starting_in": 172819463,
+            "ending_in": 174319463
+          },
+          {
+            "start_timestamp": 1660925700000,
+            "end_timestamp": 1660927200000,
+            "starting_in": 181219463,
+            "ending_in": 182719463
+          },
+          {
+            "start_timestamp": 1660934100000,
+            "end_timestamp": 1660935600000,
+            "starting_in": 189619463,
+            "ending_in": 191119463
+          },
+          {
+            "start_timestamp": 1660946100000,
+            "end_timestamp": 1660947600000,
+            "starting_in": 201619463,
+            "ending_in": 203119463
+          },
+          {
+            "start_timestamp": 1660954500000,
+            "end_timestamp": 1660956000000,
+            "starting_in": 210019463,
+            "ending_in": 211519463
+          },
+          {
+            "start_timestamp": 1660962900000,
+            "end_timestamp": 1660964400000,
+            "starting_in": 218419463,
+            "ending_in": 219919463
+          },
+          {
+            "start_timestamp": 1660971300000,
+            "end_timestamp": 1660972800000,
+            "starting_in": 226819463,
+            "ending_in": 228319463
+          },
+          {
+            "start_timestamp": 1660983300000,
+            "end_timestamp": 1660984800000,
+            "starting_in": 238819463,
+            "ending_in": 240319463
+          },
+          {
+            "start_timestamp": 1660991700000,
+            "end_timestamp": 1660993200000,
+            "starting_in": 247219463,
+            "ending_in": 248719463
+          },
+          {
+            "start_timestamp": 1661000100000,
+            "end_timestamp": 1661001600000,
+            "starting_in": 255619463,
+            "ending_in": 257119463
+          },
+          {
+            "start_timestamp": 1661008500000,
+            "end_timestamp": 1661010000000,
+            "starting_in": 264019463,
+            "ending_in": 265519463
+          },
+          {
+            "start_timestamp": 1661020500000,
+            "end_timestamp": 1661022000000,
+            "starting_in": 276019463,
+            "ending_in": 277519463
+          },
+          {
+            "start_timestamp": 1661028900000,
+            "end_timestamp": 1661030400000,
+            "starting_in": 284419463,
+            "ending_in": 285919463
+          },
+          {
+            "start_timestamp": 1661037300000,
+            "end_timestamp": 1661038800000,
+            "starting_in": 292819463,
+            "ending_in": 294319463
+          },
+          {
+            "start_timestamp": 1661045700000,
+            "end_timestamp": 1661047200000,
+            "starting_in": 301219463,
+            "ending_in": 302719463
+          },
+          {
+            "start_timestamp": 1661057700000,
+            "end_timestamp": 1661059200000,
+            "starting_in": 313219463,
+            "ending_in": 314719463
+          },
+          {
+            "start_timestamp": 1661066100000,
+            "end_timestamp": 1661067600000,
+            "starting_in": 321619463,
+            "ending_in": 323119463
+          },
+          {
+            "start_timestamp": 1661074500000,
+            "end_timestamp": 1661076000000,
+            "starting_in": 330019463,
+            "ending_in": 331519463
+          },
+          {
+            "start_timestamp": 1661082900000,
+            "end_timestamp": 1661084400000,
+            "starting_in": 338419463,
+            "ending_in": 339919463
+          },
+          {
+            "start_timestamp": 1661094900000,
+            "end_timestamp": 1661096400000,
+            "starting_in": 350419463,
+            "ending_in": 351919463
+          },
+          {
+            "start_timestamp": 1661103300000,
+            "end_timestamp": 1661104800000,
+            "starting_in": 358819463,
+            "ending_in": 360319463
+          },
+          {
+            "start_timestamp": 1661111700000,
+            "end_timestamp": 1661113200000,
+            "starting_in": 367219463,
+            "ending_in": 368719463
+          },
+          {
+            "start_timestamp": 1661120100000,
+            "end_timestamp": 1661121600000,
+            "starting_in": 375619463,
+            "ending_in": 377119463
+          },
+          {
+            "start_timestamp": 1661132100000,
+            "end_timestamp": 1661133600000,
+            "starting_in": 387619463,
+            "ending_in": 389119463
+          },
+          {
+            "start_timestamp": 1661140500000,
+            "end_timestamp": 1661142000000,
+            "starting_in": 396019463,
+            "ending_in": 397519463
+          },
+          {
+            "start_timestamp": 1661148900000,
+            "end_timestamp": 1661150400000,
+            "starting_in": 404419463,
+            "ending_in": 405919463
+          },
+          {
+            "start_timestamp": 1661157300000,
+            "end_timestamp": 1661158800000,
+            "starting_in": 412819463,
+            "ending_in": 414319463
+          }
+        ]
+      },
+      "FEAR_MONGERER": {
+        "name": "Fear Mongerer",
+        "duration": 10800000,
+        "events": [
+          {
+            "start_timestamp": 1661006100000,
+            "end_timestamp": 1661016900000,
+            "starting_in": 261619463,
+            "ending_in": 272419463
+          }
+        ]
+      },
+      "JACOBS_CONTEST": {
+        "name": "Jacob's Farming Contest",
+        "duration": 1200000,
+        "events": [
+          {
+            "start_timestamp": 1660745700000,
+            "end_timestamp": 1660746900000,
+            "starting_in": 1219463,
+            "ending_in": 2419463
+          },
+          {
+            "start_timestamp": 1660749300000,
+            "end_timestamp": 1660750500000,
+            "starting_in": 4819463,
+            "ending_in": 6019463
+          },
+          {
+            "start_timestamp": 1660752900000,
+            "end_timestamp": 1660754100000,
+            "starting_in": 8419463,
+            "ending_in": 9619463
+          },
+          {
+            "start_timestamp": 1660756500000,
+            "end_timestamp": 1660757700000,
+            "starting_in": 12019463,
+            "ending_in": 13219463
+          },
+          {
+            "start_timestamp": 1660760100000,
+            "end_timestamp": 1660761300000,
+            "starting_in": 15619463,
+            "ending_in": 16819463
+          },
+          {
+            "start_timestamp": 1660763700000,
+            "end_timestamp": 1660764900000,
+            "starting_in": 19219463,
+            "ending_in": 20419463
+          },
+          {
+            "start_timestamp": 1660767300000,
+            "end_timestamp": 1660768500000,
+            "starting_in": 22819463,
+            "ending_in": 24019463
+          },
+          {
+            "start_timestamp": 1660770900000,
+            "end_timestamp": 1660772100000,
+            "starting_in": 26419463,
+            "ending_in": 27619463
+          },
+          {
+            "start_timestamp": 1660774500000,
+            "end_timestamp": 1660775700000,
+            "starting_in": 30019463,
+            "ending_in": 31219463
+          },
+          {
+            "start_timestamp": 1660778100000,
+            "end_timestamp": 1660779300000,
+            "starting_in": 33619463,
+            "ending_in": 34819463
+          },
+          {
+            "start_timestamp": 1660781700000,
+            "end_timestamp": 1660782900000,
+            "starting_in": 37219463,
+            "ending_in": 38419463
+          },
+          {
+            "start_timestamp": 1660785300000,
+            "end_timestamp": 1660786500000,
+            "starting_in": 40819463,
+            "ending_in": 42019463
+          },
+          {
+            "start_timestamp": 1660788900000,
+            "end_timestamp": 1660790100000,
+            "starting_in": 44419463,
+            "ending_in": 45619463
+          },
+          {
+            "start_timestamp": 1660792500000,
+            "end_timestamp": 1660793700000,
+            "starting_in": 48019463,
+            "ending_in": 49219463
+          },
+          {
+            "start_timestamp": 1660796100000,
+            "end_timestamp": 1660797300000,
+            "starting_in": 51619463,
+            "ending_in": 52819463
+          },
+          {
+            "start_timestamp": 1660799700000,
+            "end_timestamp": 1660800900000,
+            "starting_in": 55219463,
+            "ending_in": 56419463
+          },
+          {
+            "start_timestamp": 1660803300000,
+            "end_timestamp": 1660804500000,
+            "starting_in": 58819463,
+            "ending_in": 60019463
+          },
+          {
+            "start_timestamp": 1660806900000,
+            "end_timestamp": 1660808100000,
+            "starting_in": 62419463,
+            "ending_in": 63619463
+          },
+          {
+            "start_timestamp": 1660810500000,
+            "end_timestamp": 1660811700000,
+            "starting_in": 66019463,
+            "ending_in": 67219463
+          },
+          {
+            "start_timestamp": 1660814100000,
+            "end_timestamp": 1660815300000,
+            "starting_in": 69619463,
+            "ending_in": 70819463
+          },
+          {
+            "start_timestamp": 1660817700000,
+            "end_timestamp": 1660818900000,
+            "starting_in": 73219463,
+            "ending_in": 74419463
+          },
+          {
+            "start_timestamp": 1660821300000,
+            "end_timestamp": 1660822500000,
+            "starting_in": 76819463,
+            "ending_in": 78019463
+          },
+          {
+            "start_timestamp": 1660824900000,
+            "end_timestamp": 1660826100000,
+            "starting_in": 80419463,
+            "ending_in": 81619463
+          },
+          {
+            "start_timestamp": 1660828500000,
+            "end_timestamp": 1660829700000,
+            "starting_in": 84019463,
+            "ending_in": 85219463
+          },
+          {
+            "start_timestamp": 1660832100000,
+            "end_timestamp": 1660833300000,
+            "starting_in": 87619463,
+            "ending_in": 88819463
+          },
+          {
+            "start_timestamp": 1660835700000,
+            "end_timestamp": 1660836900000,
+            "starting_in": 91219463,
+            "ending_in": 92419463
+          },
+          {
+            "start_timestamp": 1660839300000,
+            "end_timestamp": 1660840500000,
+            "starting_in": 94819463,
+            "ending_in": 96019463
+          },
+          {
+            "start_timestamp": 1660842900000,
+            "end_timestamp": 1660844100000,
+            "starting_in": 98419463,
+            "ending_in": 99619463
+          },
+          {
+            "start_timestamp": 1660846500000,
+            "end_timestamp": 1660847700000,
+            "starting_in": 102019463,
+            "ending_in": 103219463
+          },
+          {
+            "start_timestamp": 1660850100000,
+            "end_timestamp": 1660851300000,
+            "starting_in": 105619463,
+            "ending_in": 106819463
+          },
+          {
+            "start_timestamp": 1660853700000,
+            "end_timestamp": 1660854900000,
+            "starting_in": 109219463,
+            "ending_in": 110419463
+          },
+          {
+            "start_timestamp": 1660857300000,
+            "end_timestamp": 1660858500000,
+            "starting_in": 112819463,
+            "ending_in": 114019463
+          },
+          {
+            "start_timestamp": 1660860900000,
+            "end_timestamp": 1660862100000,
+            "starting_in": 116419463,
+            "ending_in": 117619463
+          },
+          {
+            "start_timestamp": 1660864500000,
+            "end_timestamp": 1660865700000,
+            "starting_in": 120019463,
+            "ending_in": 121219463
+          },
+          {
+            "start_timestamp": 1660868100000,
+            "end_timestamp": 1660869300000,
+            "starting_in": 123619463,
+            "ending_in": 124819463
+          },
+          {
+            "start_timestamp": 1660871700000,
+            "end_timestamp": 1660872900000,
+            "starting_in": 127219463,
+            "ending_in": 128419463
+          },
+          {
+            "start_timestamp": 1660875300000,
+            "end_timestamp": 1660876500000,
+            "starting_in": 130819463,
+            "ending_in": 132019463
+          },
+          {
+            "start_timestamp": 1660878900000,
+            "end_timestamp": 1660880100000,
+            "starting_in": 134419463,
+            "ending_in": 135619463
+          },
+          {
+            "start_timestamp": 1660882500000,
+            "end_timestamp": 1660883700000,
+            "starting_in": 138019463,
+            "ending_in": 139219463
+          },
+          {
+            "start_timestamp": 1660886100000,
+            "end_timestamp": 1660887300000,
+            "starting_in": 141619463,
+            "ending_in": 142819463
+          },
+          {
+            "start_timestamp": 1660889700000,
+            "end_timestamp": 1660890900000,
+            "starting_in": 145219463,
+            "ending_in": 146419463
+          },
+          {
+            "start_timestamp": 1660893300000,
+            "end_timestamp": 1660894500000,
+            "starting_in": 148819463,
+            "ending_in": 150019463
+          },
+          {
+            "start_timestamp": 1660896900000,
+            "end_timestamp": 1660898100000,
+            "starting_in": 152419463,
+            "ending_in": 153619463
+          },
+          {
+            "start_timestamp": 1660900500000,
+            "end_timestamp": 1660901700000,
+            "starting_in": 156019463,
+            "ending_in": 157219463
+          },
+          {
+            "start_timestamp": 1660904100000,
+            "end_timestamp": 1660905300000,
+            "starting_in": 159619463,
+            "ending_in": 160819463
+          },
+          {
+            "start_timestamp": 1660907700000,
+            "end_timestamp": 1660908900000,
+            "starting_in": 163219463,
+            "ending_in": 164419463
+          },
+          {
+            "start_timestamp": 1660911300000,
+            "end_timestamp": 1660912500000,
+            "starting_in": 166819463,
+            "ending_in": 168019463
+          },
+          {
+            "start_timestamp": 1660914900000,
+            "end_timestamp": 1660916100000,
+            "starting_in": 170419463,
+            "ending_in": 171619463
+          },
+          {
+            "start_timestamp": 1660918500000,
+            "end_timestamp": 1660919700000,
+            "starting_in": 174019463,
+            "ending_in": 175219463
+          },
+          {
+            "start_timestamp": 1660922100000,
+            "end_timestamp": 1660923300000,
+            "starting_in": 177619463,
+            "ending_in": 178819463
+          },
+          {
+            "start_timestamp": 1660925700000,
+            "end_timestamp": 1660926900000,
+            "starting_in": 181219463,
+            "ending_in": 182419463
+          },
+          {
+            "start_timestamp": 1660929300000,
+            "end_timestamp": 1660930500000,
+            "starting_in": 184819463,
+            "ending_in": 186019463
+          },
+          {
+            "start_timestamp": 1660932900000,
+            "end_timestamp": 1660934100000,
+            "starting_in": 188419463,
+            "ending_in": 189619463
+          },
+          {
+            "start_timestamp": 1660936500000,
+            "end_timestamp": 1660937700000,
+            "starting_in": 192019463,
+            "ending_in": 193219463
+          },
+          {
+            "start_timestamp": 1660940100000,
+            "end_timestamp": 1660941300000,
+            "starting_in": 195619463,
+            "ending_in": 196819463
+          },
+          {
+            "start_timestamp": 1660943700000,
+            "end_timestamp": 1660944900000,
+            "starting_in": 199219463,
+            "ending_in": 200419463
+          },
+          {
+            "start_timestamp": 1660947300000,
+            "end_timestamp": 1660948500000,
+            "starting_in": 202819463,
+            "ending_in": 204019463
+          },
+          {
+            "start_timestamp": 1660950900000,
+            "end_timestamp": 1660952100000,
+            "starting_in": 206419463,
+            "ending_in": 207619463
+          },
+          {
+            "start_timestamp": 1660954500000,
+            "end_timestamp": 1660955700000,
+            "starting_in": 210019463,
+            "ending_in": 211219463
+          },
+          {
+            "start_timestamp": 1660958100000,
+            "end_timestamp": 1660959300000,
+            "starting_in": 213619463,
+            "ending_in": 214819463
+          },
+          {
+            "start_timestamp": 1660961700000,
+            "end_timestamp": 1660962900000,
+            "starting_in": 217219463,
+            "ending_in": 218419463
+          },
+          {
+            "start_timestamp": 1660965300000,
+            "end_timestamp": 1660966500000,
+            "starting_in": 220819463,
+            "ending_in": 222019463
+          },
+          {
+            "start_timestamp": 1660968900000,
+            "end_timestamp": 1660970100000,
+            "starting_in": 224419463,
+            "ending_in": 225619463
+          },
+          {
+            "start_timestamp": 1660972500000,
+            "end_timestamp": 1660973700000,
+            "starting_in": 228019463,
+            "ending_in": 229219463
+          },
+          {
+            "start_timestamp": 1660976100000,
+            "end_timestamp": 1660977300000,
+            "starting_in": 231619463,
+            "ending_in": 232819463
+          },
+          {
+            "start_timestamp": 1660979700000,
+            "end_timestamp": 1660980900000,
+            "starting_in": 235219463,
+            "ending_in": 236419463
+          },
+          {
+            "start_timestamp": 1660983300000,
+            "end_timestamp": 1660984500000,
+            "starting_in": 238819463,
+            "ending_in": 240019463
+          },
+          {
+            "start_timestamp": 1660986900000,
+            "end_timestamp": 1660988100000,
+            "starting_in": 242419463,
+            "ending_in": 243619463
+          },
+          {
+            "start_timestamp": 1660990500000,
+            "end_timestamp": 1660991700000,
+            "starting_in": 246019463,
+            "ending_in": 247219463
+          },
+          {
+            "start_timestamp": 1660994100000,
+            "end_timestamp": 1660995300000,
+            "starting_in": 249619463,
+            "ending_in": 250819463
+          },
+          {
+            "start_timestamp": 1660997700000,
+            "end_timestamp": 1660998900000,
+            "starting_in": 253219463,
+            "ending_in": 254419463
+          },
+          {
+            "start_timestamp": 1661001300000,
+            "end_timestamp": 1661002500000,
+            "starting_in": 256819463,
+            "ending_in": 258019463
+          },
+          {
+            "start_timestamp": 1661004900000,
+            "end_timestamp": 1661006100000,
+            "starting_in": 260419463,
+            "ending_in": 261619463
+          },
+          {
+            "start_timestamp": 1661008500000,
+            "end_timestamp": 1661009700000,
+            "starting_in": 264019463,
+            "ending_in": 265219463
+          },
+          {
+            "start_timestamp": 1661012100000,
+            "end_timestamp": 1661013300000,
+            "starting_in": 267619463,
+            "ending_in": 268819463
+          },
+          {
+            "start_timestamp": 1661015700000,
+            "end_timestamp": 1661016900000,
+            "starting_in": 271219463,
+            "ending_in": 272419463
+          },
+          {
+            "start_timestamp": 1661019300000,
+            "end_timestamp": 1661020500000,
+            "starting_in": 274819463,
+            "ending_in": 276019463
+          },
+          {
+            "start_timestamp": 1661022900000,
+            "end_timestamp": 1661024100000,
+            "starting_in": 278419463,
+            "ending_in": 279619463
+          },
+          {
+            "start_timestamp": 1661026500000,
+            "end_timestamp": 1661027700000,
+            "starting_in": 282019463,
+            "ending_in": 283219463
+          },
+          {
+            "start_timestamp": 1661030100000,
+            "end_timestamp": 1661031300000,
+            "starting_in": 285619463,
+            "ending_in": 286819463
+          },
+          {
+            "start_timestamp": 1661033700000,
+            "end_timestamp": 1661034900000,
+            "starting_in": 289219463,
+            "ending_in": 290419463
+          },
+          {
+            "start_timestamp": 1661037300000,
+            "end_timestamp": 1661038500000,
+            "starting_in": 292819463,
+            "ending_in": 294019463
+          },
+          {
+            "start_timestamp": 1661040900000,
+            "end_timestamp": 1661042100000,
+            "starting_in": 296419463,
+            "ending_in": 297619463
+          },
+          {
+            "start_timestamp": 1661044500000,
+            "end_timestamp": 1661045700000,
+            "starting_in": 300019463,
+            "ending_in": 301219463
+          },
+          {
+            "start_timestamp": 1661048100000,
+            "end_timestamp": 1661049300000,
+            "starting_in": 303619463,
+            "ending_in": 304819463
+          },
+          {
+            "start_timestamp": 1661051700000,
+            "end_timestamp": 1661052900000,
+            "starting_in": 307219463,
+            "ending_in": 308419463
+          },
+          {
+            "start_timestamp": 1661055300000,
+            "end_timestamp": 1661056500000,
+            "starting_in": 310819463,
+            "ending_in": 312019463
+          },
+          {
+            "start_timestamp": 1661058900000,
+            "end_timestamp": 1661060100000,
+            "starting_in": 314419463,
+            "ending_in": 315619463
+          },
+          {
+            "start_timestamp": 1661062500000,
+            "end_timestamp": 1661063700000,
+            "starting_in": 318019463,
+            "ending_in": 319219463
+          },
+          {
+            "start_timestamp": 1661066100000,
+            "end_timestamp": 1661067300000,
+            "starting_in": 321619463,
+            "ending_in": 322819463
+          },
+          {
+            "start_timestamp": 1661069700000,
+            "end_timestamp": 1661070900000,
+            "starting_in": 325219463,
+            "ending_in": 326419463
+          },
+          {
+            "start_timestamp": 1661073300000,
+            "end_timestamp": 1661074500000,
+            "starting_in": 328819463,
+            "ending_in": 330019463
+          },
+          {
+            "start_timestamp": 1661076900000,
+            "end_timestamp": 1661078100000,
+            "starting_in": 332419463,
+            "ending_in": 333619463
+          },
+          {
+            "start_timestamp": 1661080500000,
+            "end_timestamp": 1661081700000,
+            "starting_in": 336019463,
+            "ending_in": 337219463
+          },
+          {
+            "start_timestamp": 1661084100000,
+            "end_timestamp": 1661085300000,
+            "starting_in": 339619463,
+            "ending_in": 340819463
+          },
+          {
+            "start_timestamp": 1661087700000,
+            "end_timestamp": 1661088900000,
+            "starting_in": 343219463,
+            "ending_in": 344419463
+          },
+          {
+            "start_timestamp": 1661091300000,
+            "end_timestamp": 1661092500000,
+            "starting_in": 346819463,
+            "ending_in": 348019463
+          },
+          {
+            "start_timestamp": 1661094900000,
+            "end_timestamp": 1661096100000,
+            "starting_in": 350419463,
+            "ending_in": 351619463
+          },
+          {
+            "start_timestamp": 1661098500000,
+            "end_timestamp": 1661099700000,
+            "starting_in": 354019463,
+            "ending_in": 355219463
+          },
+          {
+            "start_timestamp": 1661102100000,
+            "end_timestamp": 1661103300000,
+            "starting_in": 357619463,
+            "ending_in": 358819463
+          },
+          {
+            "start_timestamp": 1661105700000,
+            "end_timestamp": 1661106900000,
+            "starting_in": 361219463,
+            "ending_in": 362419463
+          },
+          {
+            "start_timestamp": 1661109300000,
+            "end_timestamp": 1661110500000,
+            "starting_in": 364819463,
+            "ending_in": 366019463
+          },
+          {
+            "start_timestamp": 1661112900000,
+            "end_timestamp": 1661114100000,
+            "starting_in": 368419463,
+            "ending_in": 369619463
+          },
+          {
+            "start_timestamp": 1661116500000,
+            "end_timestamp": 1661117700000,
+            "starting_in": 372019463,
+            "ending_in": 373219463
+          },
+          {
+            "start_timestamp": 1661120100000,
+            "end_timestamp": 1661121300000,
+            "starting_in": 375619463,
+            "ending_in": 376819463
+          },
+          {
+            "start_timestamp": 1661123700000,
+            "end_timestamp": 1661124900000,
+            "starting_in": 379219463,
+            "ending_in": 380419463
+          },
+          {
+            "start_timestamp": 1661127300000,
+            "end_timestamp": 1661128500000,
+            "starting_in": 382819463,
+            "ending_in": 384019463
+          },
+          {
+            "start_timestamp": 1661130900000,
+            "end_timestamp": 1661132100000,
+            "starting_in": 386419463,
+            "ending_in": 387619463
+          },
+          {
+            "start_timestamp": 1661134500000,
+            "end_timestamp": 1661135700000,
+            "starting_in": 390019463,
+            "ending_in": 391219463
+          },
+          {
+            "start_timestamp": 1661138100000,
+            "end_timestamp": 1661139300000,
+            "starting_in": 393619463,
+            "ending_in": 394819463
+          },
+          {
+            "start_timestamp": 1661141700000,
+            "end_timestamp": 1661142900000,
+            "starting_in": 397219463,
+            "ending_in": 398419463
+          },
+          {
+            "start_timestamp": 1661145300000,
+            "end_timestamp": 1661146500000,
+            "starting_in": 400819463,
+            "ending_in": 402019463
+          },
+          {
+            "start_timestamp": 1661148900000,
+            "end_timestamp": 1661150100000,
+            "starting_in": 404419463,
+            "ending_in": 405619463
+          },
+          {
+            "start_timestamp": 1661152500000,
+            "end_timestamp": 1661153700000,
+            "starting_in": 408019463,
+            "ending_in": 409219463
+          },
+          {
+            "start_timestamp": 1661156100000,
+            "end_timestamp": 1661157300000,
+            "starting_in": 411619463,
+            "ending_in": 412819463
+          },
+          {
+            "start_timestamp": 1661159700000,
+            "end_timestamp": 1661160900000,
+            "starting_in": 415219463,
+            "ending_in": 416419463
+          }
+        ]
+      },
+      "JERRYS_WORKSHOP": {
+        "name": "Jerry's Workshop",
+        "duration": 37200000,
+        "events": [
+          {
+            "start_timestamp": 1661124900000,
+            "end_timestamp": 1661162100000,
+            "starting_in": 380419463,
+            "ending_in": 417619463
+          }
+        ]
+      },
+      "NEW_YEAR_CELEBRATION": {
+        "name": "New Year Celebration",
+        "duration": 3600000,
+        "events": [
+          {
+            "start_timestamp": 1661158500000,
+            "end_timestamp": 1661162100000,
+            "starting_in": 414019463,
+            "ending_in": 417619463
+          }
+        ]
+      },
+      "SEASON_OF_JERRY": {
+        "name": "Season of Jerry",
+        "duration": 3600000,
+        "events": [
+          {
+            "start_timestamp": 1661152500000,
+            "end_timestamp": 1661156100000,
+            "starting_in": 408019463,
+            "ending_in": 411619463
+          }
+        ]
+      },
+      "SPOOKY_FESTIVAL": {
+        "name": "Spooky Festival",
+        "duration": 3600000,
+        "events": [
+          {
+            "start_timestamp": 1661009700000,
+            "end_timestamp": 1661013300000,
+            "starting_in": 265219463,
+            "ending_in": 268819463
+          }
+        ]
+      },
+      "TRAVELING_ZOO": {
+        "name": "Traveling Zoo",
+        "duration": 3600000,
+        "events": [
+          {
+            "start_timestamp": 1660827300000,
+            "end_timestamp": 1660830900000,
+            "starting_in": 82819463,
+            "ending_in": 86419463,
+            "pet": "Elephant"
+          },
+          {
+            "start_timestamp": 1661050500000,
+            "end_timestamp": 1661054100000,
+            "starting_in": 306019463,
+            "ending_in": 309619463,
+            "pet": "Giraffe"
+          }
+        ]
+      }
+    }
+  }
+}

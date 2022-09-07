@@ -20,10 +20,13 @@ module.exports = async (profile, profileData) => {
     const networth = await networthGenerator.getNetworth(items, profile, bank);
     if (Object.keys(networth.categories).length < 0) return { no_inventory: true };
 
+    
     return {
         total_networth: networth.networth,
+        unsoulbound_networth: networth.unsoulbound_networth,
         purse: networth.purse,
         bank: networth.bank,
+        personal_bank: networth.personal_bank,
         types: networth.categories,
     };
 };

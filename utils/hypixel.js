@@ -8,11 +8,14 @@ const getMinions = require('../stats/minions');
 const getSlayer = require('../stats/slayer');
 const getKills = require('../stats/kills');
 const getDeaths = require('../stats/deaths');
-const { getPets } = require('../stats/pets');
+const getPets = require('../stats/pets');
+const getBingo = require('../stats/bingo')
 const getEquipment = require('../stats/equipment')
 const getArmor = require('../stats/armor')
 const getTalismans = require('../stats/talismans');
 const getCollections = require('../stats/collections');
+const getEnchanting = require('../stats/enchanting')
+const getFarming = require('../stats/farming')
 const getMining = require('../stats/mining');
 const getDungeons = require('../stats/dungeons.js');
 const getTrophyFish = require('../stats/trophyFishing')
@@ -21,16 +24,13 @@ const getWeight = require('../stats/weight');
 const getMissing = require('../stats/missing');
 const getNetworth = require('../stats/networth');
 const getBestiary = require('../stats/bestiary');
-const { isUuid } = require('./uuid');
-
 const getContent = require('../stats/items')
-
+const { isUuid } = require('./uuid');
 
 module.exports = {
     parseHypixel: function parseHypixel(playerRes, uuid, res) {
         if (playerRes.data.hasOwnProperty('player') && playerRes.data.player == null) {
-            res.status(404).json({ status: 404, reason: `Found no Player data for a user with a UUID of '${uuid}'` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no Player data for a user with a UUID of '${uuid}'` });
         }
         const data = playerRes.data.player;
         const achievements = data.achievements;
@@ -57,8 +57,7 @@ module.exports = {
     },
     parseProfile: async function parseProfile(player, profileRes, uuid, profileid, res) {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
         }
         if (!isUuid(profileid)) {
             for (const profile of profileRes.data?.profiles || []) {
@@ -70,17 +69,15 @@ module.exports = {
 
         const profileData = profileRes.data.profiles.find((a) => a.profile_id === profileid);
         if (!profileData) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
         }
 
         if (!isValidProfile(profileData.members, uuid)) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'` });
         }
 
         const profile = profileData.members[uuid];
-
+        const [networth, weight, missing, armor, equipment, talismans, cakebag] = await Promise.all([getNetworth(profile, profileData), getWeight(profile, uuid), getMissing(profile), getArmor(profile), getEquipment(profile), getTalismans(profile), getCakebag(profile)]);
         return {
             username: player.name,
             uuid: uuid,
@@ -97,31 +94,32 @@ module.exports = {
             purse: profile.coin_purse || 0,
             bank: profileData.banking?.balance || 0,
             skills: getSkills(player, profile),
-            networth: await getNetworth(profile, profileData),
-            weight: await getWeight(profile, uuid),
+            networth: networth,
+            weight: weight,
             bestiary: getBestiary(profile),
             dungeons: getDungeons(player, profile),
-            crimson: await getCrimson(profile),
-            trophy_fish: await getTrophyFish(profile),
+            crimson: getCrimson(profile),
+            trophy_fish: getTrophyFish(profile),
+            enchanting: getEnchanting(player, profile),
+            farming: getFarming(player, profile),
             mining: getMining(player, profile),
             slayer: getSlayer(profile),
             milestones: getMilestones(profile),
-            missing: await getMissing(profile),
+            missing: missing,
             kills: getKills(profile),
             deaths: getDeaths(profile),
-            armor: await getArmor(profile),
-            equipment: await getEquipment(profile),
-            pets: await getPets(profile),
-            talismans: await getTalismans(profile),
+            armor: armor,
+            equipment: equipment,
+            pets: getPets(profile),
+            talismans: talismans,
             collections: getCollections(profileData),
             minions: getMinions(profileData),
-            cakebag: await getCakebag(profile),
+            cakebag: cakebag,
         };
     },
     parseProfiles: async function parseProfile(player, profileRes, uuid, res) {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
         }
 
         const result = [];
@@ -131,7 +129,8 @@ module.exports = {
                 continue;
             }
             const profile = profileData.members[uuid];
-
+            const [networth, weight, missing, armor, equipment, talismans, cakebag] = await Promise.all([getNetworth(profile, profileData), getWeight(profile, uuid), getMissing(profile), getArmor(profile), getEquipment(profile), getTalismans(profile), getCakebag(profile)]);
+            
             result.push({
                 username: player.name,
                 uuid: uuid,
@@ -148,25 +147,27 @@ module.exports = {
                 purse: profile.coin_purse || 0,
                 bank: profileData.banking?.balance || 0,
                 skills: getSkills(player, profile),
-                networth: await getNetworth(profile, profileData),
-                weight: await getWeight(profile, uuid),
+                networth: networth,
+                weight: weight,
                 bestiary: getBestiary(profile),
                 dungeons: getDungeons(player, profile),
-                crimson: await getCrimson(profile),
-                trophy_fish: await getTrophyFish(profile),
+                crimson: getCrimson(profile),
+                trophy_fish: getTrophyFish(profile),
+                enchanting: getEnchanting(player, profile),
+                farming: getFarming(player, profile),
                 mining: getMining(player, profile),
                 slayer: getSlayer(profile),
                 milestones: getMilestones(profile),
-                missing: await getMissing(profile),
+                missing: missing,
                 kills: getKills(profile),
                 deaths: getDeaths(profile),
-                armor: await getArmor(profile),
-                equipment: await getEquipment(profile),
-                pets: await getPets(profile),
-                talismans: await getTalismans(profile),
+                armor: armor,
+                equipment: equipment,
+                pets: getPets(profile),
+                talismans: talismans,
                 collections: getCollections(profileData),
                 minions: getMinions(profileData),
-                cakebag: await getCakebag(profile),
+                cakebag: cakebag,
             });
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
@@ -174,8 +175,7 @@ module.exports = {
     },
     parseProfileItems: async function parseProfileItems(player, profileRes, uuid, profileid, res)  {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
         }
 
         if (!isUuid(profileid)) {
@@ -188,13 +188,11 @@ module.exports = {
 
         const profileData = profileRes.data.profiles.find((a) => a.profile_id === profileid);
         if (!profileData) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}' and profile of '${profileid}'` });
         }
 
         if (!isValidProfile(profileData.members, uuid)) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'` });
         }
 
         const profile = profileData.members[uuid];
@@ -211,8 +209,7 @@ module.exports = {
 
     parseProfilesItems: async function parseProfileItems(player, profileRes, uuid, res)  {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
-            res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
-            return;
+            return res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
         }
 
         const result = [];
@@ -234,9 +231,13 @@ module.exports = {
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
         return result.sort((a, b) => b.last_save - a.last_save);
-    }
-
-
+    },
+    parseBingoProfile: function parseBingoProfile(profile, bingo, uuid) {
+        return {
+            uuid: uuid,
+            profile: getBingo(profile.data, bingo.data)
+        }
+    },
 };
 
 function isValidProfile(profileMembers, uuid) {

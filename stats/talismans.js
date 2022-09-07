@@ -5,6 +5,11 @@ const { talismans: allTalismans } = require('../constants/talismans');
 module.exports = async (profile) => {
     if (profile.talisman_bag?.data) {
         const talismans = {
+            talismanBagUpgrades: profile?.accessory_bag_storage?.bag_upgrades_purchased,
+            currentReforge: profile?.accessory_bag_storage?.selected_power,
+            unlockedReforges: profile?.accessory_bag_storage?.unlocked_powers,
+            tuningsSlots: profile?.accessory_bag_storage?.tuning?.highest_unlocked_slot,
+            tunings: profile?.accessory_bag_storage?.tuning,
             common: [],
             uncommon: [],
             rare: [],
@@ -14,6 +19,7 @@ module.exports = async (profile) => {
             special: [],
             very: [],
         };
+        delete(talismans.tunings.highest_unlocked_slot)
         const talisman_bag = (await decodeData(Buffer.from(profile.talisman_bag.data, 'base64'))).i;
 
         for (const talisman of talisman_bag) {
@@ -46,7 +52,6 @@ module.exports = async (profile) => {
                 else talismans[getRarity(talisman.tag?.display.Lore)] = new_talisman;
             }
         }
-        
         return talismans;
     } else {
         return {
