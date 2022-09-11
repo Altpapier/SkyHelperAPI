@@ -22,6 +22,7 @@
         "express-rate-limit": "^6.3.0",
         "lilyweight": "^2.7.0",
         "prismarine-nbt": "^1.6.0",
+        "skyhelper-networth": "^1.0.5",
         "util": "^0.12.4"
     },
     "engines": {

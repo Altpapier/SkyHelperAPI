@@ -35,6 +35,19 @@ The API automatically updates upon starting. If you wish to not want that, chang
 
 # Endpoints:
 
+### `POST` /v2/networth
+
+Request Body:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| profileData | Object | The profile player data from the Hypixel API (profile.members[uuid]) |
+| bankBalance | Number | The player's bank balance from the Hypixel API (profile.banking?.balance) |
+| onlyNetworth | Boolean | (default: false) If true, only the networth will be returned |
+
+### `GET` /v2/profiles/:user
+
+### `GET` /v2/profile/:user/:profile
+
 ### `GET` /v1/profiles/:user
 
 ### `GET` /v1/profile/:user/:profile
