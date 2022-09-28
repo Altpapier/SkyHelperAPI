@@ -95,6 +95,7 @@ module.exports = {
             name: profileData.cute_name,
             id: profileData.profile_id,
             last_save: profile.last_save,
+            selected: profile.selected,
             first_join: profile.first_join,
             gamemode: profileData?.game_mode || 'normal',
             purse: profile.coin_purse || 0,
@@ -138,6 +139,7 @@ module.exports = {
             isIronman: profileData?.game_mode === 'ironman' ? true : false,
             gamemode: profileData?.game_mode ?? 'normal',
             last_save: profile.last_save,
+            selected: profile.selected,
             first_join: profile.first_join,
             fairy_souls: profile.fairy_souls_collected || 0,
             purse: profile.coin_purse || 0,
@@ -183,6 +185,7 @@ module.exports = {
                 name: profileData.cute_name,
                 id: profileData.profile_id,
                 last_save: profile.last_save,
+                selected: profile.selected,
                 first_join: profile.first_join,
                 gamemode: profileData?.game_mode || 'normal',
                 purse: profile.coin_purse || 0,
@@ -191,7 +194,7 @@ module.exports = {
             });
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
-        return result.sort((a, b) => b.last_save - a.last_save);
+        return result.sort((a, b) => b.selected || b.last_save - a.last_save);
     },
     parseProfiles: async function parseProfile(player, profileRes, uuid, res) {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
@@ -218,6 +221,7 @@ module.exports = {
                 isIronman: profileData?.game_mode === 'ironman' ? true : false,
                 gamemode: profileData?.game_mode ?? 'normal',
                 last_save: profile.last_save,
+                selected: profile.selected,
                 first_join: profile.first_join,
                 fairy_souls: profile.fairy_souls_collected || 0,
                 purse: profile.coin_purse || 0,
@@ -245,7 +249,7 @@ module.exports = {
             });
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
-        return result.sort((a, b) => b.last_save - a.last_save);
+        return result.sort((a, b) => b.selected || b.last_save - a.last_save);
     },
     parseProfileItems: async function parseProfileItems(player, profileRes, uuid, profileid, res) {
         if (profileRes.data.hasOwnProperty('profiles') && profileRes.data.profiles == null) {
@@ -280,6 +284,7 @@ module.exports = {
             name: profileData.cute_name,
             id: profileData.profile_id,
             last_save: profile.last_save,
+            selected: profile.selected,
             data: await getContent(profile),
         };
     },
@@ -304,14 +309,15 @@ module.exports = {
                 name: profileData.cute_name,
                 id: profileData.profile_id,
                 last_save: profile.last_save,
+                selected: profile.selected,
                 data: await getContent(profile),
             });
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
-        return result.sort((a, b) => b.last_save - a.last_save);
+        return result.sort((a, b) => b.selected || b.last_save - a.last_save);
     },
 };
 
 function isValidProfile(profileMembers, uuid) {
-    return profileMembers.hasOwnProperty(uuid) && profileMembers[uuid].last_save != undefined;
+    return profileMembers.hasOwnProperty(uuid) && profileMembers[uuid] !== undefined;
 }
