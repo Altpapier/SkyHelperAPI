@@ -44,6 +44,13 @@ Request Body:
 | bankBalance | Number | The player's bank balance from the Hypixel API (profile.banking?.balance) |
 | onlyNetworth | Boolean | (default: false) If true, only the networth will be returned |
 
+### `POST` /v2/networth/item
+
+Request Body:
+| Field | Type | Description |
+| ----- | ---- | ----------- |
+| itemData | Object | The item data of an item from the profiles endpoint |
+
 ### `GET` /v2/profiles/:user
 
 ### `GET` /v2/profile/:user/:profile
