@@ -1,0 +1,35 @@
+{
+    "status": 200,
+    "data": {
+        "name": "Withered Hyperion ✪✪✪✪✪",
+        "id": "hyperion",
+        "price": 1236644550.1292129,
+        "base": 1059999000,
+        "calculation": [
+            { "id": "LUCK_6", "type": "enchant", "price": 168.841875, "count": 1 },
+            { "id": "CRITICAL_6", "type": "enchant", "price": 2294.66, "count": 1 },
+            { "id": "LOOTING_4", "type": "enchant", "price": 5727.724999999999, "count": 1 },
+            { "id": "SCAVENGER_4", "type": "enchant", "price": 626.3042857142857, "count": 1 },
+            { "id": "VAMPIRISM_6", "type": "enchant", "price": 474212.535, "count": 1 },
+            { "id": "MANA_STEAL_3", "type": "enchant", "price": 15115.21, "count": 1 },
+            { "id": "THUNDERLORD_6", "type": "enchant", "price": 328.95, "count": 1 },
+            { "id": "ULTIMATE_WISE_5", "type": "enchant", "price": 2703481.44, "count": 1 },
+            { "id": "LETHALITY_6", "type": "enchant", "price": 144881.4375, "count": 1 },
+            { "id": "FUMING_POTATO_BOOK", "type": "fuming_potato_book", "price": 3254249.4999999995, "count": 5 },
+            { "id": "HOT_POTATO_BOOK", "type": "hot_potato_book", "price": 428945, "count": 10 },
+            { "id": "THE_ART_OF_WAR", "type": "the_art_of_war", "price": 3976433.04, "count": 1 },
+            { "id": "RECOMBOBULATOR_3000", "type": "recombobulator_3000", "price": 4923421.760000001, "count": 1 },
+            { "id": "wither_blood", "type": "reforge", "price": 2143893.7, "count": 1 },
+            { "id": "WITHER", "type": "essence", "price": 212532.49815905743, "count": 150 },
+            { "id": "WITHER", "type": "essence", "price": 425064.99631811486, "count": 300 },
+            { "id": "WITHER", "type": "essence", "price": 708441.6605301914, "count": 500 },
+            { "id": "WITHER", "type": "essence", "price": 1275194.9889543443, "count": 900 },
+            { "id": "WITHER", "type": "essence", "price": 2125324.981590574, "count": 1500 },
+            { "id": "WITHER_SHIELD_SCROLL", "type": "necron_scroll", "price": 42651217.5, "count": 1 },
+            { "id": "IMPLOSION_SCROLL", "type": "necron_scroll", "price": 52473994.8, "count": 1 },
+            { "id": "SHADOW_WARP_SCROLL", "type": "necron_scroll", "price": 58699998.6, "count": 1 }
+        ],
+        "count": 1,
+        "soulbound": true
+    }
+}

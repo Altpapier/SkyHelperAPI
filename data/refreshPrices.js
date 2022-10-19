@@ -1,25 +1,15 @@
-const axios = require('axios');
-const fs = require('fs');
+const { getPrices } = require('skyhelper-networth');
 
-module.exports = async function refreshPrices() {
-    async function updatePrices() {
-        let request;
-        try {
-            request = await axios.get('https://raw.githubusercontent.com/SkyHelperBot/Prices/master/prices.json');
-        } catch (err) {
-            return console.log('Failed to update prices: ', err);
-        }
+let prices = {};
+getPrices().then((data) => {
+    prices = data;
+});
 
-        if (request.status === 200) {
-            fs.writeFileSync('./data/prices.json', JSON.stringify(request.data, null, 2));
-            console.log('[PRICES] Prices updated successfully');
-        } else {
-            console.log('[PRICES] Failed to update prices: ', request.status);
-        }
-    }
-
-    updatePrices();
-    setInterval(async () => {
-        updatePrices();
-    }, 1000 * 60 * 15); // 15 minutes
+module.exports = {
+    refreshPrices: () => {
+        setInterval(async () => {
+            prices = await getPrices();
+        }, 1000 * 60 * 5); // 5 minutes
+    },
+    getPrices: () => prices,
 };

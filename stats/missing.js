@@ -1,6 +1,11 @@
 const { decodeData } = require('../utils/nbt');
 const getMissingTalismans = require('../constants/missing');
-const prices = require('../data/prices.json');
+const { getPrices } = require('../data/refreshPrices');
+
+function getPrice(name) {
+    name = name.toLowerCase();
+    return getPrices()[name] || null;
+}
 
 module.exports = async (profile) => {
     if (profile.talisman_bag?.data && profile.inv_contents?.data) {
@@ -31,8 +36,3 @@ module.exports = async (profile) => {
         return null;
     }
 };
-
-function getPrice(name) {
-    name = name.toLowerCase();
-    return prices[name]?.price || null;
-}
