@@ -49,7 +49,7 @@ Request Body:
 Request Body:
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| itemData | Object | The item data of an item from the profiles endpoint |
+| itemData | Object | The parsed item data of an item from the profiles endpoint |
 
 ### `GET` /v2/profiles/:user
 
