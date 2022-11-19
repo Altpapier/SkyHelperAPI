@@ -364,7 +364,7 @@ module.exports = {
         WITHER_RELIC: { name: 'Wither Relic', rarity: 'epic' },
         CATACOMBS_EXPERT_RING: { name: 'Catacombs Expert Ring', rarity: 'epic' },
         AUTO_RECOMBOBULATOR: { name: 'Auto Recombobulator', rarity: 'legendary' },
-        JERRY_TALISMAN_GOLDEN: { name: 'Golden Jerry Artifac t', rarity: 'legendary' },
+        JERRY_TALISMAN_GOLDEN: { name: 'Golden Jerry Artifact', rarity: 'legendary' },
         KING_TALISMAN: { name: 'King Talisman', rarity: 'common' },
         TITANIUM_RELIC: { name: 'Titanium Relic', rarity: 'legendary' },
         REAPER_ORB: { name: 'Reaper Orb', rarity: 'legendary' },
