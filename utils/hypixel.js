@@ -127,6 +127,19 @@ module.exports = {
 
         const profile = profileData.members[uuid];
 
+        const [networth, weight, crimson, trophy_fish, missing, armor, equipment, pets, talismans, cakebag] = await Promise.all([
+            getNetworth(profile, profileData.banking?.balance, { prices }),
+            getWeight(profile),
+            getCrimson(profile),
+            getTrophyFish(profile),
+            getMissing(profile),
+            getArmor(profile),
+            getEquipment(profile),
+            getPets(profile),
+            getTalismans(profile),
+            getCakebag(profile),
+        ]);
+
         return {
             uuid: uuid,
             name: profileData.cute_name,
@@ -142,25 +155,25 @@ module.exports = {
             purse: profile.coin_purse || 0,
             bank: profileData.banking?.balance || 0,
             skills: getSkills(profile),
-            networth: await getNetworth(profile, profileData.banking?.balance, { prices }),
-            weight: await getWeight(profile),
+            networth,
+            weight,
             bestiary: getBestiary(profile),
             dungeons: getDungeons(player, profile),
-            crimson: await getCrimson(profile),
-            trophy_fish: await getTrophyFish(profile),
+            crimson,
+            trophy_fish,
             mining: getMining(player, profile),
             slayer: getSlayer(profile),
             milestones: getMilestones(profile),
-            missing: await getMissing(profile),
+            missing,
             kills: getKills(profile),
             deaths: getDeaths(profile),
-            armor: await getArmor(profile),
-            equipment: await getEquipment(profile),
-            pets: await getPets(profile),
-            talismans: await getTalismans(profile),
+            armor,
+            equipment,
+            pets,
+            talismans,
             collections: getCollections(profileData),
             minions: getMinions(profileData),
-            cakebag: await getCakebag(profile),
+            cakebag,
         };
     },
     parseNetworthProfiles: async function parseNetworthProfiles(profileRes, uuid, res) {
@@ -206,6 +219,19 @@ module.exports = {
             }
             const profile = profileData.members[uuid];
 
+            const [networth, weight, crimson, trophy_fish, missing, armor, equipment, pets, talismans, cakebag] = await Promise.all([
+                getNetworth(profile, profileData.banking?.balance, { prices }),
+                getWeight(profile),
+                getCrimson(profile),
+                getTrophyFish(profile),
+                getMissing(profile),
+                getArmor(profile),
+                getEquipment(profile),
+                getPets(profile),
+                getTalismans(profile),
+                getCakebag(profile),
+            ]);
+
             result.push({
                 username: player.name,
                 uuid: uuid,
@@ -222,25 +248,25 @@ module.exports = {
                 purse: profile.coin_purse || 0,
                 bank: profileData.banking?.balance || 0,
                 skills: getSkills(profile),
-                networth: await getNetworth(profile, profileData.banking?.balance, { prices }),
-                weight: await getWeight(profile),
+                networth,
+                weight,
                 bestiary: getBestiary(profile),
                 dungeons: getDungeons(player, profile),
-                crimson: await getCrimson(profile),
-                trophy_fish: await getTrophyFish(profile),
+                crimson,
+                trophy_fish,
                 mining: getMining(player, profile),
                 slayer: getSlayer(profile),
                 milestones: getMilestones(profile),
-                missing: await getMissing(profile),
+                missing,
                 kills: getKills(profile),
                 deaths: getDeaths(profile),
-                armor: await getArmor(profile),
-                equipment: await getEquipment(profile),
-                pets: await getPets(profile),
-                talismans: await getTalismans(profile),
+                armor,
+                equipment,
+                pets,
+                talismans,
                 collections: getCollections(profileData),
                 minions: getMinions(profileData),
-                cakebag: await getCakebag(profile),
+                cakebag,
             });
         }
         if (result.length == 0) res.status(404).json({ status: 404, reason: `Found no SkyBlock profiles for a user with a UUID of '${uuid}'.` });
