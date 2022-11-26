@@ -241,7 +241,6 @@ module.exports = async (profile) => {
 };
 
 function formatLilySkills(skills) {
-    console.log(skills);
     const skillSort = ['enchanting', 'taming', 'alchemy', 'mining', 'farming', 'foraging', 'combat', 'fishing'];
     const whitelistedSkills = Object.keys(skills).filter((skill) => !['runecrafting', 'social', 'carpentry'].includes(skill));
     const skills_levels = whitelistedSkills.sort((a, b) => skillSort.indexOf(a) - skillSort.indexOf(b)).map((skill) => skills[skill].level);
