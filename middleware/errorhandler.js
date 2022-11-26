@@ -1,5 +1,6 @@
 //CREDIT: https://github.com/Senither/hypixel-skyblock-facade (Modified)
 module.exports = (error, _, response, __) => {
+    if (response.headersSent) return;
     if (error.hasOwnProperty('response')) {
         switch (error.response.status) {
             case 403:

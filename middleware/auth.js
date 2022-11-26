@@ -7,7 +7,11 @@ if (process.env.AUTH_TOKEN_URL) {
     setInterval(() => setTokens(), 1000 * 60 * 5); // 5 minutes
 
     async function setTokens() {
-        urlAuthTokens = (await axios.get(process.env.AUTH_TOKEN_URL)).data;
+        try {
+            urlAuthTokens = (await axios.get(process.env.AUTH_TOKEN_URL)).data;
+        } catch (e) {
+            console.log('Failed to fetch auth tokens from URL');
+        }
     }
 }
 

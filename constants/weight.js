@@ -6,7 +6,7 @@ const dungeon_weights = {
     berserk: 0.0000045254834,
     archer: 0.0000045254834,
     tank: 0.0000045254834,
-}
+};
 const slayer_weights = {
     revenant: {
         divider: 2208,
@@ -22,9 +22,9 @@ const slayer_weights = {
     },
     enderman: {
         divider: 1430,
-        modifier: .017,
-    }
-}
+        modifier: 0.017,
+    },
+};
 const skill_weights = {
     mining: {
         exponent: 1.18207448,
@@ -72,95 +72,138 @@ const skill_weights = {
         exponent: 1.14744,
         divider: 441379,
         maxLevel: 50,
-    }
-}
+    },
+};
 
-
-module.exports = function calculateWeight(type, level = null, experience) {
-    const slayers = ['revenant', 'tarantula', 'sven', 'enderman']
-    const dungeons = ['catacombs', 'healer', 'mage', 'berserk', 'archer', 'tank']
-    const skills = ['mining', 'foraging', 'enchanting', 'farming', 'combat', 'fishing', 'alchemy', 'taming']
-    if (slayers.includes(type)) return calculateSlayerWeight(type, experience)
-    else if (dungeons.includes(type)) return calculateDungeonWeight(type, level, experience)
-    else if (skills.includes(type)) return calculateSkillWeight(type, level, experience)
-    else return null
+function calculateWeight(type, level = null, experience) {
+    const slayers = ['revenant', 'tarantula', 'sven', 'enderman'];
+    const dungeons = ['catacombs', 'healer', 'mage', 'berserk', 'archer', 'tank'];
+    const skills = ['mining', 'foraging', 'enchanting', 'farming', 'combat', 'fishing', 'alchemy', 'taming'];
+    if (slayers.includes(type)) return calculateSlayerWeight(type, experience);
+    else if (dungeons.includes(type)) return calculateDungeonWeight(type, level, experience);
+    else if (skills.includes(type)) return calculateSkillWeight(type, level, experience);
+    else return null;
 }
 
 function calculateDungeonWeight(type, level, experience) {
-    let percentageModifier = dungeon_weights[type]
+    let percentageModifier = dungeon_weights[type];
 
-    let base = Math.pow(level, 4.5) * percentageModifier
+    let base = Math.pow(level, 4.5) * percentageModifier;
 
     if (experience <= 569809640) {
         return {
             weight: base,
             weight_overflow: 0,
-        }
+        };
     }
 
-    let remaining = experience - 569809640
-    let splitter = (4 * 569809640) / base
+    let remaining = experience - 569809640;
+    let splitter = (4 * 569809640) / base;
 
     return {
         weight: Math.floor(base),
         weight_overflow: Math.pow(remaining / splitter, 0.968) || 0,
-    }
+    };
 }
 
 function calculateSkillWeight(type, level, experience) {
-    const skillGroup = skill_weights[type]
+    const skillGroup = skill_weights[type];
     if (skillGroup.exponent == undefined || skillGroup.divider == undefined) {
         return {
             weight: 0,
             weight_overflow: 0,
-        }
+        };
     }
 
-    let maxSkillLevelXP = skillGroup.maxLevel == 60 ? 111672425 : 55172425
+    let maxSkillLevelXP = skillGroup.maxLevel == 60 ? 111672425 : 55172425;
 
-    let base = Math.pow(level * 10, 0.5 + skillGroup.exponent + level / 100) / 1250
+    let base = Math.pow(level * 10, 0.5 + skillGroup.exponent + level / 100) / 1250;
     if (experience > maxSkillLevelXP) {
-        base = Math.round(base)
+        base = Math.round(base);
     }
     if (experience <= maxSkillLevelXP) {
         return {
             weight: base,
             weight_overflow: 0,
-        }
+        };
     }
 
     return {
         weight: base,
         weight_overflow: Math.pow((experience - maxSkillLevelXP) / skillGroup.divider, 0.968),
-    }
+    };
 }
 
 function calculateSlayerWeight(type, experience) {
-    const slayerWeight = slayer_weights[type]
+    const slayerWeight = slayer_weights[type];
 
     if (experience <= 1000000) {
         return {
             weight: experience == 0 ? 0 : experience / slayerWeight.divider,
             weight_overflow: 0,
-        }
+        };
     }
 
-    let base = 1000000 / slayerWeight.divider
-    let remaining = experience - 1000000
+    let base = 1000000 / slayerWeight.divider;
+    let remaining = experience - 1000000;
 
-    let modifier = slayerWeight.modifier
-    let overflow = 0
+    let modifier = slayerWeight.modifier;
+    let overflow = 0;
 
     while (remaining > 0) {
-        let left = Math.min(remaining, 1000000)
+        let left = Math.min(remaining, 1000000);
 
-        overflow += Math.pow(left / (slayerWeight.divider * (1.5 + modifier)), 0.942)
-        modifier += slayerWeight.modifier
-        remaining -= left
+        overflow += Math.pow(left / (slayerWeight.divider * (1.5 + modifier)), 0.942);
+        modifier += slayerWeight.modifier;
+        remaining -= left;
     }
 
     return {
         weight: base,
         weight_overflow: overflow,
-    }
+    };
 }
+
+const calcSkill = require('./skills.js');
+
+function calculateTotalSenitherWeight(profile) {
+    const weight = {
+        skills: {
+            farming: calculateWeight('farming', calcSkill('farming', profile?.experience_skill_farming || 0).levelWithProgress, profile?.experience_skill_farming || 0),
+            mining: calculateWeight('mining', calcSkill('mining', profile?.experience_skill_mining || 0).levelWithProgress, profile?.experience_skill_mining || 0),
+            combat: calculateWeight('combat', calcSkill('combat', profile?.experience_skill_combat || 0).levelWithProgress, profile?.experience_skill_combat || 0),
+            foraging: calculateWeight('foraging', calcSkill('foraging', profile?.experience_skill_foraging || 0).levelWithProgress, profile?.experience_skill_foraging || 0),
+            fishing: calculateWeight('fishing', calcSkill('fishing', profile?.experience_skill_fishing || 0).levelWithProgress, profile?.experience_skill_fishing || 0),
+            enchanting: calculateWeight('enchanting', calcSkill('enchanting', profile?.experience_skill_enchanting || 0).levelWithProgress, profile?.experience_skill_enchanting || 0),
+            alchemy: calculateWeight('alchemy', calcSkill('alchemy', profile?.experience_skill_alchemy || 0).levelWithProgress, profile?.experience_skill_alchemy || 0),
+            taming: calculateWeight('taming', calcSkill('taming', profile?.experience_skill_taming || 0).levelWithProgress, profile?.experience_skill_taming || 0),
+        },
+        slayer: {
+            revenant: calculateWeight('revenant', null, profile.slayer_bosses?.zombie?.xp || 0),
+            tarantula: calculateWeight('tarantula', null, profile.slayer_bosses?.spider?.xp || 0),
+            sven: calculateWeight('sven', null, profile.slayer_bosses?.wolf?.xp || 0),
+            enderman: calculateWeight('enderman', null, profile.slayer_bosses?.enderman?.xp || 0),
+        },
+        dungeons: {
+            catacombs: calculateWeight(
+                'catacombs',
+                calcSkill('dungeoneering', profile.dungeons?.dungeon_types?.catacombs?.experience || 0).levelWithProgress,
+                profile.dungeons?.dungeon_types?.catacombs?.experience || 0
+            ),
+            classes: {
+                healer: calculateWeight('healer', calcSkill('dungeoneering', profile.dungeons?.player_classes?.healer?.experience || 0).levelWithProgress, profile.dungeons?.player_classes?.healer?.experience || 0),
+                mage: calculateWeight('mage', calcSkill('dungeoneering', profile.dungeons?.player_classes?.mage?.experience || 0).levelWithProgress, profile.dungeons?.player_classes?.mage?.experience || 0),
+                berserk: calculateWeight(
+                    'berserk',
+                    calcSkill('dungeoneering', profile.dungeons?.player_classes?.berserk?.experience || 0).levelWithProgress,
+                    profile.dungeons?.player_classes?.berserk?.experience || 0
+                ),
+                archer: calculateWeight('archer', calcSkill('dungeoneering', profile.dungeons?.player_classes?.archer?.experience || 0).levelWithProgress, profile.dungeons?.player_classes?.archer?.experience || 0),
+                tank: calculateWeight('tank', calcSkill('dungeoneering', profile.dungeons?.player_classes?.tank?.experience || 0).levelWithProgress, profile.dungeons?.player_classes?.tank?.experience || 0),
+            },
+        },
+    };
+    return weight;
+}
+
+module.exports = { calculateTotalSenitherWeight };

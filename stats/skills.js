@@ -1,6 +1,6 @@
 const calcSkill = require('../constants/skills');
 
-module.exports = function getSkills(player, profile) {
+module.exports = function getSkills(profile, weight) {
     const skill_experience = {
         farming: profile?.experience_skill_farming || 0,
         mining: profile?.experience_skill_mining || 0,
@@ -16,16 +16,16 @@ module.exports = function getSkills(player, profile) {
     };
 
     return {
-        farming: calcSkill('farming', skill_experience['farming']),
-        mining: calcSkill('mining', skill_experience['mining']),
-        combat: calcSkill('combat', skill_experience['combat']),
-        foraging: calcSkill('foraging', skill_experience['foraging']),
-        fishing: calcSkill('fishing', skill_experience['fishing']),
-        enchanting: calcSkill('enchanting', skill_experience['enchanting']),
-        alchemy: calcSkill('alchemy', skill_experience['alchemy']),
-        carpentry: calcSkill('carpentry', skill_experience['carpentry']),
-        runecrafting: calcSkill('runecrafting', skill_experience['runecrafting']),
-        social: calcSkill('social', skill_experience['social']),
-        taming: calcSkill('taming', skill_experience['taming']),
+        farming: calcSkill('farming', skill_experience['farming'], weight),
+        mining: calcSkill('mining', skill_experience['mining'], weight),
+        combat: calcSkill('combat', skill_experience['combat'], weight),
+        foraging: calcSkill('foraging', skill_experience['foraging'], weight),
+        fishing: calcSkill('fishing', skill_experience['fishing'], weight),
+        enchanting: calcSkill('enchanting', skill_experience['enchanting'], weight),
+        alchemy: calcSkill('alchemy', skill_experience['alchemy'], weight),
+        carpentry: calcSkill('carpentry', skill_experience['carpentry'], weight),
+        runecrafting: calcSkill('runecrafting', skill_experience['runecrafting'], weight),
+        social: calcSkill('social', skill_experience['social'], weight),
+        taming: calcSkill('taming', skill_experience['taming'], weight),
     };
 };
