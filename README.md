@@ -2,7 +2,7 @@
 
 A hypixel skyblock API wrapper containing most features that the [SkyHelper](https://top.gg/bot/710143953533403226) bot has to offer.
 
-This API was made using the [Hypixel Skyblock Facade](https://github.com/Senither/hypixel-skyblock-facade), [SkyCrypt](https://github.com/SkyCryptWebsite/SkyCrypt) and [Maro API](https://github.com/zt3h/MaroAPI).
+This API was made using the [Hypixel SkyBlock Facade](https://github.com/Senither/hypixel-skyblock-facade), [SkyCrypt](https://github.com/SkyCryptWebsite/SkyCrypt) and [Maro API](https://github.com/zt3h/MaroAPI).
 
 # Installing
 
@@ -24,6 +24,8 @@ Node.js >= 14
 
 ### Environment Variables
 
+Rename the `example.env` file to `.env`
+
 The Port normally defaults to `3000`. If you want to change that, you can do so by changing the `PORT` environment variable.
 
 You will have to set the Hypixel API key by adding the `HYPIXEL_API_KEY` environment variable.
@@ -31,7 +33,7 @@ You will have to set the Hypixel API key by adding the `HYPIXEL_API_KEY` environ
 To be able to use the API you will need to define your own API keys. For that add the `TOKENS` environment variable and add tokens seperated by a `,`
 Example: `token1,token2`
 
-The API automatically updates upon starting. If you wish to not want that, change the `AUTO_UPDATE` environment variable to `false`
+The API automatically updates upon starting. If you wish to not have that feature, change the `AUTO_UPDATE` environment variable to `false`
 
 # Endpoints:
 
