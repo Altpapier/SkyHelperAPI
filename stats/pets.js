@@ -163,10 +163,10 @@ async function getPets(profile) {
         if (!heldItemObj) {
           heldItemObj = constants.pet_items[heldItem];
         }
-        lore.push("", `§6Held Item: §${constants.rarityColors[heldItemObj.tier.toLowerCase()]}${heldItemObj.name}`);
+        lore.push("", `§6Held Item: §${constants.rarityColors[(heldItemObj?.tier ?? "common").toLowerCase()]}${heldItemObj?.name ?? "Unknown"}`);
   
         if (heldItem in constants.pet_items) {
-          lore.push(constants.pet_items[heldItem].description);
+          lore.push(constants.pet_items[heldItem]?.description ?? "");
         }
         // extra line
         lore.push(" ");
